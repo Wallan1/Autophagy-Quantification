@@ -7,3 +7,4 @@ credential save test 3 on downing
 credential save test 4 downing
 test 5 credential save downing
 test 6 of credential save to downing
+credential save 7 from downing
