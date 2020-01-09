@@ -19,8 +19,18 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
 
 #Enable packages used to load FIJI results data
 
+tidyverse package has reproducible functions for loading csv files (readr)
+
 ```{r}
 library(tidyverse)
+library(readr)
+```
 
+#Open results CSV file
+
+input desired file path to current data for analysis
+
+```{r}
+read_csv("/Users/Natwalla/Desktop/Summary_02-inf_basal_28May19.csv")
 ```
 
