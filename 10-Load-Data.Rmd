@@ -17,13 +17,10 @@ When you save the notebook, an HTML file containing the code and output will be 
 
 The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
 
-#Enable packages used to load image data
-
-Using the EMImage package to open Tiff z-stack images.
-
-We first need to ensure the EBImage package is enabled
+#Enable packages used to load FIJI results data
 
 ```{r}
-library(EBImage)
+library(tidyverse)
+
 ```
 
