@@ -1,0 +1,51 @@
+---
+title: "21-Graph-Individual-Puncta-Data"
+output: html_notebook
+---
+
+density ridges
+*CHANGE OUTPUT FILE NAME*
+```{r}
+library(ggplot2)
+library(viridis)
+library(ggridges)
+temp<-temp[which(temp$Type!="Mock"),]
+plotme<-function(yaxis,labelme,mytitle,nameme){
+  ggplot(temp,aes(x=yaxis,fill=Type, y=Type,group=Type))+
+  geom_density_ridges(aes(color=Type) ,alpha=.5,scale=.5,jittered_points=TRUE,position="raincloud",scale=.2,point_size=.5) +
+    facet_wrap(~BvsS)+
+  xlab(labelme)+
+  ggtitle(mytitle)+
+  theme()+
+  scale_x_continuous(name=labelme,limits = c(2,10))+
+    #scale_color_manual(values=c("#EB7D5B", "#FED23F", "#B5D33D","#6CA2EA","#442288"))+
+    #scale_fill_manual(values=c("#EB7D5B", "#FED23F", "#B5D33D","#6CA2EA","#442288"))
+    scale_fill_viridis(discrete=TRUE,end=.9) +
+    scale_color_viridis(discrete=TRUE,end=.9) +
+    theme_minimal()+
+    theme(plot.title=element_text(hjust=.5), panel.spacing.x = unit(4, "lines"))
+}
+#tiff(file="~/Desktop/Analyzed-data_HeLa-KD_7May20/batch-graphs/combined-datasets_eqNum_noMock_individualPunctaInt.tiff",width=2800,height=2800,res=600)
+plotme(temp$MeanObjIntensity,"puncta mean intensity (A.U.)","LC3 Puncta Mean Intensity")
+#dev.off()
+
+tiff(file="~/Desktop/Analyzed-data_HeLa-KD_7May20/batch-graphs/EqCellNumber-graphs/combined-datasets_eqNum_noMock_individualPunctaVol_enlarge2-10_30Jun20.tiff",width=3000,height=3000,res=600)
+plotme(temp$Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Puncta Volumes")
+dev.off()
+```
+
+
+Violin plots of individual puncta values
+
+```{r}
+plotme<-function(yaxis,labelme,mytitle,nameme){
+  ggplot(temp,aes(x=Type,y=yaxis,fill=BvsS))+
+  geom_violin(width=.2,position = position_dodge(0.9)) +
+  ylab(labelme)+
+  ggtitle(mytitle)+
+  theme(plot.title=element_text(hjust=.5))
+}
+#tiff(file="~/Desktop/Analyzed-data/11Mar20_individualPuncta.tiff",width=2800,height=2800,res=600)
+plotme(temp$MeanObjIntensity,expression("Puncta Volume (um"^'3'*")"),"Puncta Volumes")
+#dev.off()
+```
