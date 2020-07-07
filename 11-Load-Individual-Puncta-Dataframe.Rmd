@@ -1,0 +1,133 @@
+---
+title: "11-Load-Individual-Puncta-Data"
+output: html_notebook
+---
+
+Input CSV file and filling in rows
+*change input file name*
+*change BvsS type*
+*change replicate #*
+
+```{r}
+testdata=read.csv(file="~/Desktop/Batch-eqNum_results_10Jun20/15Mar20_basal_eqNum_20Jun20.csv",header=TRUE)
+testdata$BvsS<-"Basal"
+testdata$Rep<-3
+nobs=nrow(testdata)
+for (i in 1:nobs) {
+  if (is.na(testdata[i,3])) {
+    testdata[i,1]<-fname
+    testdata[i,2]<-en
+    testdata[i,3]<-TotVol
+    testdata[i,4]<-puncta
+    testdata[i,5]<-LC3mInt
+    testdata[i,6]<-Nuc
+    testdata[i,7]<-LAMPmInt
+    testdata[i,8]<-LAMPstInt
+  } 
+  else {
+    fname=testdata[i,1]
+    en=testdata[i,2]
+    TotVol=testdata[i,3]
+    puncta=testdata[i,4]
+    LC3mInt=testdata[i,5]
+    Nuc=testdata[i,6]
+    LAMPmInt=testdata[i,7]
+    LAMPstInt=testdata[i,8]
+  }
+}
+
+testdata2=read.csv(file="~/Desktop/Batch-eqNum_results_10Jun20/15Mar20_starved_eqNum_20Jun20.csv",header=TRUE)
+testdata2$BvsS<-"Starved"
+testdata2$Rep<-3
+nobs=nrow(testdata2)
+for (i in 1:nobs) {
+  if (is.na(testdata2[i,3])) {
+    testdata2[i,1]<-fname
+    testdata2[i,2]<-en
+    testdata2[i,3]<-TotVol
+    testdata2[i,4]<-puncta
+    testdata2[i,5]<-LC3mInt
+    testdata2[i,6]<-Nuc
+    testdata2[i,7]<-LAMPmInt
+    testdata2[i,8]<-LAMPstInt
+  } 
+  else {
+    fname=testdata2[i,1]
+    en=testdata2[i,2]
+    TotVol=testdata2[i,3]
+    puncta=testdata2[i,4]
+    LC3mInt=testdata2[i,5]
+    Nuc=testdata2[i,6]
+    LAMPmInt=testdata2[i,7]
+    LAMPstInt=testdata2[i,8]
+  }
+}
+temp<-rbind(testdata,testdata2)
+```
+
+Adding type designation
+*if necessary update substring values based on filename in input document*
+
+```{r}
+temp$Type<-NA
+ntemp<-nrow(temp)
+
+
+for (c in 1:ntemp) {
+  if (substr(temp[c,1],47,47)=="W") {
+    temp$Type[c]<-"WT"
+  }
+ # else if (substr(temp[c,1],47,47)=="M") {
+#    temp$Type[c]<-"Mock"
+ # }
+  else if (substr(temp[c,1],47,47)=="C") {
+    temp$Type[c]<-"Control"
+  }
+  else if (substr(temp[c,1],47,47)=="t") {
+    temp$Type[c]<-"tepsin"
+  }
+  else {
+    temp$Type[c]<-"AP4E1"
+  }
+  
+}
+temp$Type<-factor(temp$Type, levels=c("WT", "Mock", "Control", "tepsin", "AP4E1"))
+```
+
+Calculating Summary Statistics
+```{r}
+temp$IndeVolVar<-NA
+temp$IndeVolMean<-NA
+temp$IndeVolSTD<-NA
+temp$IndeVolMed<-NA
+
+temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
+
+for (t in c("WT","Mock", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+  temp$IndeVolMean[which(temp$Type==t & temp$BvsS==bs)]<-mean(temp$Volume[which(temp$Type==t & temp$BvsS==bs)],na.rm = T)
+   
+  temp$IndeVolMed[which(temp$Type==t & temp$BvsS==bs)]<-median(temp$Volume[which(temp$Type==t & temp$BvsS==bs)],na.rm = T)
+  
+  temp$IndeVolVar[which(temp$Type==t & temp$BvsS==bs)]<-var(temp$Volume[which(temp$Type==t & temp$BvsS==bs)],na.rm = T)
+  
+  temp$IndeVolSTD[which(temp$Type==t & temp$BvsS==bs)]<-sd(temp$Volume[which(temp$Type==t & temp$BvsS==bs)],na.rm = T)
+ 
+   }
+}
+```
+
+
+calculating number of enlarged puncta
+
+```{r}
+temp$EnlargedPunctaCount<-NA
+
+temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
+
+for (t in c("WT","Mock", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+    temp$EnlargedPunctaCount[which(temp$Type==t & temp$BvsS==bs)]<-length(which(temp$Type==t & temp$BvsS==bs & temp$Volume >2 & temp$Type==t & temp$BvsS==bs & temp$Volume < 10))
+  }
+}
+```
