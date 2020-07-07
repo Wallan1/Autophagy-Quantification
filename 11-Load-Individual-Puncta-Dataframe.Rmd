@@ -9,9 +9,9 @@ Input CSV file and filling in rows
 *change replicate #*
 
 ```{r}
-testdata=read.csv(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/21Feb20_eqCellSum-PCC_basal_1Jul20.csv",header=TRUE)
+testdata=read.csv(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/15Mar20_eqCellSum-PCC_basal_1Jul20.csv",header=TRUE)
 testdata$BvsS<-"Basal"
-testdata$Rep<-1
+testdata$Rep<-3
 nobs=nrow(testdata)
 for (i in 1:nobs) {
   if (is.na(testdata[i,3])) {
@@ -36,9 +36,9 @@ for (i in 1:nobs) {
   }
 }
 
-testdata2=read.csv(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/21Feb20_eqCellSum-PCC_starved_1Jul20.csv",header=TRUE)
+testdata2=read.csv(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/15Mar20_eqCellSum-PCC_starved_1Jul20.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
-testdata2$Rep<-1
+testdata2$Rep<-3
 nobs=nrow(testdata2)
 for (i in 1:nobs) {
   if (is.na(testdata2[i,3])) {
@@ -105,13 +105,13 @@ temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
 
 for (t in c("WT","Mock", "Control", "tepsin", "AP4E1")) {
   for (bs in c("Basal", "Starved")) {
-  temp$IndeVolMean[which(temp$Type==t & temp$BvsS==bs)]<-mean(temp$Volume[which(temp$Type==t & temp$BvsS==bs)],na.rm = T)
+  temp$IndeVolMean[which(temp$Type==t & temp$BvsS==bs)]<-mean(temp$LC3Volume[which(temp$Type==t & temp$BvsS==bs)],na.rm = T)
    
-  temp$IndeVolMed[which(temp$Type==t & temp$BvsS==bs)]<-median(temp$Volume[which(temp$Type==t & temp$BvsS==bs)],na.rm = T)
+  temp$IndeVolMed[which(temp$Type==t & temp$BvsS==bs)]<-median(temp$LC3Volume[which(temp$Type==t & temp$BvsS==bs)],na.rm = T)
   
-  temp$IndeVolVar[which(temp$Type==t & temp$BvsS==bs)]<-var(temp$Volume[which(temp$Type==t & temp$BvsS==bs)],na.rm = T)
+  temp$IndeVolVar[which(temp$Type==t & temp$BvsS==bs)]<-var(temp$LC3Volume[which(temp$Type==t & temp$BvsS==bs)],na.rm = T)
   
-  temp$IndeVolSTD[which(temp$Type==t & temp$BvsS==bs)]<-sd(temp$Volume[which(temp$Type==t & temp$BvsS==bs)],na.rm = T)
+  temp$IndeVolSTD[which(temp$Type==t & temp$BvsS==bs)]<-sd(temp$LC3Volume[which(temp$Type==t & temp$BvsS==bs)],na.rm = T)
  
    }
 }
@@ -127,7 +127,7 @@ temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
 
 for (t in c("WT","Mock", "Control", "tepsin", "AP4E1")) {
   for (bs in c("Basal", "Starved")) {
-    temp$EnlargedPunctaCount[which(temp$Type==t & temp$BvsS==bs)]<-length(which(temp$Type==t & temp$BvsS==bs & temp$Volume >2 & temp$Type==t & temp$BvsS==bs & temp$Volume < 10))
+    temp$EnlargedPunctaCount[which(temp$Type==t & temp$BvsS==bs)]<-length(which(temp$Type==t & temp$BvsS==bs & temp$LC3Volume >2 & temp$Type==t & temp$BvsS==bs & temp$LC3Volume < 10))
   }
 }
 ```
