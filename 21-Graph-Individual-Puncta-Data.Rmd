@@ -4,7 +4,7 @@ output: html_notebook
 ---
 
 density ridges
-*CHANGE OUTPUT FILE NAME*
+*CHANGE OUTPUT FILE NAME AND SAVE LOCATION*
 ```{r}
 library(ggplot2)
 library(viridis)
@@ -17,7 +17,7 @@ plotme<-function(yaxis,labelme,mytitle,nameme){
   xlab(labelme)+
   ggtitle(mytitle)+
   theme()+
-  scale_x_continuous(name=labelme,limits = c(2,10))+
+  #scale_x_continuous(name=labelme,limits = c(2,10))+
     #scale_color_manual(values=c("#EB7D5B", "#FED23F", "#B5D33D","#6CA2EA","#442288"))+
     #scale_fill_manual(values=c("#EB7D5B", "#FED23F", "#B5D33D","#6CA2EA","#442288"))
     scale_fill_viridis(discrete=TRUE,end=.9) +
@@ -25,13 +25,25 @@ plotme<-function(yaxis,labelme,mytitle,nameme){
     theme_minimal()+
     theme(plot.title=element_text(hjust=.5), panel.spacing.x = unit(4, "lines"))
 }
-#tiff(file="~/Desktop/Analyzed-data_HeLa-KD_7May20/batch-graphs/combined-datasets_eqNum_noMock_individualPunctaInt.tiff",width=2800,height=2800,res=600)
-plotme(temp$MeanObjIntensity,"puncta mean intensity (A.U.)","LC3 Puncta Mean Intensity")
+#tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/LC3meanInt_combined-datasets_7Jul20.tiff",width=2800,height=2800,res=600)
+plotme(temp$LC3MeanObjIntensity,"puncta mean intensity (A.U.)","LC3 Puncta Mean Intensity")
 #dev.off()
 
-tiff(file="~/Desktop/Analyzed-data_HeLa-KD_7May20/batch-graphs/EqCellNumber-graphs/combined-datasets_eqNum_noMock_individualPunctaVol_enlarge2-10_30Jun20.tiff",width=3000,height=3000,res=600)
-plotme(temp$Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Puncta Volumes")
-dev.off()
+#tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/LC3punctaVol_combined-datasets_7Jul20.tiff",width=3000,height=3000,res=600)
+plotme(temp$LC3Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Puncta Volumes")
+#dev.off()
+
+#tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/LAMP1Vol_combined-datasets_7Jul20.tiff",width=3000,height=3000,res=600)
+plotme(temp$LAMP1Volume,expression("LAMP1 Puncta Volume (um"^'3'*")"),"LAMP1 Puncta Volumes")
+#dev.off()
+
+#tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/LAMP1Vol_combined-datasets_7Jul20.tiff",width=3000,height=3000,res=600)
+plotme(temp$LAMP1MeanObjIntensity,"puncta mean intensity (A.U.)","LAMP1 Puncta Mean Intensity")
+#dev.off()
+
+#tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/PCCvalues_combined-datasets_7Jul20.tiff",width=3000,height=3000,res=600)
+plotme(temp$PearsonCoeff,"PCC (A.U.)","Pearson Correlation Coefficient Values")
+#dev.off()
 ```
 
 
