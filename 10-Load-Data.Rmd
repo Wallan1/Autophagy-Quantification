@@ -2,35 +2,172 @@
 title: "10-Load-Data"
 output: html_notebook
 ---
-#Import image
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
-
+This is the import and filling in blank rows
+*change input file*
+*change replicate #*
 ```{r}
-plot(cars)
+testdata=read.csv(file="~/Desktop/Batch-eqNum_results_10Jun20/21Feb20_basal_eqNum_20Jun20.csv",header=TRUE)
+testdata$BvsS<-"Basal"
+testdata$Rep<-1
+nobs=nrow(testdata)
+for (i in 1:nobs) {
+  if (is.na(testdata[i,3])) {
+    testdata[i,1]<-fname
+    testdata[i,2]<-en
+    testdata[i,3]<-TotVol
+    testdata[i,4]<-puncta
+    testdata[i,5]<-LC3mInt
+    testdata[i,6]<-Nuc
+    testdata[i,7]<-LAMPmInt
+    testdata[i,8]<-LAMPstInt
+  } 
+  else {
+    fname=testdata[i,1]
+    en=testdata[i,2]
+    TotVol=testdata[i,3]
+    puncta=testdata[i,4]
+    LC3mInt=testdata[i,5]
+    Nuc=testdata[i,6]
+    LAMPmInt=testdata[i,7]
+    LAMPstInt=testdata[i,8]
+  }
+}
+
+testdata2=read.csv(file="~/Desktop/Batch-eqNum_results_10Jun20/21Feb20_starved_eqNum_20Jun20.csv",header=TRUE)
+testdata2$BvsS<-"Starved"
+testdata2$Rep<-1
+nobs=nrow(testdata2)
+for (i in 1:nobs) {
+  if (is.na(testdata2[i,3])) {
+    testdata2[i,1]<-fname
+    testdata2[i,2]<-en
+    testdata2[i,3]<-TotVol
+    testdata2[i,4]<-puncta
+    testdata2[i,5]<-LC3mInt
+    testdata2[i,6]<-Nuc
+    testdata2[i,7]<-LAMPmInt
+    testdata2[i,8]<-LAMPstInt
+  } 
+  else {
+    fname=testdata2[i,1]
+    en=testdata2[i,2]
+    TotVol=testdata2[i,3]
+    puncta=testdata2[i,4]
+    LC3mInt=testdata2[i,5]
+    Nuc=testdata2[i,6]
+    LAMPmInt=testdata2[i,7]
+    LAMPstInt=testdata2[i,8]
+  }
+}
+both<-rbind(testdata,testdata2)
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
-
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
-
-#Enable packages used to load FIJI results data
-
-tidyverse package has reproducible functions for loading csv files (readr)
-
+Basic Calcultaions
 ```{r}
-library(tidyverse)
-library(readr)
+both$AverageVolume<-both$LC3TotalObjectVolume/both$LC3punctaCount
+both$punctaPerCell<-both$LC3punctaCount/both$NucleiCount
+both$TotVolPerCell<-both$LC3TotalObjectVolume/both$NucleiCount
 ```
 
-#Open results CSV file
-
-input desired file path to current data for analysis
-
+Getting 1 row per Filename into a new file "both_nodup", making individual type files, adding total cell counts per type
+*If necessary update substring values based on filenames from input document*
 ```{r}
-read_csv("/Users/Natwalla/Desktop/Summary_02-inf_basal_28May19.csv")
+both_nodup<-both[!duplicated(both$Filename),]
+both_nodup$Type<-NA
+nboth_nodup<-nrow(both_nodup)
+WT<-both_nodup[0,]
+Mock<-both_nodup[0,]
+Control<-both_nodup[0,]
+tepsin<-both_nodup[0,]
+AP4E1<-both_nodup[0,]
+for (c in 1:nboth_nodup) {
+  if (substr(both_nodup[c,1],47,47)=="W") {
+    WT<-rbind(WT, both_nodup[c,])
+    WT$Type="WT"
+    both_nodup$Type[c]<-"WT"
+  }
+  else if (substr(both_nodup[c,1],47,47)=="M") {
+    Mock<-rbind(Mock, both_nodup[c,])
+    Mock$Type<-"Mock"
+    both_nodup$Type[c]<-"Mock"
+  }
+  else if (substr(both_nodup[c,1],47,47)=="C") {
+    Control<-rbind(Control, both_nodup[c,])
+    Control$Type<-"Control"
+    both_nodup$Type[c]<-"Control"
+  }
+  else if (substr(both_nodup[c,1],47,47)=="t") {
+    tepsin<-rbind(tepsin, both_nodup[c,])
+    tepsin$Type<-"tepsin"
+    both_nodup$Type[c]<-"tepsin"
+  }
+  else {
+    AP4E1<-rbind(AP4E1, both_nodup[c,])
+    AP4E1$Type<-"AP4E1"
+    both_nodup$Type[c]<-"AP4E1"
+  }
+  
+}
+
 ```
+
+
+Get Sum of cell counts per type
+```{r}
+both_nodup$CellSum<-NA
+
+for (t in c("WT","Mock", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+  both_nodup$CellSum[which(both_nodup$Type==t & both_nodup$BvsS==bs)]<-sum(both_nodup$NucleiCount[which(both_nodup$Type==t & both_nodup$BvsS==bs)])
+   }
+}
+```
+
+Get sum of LC3 puncta counts per condition
+*Use when cell counts match!*
+```{r}
+both_nodup$TotalLC3PunctaCount<-NA
+
+for (t in c("WT","Mock", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+  both_nodup$TotalLC3PunctaCount[which(both_nodup$Type==t & both_nodup$BvsS==bs)]<-sum(both_nodup$LC3punctaCount[which(both_nodup$Type==t & both_nodup$BvsS==bs)])
+   }
+}
+```
+
+
+Getting average of subsets
+```{r}
+WT$TypeIntAvg<-mean(WT$MeanIntensity)
+WT$TypeAvgVol<-mean(WT$AverageVolume)
+WT$TypeAvgpuncta<-mean(WT$punctaPerCell)
+WT$TypeLAMPIntAvg<-mean(WT$LAMP1meanInt)
+Mock$TypeIntAvg<-mean(Mock$MeanIntensity)
+Mock$TypeAvgVol<-mean(Mock$AverageVolume)
+Mock$TypeAvgpuncta<-mean(Mock$punctaPerCell)
+Mock$TypeLAMPIntAvg<-mean(Mock$LAMP1meanInt)
+Control$TypeIntAvg<-mean(Control$MeanIntensity)
+Control$TypeAvgVol<-mean(Control$AverageVolume)
+Control$TypeAvgpuncta<-mean(Control$punctaPerCell)
+Control$TypeLAMPIntAvg<-mean(Control$LAMP1meanInt)
+tepsin$TypeIntAvg<-mean(tepsin$MeanIntensity)
+tepsin$TypeAvgVol<-mean(tepsin$AverageVolume)
+tepsin$TypeAvgpuncta<-mean(tepsin$punctaPerCell)
+tepsin$TypeLAMPIntAvg<-mean(tepsin$LAMP1meanInt)
+AP4E1$TypeIntAvg<-mean(AP4E1$MeanIntensity)
+AP4E1$TypeAvgVol<-mean(AP4E1$AverageVolume)
+AP4E1$TypeAvgpuncta<-mean(AP4E1$punctaPerCell)
+AP4E1$TypeLAMPIntAvg<-mean(AP4E1$LAMP1meanInt)
+```
+
+Make final file
+
+*change file output name*
+```{r}
+FinalOut<-rbind(WT,Mock,Control,tepsin,AP4E1)
+FinalOut<-FinalOut[!duplicated(FinalOut$Type),17:21]
+write.csv(FinalOut,"~/Desktop/Starved_11Mar20-dataset_26Mar20_average.csv")
+```
+
 
