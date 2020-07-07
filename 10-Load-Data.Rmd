@@ -7,57 +7,57 @@ This is the import and filling in blank rows
 *change input file*
 *change replicate #*
 ```{r}
-testdata=read.csv(file="~/Desktop/Batch-eqNum_results_10Jun20/21Feb20_basal_eqNum_20Jun20.csv",header=TRUE)
+testdata=read.csv(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/21Feb20_eqCellSum-PCC_basal_1Jul20.csv",header=TRUE)
 testdata$BvsS<-"Basal"
 testdata$Rep<-1
 nobs=nrow(testdata)
 for (i in 1:nobs) {
   if (is.na(testdata[i,3])) {
     testdata[i,1]<-fname
-    testdata[i,2]<-en
-    testdata[i,3]<-TotVol
-    testdata[i,4]<-puncta
-    testdata[i,5]<-LC3mInt
-    testdata[i,6]<-Nuc
-    testdata[i,7]<-LAMPmInt
-    testdata[i,8]<-LAMPstInt
+    testdata[i,2]<-LC3TotVol
+    testdata[i,3]<-LC3puncta
+    testdata[i,4]<-LC3mInt
+    testdata[i,5]<-Nuc
+    testdata[i,6]<-LAMPmInt
+    testdata[i,7]<-LAMPstInt
+    testdata[i,8]<-LAMPTotVol
   } 
   else {
     fname=testdata[i,1]
-    en=testdata[i,2]
-    TotVol=testdata[i,3]
-    puncta=testdata[i,4]
-    LC3mInt=testdata[i,5]
-    Nuc=testdata[i,6]
-    LAMPmInt=testdata[i,7]
-    LAMPstInt=testdata[i,8]
+    LC3TotVol=testdata[i,2]
+    LC3puncta=testdata[i,3]
+    LC3mInt=testdata[i,4]
+    Nuc=testdata[i,5]
+    LAMPmInt=testdata[i,6]
+    LAMPstInt=testdata[i,7]
+    LAMPTotVol=testdata[i,8]
   }
 }
 
-testdata2=read.csv(file="~/Desktop/Batch-eqNum_results_10Jun20/21Feb20_starved_eqNum_20Jun20.csv",header=TRUE)
+testdata2=read.csv(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/21Feb20_eqCellSum-PCC_starved_1Jul20.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
 testdata2$Rep<-1
 nobs=nrow(testdata2)
 for (i in 1:nobs) {
   if (is.na(testdata2[i,3])) {
     testdata2[i,1]<-fname
-    testdata2[i,2]<-en
-    testdata2[i,3]<-TotVol
-    testdata2[i,4]<-puncta
-    testdata2[i,5]<-LC3mInt
-    testdata2[i,6]<-Nuc
-    testdata2[i,7]<-LAMPmInt
-    testdata2[i,8]<-LAMPstInt
+    testdata2[i,2]<-LC3TotVol
+    testdata2[i,3]<-LC3puncta
+    testdata2[i,4]<-LC3mInt
+    testdata2[i,5]<-Nuc
+    testdata2[i,6]<-LAMPmInt
+    testdata2[i,7]<-LAMPstInt
+    testdata2[i,8]<-LAMPTotVol
   } 
   else {
     fname=testdata2[i,1]
-    en=testdata2[i,2]
-    TotVol=testdata2[i,3]
-    puncta=testdata2[i,4]
-    LC3mInt=testdata2[i,5]
-    Nuc=testdata2[i,6]
-    LAMPmInt=testdata2[i,7]
-    LAMPstInt=testdata2[i,8]
+    LC3TotVol=testdata2[i,2]
+    LC3puncta=testdata2[i,3]
+    LC3mInt=testdata2[i,4]
+    Nuc=testdata2[i,5]
+    LAMPmInt=testdata2[i,6]
+    LAMPstInt=testdata2[i,7]
+    LAMPTotVol=testdata2[i,8]
   }
 }
 both<-rbind(testdata,testdata2)
