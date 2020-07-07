@@ -1,3 +1,3 @@
 # Autophagy-Quantification
-image processing and data analysis for cellular autophagy phenotypes
+data analysis and graphical presentations for cellular autophagy phenotypes
 
