@@ -38,11 +38,11 @@ plotme(temp,temp$LC3Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Punc
 plotme(temp,temp$LAMP1Volume,expression("LAMP1 Puncta Volume (um"^'3'*")"),"LAMP1 Puncta Volumes")
 #dev.off()
 
-#tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/LAMP1Vol_combined-datasets_7Jul20.tiff",width=3000,height=3000,res=600)
+tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/LAMP1meanInt_combined-datasets_7Jul20.tiff",width=3000,height=3000,res=600)
 plotme(temp,temp$LAMP1MeanObjIntensity,"puncta mean intensity (A.U.)","LAMP1 Puncta Mean Intensity")
-#dev.off()
+dev.off()
 
-#tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/PCCvalues_combined-datasets_7Jul20.tiff",width=3000,height=3000,res=600)
+#tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/PCCvalues_combined-datasets_v2_7Jul20.tiff",width=3000,height=3000,res=600)
 plotme(temp,temp$PearsonCoeff,"PCC (A.U.)","Pearson Correlation Coefficient Values")
 #dev.off()
 ```
