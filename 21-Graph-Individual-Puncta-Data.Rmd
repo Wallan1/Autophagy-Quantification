@@ -9,9 +9,10 @@ density ridges
 library(ggplot2)
 library(viridis)
 library(ggridges)
-temp<-temp[which(temp$Type!="Mock"),]
-plotme<-function(yaxis,labelme,mytitle,nameme){
-  ggplot(temp,aes(x=yaxis,fill=Type, y=Type,group=Type))+
+#temp<-temp[which(temp$Type!="Mock"),]
+#temp2<-temp[which(!is.na(temp$ObjectId3D)),]
+plotme<-function(dataset,yaxis,labelme,mytitle,nameme){
+  ggplot(dataset,aes(x=yaxis,fill=Type, y=Type,group=Type))+
   geom_density_ridges(aes(color=Type) ,alpha=.5,scale=.5,jittered_points=TRUE,position="raincloud",scale=.2,point_size=.5) +
     facet_wrap(~BvsS)+
   xlab(labelme)+
@@ -26,25 +27,26 @@ plotme<-function(yaxis,labelme,mytitle,nameme){
     theme(plot.title=element_text(hjust=.5), panel.spacing.x = unit(4, "lines"))
 }
 #tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/LC3meanInt_combined-datasets_7Jul20.tiff",width=2800,height=2800,res=600)
-plotme(temp$LC3MeanObjIntensity,"puncta mean intensity (A.U.)","LC3 Puncta Mean Intensity")
+plotme(temp,temp$LC3MeanObjIntensity,"puncta mean intensity (A.U.)","LC3 Puncta Mean Intensity")
 #dev.off()
 
-#tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/LC3punctaVol_combined-datasets_7Jul20.tiff",width=3000,height=3000,res=600)
-plotme(temp$LC3Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Puncta Volumes")
-#dev.off()
-
-#tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/LAMP1Vol_combined-datasets_7Jul20.tiff",width=3000,height=3000,res=600)
-plotme(temp$LAMP1Volume,expression("LAMP1 Puncta Volume (um"^'3'*")"),"LAMP1 Puncta Volumes")
+#tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/LC3punctaVol_combined-datasets_zoom2-10_7Jul20.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LC3Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Puncta Volumes")
 #dev.off()
 
 #tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/LAMP1Vol_combined-datasets_7Jul20.tiff",width=3000,height=3000,res=600)
-plotme(temp$LAMP1MeanObjIntensity,"puncta mean intensity (A.U.)","LAMP1 Puncta Mean Intensity")
+plotme(temp,temp$LAMP1Volume,expression("LAMP1 Puncta Volume (um"^'3'*")"),"LAMP1 Puncta Volumes")
+#dev.off()
+
+#tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/LAMP1Vol_combined-datasets_7Jul20.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LAMP1MeanObjIntensity,"puncta mean intensity (A.U.)","LAMP1 Puncta Mean Intensity")
 #dev.off()
 
 #tiff(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/graphs/PCCvalues_combined-datasets_7Jul20.tiff",width=3000,height=3000,res=600)
-plotme(temp$PearsonCoeff,"PCC (A.U.)","Pearson Correlation Coefficient Values")
+plotme(temp,temp$PearsonCoeff,"PCC (A.U.)","Pearson Correlation Coefficient Values")
 #dev.off()
 ```
+
 
 
 Violin plots of individual puncta values
