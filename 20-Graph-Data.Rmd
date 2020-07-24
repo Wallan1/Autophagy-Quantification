@@ -24,19 +24,19 @@ plotme<-function(yaxis,labelme,mytitle,nameme){
 #  dev.off()
 }
 #tiff(file="~/Desktop/Analyzed-data_HeLa-KD_7May20/batch-graphs/combined_aveVol.tiff",width=3000,height=2800,res=600)
-plotme(both_nodup$AverageVolume,expression("Average Volume (um"^'3'*")"),"Average Puncta Volumes")
+#plotme(both_nodup$AverageVolume,expression("Average Volume (um"^'3'*")"),"Average Puncta Volumes")
 #dev.off()
 
-tiff(file="~/Desktop/Analyzed-data_HeLa-KD_7May20/batch-graphs/combined-adjScale_meanInt-LC3.tiff",width=3000,height=2800,res=600)
-plotme(both_nodup$LC3MeanIntensity,"LC3 Mean Intensity (A.U.)","LC3 Puncta Mean Intensity")
-dev.off()
+#tiff(file="~/Desktop/Analyzed-data_HeLa-KD_7May20/batch-graphs/combined-adjScale_meanInt-LC3.tiff",width=3000,height=2800,res=600)
+#plotme(both_nodup$LC3MeanIntensity,"LC3 Mean Intensity (A.U.)","LC3 Puncta Mean Intensity")
+#dev.off()
 
 #tiff(file="~/Desktop/Analyzed-data_HeLa-KD_7May20/batch-graphs/combined_meanInt-LAMP1.tiff",width=3000,height=2800,res=600)
-plotme(both_nodup$LAMP1meanInt,"LAMP1 Mean Intensity (A.U.)","LAMP1 Mean Intensity")
+#plotme(both_nodup$LAMP1meanInt,"LAMP1 Mean Intensity (A.U.)","LAMP1 Mean Intensity")
 #dev.off()
 
 #tiff(file="~/Desktop/Analyzed-data_HeLa-KD_7May20/batch-graphs/15mar20_TotVolPerCell.tiff",width=2800,height=2800,res=600)
-plotme(both_nodup$TotVolPerCell,expression("LC3 Puncta Volume per Cell (um"^'3'/"cell"*")"),"Total LC3 Puncta Volume per Cell")
+#plotme(both_nodup$TotVolPerCell,expression("LC3 Puncta Volume per Cell (um"^'3'/"cell"*")"),"Total LC3 Puncta Volume per Cell")
 #dev.off()
 
 ```

@@ -9,7 +9,7 @@ Input CSV file and filling in rows
 *change replicate #*
 
 ```{r}
-testdata=read.csv(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/rerun_7Jul20/21Feb20_eqCellSum-6May_basal_7Jul20.csv",header=TRUE)
+testdata=read.csv(file="~/Desktop/23Jul20_MOC_Results/21Feb20_eqCellSum-MOC_basal_23Jul20.csv",header=TRUE)
 testdata$BvsS<-"Basal"
 testdata$Rep<-1
 nobs=nrow(testdata)
@@ -36,7 +36,7 @@ for (i in 1:nobs) {
   }
 }
 
-testdata2=read.csv(file="~/Desktop/eqNum-results_LAMP-PCC_1Jul20/rerun_7Jul20/21Feb20_eqCellSum-6May_starved_7Jul20.csv",header=TRUE)
+testdata2=read.csv(file="~/Desktop/23Jul20_MOC_Results/21Feb20_eqCellSum-MOC_starved_23Jul20.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
 testdata2$Rep<-1
 nobs=nrow(testdata2)
@@ -74,16 +74,16 @@ ntemp<-nrow(temp)
 
 
 for (c in 1:ntemp) {
-  if (substr(temp[c,1],47,47)=="W") {
+  if (substr(temp[c,1],40,40)=="W") {
     temp$Type[c]<-"WT"
   }
- # else if (substr(temp[c,1],47,47)=="M") {
+ # else if (substr(temp[c,1],40,40)=="M") {
 #    temp$Type[c]<-"Mock"
  # }
-  else if (substr(temp[c,1],47,47)=="C") {
+  else if (substr(temp[c,1],40,40)=="C") {
     temp$Type[c]<-"Control"
   }
-  else if (substr(temp[c,1],47,47)=="t") {
+  else if (substr(temp[c,1],40,40)=="t") {
     temp$Type[c]<-"tepsin"
   }
   else {
