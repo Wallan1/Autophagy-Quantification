@@ -9,7 +9,7 @@ Input CSV file and filling in rows
 *change replicate #*
 
 ```{r}
-testdata=read.csv(file="~/Desktop/23Jul20_MOC_Results/21Feb20_eqCellSum-MOC_basal_23Jul20.csv",header=TRUE)
+testdata=read.csv(file="~/Desktop/23Jul20_MOC_Results/run2/21Feb20_eqCellSum-MOC-sumInt_basal_23Jul20.csv",header=TRUE)
 testdata$BvsS<-"Basal"
 testdata$Rep<-1
 nobs=nrow(testdata)
@@ -20,9 +20,10 @@ for (i in 1:nobs) {
     testdata[i,3]<-LC3puncta
     testdata[i,4]<-LC3mInt
     testdata[i,5]<-Nuc
-    testdata[i,6]<-LAMPmInt
-    testdata[i,7]<-LAMPstInt
-    testdata[i,8]<-LAMPTotVol
+    testdata[i,6]<-LAMPsumInt
+    testdata[i,7]<-LAMPmInt
+    testdata[i,8]<-LAMPstInt
+    testdata[i,9]<-LAMPTotVol
   } 
   else {
     fname=testdata[i,1]
@@ -30,13 +31,14 @@ for (i in 1:nobs) {
     LC3puncta=testdata[i,3]
     LC3mInt=testdata[i,4]
     Nuc=testdata[i,5]
-    LAMPmInt=testdata[i,6]
-    LAMPstInt=testdata[i,7]
-    LAMPTotVol=testdata[i,8]
+    LAMPsumInt=testdata[i,6]
+    LAMPmInt=testdata[i,7]
+    LAMPstInt=testdata[i,8]
+    LAMPTotVol=testdata[i,9]
   }
 }
 
-testdata2=read.csv(file="~/Desktop/23Jul20_MOC_Results/21Feb20_eqCellSum-MOC_starved_23Jul20.csv",header=TRUE)
+testdata2=read.csv(file="~/Desktop/23Jul20_MOC_Results/run2/21Feb20_eqCellSum-MOC-sumInt_starved_23Jul20.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
 testdata2$Rep<-1
 nobs=nrow(testdata2)
@@ -47,9 +49,10 @@ for (i in 1:nobs) {
     testdata2[i,3]<-LC3puncta
     testdata2[i,4]<-LC3mInt
     testdata2[i,5]<-Nuc
-    testdata2[i,6]<-LAMPmInt
-    testdata2[i,7]<-LAMPstInt
-    testdata2[i,8]<-LAMPTotVol
+    testdata2[i,6]<-LAMPsumInt
+    testdata2[i,7]<-LAMPmInt
+    testdata2[i,8]<-LAMPstInt
+    testdata2[i,9]<-LAMPTotVol
   } 
   else {
     fname=testdata2[i,1]
@@ -57,9 +60,10 @@ for (i in 1:nobs) {
     LC3puncta=testdata2[i,3]
     LC3mInt=testdata2[i,4]
     Nuc=testdata2[i,5]
-    LAMPmInt=testdata2[i,6]
-    LAMPstInt=testdata2[i,7]
-    LAMPTotVol=testdata2[i,8]
+    LAMPsumInt=testdata2[i,6]
+    LAMPmInt=testdata2[i,7]
+    LAMPstInt=testdata2[i,8]
+    LAMPTotVol=testdata2[i,9]
   }
 }
 temp<-rbind(testdata,testdata2)

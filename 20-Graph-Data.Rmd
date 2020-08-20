@@ -32,12 +32,23 @@ plotme<-function(yaxis,labelme,mytitle,nameme){
 #plotme(both_nodup$LC3MeanIntensity,"LC3 Mean Intensity (A.U.)","LC3 Puncta Mean Intensity")
 #dev.off()
 
-#tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/21Feb20_meanInt-LAMP1_23Jul20.tiff",width=3000,height=2800,res=600)
+#tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/21Feb20_meanInt-LAMP1-run2_23Jul20.tiff",width=3000,height=3000,res=600)
 plotme(both_nodup$LAMP1meanInt,"LAMP1 Mean Intensity (A.U.)","LAMP1 Mean Intensity")
 #dev.off()
 
-#tiff(file="~/Desktop/Analyzed-data_HeLa-KD_7May20/batch-graphs/15mar20_TotVolPerCell.tiff",width=2800,height=2800,res=600)
+#tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/21Feb20_SumInt-LAMP1-run2_23Jul20.tiff",width=3000,height=3000,res=600)
+plotme(both_nodup$LAMP1SumIntensity,"LAMP1 Sum Intensity (A.U.)","LAMP1 Sum Intensity")
+#dev.off()
+
+#tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/21Feb20_SumIntPerCell-run2-LAMP1_23Jul20.tiff",width=3000,height=3000,res=600)
+plotme(both_nodup$TotLAMPIntPerCell,"LAMP1 Sum Intensity/cell (A.U.)","LAMP1 Sum Intensity per Cell")
+#dev.off()
+
+#tiff(file="~/Desktop/Analyzed-data_HeLa-KD_7May20/batch-graphs/15mar20_TotVolPerCell.tiff",width=2800,height=3000,res=600)
 #plotme(both_nodup$TotVolPerCell,expression("LC3 Puncta Volume per Cell (um"^'3'/"cell"*")"),"Total LC3 Puncta Volume per Cell")
 #dev.off()
 
+#tiff(file="~/Desktop/Analyzed-data_HeLa-KD_7May20/batch-graphs/15mar20_TotVolPerCell.tiff",width=2800,height=3000,res=600)
+plotme(both_nodup$LAMP1TotalObjectVolume,expression("LAMP1 Volume per Cell (um"^'3'/"cell"*")"),"Total LAMP Volume per Cell")
+#dev.off()
 ```

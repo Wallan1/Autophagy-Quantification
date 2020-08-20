@@ -18,7 +18,7 @@ plotme<-function(dataset,yaxis,labelme,mytitle,nameme){
   xlab(labelme)+
   ggtitle(mytitle)+
   theme()+
-  scale_x_continuous(name=labelme,limits = c(0,15))+
+  #scale_x_continuous(name=labelme,limits = c(0.4,1))+
     #scale_color_manual(values=c("#EB7D5B", "#FED23F", "#B5D33D","#6CA2EA","#442288"))+
     #scale_fill_manual(values=c("#EB7D5B", "#FED23F", "#B5D33D","#6CA2EA","#442288"))
     scale_fill_viridis(discrete=TRUE,end=.9) +
@@ -27,11 +27,11 @@ plotme<-function(dataset,yaxis,labelme,mytitle,nameme){
     theme(plot.title=element_text(hjust=.5), panel.spacing.x = unit(4, "lines"))
 }
 #tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/LC3meanInt_21Feb20-dataset_1Jul20.tiff",width=2800,height=2800,res=600)
-plotme(temp,temp$LC3MeanObjIntensity,"puncta mean intensity (A.U.)","LC3 Puncta Mean Intensity")
+#plotme(temp,temp$LC3MeanObjIntensity,"puncta mean intensity (A.U.)","LC3 Puncta Mean Intensity")
 #dev.off()
 
-#tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/LC3punctaVol_21Feb20-dataset_1Jul20.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$LC3Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Puncta Volumes")
+#tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/LC3punctaVol_21Feb20-dataset-run2_23Jul20.tiff",width=3000,height=3000,res=600)
+#plotme(temp,temp$LC3Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Puncta Volumes")
 #dev.off()
 
 #tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/LAMP1Vol_21Feb20-dataset_23Jul20.tiff",width=3000,height=3000,res=600)
@@ -42,20 +42,21 @@ plotme(temp,temp$LC3Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Punc
 #plotme(temp,temp$LAMP1MeanObjIntensity,"puncta mean intensity (A.U.)","LAMP1 Puncta Mean Intensity")
 #dev.off()
 
-#tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/MOCvalues_21Feb20-dataset_23Jul20.tiff",width=3000,height=3000,res=600)
-#plotme(temp,temp$MandersLC3MOC,"MOC (A.U.)","LC3/LAMP1 colocalization")
+#-=tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/MOCvalues_21Feb20-dataset-run2_23Jul20.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$MandersLC3MOC,"MOC (A.U.)","LC3/LAMP1 co-occurence")
 #dev.off()
 ```
 
 ```{r Boxplot}
-temp$Type<-factor(temp$Type, levels=c("WT", "Control", "tepsin", "AP4E1"))
+temp$Type<-factor(temp$Type, levels=c("WT", "Mock", "Control", "tepsin", "AP4E1"))
 library(ggplot2)
 library(viridis)
+temp<-temp[which(temp$Type!="Mock"),]
 plotme<-function(yaxis,labelme,mytitle,nameme){
 #  tiff(file=nameme,width=2800,height=2800,res=600)
   ggplot(temp,aes(x=Type,y=yaxis,fill=BvsS))+
-  geom_dotplot(binaxis='y', stackdir='center', stackratio= 0.8, dotsize = 0.25,
-    position = position_dodge(0.9),alpha=.5)+
+  #geom_dotplot(binaxis='y', stackdir='center', stackratio= 0.8, dotsize = 0.25,
+    #position = position_dodge(0.9),alpha=.5)+
     geom_boxplot(width=.5,position = position_dodge(0.9),alpha=.5, outlier.shape = NA) +
   ylab(labelme)+
   ggtitle(mytitle)+
@@ -67,8 +68,8 @@ plotme<-function(yaxis,labelme,mytitle,nameme){
 #  dev.off()
 }
 
-#tiff(file="~/Desktop/Analyzed-data_HeLa-KD_7May20/batch-graphs/15mar20_TotVolPerCell.tiff",width=2800,height=2800,res=600)
-plotme(temp$MandersLC3MOC,expression("Manders' Overlap Coefficient"),"LC3/LAMP1 colocalization")
+#tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/MOCvalues-boxplot_21Feb20-dataset-run2_23Jul20.tif",width=2800,height=2800,res=600)
+plotme(temp$MandersLC3MOC,expression("Manders' Overlap Coefficient"),"LC3/LAMP1 co-occurence")
 #dev.off()
 
 ```
