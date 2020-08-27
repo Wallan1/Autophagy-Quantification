@@ -7,11 +7,11 @@ Load dataframe
 *change input file*
 *change replicate #*
 ```{r}
-testdata=read.csv(file="~/Desktop/analysis_20Aug20/nuclei-counts/NSW3005_cell-count_basal_20Aug20.csv",header=TRUE)
+testdata=read.csv(file="~/Desktop/analysis_20Aug20/nuclei-counts/NSW3003_cell-count_basal_27Aug20.csv",header=TRUE)
 testdata$BvsS<-"Basal"
 testdata$Rep<-2
 
-testdata2=read.csv(file="~/Desktop/analysis_20Aug20/nuclei-counts/NSW3005_cell-count_starved_20Aug20.csv",header=TRUE)
+testdata2=read.csv(file="~/Desktop/analysis_20Aug20/nuclei-counts/NSW3003_cell-count_starved_27Aug20.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
 testdata2$Rep<-2
 
