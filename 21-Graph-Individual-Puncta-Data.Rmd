@@ -18,7 +18,7 @@ plotme<-function(dataset,yaxis,labelme,mytitle,nameme){
   xlab(labelme)+
   ggtitle(mytitle)+
   theme()+
-  #scale_x_continuous(name=labelme,limits = c(0.4,1))+
+  scale_x_continuous(name=labelme,limits = c(2,20))+
     #scale_color_manual(values=c("#EB7D5B", "#FED23F", "#B5D33D","#6CA2EA","#442288"))+
     #scale_fill_manual(values=c("#EB7D5B", "#FED23F", "#B5D33D","#6CA2EA","#442288"))
     scale_fill_viridis(discrete=TRUE,end=.9) +
@@ -30,9 +30,9 @@ plotme<-function(dataset,yaxis,labelme,mytitle,nameme){
 #plotme(temp,temp$LC3MeanObjIntensity,"puncta mean intensity (A.U.)","LC3 Puncta Mean Intensity")
 #dev.off()
 
-#tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/LC3punctaVol_21Feb20-dataset-run2_23Jul20.tiff",width=3000,height=3000,res=600)
-#plotme(temp,temp$LC3Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Puncta Volumes")
-#dev.off()
+tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/graphs/LC3punctaVol_combined-zoom2-20-dataset_20Aug20.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LC3Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Puncta Volumes")
+dev.off()
 
 #tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/LAMP1Vol_21Feb20-dataset_23Jul20.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$LAMP1Volume,expression("LAMP1 Puncta Volume (um"^'3'*")"),"LAMP1 Puncta Volumes")
@@ -43,7 +43,7 @@ plotme<-function(dataset,yaxis,labelme,mytitle,nameme){
 #dev.off()
 
 #-=tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/MOCvalues_21Feb20-dataset-run2_23Jul20.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$MandersLC3MOC,"MOC (A.U.)","LC3/LAMP1 co-occurence")
+#plotme(temp,temp$MandersLC3MOC,"MOC (A.U.)","LC3/LAMP1 co-occurence")
 #dev.off()
 ```
 
