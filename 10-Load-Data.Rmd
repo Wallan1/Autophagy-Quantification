@@ -7,9 +7,9 @@ This is the import and filling in blank rows
 *change input file*
 *change replicate #*
 ```{r}
-testdata=read.csv(file="~/Desktop/23Jul20_MOC_Results/run2/21Feb20_eqCellSum-MOC-sumInt_basal_23Jul20.csv",header=TRUE)
+testdata=read.csv(file="~/Desktop/analysis_20Aug20/nuclei-counts/NSW3001_cell-count_basal_20Aug20.csv",header=TRUE)
 testdata$BvsS<-"Basal"
-testdata$Rep<-1
+testdata$Rep<-2
 nobs=nrow(testdata)
 for (i in 1:nobs) {
   if (is.na(testdata[i,3])) {
@@ -36,9 +36,9 @@ for (i in 1:nobs) {
   }
 }
 
-testdata2=read.csv(file="~/Desktop/23Jul20_MOC_Results/run2/21Feb20_eqCellSum-MOC-sumInt_starved_23Jul20.csv",header=TRUE)
+testdata2=read.csv(file="~/Desktop/analysis_20Aug20/nuclei-counts/NSW3001_cell-count_starved_20Aug20.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
-testdata2$Rep<-1
+testdata2$Rep<-2
 nobs=nrow(testdata2)
 for (i in 1:nobs) {
   if (is.na(testdata2[i,3])) {
@@ -87,22 +87,22 @@ Control<-both_nodup[0,]
 tepsin<-both_nodup[0,]
 AP4E1<-both_nodup[0,]
 for (c in 1:nboth_nodup) {
-  if (substr(both_nodup[c,1],40,40)=="W") {
+  if (substr(both_nodup[c,1],35,35)=="W") {
     WT<-rbind(WT, both_nodup[c,])
     WT$Type="WT"
     both_nodup$Type[c]<-"WT"
   }
-  else if (substr(both_nodup[c,1],40,40)=="M") {
+  else if (substr(both_nodup[c,1],35,35)=="M") {
     Mock<-rbind(Mock, both_nodup[c,])
     Mock$Type<-"Mock"
     both_nodup$Type[c]<-"Mock"
   }
-  else if (substr(both_nodup[c,1],40,40)=="C") {
+  else if (substr(both_nodup[c,1],35,35)=="C") {
     Control<-rbind(Control, both_nodup[c,])
     Control$Type<-"Control"
     both_nodup$Type[c]<-"Control"
   }
-  else if (substr(both_nodup[c,1],40,40)=="t") {
+  else if (substr(both_nodup[c,1],35,35)=="t") {
     tepsin<-rbind(tepsin, both_nodup[c,])
     tepsin$Type<-"tepsin"
     both_nodup$Type[c]<-"tepsin"
