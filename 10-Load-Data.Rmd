@@ -67,7 +67,7 @@ for (i in 1:nobs) {
 both<-rbind(testdata,testdata2)
 ```
 
-Basic Calcultaions
+Basic Calculations
 ```{r}
 both$AverageVolume<-both$LC3TotalObjectVolume/both$LC3punctaCount
 both$punctaPerCell<-both$LC3punctaCount/both$NucleiCount
