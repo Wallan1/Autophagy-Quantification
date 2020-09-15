@@ -19,7 +19,7 @@ plotme<-function(dataset,yaxis,labelme,mytitle,nameme){
   xlab(labelme)+
   ggtitle(mytitle)+
   theme()+
-  scale_x_continuous(trans = scales::log_trans(base = exp(2.718281828459)))+
+  #scale_x_continuous(trans = scales::log_trans(base = exp(2.718281828459)))+
   #scale_x_continuous(name=labelme,limits = c(2,25))+
     #scale_color_manual(values=c("#EB7D5B", "#FED23F", "#B5D33D","#6CA2EA","#442288"))+
     #scale_fill_manual(values=c("#EB7D5B", "#FED23F", "#B5D33D","#6CA2EA","#442288"))
@@ -34,6 +34,10 @@ plotme<-function(dataset,yaxis,labelme,mytitle,nameme){
 
 #tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/graphs/LC3punctaVol_combinedr2-4-dataset_naturalLog-scale_27Aug20.tiff",width=3000,height=3000,res=600)
 plotme(temp,temp$LC3Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Puncta Volumes")
+#dev.off()
+
+#tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/graphs/LC3punctaVol_combinedr2-4-dataset_Log-scale_27Aug20.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LogLC3Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Puncta Volumes")
 #dev.off()
 
 #tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/LAMP1Vol_21Feb20-dataset_23Jul20.tiff",width=3000,height=3000,res=600)
