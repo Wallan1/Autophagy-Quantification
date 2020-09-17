@@ -137,11 +137,31 @@ for (t in c("WT","Mock", "Control", "tepsin", "AP4E1")) {
 
 ```
 
-Log10 of individual LC3 puncta values
+Log10 of data values
 ```{r}
 temp$LogLC3Volume<-NA
+temp$LogLC3MOC<-NA
 
 temp$LogLC3Volume<-log10(temp$LC3Volume)
+temp$LogLC3MOC<-log10(temp$MandersLC3MOC)
 ```
 
+remove NA rows and remove duplicate values
+*only use after finished with individual puncta values to assess: total puncta and percent enlarged puncta*
+```{r}
+tempTotals<-temp[complete.cases(test),]
+tempTotals_nodup<-tempTotals[!duplicated(tempTotals$Filename),]
+```
+
+Get sum of LC3 puncta counts per condition
+*Use when cell counts match!*
+```{r}
+tempTotals_nodup$TotalLC3PunctaCount<-NA
+
+for (t in c("WT","Mock", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+  tempTotals_nodup$TotalLC3PunctaCount[which(tempTotals_nodup$Type==t & tempTotals_nodup$BvsS==bs)]<-sum(tempTotals_nodup$LC3punctaCount[which(tempTotals_nodup$Type==t & tempTotals_nodup$BvsS==bs)])
+   }
+}
+```
 
