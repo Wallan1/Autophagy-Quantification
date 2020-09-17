@@ -87,22 +87,22 @@ Control<-both_nodup[0,]
 tepsin<-both_nodup[0,]
 AP4E1<-both_nodup[0,]
 for (c in 1:nboth_nodup) {
-  if (substr(both_nodup[c,1],35,35)=="W") {
+  if (substr(both_nodup[c,1],45,45)=="W") {
     WT<-rbind(WT, both_nodup[c,])
     WT$Type="WT"
     both_nodup$Type[c]<-"WT"
   }
-  else if (substr(both_nodup[c,1],35,35)=="M") {
+  else if (substr(both_nodup[c,1],45,45)=="M") {
     Mock<-rbind(Mock, both_nodup[c,])
     Mock$Type<-"Mock"
     both_nodup$Type[c]<-"Mock"
   }
-  else if (substr(both_nodup[c,1],35,35)=="C") {
+  else if (substr(both_nodup[c,1],45,45)=="C") {
     Control<-rbind(Control, both_nodup[c,])
     Control$Type<-"Control"
     both_nodup$Type[c]<-"Control"
   }
-  else if (substr(both_nodup[c,1],35,35)=="t") {
+  else if (substr(both_nodup[c,1],45,45)=="t") {
     tepsin<-rbind(tepsin, both_nodup[c,])
     tepsin$Type<-"tepsin"
     both_nodup$Type[c]<-"tepsin"
