@@ -7,7 +7,7 @@ ANOVA of Individual Puncta Volumes
 
 ```{r}
 temp$Rep<-as.factor(temp$Rep)
-anovaPunctaVol<-aov(temp$LC3Volume~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+anovaPunctaVol<-aov(temp$LogLC3Volume~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
 summary(anovaPunctaVol)
 TukeyHSD(anovaPunctaVol)
 ```

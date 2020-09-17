@@ -32,13 +32,13 @@ plotme<-function(dataset,yaxis,labelme,mytitle,nameme){
 #plotme(temp,temp$LC3MeanObjIntensity,"puncta mean intensity (A.U.)","LC3 Puncta Mean Intensity")
 #dev.off()
 
-#tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/graphs/LC3punctaVol_combinedr2-4-dataset_naturalLog-scale_27Aug20.tiff",width=3000,height=3000,res=600)
+#tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/graphs/LC3punctaVol_combined-dataset_9Sep20.tiff",width=3000,height=3000,res=600)
 plotme(temp,temp$LC3Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Puncta Volumes")
-#dev.off()
+dev.off()
 
-#tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/graphs/LC3punctaVol_combinedr2-4-dataset_Log-scale_27Aug20.tiff",width=3000,height=3000,res=600)
+#tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/graphs/LC3punctaVol_combined-logScale-dataset_9Sep20.tiff",width=3000,height=3000,res=600)
 plotme(temp,temp$LogLC3Volume,expression("LC3 Puncta Volume (um"^'3'*")"),"LC3 Puncta Volumes")
-#dev.off()
+dev.off()
 
 #tiff(file="~/Desktop/23Jul20_MOC_results/batch-graphs/LAMP1Vol_21Feb20-dataset_23Jul20.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$LAMP1Volume,expression("LAMP1 Puncta Volume (um"^'3'*")"),"LAMP1 Puncta Volumes")
