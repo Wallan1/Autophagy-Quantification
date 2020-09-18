@@ -3,3 +3,11 @@ title: "13-Load-Western-quantification"
 output: html_notebook
 ---
 
+CSV import
+*change input file path*
+```{r}
+WBdata=read.csv(file="~/Desktop/analysis_20Aug20/WB-quant/15Mar-NSW3001-NSW3005_quant-results_17Sep20.csv",header=TRUE)
+
+
+```
+

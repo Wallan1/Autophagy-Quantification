@@ -1749,9 +1749,20 @@ summary {
 
 
 <!-- rnb-text-begin -->
+<p>CSV import <em>change input file path</em></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuV0JkYXRhPXJlYWQuY3N2KGZpbGU9XCJ+L0Rlc2t0b3AvYW5hbHlzaXNfMjBBdWcyMC9XQi1xdWFudC8xNU1hci1OU1czMDAxLU5TVzMwMDVfcXVhbnQtcmVzdWx0c18xN1NlcDIwLmNzdlwiLGhlYWRlcj1UUlVFKVxuXG5XQmRhdGEkQnZzUzwtZmFjdG9yKFdCZGF0YSRCdnNTLCBsZXZlbHM9YyhcIkJhc2FsXCIsIFwiU3RhcnZlZFwiKSlcblxuYGBgIn0= -->
+<pre class="r"><code>WBdata=read.csv(file=&quot;~/Desktop/analysis_20Aug20/WB-quant/15Mar-NSW3001-NSW3005_quant-results_17Sep20.csv&quot;,header=TRUE)
+
+WBdata$BvsS&lt;-factor(WBdata$BvsS, levels=c(&quot;Basal&quot;, &quot;Starved&quot;))
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiMTMtTG9hZC1XZXN0ZXJuLXF1YW50aWZpY2F0aW9uIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiMTMtTG9hZC1XZXN0ZXJuLXF1YW50aWZpY2F0aW9uIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgpDU1YgaW1wb3J0CipjaGFuZ2UgaW5wdXQgZmlsZSBwYXRoKgpgYGB7cn0KV0JkYXRhPXJlYWQuY3N2KGZpbGU9In4vRGVza3RvcC9hbmFseXNpc18yMEF1ZzIwL1dCLXF1YW50LzE1TWFyLU5TVzMwMDEtTlNXMzAwNV9xdWFudC1yZXN1bHRzXzE3U2VwMjAuY3N2IixoZWFkZXI9VFJVRSkKCgpgYGAKCg==</div>
 
 
 
