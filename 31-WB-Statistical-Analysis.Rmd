@@ -1,0 +1,24 @@
+---
+title: "31-WB-statistical-analysis"
+output: html_notebook
+---
+
+
+```{r}
+WBdata$replicate<-as.factor(WBdata$replicate)
+
+anovaLC3ratio<-aov(WBdata$LC3ratio~WBdata$type*WBdata$BvsS+WBdata$replicate+WBdata$replicate:WBdata$type)
+summary(anovaLC3ratio)
+TukeyHSD(anovaLC3ratio)
+
+anovatepsinKD<-aov(WBdata$tepsinKD~WBdata$type*WBdata$BvsS+WBdata$replicate+WBdata$replicate:WBdata$type)
+summary(anovatepsinKD)
+TukeyHSD(anovatepsinKD)
+
+anovaAP4EKD<-aov(WBdata$AP4EKD~WBdata$type*WBdata$BvsS+WBdata$replicate+WBdata$replicate:WBdata$type)
+summary(anovaAP4EKD)
+TukeyHSD(anovaAP4EKD)
+```
+
+
+

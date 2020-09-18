@@ -3,7 +3,7 @@ title: "30-Statistical-Analysis"
 output: html_notebook
 ---
 
-ANOVA of Individual Puncta Volumes
+ANOVA of Iall metrics
 
 ```{r}
 temp$Rep<-as.factor(temp$Rep)

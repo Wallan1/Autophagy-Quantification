@@ -11,7 +11,7 @@
 
 
 
-<title>30-Statistical-Analysis</title>
+<title>31-WB-statistical-analysis</title>
 
 <script>/*! jQuery v1.11.3 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */
 !function(a,b){"object"==typeof module&&"object"==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error("jQuery requires a window with a document");return b(a)}:b(a)}("undefined"!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l="1.11.3",m=function(a,b){return new m.fn.init(a,b)},n=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,o=/^-ms-/,p=/-([\da-z])/gi,q=function(a,b){return b.toUpperCase()};m.fn=m.prototype={jquery:l,constructor:m,selector:"",length:0,toArray:function(){return d.call(this)},get:function(a){return null!=a?0>a?this[a+this.length]:this[a]:d.call(this)},pushStack:function(a){var b=m.merge(this.constructor(),a);return b.prevObject=this,b.context=this.context,b},each:function(a,b){return m.each(this,a,b)},map:function(a){return this.pushStack(m.map(this,function(b,c){return a.call(b,c,b)}))},slice:function(){return this.pushStack(d.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},eq:function(a){var b=this.length,c=+a+(0>a?b:0);return this.pushStack(c>=0&&b>c?[this[c]]:[])},end:function(){return this.prevObject||this.constructor(null)},push:f,sort:c.sort,splice:c.splice},m.extend=m.fn.extend=function(){var a,b,c,d,e,f,g=arguments[0]||{},h=1,i=arguments.length,j=!1;for("boolean"==typeof g&&(j=g,g=arguments[h]||{},h++),"object"==typeof g||m.isFunction(g)||(g={}),h===i&&(g=this,h--);i>h;h++)if(null!=(e=arguments[h]))for(d in e)a=g[d],c=e[d],g!==c&&(j&&c&&(m.isPlainObject(c)||(b=m.isArray(c)))?(b?(b=!1,f=a&&m.isArray(a)?a:[]):f=a&&m.isPlainObject(a)?a:{},g[d]=m.extend(j,f,c)):void 0!==c&&(g[d]=c));return g},m.extend({expando:"jQuery"+(l+Math.random()).replace(/\D/g,""),isReady:!0,error:function(a){throw new Error(a)},noop:function(){},isFunction:function(a){return"function"===m.type(a)},isArray:Array.isArray||function(a){return"array"===m.type(a)},isWindow:function(a){return null!=a&&a==a.window},isNumeric:function(a){return!m.isArray(a)&&a-parseFloat(a)+1>=0},isEmptyObject:function(a){var b;for(b in a)return!1;return!0},isPlainObject:function(a){var b;if(!a||"object"!==m.type(a)||a.nodeType||m.isWindow(a))return!1;try{if(a.constructor&&!j.call(a,"constructor")&&!j.call(a.constructor.prototype,"isPrototypeOf"))return!1}catch(c){return!1}if(k.ownLast)for(b in a)return j.call(a,b);for(b in a);return void 0===b||j.call(a,b)},type:function(a){return null==a?a+"":"object"==typeof a||"function"==typeof a?h[i.call(a)]||"object":typeof a},globalEval:function(b){b&&m.trim(b)&&(a.execScript||function(b){a.eval.call(a,b)})(b)},camelCase:function(a){return a.replace(o,"ms-").replace(p,q)},nodeName:function(a,b){return a.nodeName&&a.nodeName.toLowerCase()===b.toLowerCase()},each:function(a,b,c){var d,e=0,f=a.length,g=r(a);if(c){if(g){for(;f>e;e++)if(d=b.apply(a[e],c),d===!1)break}else for(e in a)if(d=b.apply(a[e],c),d===!1)break}else if(g){for(;f>e;e++)if(d=b.call(a[e],e,a[e]),d===!1)break}else for(e in a)if(d=b.call(a[e],e,a[e]),d===!1)break;return a},trim:function(a){return null==a?"":(a+"").replace(n,"")},makeArray:function(a,b){var c=b||[];return null!=a&&(r(Object(a))?m.merge(c,"string"==typeof a?[a]:a):f.call(c,a)),c},inArray:function(a,b,c){var d;if(b){if(g)return g.call(b,a,c);for(d=b.length,c=c?0>c?Math.max(0,d+c):c:0;d>c;c++)if(c in b&&b[c]===a)return c}return-1},merge:function(a,b){var c=+b.length,d=0,e=a.length;while(c>d)a[e++]=b[d++];if(c!==c)while(void 0!==b[d])a[e++]=b[d++];return a.length=e,a},grep:function(a,b,c){for(var d,e=[],f=0,g=a.length,h=!c;g>f;f++)d=!b(a[f],f),d!==h&&e.push(a[f]);return e},map:function(a,b,c){var d,f=0,g=a.length,h=r(a),i=[];if(h)for(;g>f;f++)d=b(a[f],f,c),null!=d&&i.push(d);else for(f in a)d=b(a[f],f,c),null!=d&&i.push(d);return e.apply([],i)},guid:1,proxy:function(a,b){var c,e,f;return"string"==typeof b&&(f=a[b],b=a,a=f),m.isFunction(a)?(c=d.call(arguments,2),e=function(){return a.apply(b||this,c.concat(d.call(arguments)))},e.guid=a.guid=a.guid||m.guid++,e):void 0},now:function(){return+new Date},support:k}),m.each("Boolean Number String Function Array Date RegExp Object Error".split(" "),function(a,b){h["[object "+b+"]"]=b.toLowerCase()});function r(a){var b="length"in a&&a.length,c=m.type(a);return"function"===c||m.isWindow(a)?!1:1===a.nodeType&&b?!0:"array"===c||0===b||"number"==typeof b&&b>0&&b-1 in a}var s=function(a){var b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u="sizzle"+1*new Date,v=a.document,w=0,x=0,y=ha(),z=ha(),A=ha(),B=function(a,b){return a===b&&(l=!0),0},C=1<<31,D={}.hasOwnProperty,E=[],F=E.pop,G=E.push,H=E.push,I=E.slice,J=function(a,b){for(var c=0,d=a.length;d>c;c++)if(a[c]===b)return c;return-1},K="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",L="[\\x20\\t\\r\\n\\f]",M="(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",N=M.replace("w","w#"),O="\\["+L+"*("+M+")(?:"+L+"*([*^$|!~]?=)"+L+"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|("+N+"))|)"+L+"*\\]",P=":("+M+")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|"+O+")*)|.*)\\)|)",Q=new RegExp(L+"+","g"),R=new RegExp("^"+L+"+|((?:^|[^\\\\])(?:\\\\.)*)"+L+"+$","g"),S=new RegExp("^"+L+"*,"+L+"*"),T=new RegExp("^"+L+"*([>+~]|"+L+")"+L+"*"),U=new RegExp("="+L+"*([^\\]'\"]*?)"+L+"*\\]","g"),V=new RegExp(P),W=new RegExp("^"+N+"$"),X={ID:new RegExp("^#("+M+")"),CLASS:new RegExp("^\\.("+M+")"),TAG:new RegExp("^("+M.replace("w","w*")+")"),ATTR:new RegExp("^"+O),PSEUDO:new RegExp("^"+P),CHILD:new RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\("+L+"*(even|odd|(([+-]|)(\\d*)n|)"+L+"*(?:([+-]|)"+L+"*(\\d+)|))"+L+"*\\)|)","i"),bool:new RegExp("^(?:"+K+")$","i"),needsContext:new RegExp("^"+L+"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\("+L+"*((?:-\\d)?\\d*)"+L+"*\\)|)(?=[^-]|$)","i")},Y=/^(?:input|select|textarea|button)$/i,Z=/^h\d$/i,$=/^[^{]+\{\s*\[native \w/,_=/^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,aa=/[+~]/,ba=/'|\\/g,ca=new RegExp("\\\\([\\da-f]{1,6}"+L+"?|("+L+")|.)","ig"),da=function(a,b,c){var d="0x"+b-65536;return d!==d||c?b:0>d?String.fromCharCode(d+65536):String.fromCharCode(d>>10|55296,1023&d|56320)},ea=function(){m()};try{H.apply(E=I.call(v.childNodes),v.childNodes),E[v.childNodes.length].nodeType}catch(fa){H={apply:E.length?function(a,b){G.apply(a,I.call(b))}:function(a,b){var c=a.length,d=0;while(a[c++]=b[d++]);a.length=c-1}}}function ga(a,b,d,e){var f,h,j,k,l,o,r,s,w,x;if((b?b.ownerDocument||b:v)!==n&&m(b),b=b||n,d=d||[],k=b.nodeType,"string"!=typeof a||!a||1!==k&&9!==k&&11!==k)return d;if(!e&&p){if(11!==k&&(f=_.exec(a)))if(j=f[1]){if(9===k){if(h=b.getElementById(j),!h||!h.parentNode)return d;if(h.id===j)return d.push(h),d}else if(b.ownerDocument&&(h=b.ownerDocument.getElementById(j))&&t(b,h)&&h.id===j)return d.push(h),d}else{if(f[2])return H.apply(d,b.getElementsByTagName(a)),d;if((j=f[3])&&c.getElementsByClassName)return H.apply(d,b.getElementsByClassName(j)),d}if(c.qsa&&(!q||!q.test(a))){if(s=r=u,w=b,x=1!==k&&a,1===k&&"object"!==b.nodeName.toLowerCase()){o=g(a),(r=b.getAttribute("id"))?s=r.replace(ba,"\\$&"):b.setAttribute("id",s),s="[id='"+s+"'] ",l=o.length;while(l--)o[l]=s+ra(o[l]);w=aa.test(a)&&pa(b.parentNode)||b,x=o.join(",")}if(x)try{return H.apply(d,w.querySelectorAll(x)),d}catch(y){}finally{r||b.removeAttribute("id")}}}return i(a.replace(R,"$1"),b,d,e)}function ha(){var a=[];function b(c,e){return a.push(c+" ")>d.cacheLength&&delete b[a.shift()],b[c+" "]=e}return b}function ia(a){return a[u]=!0,a}function ja(a){var b=n.createElement("div");try{return!!a(b)}catch(c){return!1}finally{b.parentNode&&b.parentNode.removeChild(b),b=null}}function ka(a,b){var c=a.split("|"),e=a.length;while(e--)d.attrHandle[c[e]]=b}function la(a,b){var c=b&&a,d=c&&1===a.nodeType&&1===b.nodeType&&(~b.sourceIndex||C)-(~a.sourceIndex||C);if(d)return d;if(c)while(c=c.nextSibling)if(c===b)return-1;return a?1:-1}function ma(a){return function(b){var c=b.nodeName.toLowerCase();return"input"===c&&b.type===a}}function na(a){return function(b){var c=b.nodeName.toLowerCase();return("input"===c||"button"===c)&&b.type===a}}function oa(a){return ia(function(b){return b=+b,ia(function(c,d){var e,f=a([],c.length,b),g=f.length;while(g--)c[e=f[g]]&&(c[e]=!(d[e]=c[e]))})})}function pa(a){return a&&"undefined"!=typeof a.getElementsByTagName&&a}c=ga.support={},f=ga.isXML=function(a){var b=a&&(a.ownerDocument||a).documentElement;return b?"HTML"!==b.nodeName:!1},m=ga.setDocument=function(a){var b,e,g=a?a.ownerDocument||a:v;return g!==n&&9===g.nodeType&&g.documentElement?(n=g,o=g.documentElement,e=g.defaultView,e&&e!==e.top&&(e.addEventListener?e.addEventListener("unload",ea,!1):e.attachEvent&&e.attachEvent("onunload",ea)),p=!f(g),c.attributes=ja(function(a){return a.className="i",!a.getAttribute("className")}),c.getElementsByTagName=ja(function(a){return a.appendChild(g.createComment("")),!a.getElementsByTagName("*").length}),c.getElementsByClassName=$.test(g.getElementsByClassName),c.getById=ja(function(a){return o.appendChild(a).id=u,!g.getElementsByName||!g.getElementsByName(u).length}),c.getById?(d.find.ID=function(a,b){if("undefined"!=typeof b.getElementById&&p){var c=b.getElementById(a);return c&&c.parentNode?[c]:[]}},d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){return a.getAttribute("id")===b}}):(delete d.find.ID,d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){var c="undefined"!=typeof a.getAttributeNode&&a.getAttributeNode("id");return c&&c.value===b}}),d.find.TAG=c.getElementsByTagName?function(a,b){return"undefined"!=typeof b.getElementsByTagName?b.getElementsByTagName(a):c.qsa?b.querySelectorAll(a):void 0}:function(a,b){var c,d=[],e=0,f=b.getElementsByTagName(a);if("*"===a){while(c=f[e++])1===c.nodeType&&d.push(c);return d}return f},d.find.CLASS=c.getElementsByClassName&&function(a,b){return p?b.getElementsByClassName(a):void 0},r=[],q=[],(c.qsa=$.test(g.querySelectorAll))&&(ja(function(a){o.appendChild(a).innerHTML="<a id='"+u+"'></a><select id='"+u+"-\f]' msallowcapture=''><option selected=''></option></select>",a.querySelectorAll("[msallowcapture^='']").length&&q.push("[*^$]="+L+"*(?:''|\"\")"),a.querySelectorAll("[selected]").length||q.push("\\["+L+"*(?:value|"+K+")"),a.querySelectorAll("[id~="+u+"-]").length||q.push("~="),a.querySelectorAll(":checked").length||q.push(":checked"),a.querySelectorAll("a#"+u+"+*").length||q.push(".#.+[+~]")}),ja(function(a){var b=g.createElement("input");b.setAttribute("type","hidden"),a.appendChild(b).setAttribute("name","D"),a.querySelectorAll("[name=d]").length&&q.push("name"+L+"*[*^$|!~]?="),a.querySelectorAll(":enabled").length||q.push(":enabled",":disabled"),a.querySelectorAll("*,:x"),q.push(",.*:")})),(c.matchesSelector=$.test(s=o.matches||o.webkitMatchesSelector||o.mozMatchesSelector||o.oMatchesSelector||o.msMatchesSelector))&&ja(function(a){c.disconnectedMatch=s.call(a,"div"),s.call(a,"[s!='']:x"),r.push("!=",P)}),q=q.length&&new RegExp(q.join("|")),r=r.length&&new RegExp(r.join("|")),b=$.test(o.compareDocumentPosition),t=b||$.test(o.contains)?function(a,b){var c=9===a.nodeType?a.documentElement:a,d=b&&b.parentNode;return a===d||!(!d||1!==d.nodeType||!(c.contains?c.contains(d):a.compareDocumentPosition&&16&a.compareDocumentPosition(d)))}:function(a,b){if(b)while(b=b.parentNode)if(b===a)return!0;return!1},B=b?function(a,b){if(a===b)return l=!0,0;var d=!a.compareDocumentPosition-!b.compareDocumentPosition;return d?d:(d=(a.ownerDocument||a)===(b.ownerDocument||b)?a.compareDocumentPosition(b):1,1&d||!c.sortDetached&&b.compareDocumentPosition(a)===d?a===g||a.ownerDocument===v&&t(v,a)?-1:b===g||b.ownerDocument===v&&t(v,b)?1:k?J(k,a)-J(k,b):0:4&d?-1:1)}:function(a,b){if(a===b)return l=!0,0;var c,d=0,e=a.parentNode,f=b.parentNode,h=[a],i=[b];if(!e||!f)return a===g?-1:b===g?1:e?-1:f?1:k?J(k,a)-J(k,b):0;if(e===f)return la(a,b);c=a;while(c=c.parentNode)h.unshift(c);c=b;while(c=c.parentNode)i.unshift(c);while(h[d]===i[d])d++;return d?la(h[d],i[d]):h[d]===v?-1:i[d]===v?1:0},g):n},ga.matches=function(a,b){return ga(a,null,null,b)},ga.matchesSelector=function(a,b){if((a.ownerDocument||a)!==n&&m(a),b=b.replace(U,"='$1']"),!(!c.matchesSelector||!p||r&&r.test(b)||q&&q.test(b)))try{var d=s.call(a,b);if(d||c.disconnectedMatch||a.document&&11!==a.document.nodeType)return d}catch(e){}return ga(b,n,null,[a]).length>0},ga.contains=function(a,b){return(a.ownerDocument||a)!==n&&m(a),t(a,b)},ga.attr=function(a,b){(a.ownerDocument||a)!==n&&m(a);var e=d.attrHandle[b.toLowerCase()],f=e&&D.call(d.attrHandle,b.toLowerCase())?e(a,b,!p):void 0;return void 0!==f?f:c.attributes||!p?a.getAttribute(b):(f=a.getAttributeNode(b))&&f.specified?f.value:null},ga.error=function(a){throw new Error("Syntax error, unrecognized expression: "+a)},ga.uniqueSort=function(a){var b,d=[],e=0,f=0;if(l=!c.detectDuplicates,k=!c.sortStable&&a.slice(0),a.sort(B),l){while(b=a[f++])b===a[f]&&(e=d.push(f));while(e--)a.splice(d[e],1)}return k=null,a},e=ga.getText=function(a){var b,c="",d=0,f=a.nodeType;if(f){if(1===f||9===f||11===f){if("string"==typeof a.textContent)return a.textContent;for(a=a.firstChild;a;a=a.nextSibling)c+=e(a)}else if(3===f||4===f)return a.nodeValue}else while(b=a[d++])c+=e(b);return c},d=ga.selectors={cacheLength:50,createPseudo:ia,match:X,attrHandle:{},find:{},relative:{">":{dir:"parentNode",first:!0}," ":{dir:"parentNode"},"+":{dir:"previousSibling",first:!0},"~":{dir:"previousSibling"}},preFilter:{ATTR:function(a){return a[1]=a[1].replace(ca,da),a[3]=(a[3]||a[4]||a[5]||"").replace(ca,da),"~="===a[2]&&(a[3]=" "+a[3]+" "),a.slice(0,4)},CHILD:function(a){return a[1]=a[1].toLowerCase(),"nth"===a[1].slice(0,3)?(a[3]||ga.error(a[0]),a[4]=+(a[4]?a[5]+(a[6]||1):2*("even"===a[3]||"odd"===a[3])),a[5]=+(a[7]+a[8]||"odd"===a[3])):a[3]&&ga.error(a[0]),a},PSEUDO:function(a){var b,c=!a[6]&&a[2];return X.CHILD.test(a[0])?null:(a[3]?a[2]=a[4]||a[5]||"":c&&V.test(c)&&(b=g(c,!0))&&(b=c.indexOf(")",c.length-b)-c.length)&&(a[0]=a[0].slice(0,b),a[2]=c.slice(0,b)),a.slice(0,3))}},filter:{TAG:function(a){var b=a.replace(ca,da).toLowerCase();return"*"===a?function(){return!0}:function(a){return a.nodeName&&a.nodeName.toLowerCase()===b}},CLASS:function(a){var b=y[a+" "];return b||(b=new RegExp("(^|"+L+")"+a+"("+L+"|$)"))&&y(a,function(a){return b.test("string"==typeof a.className&&a.className||"undefined"!=typeof a.getAttribute&&a.getAttribute("class")||"")})},ATTR:function(a,b,c){return function(d){var e=ga.attr(d,a);return null==e?"!="===b:b?(e+="","="===b?e===c:"!="===b?e!==c:"^="===b?c&&0===e.indexOf(c):"*="===b?c&&e.indexOf(c)>-1:"$="===b?c&&e.slice(-c.length)===c:"~="===b?(" "+e.replace(Q," ")+" ").indexOf(c)>-1:"|="===b?e===c||e.slice(0,c.length+1)===c+"-":!1):!0}},CHILD:function(a,b,c,d,e){var f="nth"!==a.slice(0,3),g="last"!==a.slice(-4),h="of-type"===b;return 1===d&&0===e?function(a){return!!a.parentNode}:function(b,c,i){var j,k,l,m,n,o,p=f!==g?"nextSibling":"previousSibling",q=b.parentNode,r=h&&b.nodeName.toLowerCase(),s=!i&&!h;if(q){if(f){while(p){l=b;while(l=l[p])if(h?l.nodeName.toLowerCase()===r:1===l.nodeType)return!1;o=p="only"===a&&!o&&"nextSibling"}return!0}if(o=[g?q.firstChild:q.lastChild],g&&s){k=q[u]||(q[u]={}),j=k[a]||[],n=j[0]===w&&j[1],m=j[0]===w&&j[2],l=n&&q.childNodes[n];while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if(1===l.nodeType&&++m&&l===b){k[a]=[w,n,m];break}}else if(s&&(j=(b[u]||(b[u]={}))[a])&&j[0]===w)m=j[1];else while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if((h?l.nodeName.toLowerCase()===r:1===l.nodeType)&&++m&&(s&&((l[u]||(l[u]={}))[a]=[w,m]),l===b))break;return m-=e,m===d||m%d===0&&m/d>=0}}},PSEUDO:function(a,b){var c,e=d.pseudos[a]||d.setFilters[a.toLowerCase()]||ga.error("unsupported pseudo: "+a);return e[u]?e(b):e.length>1?(c=[a,a,"",b],d.setFilters.hasOwnProperty(a.toLowerCase())?ia(function(a,c){var d,f=e(a,b),g=f.length;while(g--)d=J(a,f[g]),a[d]=!(c[d]=f[g])}):function(a){return e(a,0,c)}):e}},pseudos:{not:ia(function(a){var b=[],c=[],d=h(a.replace(R,"$1"));return d[u]?ia(function(a,b,c,e){var f,g=d(a,null,e,[]),h=a.length;while(h--)(f=g[h])&&(a[h]=!(b[h]=f))}):function(a,e,f){return b[0]=a,d(b,null,f,c),b[0]=null,!c.pop()}}),has:ia(function(a){return function(b){return ga(a,b).length>0}}),contains:ia(function(a){return a=a.replace(ca,da),function(b){return(b.textContent||b.innerText||e(b)).indexOf(a)>-1}}),lang:ia(function(a){return W.test(a||"")||ga.error("unsupported lang: "+a),a=a.replace(ca,da).toLowerCase(),function(b){var c;do if(c=p?b.lang:b.getAttribute("xml:lang")||b.getAttribute("lang"))return c=c.toLowerCase(),c===a||0===c.indexOf(a+"-");while((b=b.parentNode)&&1===b.nodeType);return!1}}),target:function(b){var c=a.location&&a.location.hash;return c&&c.slice(1)===b.id},root:function(a){return a===o},focus:function(a){return a===n.activeElement&&(!n.hasFocus||n.hasFocus())&&!!(a.type||a.href||~a.tabIndex)},enabled:function(a){return a.disabled===!1},disabled:function(a){return a.disabled===!0},checked:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&!!a.checked||"option"===b&&!!a.selected},selected:function(a){return a.parentNode&&a.parentNode.selectedIndex,a.selected===!0},empty:function(a){for(a=a.firstChild;a;a=a.nextSibling)if(a.nodeType<6)return!1;return!0},parent:function(a){return!d.pseudos.empty(a)},header:function(a){return Z.test(a.nodeName)},input:function(a){return Y.test(a.nodeName)},button:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&"button"===a.type||"button"===b},text:function(a){var b;return"input"===a.nodeName.toLowerCase()&&"text"===a.type&&(null==(b=a.getAttribute("type"))||"text"===b.toLowerCase())},first:oa(function(){return[0]}),last:oa(function(a,b){return[b-1]}),eq:oa(function(a,b,c){return[0>c?c+b:c]}),even:oa(function(a,b){for(var c=0;b>c;c+=2)a.push(c);return a}),odd:oa(function(a,b){for(var c=1;b>c;c+=2)a.push(c);return a}),lt:oa(function(a,b,c){for(var d=0>c?c+b:c;--d>=0;)a.push(d);return a}),gt:oa(function(a,b,c){for(var d=0>c?c+b:c;++d<b;)a.push(d);return a})}},d.pseudos.nth=d.pseudos.eq;for(b in{radio:!0,checkbox:!0,file:!0,password:!0,image:!0})d.pseudos[b]=ma(b);for(b in{submit:!0,reset:!0})d.pseudos[b]=na(b);function qa(){}qa.prototype=d.filters=d.pseudos,d.setFilters=new qa,g=ga.tokenize=function(a,b){var c,e,f,g,h,i,j,k=z[a+" "];if(k)return b?0:k.slice(0);h=a,i=[],j=d.preFilter;while(h){(!c||(e=S.exec(h)))&&(e&&(h=h.slice(e[0].length)||h),i.push(f=[])),c=!1,(e=T.exec(h))&&(c=e.shift(),f.push({value:c,type:e[0].replace(R," ")}),h=h.slice(c.length));for(g in d.filter)!(e=X[g].exec(h))||j[g]&&!(e=j[g](e))||(c=e.shift(),f.push({value:c,type:g,matches:e}),h=h.slice(c.length));if(!c)break}return b?h.length:h?ga.error(a):z(a,i).slice(0)};function ra(a){for(var b=0,c=a.length,d="";c>b;b++)d+=a[b].value;return d}function sa(a,b,c){var d=b.dir,e=c&&"parentNode"===d,f=x++;return b.first?function(b,c,f){while(b=b[d])if(1===b.nodeType||e)return a(b,c,f)}:function(b,c,g){var h,i,j=[w,f];if(g){while(b=b[d])if((1===b.nodeType||e)&&a(b,c,g))return!0}else while(b=b[d])if(1===b.nodeType||e){if(i=b[u]||(b[u]={}),(h=i[d])&&h[0]===w&&h[1]===f)return j[2]=h[2];if(i[d]=j,j[2]=a(b,c,g))return!0}}}function ta(a){return a.length>1?function(b,c,d){var e=a.length;while(e--)if(!a[e](b,c,d))return!1;return!0}:a[0]}function ua(a,b,c){for(var d=0,e=b.length;e>d;d++)ga(a,b[d],c);return c}function va(a,b,c,d,e){for(var f,g=[],h=0,i=a.length,j=null!=b;i>h;h++)(f=a[h])&&(!c||c(f,d,e))&&(g.push(f),j&&b.push(h));return g}function wa(a,b,c,d,e,f){return d&&!d[u]&&(d=wa(d)),e&&!e[u]&&(e=wa(e,f)),ia(function(f,g,h,i){var j,k,l,m=[],n=[],o=g.length,p=f||ua(b||"*",h.nodeType?[h]:h,[]),q=!a||!f&&b?p:va(p,m,a,h,i),r=c?e||(f?a:o||d)?[]:g:q;if(c&&c(q,r,h,i),d){j=va(r,n),d(j,[],h,i),k=j.length;while(k--)(l=j[k])&&(r[n[k]]=!(q[n[k]]=l))}if(f){if(e||a){if(e){j=[],k=r.length;while(k--)(l=r[k])&&j.push(q[k]=l);e(null,r=[],j,i)}k=r.length;while(k--)(l=r[k])&&(j=e?J(f,l):m[k])>-1&&(f[j]=!(g[j]=l))}}else r=va(r===g?r.splice(o,r.length):r),e?e(null,g,r,i):H.apply(g,r)})}function xa(a){for(var b,c,e,f=a.length,g=d.relative[a[0].type],h=g||d.relative[" "],i=g?1:0,k=sa(function(a){return a===b},h,!0),l=sa(function(a){return J(b,a)>-1},h,!0),m=[function(a,c,d){var e=!g&&(d||c!==j)||((b=c).nodeType?k(a,c,d):l(a,c,d));return b=null,e}];f>i;i++)if(c=d.relative[a[i].type])m=[sa(ta(m),c)];else{if(c=d.filter[a[i].type].apply(null,a[i].matches),c[u]){for(e=++i;f>e;e++)if(d.relative[a[e].type])break;return wa(i>1&&ta(m),i>1&&ra(a.slice(0,i-1).concat({value:" "===a[i-2].type?"*":""})).replace(R,"$1"),c,e>i&&xa(a.slice(i,e)),f>e&&xa(a=a.slice(e)),f>e&&ra(a))}m.push(c)}return ta(m)}function ya(a,b){var c=b.length>0,e=a.length>0,f=function(f,g,h,i,k){var l,m,o,p=0,q="0",r=f&&[],s=[],t=j,u=f||e&&d.find.TAG("*",k),v=w+=null==t?1:Math.random()||.1,x=u.length;for(k&&(j=g!==n&&g);q!==x&&null!=(l=u[q]);q++){if(e&&l){m=0;while(o=a[m++])if(o(l,g,h)){i.push(l);break}k&&(w=v)}c&&((l=!o&&l)&&p--,f&&r.push(l))}if(p+=q,c&&q!==p){m=0;while(o=b[m++])o(r,s,g,h);if(f){if(p>0)while(q--)r[q]||s[q]||(s[q]=F.call(i));s=va(s)}H.apply(i,s),k&&!f&&s.length>0&&p+b.length>1&&ga.uniqueSort(i)}return k&&(w=v,j=t),r};return c?ia(f):f}return h=ga.compile=function(a,b){var c,d=[],e=[],f=A[a+" "];if(!f){b||(b=g(a)),c=b.length;while(c--)f=xa(b[c]),f[u]?d.push(f):e.push(f);f=A(a,ya(e,d)),f.selector=a}return f},i=ga.select=function(a,b,e,f){var i,j,k,l,m,n="function"==typeof a&&a,o=!f&&g(a=n.selector||a);if(e=e||[],1===o.length){if(j=o[0]=o[0].slice(0),j.length>2&&"ID"===(k=j[0]).type&&c.getById&&9===b.nodeType&&p&&d.relative[j[1].type]){if(b=(d.find.ID(k.matches[0].replace(ca,da),b)||[])[0],!b)return e;n&&(b=b.parentNode),a=a.slice(j.shift().value.length)}i=X.needsContext.test(a)?0:j.length;while(i--){if(k=j[i],d.relative[l=k.type])break;if((m=d.find[l])&&(f=m(k.matches[0].replace(ca,da),aa.test(j[0].type)&&pa(b.parentNode)||b))){if(j.splice(i,1),a=f.length&&ra(j),!a)return H.apply(e,f),e;break}}}return(n||h(a,o))(f,b,!p,e,aa.test(a)&&pa(b.parentNode)||b),e},c.sortStable=u.split("").sort(B).join("")===u,c.detectDuplicates=!!l,m(),c.sortDetached=ja(function(a){return 1&a.compareDocumentPosition(n.createElement("div"))}),ja(function(a){return a.innerHTML="<a href='#'></a>","#"===a.firstChild.getAttribute("href")})||ka("type|href|height|width",function(a,b,c){return c?void 0:a.getAttribute(b,"type"===b.toLowerCase()?1:2)}),c.attributes&&ja(function(a){return a.innerHTML="<input/>",a.firstChild.setAttribute("value",""),""===a.firstChild.getAttribute("value")})||ka("value",function(a,b,c){return c||"input"!==a.nodeName.toLowerCase()?void 0:a.defaultValue}),ja(function(a){return null==a.getAttribute("disabled")})||ka(K,function(a,b,c){var d;return c?void 0:a[b]===!0?b.toLowerCase():(d=a.getAttributeNode(b))&&d.specified?d.value:null}),ga}(a);m.find=s,m.expr=s.selectors,m.expr[":"]=m.expr.pseudos,m.unique=s.uniqueSort,m.text=s.getText,m.isXMLDoc=s.isXML,m.contains=s.contains;var t=m.expr.match.needsContext,u=/^<(\w+)\s*\/?>(?:<\/\1>|)$/,v=/^.[^:#\[\.,]*$/;function w(a,b,c){if(m.isFunction(b))return m.grep(a,function(a,d){return!!b.call(a,d,a)!==c});if(b.nodeType)return m.grep(a,function(a){return a===b!==c});if("string"==typeof b){if(v.test(b))return m.filter(b,a,c);b=m.filter(b,a)}return m.grep(a,function(a){return m.inArray(a,b)>=0!==c})}m.filter=function(a,b,c){var d=b[0];return c&&(a=":not("+a+")"),1===b.length&&1===d.nodeType?m.find.matchesSelector(d,a)?[d]:[]:m.find.matches(a,m.grep(b,function(a){return 1===a.nodeType}))},m.fn.extend({find:function(a){var b,c=[],d=this,e=d.length;if("string"!=typeof a)return this.pushStack(m(a).filter(function(){for(b=0;e>b;b++)if(m.contains(d[b],this))return!0}));for(b=0;e>b;b++)m.find(a,d[b],c);return c=this.pushStack(e>1?m.unique(c):c),c.selector=this.selector?this.selector+" "+a:a,c},filter:function(a){return this.pushStack(w(this,a||[],!1))},not:function(a){return this.pushStack(w(this,a||[],!0))},is:function(a){return!!w(this,"string"==typeof a&&t.test(a)?m(a):a||[],!1).length}});var x,y=a.document,z=/^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/,A=m.fn.init=function(a,b){var c,d;if(!a)return this;if("string"==typeof a){if(c="<"===a.charAt(0)&&">"===a.charAt(a.length-1)&&a.length>=3?[null,a,null]:z.exec(a),!c||!c[1]&&b)return!b||b.jquery?(b||x).find(a):this.constructor(b).find(a);if(c[1]){if(b=b instanceof m?b[0]:b,m.merge(this,m.parseHTML(c[1],b&&b.nodeType?b.ownerDocument||b:y,!0)),u.test(c[1])&&m.isPlainObject(b))for(c in b)m.isFunction(this[c])?this[c](b[c]):this.attr(c,b[c]);return this}if(d=y.getElementById(c[2]),d&&d.parentNode){if(d.id!==c[2])return x.find(a);this.length=1,this[0]=d}return this.context=y,this.selector=a,this}return a.nodeType?(this.context=this[0]=a,this.length=1,this):m.isFunction(a)?"undefined"!=typeof x.ready?x.ready(a):a(m):(void 0!==a.selector&&(this.selector=a.selector,this.context=a.context),m.makeArray(a,this))};A.prototype=m.fn,x=m(y);var B=/^(?:parents|prev(?:Until|All))/,C={children:!0,contents:!0,next:!0,prev:!0};m.extend({dir:function(a,b,c){var d=[],e=a[b];while(e&&9!==e.nodeType&&(void 0===c||1!==e.nodeType||!m(e).is(c)))1===e.nodeType&&d.push(e),e=e[b];return d},sibling:function(a,b){for(var c=[];a;a=a.nextSibling)1===a.nodeType&&a!==b&&c.push(a);return c}}),m.fn.extend({has:function(a){var b,c=m(a,this),d=c.length;return this.filter(function(){for(b=0;d>b;b++)if(m.contains(this,c[b]))return!0})},closest:function(a,b){for(var c,d=0,e=this.length,f=[],g=t.test(a)||"string"!=typeof a?m(a,b||this.context):0;e>d;d++)for(c=this[d];c&&c!==b;c=c.parentNode)if(c.nodeType<11&&(g?g.index(c)>-1:1===c.nodeType&&m.find.matchesSelector(c,a))){f.push(c);break}return this.pushStack(f.length>1?m.unique(f):f)},index:function(a){return a?"string"==typeof a?m.inArray(this[0],m(a)):m.inArray(a.jquery?a[0]:a,this):this[0]&&this[0].parentNode?this.first().prevAll().length:-1},add:function(a,b){return this.pushStack(m.unique(m.merge(this.get(),m(a,b))))},addBack:function(a){return this.add(null==a?this.prevObject:this.prevObject.filter(a))}});function D(a,b){do a=a[b];while(a&&1!==a.nodeType);return a}m.each({parent:function(a){var b=a.parentNode;return b&&11!==b.nodeType?b:null},parents:function(a){return m.dir(a,"parentNode")},parentsUntil:function(a,b,c){return m.dir(a,"parentNode",c)},next:function(a){return D(a,"nextSibling")},prev:function(a){return D(a,"previousSibling")},nextAll:function(a){return m.dir(a,"nextSibling")},prevAll:function(a){return m.dir(a,"previousSibling")},nextUntil:function(a,b,c){return m.dir(a,"nextSibling",c)},prevUntil:function(a,b,c){return m.dir(a,"previousSibling",c)},siblings:function(a){return m.sibling((a.parentNode||{}).firstChild,a)},children:function(a){return m.sibling(a.firstChild)},contents:function(a){return m.nodeName(a,"iframe")?a.contentDocument||a.contentWindow.document:m.merge([],a.childNodes)}},function(a,b){m.fn[a]=function(c,d){var e=m.map(this,b,c);return"Until"!==a.slice(-5)&&(d=c),d&&"string"==typeof d&&(e=m.filter(d,e)),this.length>1&&(C[a]||(e=m.unique(e)),B.test(a)&&(e=e.reverse())),this.pushStack(e)}});var E=/\S+/g,F={};function G(a){var b=F[a]={};return m.each(a.match(E)||[],function(a,c){b[c]=!0}),b}m.Callbacks=function(a){a="string"==typeof a?F[a]||G(a):m.extend({},a);var b,c,d,e,f,g,h=[],i=!a.once&&[],j=function(l){for(c=a.memory&&l,d=!0,f=g||0,g=0,e=h.length,b=!0;h&&e>f;f++)if(h[f].apply(l[0],l[1])===!1&&a.stopOnFalse){c=!1;break}b=!1,h&&(i?i.length&&j(i.shift()):c?h=[]:k.disable())},k={add:function(){if(h){var d=h.length;!function f(b){m.each(b,function(b,c){var d=m.type(c);"function"===d?a.unique&&k.has(c)||h.push(c):c&&c.length&&"string"!==d&&f(c)})}(arguments),b?e=h.length:c&&(g=d,j(c))}return this},remove:function(){return h&&m.each(arguments,function(a,c){var d;while((d=m.inArray(c,h,d))>-1)h.splice(d,1),b&&(e>=d&&e--,f>=d&&f--)}),this},has:function(a){return a?m.inArray(a,h)>-1:!(!h||!h.length)},empty:function(){return h=[],e=0,this},disable:function(){return h=i=c=void 0,this},disabled:function(){return!h},lock:function(){return i=void 0,c||k.disable(),this},locked:function(){return!i},fireWith:function(a,c){return!h||d&&!i||(c=c||[],c=[a,c.slice?c.slice():c],b?i.push(c):j(c)),this},fire:function(){return k.fireWith(this,arguments),this},fired:function(){return!!d}};return k},m.extend({Deferred:function(a){var b=[["resolve","done",m.Callbacks("once memory"),"resolved"],["reject","fail",m.Callbacks("once memory"),"rejected"],["notify","progress",m.Callbacks("memory")]],c="pending",d={state:function(){return c},always:function(){return e.done(arguments).fail(arguments),this},then:function(){var a=arguments;return m.Deferred(function(c){m.each(b,function(b,f){var g=m.isFunction(a[b])&&a[b];e[f[1]](function(){var a=g&&g.apply(this,arguments);a&&m.isFunction(a.promise)?a.promise().done(c.resolve).fail(c.reject).progress(c.notify):c[f[0]+"With"](this===d?c.promise():this,g?[a]:arguments)})}),a=null}).promise()},promise:function(a){return null!=a?m.extend(a,d):d}},e={};return d.pipe=d.then,m.each(b,function(a,f){var g=f[2],h=f[3];d[f[1]]=g.add,h&&g.add(function(){c=h},b[1^a][2].disable,b[2][2].lock),e[f[0]]=function(){return e[f[0]+"With"](this===e?d:this,arguments),this},e[f[0]+"With"]=g.fireWith}),d.promise(e),a&&a.call(e,e),e},when:function(a){var b=0,c=d.call(arguments),e=c.length,f=1!==e||a&&m.isFunction(a.promise)?e:0,g=1===f?a:m.Deferred(),h=function(a,b,c){return function(e){b[a]=this,c[a]=arguments.length>1?d.call(arguments):e,c===i?g.notifyWith(b,c):--f||g.resolveWith(b,c)}},i,j,k;if(e>1)for(i=new Array(e),j=new Array(e),k=new Array(e);e>b;b++)c[b]&&m.isFunction(c[b].promise)?c[b].promise().done(h(b,k,c)).fail(g.reject).progress(h(b,j,i)):--f;return f||g.resolveWith(k,c),g.promise()}});var H;m.fn.ready=function(a){return m.ready.promise().done(a),this},m.extend({isReady:!1,readyWait:1,holdReady:function(a){a?m.readyWait++:m.ready(!0)},ready:function(a){if(a===!0?!--m.readyWait:!m.isReady){if(!y.body)return setTimeout(m.ready);m.isReady=!0,a!==!0&&--m.readyWait>0||(H.resolveWith(y,[m]),m.fn.triggerHandler&&(m(y).triggerHandler("ready"),m(y).off("ready")))}}});function I(){y.addEventListener?(y.removeEventListener("DOMContentLoaded",J,!1),a.removeEventListener("load",J,!1)):(y.detachEvent("onreadystatechange",J),a.detachEvent("onload",J))}function J(){(y.addEventListener||"load"===event.type||"complete"===y.readyState)&&(I(),m.ready())}m.ready.promise=function(b){if(!H)if(H=m.Deferred(),"complete"===y.readyState)setTimeout(m.ready);else if(y.addEventListener)y.addEventListener("DOMContentLoaded",J,!1),a.addEventListener("load",J,!1);else{y.attachEvent("onreadystatechange",J),a.attachEvent("onload",J);var c=!1;try{c=null==a.frameElement&&y.documentElement}catch(d){}c&&c.doScroll&&!function e(){if(!m.isReady){try{c.doScroll("left")}catch(a){return setTimeout(e,50)}I(),m.ready()}}()}return H.promise(b)};var K="undefined",L;for(L in m(k))break;k.ownLast="0"!==L,k.inlineBlockNeedsLayout=!1,m(function(){var a,b,c,d;c=y.getElementsByTagName("body")[0],c&&c.style&&(b=y.createElement("div"),d=y.createElement("div"),d.style.cssText="position:absolute;border:0;width:0;height:0;top:0;left:-9999px",c.appendChild(d).appendChild(b),typeof b.style.zoom!==K&&(b.style.cssText="display:inline;margin:0;border:0;padding:1px;width:1px;zoom:1",k.inlineBlockNeedsLayout=a=3===b.offsetWidth,a&&(c.style.zoom=1)),c.removeChild(d))}),function(){var a=y.createElement("div");if(null==k.deleteExpando){k.deleteExpando=!0;try{delete a.test}catch(b){k.deleteExpando=!1}}a=null}(),m.acceptData=function(a){var b=m.noData[(a.nodeName+" ").toLowerCase()],c=+a.nodeType||1;return 1!==c&&9!==c?!1:!b||b!==!0&&a.getAttribute("classid")===b};var M=/^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,N=/([A-Z])/g;function O(a,b,c){if(void 0===c&&1===a.nodeType){var d="data-"+b.replace(N,"-$1").toLowerCase();if(c=a.getAttribute(d),"string"==typeof c){try{c="true"===c?!0:"false"===c?!1:"null"===c?null:+c+""===c?+c:M.test(c)?m.parseJSON(c):c}catch(e){}m.data(a,b,c)}else c=void 0}return c}function P(a){var b;for(b in a)if(("data"!==b||!m.isEmptyObject(a[b]))&&"toJSON"!==b)return!1;
@@ -1743,380 +1743,450 @@ summary {
 
 
 
-<h1 class="title toc-ignore">30-Statistical-Analysis</h1>
+<h1 class="title toc-ignore">31-WB-statistical-analysis</h1>
 
 </div>
 
 
 <!-- rnb-text-begin -->
-<p>ANOVA of Iall metrics</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVtcCRSZXA8LWFzLmZhY3Rvcih0ZW1wJFJlcClcblxuYW5vdmFQdW5jdGFWb2w8LWFvdih0ZW1wJExDM1ZvbHVtZX50ZW1wJFR5cGUqdGVtcCRCdnNTK3RlbXAkUmVwK3RlbXAkUmVwOnRlbXAkVHlwZSlcbnN1bW1hcnkoYW5vdmFQdW5jdGFWb2wpXG5UdWtleUhTRChhbm92YVB1bmN0YVZvbClcblxuYW5vdmFQdW5jdGFMb2dWb2w8LWFvdih0ZW1wJExvZ0xDM1ZvbHVtZX50ZW1wJFR5cGUqdGVtcCRCdnNTK3RlbXAkUmVwK3RlbXAkUmVwOnRlbXAkVHlwZSlcbnN1bW1hcnkoYW5vdmFQdW5jdGFMb2dWb2wpXG5UdWtleUhTRChhbm92YVB1bmN0YUxvZ1ZvbClcblxuYW5vdmFQdW5jdGFJbnQ8LWFvdih0ZW1wJExDM01lYW5PYmpJbnRlbnNpdHl+dGVtcCRUeXBlKnRlbXAkQnZzUyt0ZW1wJFJlcCt0ZW1wJFJlcDp0ZW1wJFR5cGUpXG5zdW1tYXJ5KGFub3ZhUHVuY3RhSW50KVxuVHVrZXlIU0QoYW5vdmFQdW5jdGFJbnQpXG5cbmFub3ZhTEMzTU9DPC1hb3YodGVtcCRNYW5kZXJzTEMzTU9DfnRlbXAkVHlwZSp0ZW1wJEJ2c1MrdGVtcCRSZXArdGVtcCRSZXA6dGVtcCRUeXBlKVxuc3VtbWFyeShhbm92YUxDM01PQylcblR1a2V5SFNEKGFub3ZhTEMzTU9DKVxuXG5hbm92YUxBTVBJbnQ8LWFvdih0ZW1wJExBTVAxTWVhbk9iakludGVuc2l0eX50ZW1wJFR5cGUqdGVtcCRCdnNTK3RlbXAkUmVwK3RlbXAkUmVwOnRlbXAkVHlwZSlcbnN1bW1hcnkoYW5vdmFMQU1QSW50KVxuVHVrZXlIU0QoYW5vdmFMQU1QSW50KVxuYGBgIn0= -->
-<pre class="r"><code>temp$Rep&lt;-as.factor(temp$Rep)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuV0JkYXRhJHJlcGxpY2F0ZTwtYXMuZmFjdG9yKFdCZGF0YSRyZXBsaWNhdGUpXG5cbmFub3ZhTEMzcmF0aW88LWFvdihXQmRhdGEkTEMzcmF0aW9+V0JkYXRhJHR5cGUqV0JkYXRhJEJ2c1MrV0JkYXRhJHJlcGxpY2F0ZStXQmRhdGEkcmVwbGljYXRlOldCZGF0YSR0eXBlKVxuc3VtbWFyeShhbm92YUxDM3JhdGlvKVxuYGBgIn0= -->
+<pre class="r"><code>WBdata$replicate&lt;-as.factor(WBdata$replicate)
 
-anovaPunctaVol&lt;-aov(temp$LC3Volume~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
-summary(anovaPunctaVol)
-TukeyHSD(anovaPunctaVol)
-
-anovaPunctaLogVol&lt;-aov(temp$LogLC3Volume~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
-summary(anovaPunctaLogVol)
-TukeyHSD(anovaPunctaLogVol)
-
-anovaPunctaInt&lt;-aov(temp$LC3MeanObjIntensity~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
-summary(anovaPunctaInt)
-TukeyHSD(anovaPunctaInt)
-
-anovaLC3MOC&lt;-aov(temp$MandersLC3MOC~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
-summary(anovaLC3MOC)
-TukeyHSD(anovaLC3MOC)
-
-anovaLAMPInt&lt;-aov(temp$LAMP1MeanObjIntensity~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
-summary(anovaLAMPInt)
-TukeyHSD(anovaLAMPInt)</code></pre>
+anovaLC3ratio&lt;-aov(WBdata$LC3ratio~WBdata$type*WBdata$BvsS+WBdata$replicate+WBdata$replicate:WBdata$type)
+summary(anovaLC3ratio)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>single replicate ANOVA of Individual Puncta Volumes <em>for stats of single replicates</em></p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW5vdmFQdW5jdGFWb2w8LWFvdih0ZW1wJExDM1ZvbHVtZX50ZW1wJFR5cGUqdGVtcCRCdnNTKVxuc3VtbWFyeShhbm92YVB1bmN0YVZvbClcbmBgYCJ9 -->
-<pre class="r"><code>anovaPunctaVol&lt;-aov(temp$LC3Volume~temp$Type*temp$BvsS)
-summary(anovaPunctaVol)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgIERmIFN1bSBTcSBNZWFuIFNxIEYgdmFsdWUgICBQcig+RikgICAgXG50ZW1wJFR5cGUgICAgICAgICAgICAgIDMgICAgIDMyICAxMC43MTcgICA5LjQyMyAzLjM1ZS0wNiAqKipcbnRlbXAkQnZzUyAgICAgICAgICAgICAgMSAgICAgMjAgIDE5LjkzMiAgMTcuNTI1IDIuOTBlLTA1ICoqKlxudGVtcCRUeXBlOnRlbXAkQnZzUyAgICAzICAgICAgOSAgIDMuMDM1ICAgMi42NjkgICAgMC4wNDYgKiAgXG5SZXNpZHVhbHMgICAgICAgICAgIDM3NTUgICA0MjcxICAgMS4xMzcgICAgICAgICAgICAgICAgICAgICBcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuMzQzMzAgb2JzZXJ2YXRpb25zIGRlbGV0ZWQgZHVlIHRvIG1pc3NpbmduZXNzXG4ifQ== -->
-<pre><code>                      Df Sum Sq Mean Sq F value   Pr(&gt;F)    
-temp$Type              3     32  10.717   9.423 3.35e-06 ***
-temp$BvsS              1     20  19.932  17.525 2.90e-05 ***
-temp$Type:temp$BvsS    3      9   3.035   2.669    0.046 *  
-Residuals           3755   4271   1.137                     
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-34330 observations deleted due to missingness</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVHVrZXlIU0QoYW5vdmFQdW5jdGFWb2wpXG5gYGAifQ== -->
-<pre class="r"><code>TukeyHSD(anovaPunctaVol)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICBUdWtleSBtdWx0aXBsZSBjb21wYXJpc29ucyBvZiBtZWFuc1xuICAgIDk1JSBmYW1pbHktd2lzZSBjb25maWRlbmNlIGxldmVsXG5cbkZpdDogYW92KGZvcm11bGEgPSB0ZW1wJExDM1ZvbHVtZSB+IHRlbXAkVHlwZSAqIHRlbXAkQnZzUylcblxuJGB0ZW1wJFR5cGVgXG4gICAgICAgICAgICAgICAgICAgICAgZGlmZiAgICAgICAgICBsd3IgICAgICAgICB1cHIgICAgIHAgYWRqXG5Db250cm9sLVdUICAgICAgMC4yMTM0OTM0NiAgMC4wODM1MjU4MTcgIDAuMzQzNDYxMTAgMC4wMDAxNDU1XG50ZXBzaW4tV1QgICAgICAgMC4xMzMyMTg4NSAgMC4wMDI4NTkzMzUgIDAuMjYzNTc4MzYgMC4wNDI5ODI2XG5BUDRFMS1XVCAgICAgICAtMC4wMDM3NjM0NiAtMC4xMzM0MzU4NTEgIDAuMTI1OTA4OTMgMC45OTk4NTEyXG50ZXBzaW4tQ29udHJvbCAtMC4wODAyNzQ2MSAtMC4yMDQxOTg0MjggIDAuMDQzNjQ5MjAgMC4zNDI1NTAxXG5BUDRFMS1Db250cm9sICAtMC4yMTcyNTY5MiAtMC4zNDA0NTc3MjYgLTAuMDk0MDU2MTEgMC4wMDAwMzU2XG5BUDRFMS10ZXBzaW4gICAtMC4xMzY5ODIzMSAtMC4yNjA1OTY0MzkgLTAuMDEzMzY4MTggMC4wMjI5MjI5XG5cbiRgdGVtcCRCdnNTYFxuICAgICAgICAgICAgICAgICAgIGRpZmYgICAgICAgIGx3ciAgICAgICB1cHIgICAgcCBhZGpcblN0YXJ2ZWQtQmFzYWwgMC4xODU0OTI1IDAuMDk4MjMyNDEgMC4yNzI3NTI1IDMuMTVlLTA1XG5cbiRgdGVtcCRUeXBlOnRlbXAkQnZzU2BcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRpZmYgICAgICAgICBsd3IgICAgICAgICB1cHIgICAgIHAgYWRqXG5Db250cm9sOkJhc2FsLVdUOkJhc2FsICAgICAgICAgIDAuMTYzMTc0MDc0IC0wLjIzMDQ0Mjg1ICAwLjU1Njc5MDk5IDAuOTE0MzE1OFxudGVwc2luOkJhc2FsLVdUOkJhc2FsICAgICAgICAgICAwLjMzMjE1MzgyNiAtMC4wNjU5ODM4NiAgMC43MzAyOTE1MiAwLjE4MzA0MzZcbkFQNEUxOkJhc2FsLVdUOkJhc2FsICAgICAgICAgICAgMC4xMDIzOTA4NzggLTAuMjk5ODMyOTUgIDAuNTA0NjE0NzAgMC45OTQ0OTkwXG5XVDpTdGFydmVkLVdUOkJhc2FsICAgICAgICAgICAgIDAuMjUwODc5NzQwIC0wLjA5NzU0OTAzICAwLjU5OTMwODUxIDAuMzYxODg0MVxuQ29udHJvbDpTdGFydmVkLVdUOkJhc2FsICAgICAgICAwLjUxMDU5NTg4NyAgMC4xNjM2NzgwMSAgMC44NTc1MTM3NyAwLjAwMDIyMjlcbnRlcHNpbjpTdGFydmVkLVdUOkJhc2FsICAgICAgICAgMC4zNTk0NTY3MjEgIDAuMDEyNTg5ODMgIDAuNzA2MzIzNjEgMC4wMzU5NTMxXG5BUDRFMTpTdGFydmVkLVdUOkJhc2FsICAgICAgICAgIDAuMjQzODAzODM0IC0wLjEwMjIxMDY1ICAwLjU4OTgxODMyIDAuMzkxMjM1MlxudGVwc2luOkJhc2FsLUNvbnRyb2w6QmFzYWwgICAgICAwLjE2ODk3OTc1MiAtMC4xNDcyMjA5NiAgMC40ODUxODA0NyAwLjczNzkwOTFcbkFQNEUxOkJhc2FsLUNvbnRyb2w6QmFzYWwgICAgICAtMC4wNjA3ODMxOTYgLTAuMzgyMTEzNjggIDAuMjYwNTQ3MjggMC45OTkxNjg2XG5XVDpTdGFydmVkLUNvbnRyb2w6QmFzYWwgICAgICAgIDAuMDg3NzA1NjY2IC0wLjE2MzAzNjk5ICAwLjMzODQ0ODMzIDAuOTY0Njc0NFxuQ29udHJvbDpTdGFydmVkLUNvbnRyb2w6QmFzYWwgICAwLjM0NzQyMTgxMyAgMC4wOTg3ODI5NCAgMC41OTYwNjA2OCAwLjAwMDYxMDVcbnRlcHNpbjpTdGFydmVkLUNvbnRyb2w6QmFzYWwgICAgMC4xOTYyODI2NDcgLTAuMDUyMjg1MDggIDAuNDQ0ODUwMzcgMC4yNDQwNzExXG5BUDRFMTpTdGFydmVkLUNvbnRyb2w6QmFzYWwgICAgIDAuMDgwNjI5NzYwIC0wLjE2Njc0NzA3ICAwLjMyODAwNjU5IDAuOTc2MTY1MlxuQVA0RTE6QmFzYWwtdGVwc2luOkJhc2FsICAgICAgIC0wLjIyOTc2Mjk0OCAtMC41NTY2MTU1NCAgMC4wOTcwODk2NCAwLjM5NDQzMjlcbldUOlN0YXJ2ZWQtdGVwc2luOkJhc2FsICAgICAgICAtMC4wODEyNzQwODcgLTAuMzM5MDU1NDMgIDAuMTc2NTA3MjYgMC45ODAyODIzXG5Db250cm9sOlN0YXJ2ZWQtdGVwc2luOkJhc2FsICAgIDAuMTc4NDQyMDYxIC0wLjA3NzI5MzQwICAwLjQzNDE3NzUzIDAuNDA0NTcwNlxudGVwc2luOlN0YXJ2ZWQtdGVwc2luOkJhc2FsICAgICAwLjAyNzMwMjg5NSAtMC4yMjgzNjM0MCAgMC4yODI5NjkxOSAwLjk5OTk4MjFcbkFQNEUxOlN0YXJ2ZWQtdGVwc2luOkJhc2FsICAgICAtMC4wODgzNDk5OTIgLTAuMzQyODU4NjEgIDAuMTY2MTU4NjMgMC45NjYxMTUzXG5XVDpTdGFydmVkLUFQNEUxOkJhc2FsICAgICAgICAgIDAuMTQ4NDg4ODYyIC0wLjExNTU1OTYzICAwLjQxMjUzNzM2IDAuNjgzODE0NFxuQ29udHJvbDpTdGFydmVkLUFQNEUxOkJhc2FsICAgICAwLjQwODIwNTAwOSAgMC4xNDYxNTM0NiAgMC42NzAyNTY1NiAwLjAwMDA2NTNcbnRlcHNpbjpTdGFydmVkLUFQNEUxOkJhc2FsICAgICAgMC4yNTcwNjU4NDMgLTAuMDA0OTE4MjAgIDAuNTE5MDQ5ODkgMC4wNTg5MzIwXG5BUDRFMTpTdGFydmVkLUFQNEUxOkJhc2FsICAgICAgIDAuMTQxNDEyOTU2IC0wLjExOTQ0MTQ2ICAwLjQwMjI2NzM3IDAuNzIzMzQzN1xuQ29udHJvbDpTdGFydmVkLVdUOlN0YXJ2ZWQgICAgICAwLjI1OTcxNjE0NyAgMC4wOTE1MjA5NyAgMC40Mjc5MTEzMyAwLjAwMDA3OTdcbnRlcHNpbjpTdGFydmVkLVdUOlN0YXJ2ZWQgICAgICAgMC4xMDg1NzY5ODIgLTAuMDU5NTEzMDAgIDAuMjc2NjY2OTYgMC41MTAxNDM3XG5BUDRFMTpTdGFydmVkLVdUOlN0YXJ2ZWQgICAgICAgLTAuMDA3MDc1OTA1IC0wLjE3MzM5OTc3ICAwLjE1OTI0Nzk2IDEuMDAwMDAwMFxudGVwc2luOlN0YXJ2ZWQtQ29udHJvbDpTdGFydmVkIC0wLjE1MTEzOTE2NiAtMC4zMTYwNzQ0NSAgMC4wMTM3OTYxMiAwLjEwMDU2NzRcbkFQNEUxOlN0YXJ2ZWQtQ29udHJvbDpTdGFydmVkICAtMC4yNjY3OTIwNTMgLTAuNDI5OTI3MDcgLTAuMTAzNjU3MDMgMC4wMDAwMjAzXG5BUDRFMTpTdGFydmVkLXRlcHNpbjpTdGFydmVkICAgLTAuMTE1NjUyODg3IC0wLjI3ODY3OTQ1ICAwLjA0NzM3MzY3IDAuMzgxOTg0MlxuIn0= -->
-<pre><code>  Tukey multiple comparisons of means
-    95% family-wise confidence level
-
-Fit: aov(formula = temp$LC3Volume ~ temp$Type * temp$BvsS)
-
-$`temp$Type`
-                      diff          lwr         upr     p adj
-Control-WT      0.21349346  0.083525817  0.34346110 0.0001455
-tepsin-WT       0.13321885  0.002859335  0.26357836 0.0429826
-AP4E1-WT       -0.00376346 -0.133435851  0.12590893 0.9998512
-tepsin-Control -0.08027461 -0.204198428  0.04364920 0.3425501
-AP4E1-Control  -0.21725692 -0.340457726 -0.09405611 0.0000356
-AP4E1-tepsin   -0.13698231 -0.260596439 -0.01336818 0.0229229
-
-$`temp$BvsS`
-                   diff        lwr       upr    p adj
-Starved-Basal 0.1854925 0.09823241 0.2727525 3.15e-05
-
-$`temp$Type:temp$BvsS`
-                                       diff         lwr         upr     p adj
-Control:Basal-WT:Basal          0.163174074 -0.23044285  0.55679099 0.9143158
-tepsin:Basal-WT:Basal           0.332153826 -0.06598386  0.73029152 0.1830436
-AP4E1:Basal-WT:Basal            0.102390878 -0.29983295  0.50461470 0.9944990
-WT:Starved-WT:Basal             0.250879740 -0.09754903  0.59930851 0.3618841
-Control:Starved-WT:Basal        0.510595887  0.16367801  0.85751377 0.0002229
-tepsin:Starved-WT:Basal         0.359456721  0.01258983  0.70632361 0.0359531
-AP4E1:Starved-WT:Basal          0.243803834 -0.10221065  0.58981832 0.3912352
-tepsin:Basal-Control:Basal      0.168979752 -0.14722096  0.48518047 0.7379091
-AP4E1:Basal-Control:Basal      -0.060783196 -0.38211368  0.26054728 0.9991686
-WT:Starved-Control:Basal        0.087705666 -0.16303699  0.33844833 0.9646744
-Control:Starved-Control:Basal   0.347421813  0.09878294  0.59606068 0.0006105
-tepsin:Starved-Control:Basal    0.196282647 -0.05228508  0.44485037 0.2440711
-AP4E1:Starved-Control:Basal     0.080629760 -0.16674707  0.32800659 0.9761652
-AP4E1:Basal-tepsin:Basal       -0.229762948 -0.55661554  0.09708964 0.3944329
-WT:Starved-tepsin:Basal        -0.081274087 -0.33905543  0.17650726 0.9802823
-Control:Starved-tepsin:Basal    0.178442061 -0.07729340  0.43417753 0.4045706
-tepsin:Starved-tepsin:Basal     0.027302895 -0.22836340  0.28296919 0.9999821
-AP4E1:Starved-tepsin:Basal     -0.088349992 -0.34285861  0.16615863 0.9661153
-WT:Starved-AP4E1:Basal          0.148488862 -0.11555963  0.41253736 0.6838144
-Control:Starved-AP4E1:Basal     0.408205009  0.14615346  0.67025656 0.0000653
-tepsin:Starved-AP4E1:Basal      0.257065843 -0.00491820  0.51904989 0.0589320
-AP4E1:Starved-AP4E1:Basal       0.141412956 -0.11944146  0.40226737 0.7233437
-Control:Starved-WT:Starved      0.259716147  0.09152097  0.42791133 0.0000797
-tepsin:Starved-WT:Starved       0.108576982 -0.05951300  0.27666696 0.5101437
-AP4E1:Starved-WT:Starved       -0.007075905 -0.17339977  0.15924796 1.0000000
-tepsin:Starved-Control:Starved -0.151139166 -0.31607445  0.01379612 0.1005674
-AP4E1:Starved-Control:Starved  -0.266792053 -0.42992707 -0.10365703 0.0000203
-AP4E1:Starved-tepsin:Starved   -0.115652887 -0.27867945  0.04737367 0.3819842</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW5vdmFQdW5jdGFMb2dWb2w8LWFvdih0ZW1wJExvZ0xDM1ZvbHVtZX50ZW1wJFR5cGUqdGVtcCRCdnNTKVxuc3VtbWFyeShhbm92YVB1bmN0YUxvZ1ZvbClcbmBgYCJ9 -->
-<pre class="r"><code>anovaPunctaLogVol&lt;-aov(temp$LogLC3Volume~temp$Type*temp$BvsS)
-summary(anovaPunctaLogVol)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgIERmIFN1bSBTcSBNZWFuIFNxIEYgdmFsdWUgICBQcig+RikgICAgXG50ZW1wJFR5cGUgICAgICAgICAgICAgIDMgICAgNC44ICAgMS41OTEgICA0LjA3NiAgIDAuMDA2NyAqKiBcbnRlbXAkQnZzUyAgICAgICAgICAgICAgMSAgIDEzLjIgIDEzLjIyNiAgMzMuODg1IDYuMzRlLTA5ICoqKlxudGVtcCRUeXBlOnRlbXAkQnZzUyAgICAzICAgIDAuNyAgIDAuMjQwICAgMC42MTUgICAwLjYwNTEgICAgXG5SZXNpZHVhbHMgICAgICAgICAgIDM3NTUgMTQ2NS43ICAgMC4zOTAgICAgICAgICAgICAgICAgICAgICBcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuMzQzMzAgb2JzZXJ2YXRpb25zIGRlbGV0ZWQgZHVlIHRvIG1pc3NpbmduZXNzXG4ifQ== -->
-<pre><code>                      Df Sum Sq Mean Sq F value   Pr(&gt;F)    
-temp$Type              3    4.8   1.591   4.076   0.0067 ** 
-temp$BvsS              1   13.2  13.226  33.885 6.34e-09 ***
-temp$Type:temp$BvsS    3    0.7   0.240   0.615   0.6051    
-Residuals           3755 1465.7   0.390                     
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-34330 observations deleted due to missingness</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVHVrZXlIU0QoYW5vdmFQdW5jdGFMb2dWb2wpXG5gYGAifQ== -->
-<pre class="r"><code>TukeyHSD(anovaPunctaLogVol)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICBUdWtleSBtdWx0aXBsZSBjb21wYXJpc29ucyBvZiBtZWFuc1xuICAgIDk1JSBmYW1pbHktd2lzZSBjb25maWRlbmNlIGxldmVsXG5cbkZpdDogYW92KGZvcm11bGEgPSB0ZW1wJExvZ0xDM1ZvbHVtZSB+IHRlbXAkVHlwZSAqIHRlbXAkQnZzUylcblxuJGB0ZW1wJFR5cGVgXG4gICAgICAgICAgICAgICAgICAgICAgIGRpZmYgICAgICAgICAgbHdyICAgICAgICAgIHVwciAgICAgcCBhZGpcbkNvbnRyb2wtV1QgICAgICAwLjA3NzM5OTI0NyAgMC4wMDEyNjE0NjggIDAuMTUzNTM3MDI1IDAuMDQ0NjE3M1xudGVwc2luLVdUICAgICAgIDAuMDY2MzYxMDE3IC0wLjAxMDAwNjMyOCAgMC4xNDI3MjgzNjEgMC4xMTQ0NTY4XG5BUDRFMS1XVCAgICAgICAgMC4wMDE5NzY5MjcgLTAuMDczOTg3ODg4ICAwLjA3Nzk0MTc0MiAwLjk5OTg5MjdcbnRlcHNpbi1Db250cm9sIC0wLjAxMTAzODIzMCAtMC4wODM2MzU0MDggIDAuMDYxNTU4OTQ5IDAuOTc5NzQ3MlxuQVA0RTEtQ29udHJvbCAgLTAuMDc1NDIyMzIwIC0wLjE0NzU5NTk0NCAtMC4wMDMyNDg2OTUgMC4wMzY1MTkzXG5BUDRFMS10ZXBzaW4gICAtMC4wNjQzODQwOTAgLTAuMTM2Nzk5ODQ4ICAwLjAwODAzMTY2OSAwLjEwMTY0NzRcblxuJGB0ZW1wJEJ2c1NgXG4gICAgICAgICAgICAgICAgICAgZGlmZiAgICAgICAgbHdyICAgICAgIHVwciBwIGFkalxuU3RhcnZlZC1CYXNhbCAwLjE1MTEwMDMgMC4wOTk5ODE1NyAwLjIwMjIxOTEgICAgIDBcblxuJGB0ZW1wJFR5cGU6dGVtcCRCdnNTYFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZGlmZiAgICAgICAgICBsd3IgICAgICAgICB1cHIgICAgIHAgYWRqXG5Db250cm9sOkJhc2FsLVdUOkJhc2FsICAgICAgICAgIDAuMTQ2NTE0ODcwIC0wLjA4NDA3NDIwMiAwLjM3NzEwMzk0MyAwLjUzMjI4MzRcbnRlcHNpbjpCYXNhbC1XVDpCYXNhbCAgICAgICAgICAgMC4xNjQ5MzI3NDEgLTAuMDY4MzA0NjkyIDAuMzk4MTcwMTc1IDAuMzg2MzM1MFxuQVA0RTE6QmFzYWwtV1Q6QmFzYWwgICAgICAgICAgICAwLjA5OTI4OTk2MiAtMC4xMzYzNDEyMTcgMC4zMzQ5MjExNDEgMC45MDcxNzU2XG5XVDpTdGFydmVkLVdUOkJhc2FsICAgICAgICAgICAgIDAuMjI1NDg4MDEyICAwLjAyMTM3MTEwNyAwLjQyOTYwNDkxNyAwLjAxODUxNjhcbkNvbnRyb2w6U3RhcnZlZC1XVDpCYXNhbCAgICAgICAgMC4zMTIxMjQxMDIgIDAuMTA4ODkyMzA5IDAuNTE1MzU1ODk1IDAuMDAwMDg5OVxudGVwc2luOlN0YXJ2ZWQtV1Q6QmFzYWwgICAgICAgICAwLjI5MDc0ODI0NSAgMC4wODc1NDYzMjMgMC40OTM5NTAxNjggMC4wMDAzOTA1XG5BUDRFMTpTdGFydmVkLVdUOkJhc2FsICAgICAgICAgIDAuMjI0MDM4Njc0ICAwLjAyMTMzNjEwOCAwLjQyNjc0MTI0MSAwLjAxODQxMjhcbnRlcHNpbjpCYXNhbC1Db250cm9sOkJhc2FsICAgICAgMC4wMTg0MTc4NzEgLTAuMTY2ODE5MTU5IDAuMjAzNjU0OTAxIDAuOTk5OTg5MVxuQVA0RTE6QmFzYWwtQ29udHJvbDpCYXNhbCAgICAgIC0wLjA0NzIyNDkwOCAtMC4yMzU0NjcwNjQgMC4xNDEwMTcyNDcgMC45OTQ5NzMyXG5XVDpTdGFydmVkLUNvbnRyb2w6QmFzYWwgICAgICAgIDAuMDc4OTczMTQxIC0wLjA2NzkxNzE4NCAwLjIyNTg2MzQ2NiAwLjczMTg0NzVcbkNvbnRyb2w6U3RhcnZlZC1Db250cm9sOkJhc2FsICAgMC4xNjU2MDkyMzIgIDAuMDE5OTUxMzUwIDAuMzExMjY3MTEzIDAuMDEzMjkxM1xudGVwc2luOlN0YXJ2ZWQtQ29udHJvbDpCYXNhbCAgICAwLjE0NDIzMzM3NSAtMC4wMDEzODI4MjYgMC4yODk4NDk1NzYgMC4wNTQzNjQwXG5BUDRFMTpTdGFydmVkLUNvbnRyb2w6QmFzYWwgICAgIDAuMDc3NTIzODA0IC0wLjA2NzM5NDc1MCAwLjIyMjQ0MjM1NyAwLjczNjg5NjlcbkFQNEUxOkJhc2FsLXRlcHNpbjpCYXNhbCAgICAgICAtMC4wNjU2NDI3NzkgLTAuMjU3MTE5OTA1IDAuMTI1ODM0MzQ2IDAuOTY4Mzc1MFxuV1Q6U3RhcnZlZC10ZXBzaW46QmFzYWwgICAgICAgICAwLjA2MDU1NTI3MCAtMC4wOTA0NTg0NjQgMC4yMTE1NjkwMDUgMC45Mjc0MTU3XG5Db250cm9sOlN0YXJ2ZWQtdGVwc2luOkJhc2FsICAgIDAuMTQ3MTkxMzYxIC0wLjAwMjYyMzg1NSAwLjI5NzAwNjU3NiAwLjA1ODI5MzhcbnRlcHNpbjpTdGFydmVkLXRlcHNpbjpCYXNhbCAgICAgMC4xMjU4MTU1MDQgLTAuMDIzOTU5MTg4IDAuMjc1NTkwMTk2IDAuMTc2MDE3OVxuQVA0RTE6U3RhcnZlZC10ZXBzaW46QmFzYWwgICAgICAwLjA1OTEwNTkzMyAtMC4wODk5OTA1NzEgMC4yMDgyMDI0MzcgMC45MzE1MDc1XG5XVDpTdGFydmVkLUFQNEUxOkJhc2FsICAgICAgICAgIDAuMTI2MTk4MDUwIC0wLjAyODQ4NzExMyAwLjI4MDg4MzIxMyAwLjIwNjgyNjlcbkNvbnRyb2w6U3RhcnZlZC1BUDRFMTpCYXNhbCAgICAgMC4yMTI4MzQxNDAgIDAuMDU5MzE4ODMwIDAuMzY2MzQ5NDUwIDAuMDAwNzA0MlxudGVwc2luOlN0YXJ2ZWQtQVA0RTE6QmFzYWwgICAgICAwLjE5MTQ1ODI4MyAgMC4wMzc5ODI1MTkgMC4zNDQ5MzQwNDcgMC4wMDM5MTc3XG5BUDRFMTpTdGFydmVkLUFQNEUxOkJhc2FsICAgICAgIDAuMTI0NzQ4NzEyIC0wLjAyODA2NTI5MCAwLjI3NzU2MjcxNCAwLjIwNjE0NzlcbkNvbnRyb2w6U3RhcnZlZC1XVDpTdGFydmVkICAgICAgMC4wODY2MzYwOTAgLTAuMDExODk2MTgzIDAuMTg1MTY4MzY0IDAuMTMzMjY4NlxudGVwc2luOlN0YXJ2ZWQtV1Q6U3RhcnZlZCAgICAgICAwLjA2NTI2MDIzNCAtMC4wMzMyMTA0MTUgMC4xNjM3MzA4ODIgMC40NzUyMjA2XG5BUDRFMTpTdGFydmVkLVdUOlN0YXJ2ZWQgICAgICAgLTAuMDAxNDQ5MzM3IC0wLjA5ODg4NTM1NiAwLjA5NTk4NjY4MSAxLjAwMDAwMDBcbnRlcHNpbjpTdGFydmVkLUNvbnRyb2w6U3RhcnZlZCAtMC4wMjEzNzU4NTcgLTAuMTE3OTk4NDE4IDAuMDc1MjQ2NzA0IDAuOTk3NzE3MlxuQVA0RTE6U3RhcnZlZC1Db250cm9sOlN0YXJ2ZWQgIC0wLjA4ODA4NTQyOCAtMC4xODM2NTMzNTQgMC4wMDc0ODI0OTggMC4wOTY0MjM2XG5BUDRFMTpTdGFydmVkLXRlcHNpbjpTdGFydmVkICAgLTAuMDY2NzA5NTcxIC0wLjE2MjIxMzk1OSAwLjAyODc5NDgxNyAwLjQwMzEyNjFcbiJ9 -->
-<pre><code>  Tukey multiple comparisons of means
-    95% family-wise confidence level
-
-Fit: aov(formula = temp$LogLC3Volume ~ temp$Type * temp$BvsS)
-
-$`temp$Type`
-                       diff          lwr          upr     p adj
-Control-WT      0.077399247  0.001261468  0.153537025 0.0446173
-tepsin-WT       0.066361017 -0.010006328  0.142728361 0.1144568
-AP4E1-WT        0.001976927 -0.073987888  0.077941742 0.9998927
-tepsin-Control -0.011038230 -0.083635408  0.061558949 0.9797472
-AP4E1-Control  -0.075422320 -0.147595944 -0.003248695 0.0365193
-AP4E1-tepsin   -0.064384090 -0.136799848  0.008031669 0.1016474
-
-$`temp$BvsS`
-                   diff        lwr       upr p adj
-Starved-Basal 0.1511003 0.09998157 0.2022191     0
-
-$`temp$Type:temp$BvsS`
-                                       diff          lwr         upr     p adj
-Control:Basal-WT:Basal          0.146514870 -0.084074202 0.377103943 0.5322834
-tepsin:Basal-WT:Basal           0.164932741 -0.068304692 0.398170175 0.3863350
-AP4E1:Basal-WT:Basal            0.099289962 -0.136341217 0.334921141 0.9071756
-WT:Starved-WT:Basal             0.225488012  0.021371107 0.429604917 0.0185168
-Control:Starved-WT:Basal        0.312124102  0.108892309 0.515355895 0.0000899
-tepsin:Starved-WT:Basal         0.290748245  0.087546323 0.493950168 0.0003905
-AP4E1:Starved-WT:Basal          0.224038674  0.021336108 0.426741241 0.0184128
-tepsin:Basal-Control:Basal      0.018417871 -0.166819159 0.203654901 0.9999891
-AP4E1:Basal-Control:Basal      -0.047224908 -0.235467064 0.141017247 0.9949732
-WT:Starved-Control:Basal        0.078973141 -0.067917184 0.225863466 0.7318475
-Control:Starved-Control:Basal   0.165609232  0.019951350 0.311267113 0.0132913
-tepsin:Starved-Control:Basal    0.144233375 -0.001382826 0.289849576 0.0543640
-AP4E1:Starved-Control:Basal     0.077523804 -0.067394750 0.222442357 0.7368969
-AP4E1:Basal-tepsin:Basal       -0.065642779 -0.257119905 0.125834346 0.9683750
-WT:Starved-tepsin:Basal         0.060555270 -0.090458464 0.211569005 0.9274157
-Control:Starved-tepsin:Basal    0.147191361 -0.002623855 0.297006576 0.0582938
-tepsin:Starved-tepsin:Basal     0.125815504 -0.023959188 0.275590196 0.1760179
-AP4E1:Starved-tepsin:Basal      0.059105933 -0.089990571 0.208202437 0.9315075
-WT:Starved-AP4E1:Basal          0.126198050 -0.028487113 0.280883213 0.2068269
-Control:Starved-AP4E1:Basal     0.212834140  0.059318830 0.366349450 0.0007042
-tepsin:Starved-AP4E1:Basal      0.191458283  0.037982519 0.344934047 0.0039177
-AP4E1:Starved-AP4E1:Basal       0.124748712 -0.028065290 0.277562714 0.2061479
-Control:Starved-WT:Starved      0.086636090 -0.011896183 0.185168364 0.1332686
-tepsin:Starved-WT:Starved       0.065260234 -0.033210415 0.163730882 0.4752206
-AP4E1:Starved-WT:Starved       -0.001449337 -0.098885356 0.095986681 1.0000000
-tepsin:Starved-Control:Starved -0.021375857 -0.117998418 0.075246704 0.9977172
-AP4E1:Starved-Control:Starved  -0.088085428 -0.183653354 0.007482498 0.0964236
-AP4E1:Starved-tepsin:Starved   -0.066709571 -0.162213959 0.028794817 0.4031261</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW5vdmFQdW5jdGFJbnQ8LWFvdih0ZW1wJExDM01lYW5PYmpJbnRlbnNpdHl+dGVtcCRUeXBlKnRlbXAkQnZzUylcbnN1bW1hcnkoYW5vdmFQdW5jdGFJbnQpXG5gYGAifQ== -->
-<pre class="r"><code>anovaPunctaInt&lt;-aov(temp$LC3MeanObjIntensity~temp$Type*temp$BvsS)
-summary(anovaPunctaInt)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgIERmICAgIFN1bSBTcSBNZWFuIFNxIEYgdmFsdWUgICBQcig+RikgICAgXG50ZW1wJFR5cGUgICAgICAgICAgICAgIDMgICA3NDkxMDM0IDI0OTcwMTEgIDEwLjMyNSA5LjE0ZS0wNyAqKipcbnRlbXAkQnZzUyAgICAgICAgICAgICAgMSAgIDE5NjA0OTEgMTk2MDQ5MSAgIDguMTA2ICAwLjAwNDQzICoqIFxudGVtcCRUeXBlOnRlbXAkQnZzUyAgICAzICAxMzIxMzM4MyA0NDA0NDYxICAxOC4yMTIgOS45M2UtMTIgKioqXG5SZXNpZHVhbHMgICAgICAgICAgIDM3NTUgOTA4MTMxNjAwICAyNDE4NDYgICAgICAgICAgICAgICAgICAgICBcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuMzQzMzAgb2JzZXJ2YXRpb25zIGRlbGV0ZWQgZHVlIHRvIG1pc3NpbmduZXNzXG4ifQ== -->
-<pre><code>                      Df    Sum Sq Mean Sq F value   Pr(&gt;F)    
-temp$Type              3   7491034 2497011  10.325 9.14e-07 ***
-temp$BvsS              1   1960491 1960491   8.106  0.00443 ** 
-temp$Type:temp$BvsS    3  13213383 4404461  18.212 9.93e-12 ***
-Residuals           3755 908131600  241846                     
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-34330 observations deleted due to missingness</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVHVrZXlIU0QoYW5vdmFQdW5jdGFJbnQpXG5gYGAifQ== -->
-<pre class="r"><code>TukeyHSD(anovaPunctaInt)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICBUdWtleSBtdWx0aXBsZSBjb21wYXJpc29ucyBvZiBtZWFuc1xuICAgIDk1JSBmYW1pbHktd2lzZSBjb25maWRlbmNlIGxldmVsXG5cbkZpdDogYW92KGZvcm11bGEgPSB0ZW1wJExDM01lYW5PYmpJbnRlbnNpdHkgfiB0ZW1wJFR5cGUgKiB0ZW1wJEJ2c1MpXG5cbiRgdGVtcCRUeXBlYFxuICAgICAgICAgICAgICAgICAgICBkaWZmICAgICAgICBsd3IgICAgICAgIHVwciAgICAgcCBhZGpcbkNvbnRyb2wtV1QgICAgIDExMS4wMTMwNCAgIDUxLjA4MTE0IDE3MC45NDQ5MzAgMC4wMDAwMTE5XG50ZXBzaW4tV1QgICAgICAgODQuODAxNzEgICAyNC42ODkxMiAxNDQuOTE0MzEyIDAuMDAxNjYwOVxuQVA0RTEtV1QgICAgICAgIDIxLjgyMDMwICAtMzcuOTc1NDQgIDgxLjYxNjA0NyAwLjc4NDQzNTZcbnRlcHNpbi1Db250cm9sIC0yNi4yMTEzMiAgLTgzLjM1NjIzICAzMC45MzM1ODggMC42NDAyNTM2XG5BUDRFMS1Db250cm9sICAtODkuMTkyNzMgLTE0Ni4wMDQyNCAtMzIuMzgxMjI2IDAuMDAwMzI0NFxuQVA0RTEtdGVwc2luICAgLTYyLjk4MTQxIC0xMTkuOTgzNTIgIC01Ljk3OTMwOSAwLjAyMzQ5NTRcblxuJGB0ZW1wJEJ2c1NgXG4gICAgICAgICAgICAgICAgICBkaWZmICAgICAgbHdyICAgICAgdXByICAgICBwIGFkalxuU3RhcnZlZC1CYXNhbCA1OC4xNzQ3OCAxNy45MzY2MSA5OC40MTI5NSAwLjAwNDYxMzVcblxuJGB0ZW1wJFR5cGU6dGVtcCRCdnNTYFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRpZmYgICAgICAgIGx3ciAgICAgICAgdXByICAgICBwIGFkalxuQ29udHJvbDpCYXNhbC1XVDpCYXNhbCAgICAgICAgICAgOTEuMDk4MjkgIC05MC40MTAwMiAyNzIuNjA2NjEwIDAuNzk1NzIwOVxudGVwc2luOkJhc2FsLVdUOkJhc2FsICAgICAgICAgICAzMDQuNjg5ODQgIDEyMS4wOTY4NyA0ODguMjgyODE4IDAuMDAwMDEzOVxuQVA0RTE6QmFzYWwtV1Q6QmFzYWwgICAgICAgICAgICAyNjYuMzg5OTAgICA4MC45MTI2OSA0NTEuODY3MTE0IDAuMDAwMzYzMFxuV1Q6U3RhcnZlZC1XVDpCYXNhbCAgICAgICAgICAgICAxOTMuMDA1OTkgICAzMi4zMzUyNSAzNTMuNjc2NzIwIDAuMDA2NjM2MVxuQ29udHJvbDpTdGFydmVkLVdUOkJhc2FsICAgICAgICAzMzQuMjY3ODMgIDE3NC4yOTM4MiA0OTQuMjQxODUyIDAuMDAwMDAwMFxudGVwc2luOlN0YXJ2ZWQtV1Q6QmFzYWwgICAgICAgICAyNDEuMzE0NTcgICA4MS4zNjQwNyA0MDEuMjY1MDc2IDAuMDAwMTMyOFxuQVA0RTE6U3RhcnZlZC1XVDpCYXNhbCAgICAgICAgICAxNzMuODI4NzUgICAxNC4yNzEzMSAzMzMuMzg2MTgyIDAuMDIxNTcwOFxudGVwc2luOkJhc2FsLUNvbnRyb2w6QmFzYWwgICAgICAyMTMuNTkxNTUgICA2Ny43ODIxMiAzNTkuNDAwOTc5IDAuMDAwMjQ1NFxuQVA0RTE6QmFzYWwtQ29udHJvbDpCYXNhbCAgICAgICAxNzUuMjkxNjEgICAyNy4xMTY2OSAzMjMuNDY2NTIzIDAuMDA4MTE5NVxuV1Q6U3RhcnZlZC1Db250cm9sOkJhc2FsICAgICAgICAxMDEuOTA3NjkgIC0xMy43MTcxMSAyMTcuNTMyNDkyIDAuMTMxMjI0M1xuQ29udHJvbDpTdGFydmVkLUNvbnRyb2w6QmFzYWwgICAyNDMuMTY5NTQgIDEyOC41MTQ4NiAzNTcuODI0MjIxIDAuMDAwMDAwMFxudGVwc2luOlN0YXJ2ZWQtQ29udHJvbDpCYXNhbCAgICAxNTAuMjE2MjggICAzNS41OTQ0MCAyNjQuODM4MTQ5IDAuMDAxODQxOFxuQVA0RTE6U3RhcnZlZC1Db250cm9sOkJhc2FsICAgICAgODIuNzMwNDUgIC0zMS4zNDIyNyAxOTYuODAzMTY5IDAuMzUyMjA0MVxuQVA0RTE6QmFzYWwtdGVwc2luOkJhc2FsICAgICAgICAtMzguMjk5OTQgLTE4OS4wMjEyNyAxMTIuNDIxMzgyIDAuOTk0NTU4OFxuV1Q6U3RhcnZlZC10ZXBzaW46QmFzYWwgICAgICAgIC0xMTEuNjgzODYgLTIzMC41NTQ0MCAgIDcuMTg2Njg2IDAuMDgzNTg0M1xuQ29udHJvbDpTdGFydmVkLXRlcHNpbjpCYXNhbCAgICAgMjkuNTc3OTkgIC04OC4zNDkxNCAxNDcuNTA1MTE5IDAuOTk0OTgwM1xudGVwc2luOlN0YXJ2ZWQtdGVwc2luOkJhc2FsICAgICAtNjMuMzc1MjcgLTE4MS4yNzA1MCAgNTQuNTE5OTU4IDAuNzMxOTkzN1xuQVA0RTE6U3RhcnZlZC10ZXBzaW46QmFzYWwgICAgIC0xMzAuODYxMTAgLTI0OC4yMjI0OSAtMTMuNDk5NzA0IDAuMDE2Njc0MVxuV1Q6U3RhcnZlZC1BUDRFMTpCYXNhbCAgICAgICAgICAtNzMuMzgzOTIgLTE5NS4xNDQ0MyAgNDguMzc2NTk1IDAuNjAxMDY0MFxuQ29udHJvbDpTdGFydmVkLUFQNEUxOkJhc2FsICAgICAgNjcuODc3OTMgIC01Mi45NjE3MyAxODguNzE3NTkzIDAuNjg1MDgwN1xudGVwc2luOlN0YXJ2ZWQtQVA0RTE6QmFzYWwgICAgICAtMjUuMDc1MzMgLTE0NS44ODM4NiAgOTUuNzMzMjAxIDAuOTk4NDgyMlxuQVA0RTE6U3RhcnZlZC1BUDRFMTpCYXNhbCAgICAgICAtOTIuNTYxMTYgLTIxMi44NDg3OCAgMjcuNzI2NDY5IDAuMjc1NDY4OVxuQ29udHJvbDpTdGFydmVkLVdUOlN0YXJ2ZWQgICAgICAxNDEuMjYxODUgICA2My43MDIxMSAyMTguODIxNTgxIDAuMDAwMDAxMFxudGVwc2luOlN0YXJ2ZWQtV1Q6U3RhcnZlZCAgICAgICAgNDguMzA4NTggIC0yOS4yMDI2NCAxMjUuODE5ODEwIDAuNTU3ODU3NlxuQVA0RTE6U3RhcnZlZC1XVDpTdGFydmVkICAgICAgICAtMTkuMTc3MjQgIC05NS44NzQwNiAgNTcuNTE5NTc0IDAuOTk1MDc1N1xudGVwc2luOlN0YXJ2ZWQtQ29udHJvbDpTdGFydmVkICAtOTIuOTUzMjYgLTE2OS4wMDk3NyAtMTYuODk2NzYxIDAuMDA1MjQzNFxuQVA0RTE6U3RhcnZlZC1Db250cm9sOlN0YXJ2ZWQgIC0xNjAuNDM5MDkgLTIzNS42NjU0MyAtODUuMjEyNzQ0IDAuMDAwMDAwMFxuQVA0RTE6U3RhcnZlZC10ZXBzaW46U3RhcnZlZCAgICAtNjcuNDg1ODMgLTE0Mi42NjIxNiAgIDcuNjkwNTA1IDAuMTE2MTIzNVxuIn0= -->
-<pre><code>  Tukey multiple comparisons of means
-    95% family-wise confidence level
-
-Fit: aov(formula = temp$LC3MeanObjIntensity ~ temp$Type * temp$BvsS)
-
-$`temp$Type`
-                    diff        lwr        upr     p adj
-Control-WT     111.01304   51.08114 170.944930 0.0000119
-tepsin-WT       84.80171   24.68912 144.914312 0.0016609
-AP4E1-WT        21.82030  -37.97544  81.616047 0.7844356
-tepsin-Control -26.21132  -83.35623  30.933588 0.6402536
-AP4E1-Control  -89.19273 -146.00424 -32.381226 0.0003244
-AP4E1-tepsin   -62.98141 -119.98352  -5.979309 0.0234954
-
-$`temp$BvsS`
-                  diff      lwr      upr     p adj
-Starved-Basal 58.17478 17.93661 98.41295 0.0046135
-
-$`temp$Type:temp$BvsS`
-                                     diff        lwr        upr     p adj
-Control:Basal-WT:Basal           91.09829  -90.41002 272.606610 0.7957209
-tepsin:Basal-WT:Basal           304.68984  121.09687 488.282818 0.0000139
-AP4E1:Basal-WT:Basal            266.38990   80.91269 451.867114 0.0003630
-WT:Starved-WT:Basal             193.00599   32.33525 353.676720 0.0066361
-Control:Starved-WT:Basal        334.26783  174.29382 494.241852 0.0000000
-tepsin:Starved-WT:Basal         241.31457   81.36407 401.265076 0.0001328
-AP4E1:Starved-WT:Basal          173.82875   14.27131 333.386182 0.0215708
-tepsin:Basal-Control:Basal      213.59155   67.78212 359.400979 0.0002454
-AP4E1:Basal-Control:Basal       175.29161   27.11669 323.466523 0.0081195
-WT:Starved-Control:Basal        101.90769  -13.71711 217.532492 0.1312243
-Control:Starved-Control:Basal   243.16954  128.51486 357.824221 0.0000000
-tepsin:Starved-Control:Basal    150.21628   35.59440 264.838149 0.0018418
-AP4E1:Starved-Control:Basal      82.73045  -31.34227 196.803169 0.3522041
-AP4E1:Basal-tepsin:Basal        -38.29994 -189.02127 112.421382 0.9945588
-WT:Starved-tepsin:Basal        -111.68386 -230.55440   7.186686 0.0835843
-Control:Starved-tepsin:Basal     29.57799  -88.34914 147.505119 0.9949803
-tepsin:Starved-tepsin:Basal     -63.37527 -181.27050  54.519958 0.7319937
-AP4E1:Starved-tepsin:Basal     -130.86110 -248.22249 -13.499704 0.0166741
-WT:Starved-AP4E1:Basal          -73.38392 -195.14443  48.376595 0.6010640
-Control:Starved-AP4E1:Basal      67.87793  -52.96173 188.717593 0.6850807
-tepsin:Starved-AP4E1:Basal      -25.07533 -145.88386  95.733201 0.9984822
-AP4E1:Starved-AP4E1:Basal       -92.56116 -212.84878  27.726469 0.2754689
-Control:Starved-WT:Starved      141.26185   63.70211 218.821581 0.0000010
-tepsin:Starved-WT:Starved        48.30858  -29.20264 125.819810 0.5578576
-AP4E1:Starved-WT:Starved        -19.17724  -95.87406  57.519574 0.9950757
-tepsin:Starved-Control:Starved  -92.95326 -169.00977 -16.896761 0.0052434
-AP4E1:Starved-Control:Starved  -160.43909 -235.66543 -85.212744 0.0000000
-AP4E1:Starved-tepsin:Starved    -67.48583 -142.66216   7.690505 0.1161235</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW5vdmFMQzNNT0M8LWFvdih0ZW1wJE1hbmRlcnNMQzNNT0N+dGVtcCRUeXBlKnRlbXAkQnZzUylcbnN1bW1hcnkoYW5vdmFMQzNNT0MpXG5gYGAifQ== -->
-<pre class="r"><code>anovaLC3MOC&lt;-aov(temp$MandersLC3MOC~temp$Type*temp$BvsS)
-summary(anovaLC3MOC)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgIERmIFN1bSBTcSBNZWFuIFNxIEYgdmFsdWUgIFByKD5GKSAgICBcbnRlbXAkVHlwZSAgICAgICAgICAgICAgMyAgIDAuMjkgIDAuMDk3NSAgIDQuNDU3IDAuMDAzOTQgKiogXG50ZW1wJEJ2c1MgICAgICAgICAgICAgIDEgICAwLjU0ICAwLjU0MTUgIDI0Ljc1NSA2LjhlLTA3ICoqKlxudGVtcCRUeXBlOnRlbXAkQnZzUyAgICAzICAgMC4yNyAgMC4wOTE2ICAgNC4xODcgMC4wMDU3NCAqKiBcblJlc2lkdWFscyAgICAgICAgICAgMzc1NSAgODIuMTQgIDAuMDIxOSAgICAgICAgICAgICAgICAgICAgXG4tLS1cblNpZ25pZi4gY29kZXM6ICAwIOKAmCoqKuKAmSAwLjAwMSDigJgqKuKAmSAwLjAxIOKAmCrigJkgMC4wNSDigJgu4oCZIDAuMSDigJgg4oCZIDFcbjM0MzMwIG9ic2VydmF0aW9ucyBkZWxldGVkIGR1ZSB0byBtaXNzaW5nbmVzc1xuIn0= -->
-<pre><code>                      Df Sum Sq Mean Sq F value  Pr(&gt;F)    
-temp$Type              3   0.29  0.0975   4.457 0.00394 ** 
-temp$BvsS              1   0.54  0.5415  24.755 6.8e-07 ***
-temp$Type:temp$BvsS    3   0.27  0.0916   4.187 0.00574 ** 
-Residuals           3755  82.14  0.0219                    
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-34330 observations deleted due to missingness</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVHVrZXlIU0QoYW5vdmFMQzNNT0MpXG5gYGAifQ== -->
-<pre class="r"><code>TukeyHSD(anovaLC3MOC)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICBUdWtleSBtdWx0aXBsZSBjb21wYXJpc29ucyBvZiBtZWFuc1xuICAgIDk1JSBmYW1pbHktd2lzZSBjb25maWRlbmNlIGxldmVsXG5cbkZpdDogYW92KGZvcm11bGEgPSB0ZW1wJE1hbmRlcnNMQzNNT0MgfiB0ZW1wJFR5cGUgKiB0ZW1wJEJ2c1MpXG5cbiRgdGVtcCRUeXBlYFxuICAgICAgICAgICAgICAgICAgICAgICBkaWZmICAgICAgICAgICBsd3IgICAgICAgICAgdXByICAgICBwIGFkalxuQ29udHJvbC1XVCAgICAgLTAuMDEwNTEzODg2IC0wLjAyODUzODE2NDcgIDAuMDA3NTEwMzkzIDAuNDM4MDIwOVxudGVwc2luLVdUICAgICAgIDAuMDA3MzA0NjYyIC0wLjAxMDc3Mzk2MjggIDAuMDI1MzgzMjg2IDAuNzI2ODA4MFxuQVA0RTEtV1QgICAgICAgLTAuMDE0Nzg2MTM5IC0wLjAzMjc2OTQ3MTggIDAuMDAzMTk3MTk0IDAuMTQ5MDA2MFxudGVwc2luLUNvbnRyb2wgIDAuMDE3ODE4NTQ4ICAwLjAwMDYzMjQ0MzQgIDAuMDM1MDA0NjUyIDAuMDM4NzE3MFxuQVA0RTEtQ29udHJvbCAgLTAuMDA0MjcyMjUzIC0wLjAyMTM1ODA4ODQgIDAuMDEyODEzNTgyIDAuOTE4MTI0OFxuQVA0RTEtdGVwc2luICAgLTAuMDIyMDkwODAxIC0wLjAzOTIzMzk1NjkgLTAuMDA0OTQ3NjQ1IDAuMDA1MTcyOFxuXG4kYHRlbXAkQnZzU2BcbiAgICAgICAgICAgICAgICAgICAgIGRpZmYgICAgICAgICBsd3IgICAgICAgICB1cHIgcCBhZGpcblN0YXJ2ZWQtQmFzYWwgLTAuMDMwNTc0MzQgLTAuMDQyNjc1ODEgLTAuMDE4NDcyODcgOGUtMDdcblxuJGB0ZW1wJFR5cGU6dGVtcCRCdnNTYFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZGlmZiAgICAgICAgICBsd3IgICAgICAgICAgIHVwciAgICAgcCBhZGpcbkNvbnRyb2w6QmFzYWwtV1Q6QmFzYWwgICAgICAgICAgMC4wNDMxMDc0MTMgLTAuMDExNDgwNDkwICAwLjA5NzY5NTMxNzMgMC4yNDQwMjEwXG50ZXBzaW46QmFzYWwtV1Q6QmFzYWwgICAgICAgICAgIDAuMDM0OTQwODU1IC0wLjAyMDI3NDAwMiAgMC4wOTAxNTU3MTE1IDAuNTM3NzA1NFxuQVA0RTE6QmFzYWwtV1Q6QmFzYWwgICAgICAgICAgICAwLjAyMzUxMzk2NSAtMC4wMzIyNjc1NjkgIDAuMDc5Mjk1NDk4OSAwLjkwNzAwNjFcbldUOlN0YXJ2ZWQtV1Q6QmFzYWwgICAgICAgICAgICAgMC4wMTExNjYyMjkgLTAuMDM3MTU0ODU1ICAwLjA1OTQ4NzMxMzMgMC45OTY5OTE1XG5Db250cm9sOlN0YXJ2ZWQtV1Q6QmFzYWwgICAgICAgLTAuMDEzMDczOTg2IC0wLjA2MTE4NTUzNSAgMC4wMzUwMzc1NjM4IDAuOTkxODAxN1xudGVwc2luOlN0YXJ2ZWQtV1Q6QmFzYWwgICAgICAgICAwLjAxMjQ0NjkxNCAtMC4wMzU2NTc1NjQgIDAuMDYwNTUxMzkyMyAwLjk5MzkxODZcbkFQNEUxOlN0YXJ2ZWQtV1Q6QmFzYWwgICAgICAgICAtMC4wMTE2OTE5NTkgLTAuMDU5Njc4MjI0ICAwLjAzNjI5NDMwNTEgMC45OTU4MDY5XG50ZXBzaW46QmFzYWwtQ29udHJvbDpCYXNhbCAgICAgLTAuMDA4MTY2NTU5IC0wLjA1MjAxODE2NSAgMC4wMzU2ODUwNDc0IDAuOTk5MjQ5M1xuQVA0RTE6QmFzYWwtQ29udHJvbDpCYXNhbCAgICAgIC0wLjAxOTU5MzQ0OCAtMC4wNjQxNTY0NjUgIDAuMDI0OTY5NTY4NCAwLjg4NjIyNDNcbldUOlN0YXJ2ZWQtQ29udHJvbDpCYXNhbCAgICAgICAtMC4wMzE5NDExODQgLTAuMDY2NzE0ODgzICAwLjAwMjgzMjUxNDUgMC4wOTg4NTQ2XG5Db250cm9sOlN0YXJ2ZWQtQ29udHJvbDpCYXNhbCAgLTAuMDU2MTgxMzk5IC0wLjA5MDY2MzMzOSAtMC4wMjE2OTk0NTk3IDAuMDAwMDIyM1xudGVwc2luOlN0YXJ2ZWQtQ29udHJvbDpCYXNhbCAgIC0wLjAzMDY2MDQ5OSAtMC4wNjUxMzI1NzIgIDAuMDAzODExNTczMCAwLjEyMzU5MThcbkFQNEUxOlN0YXJ2ZWQtQ29udHJvbDpCYXNhbCAgICAtMC4wNTQ3OTkzNzMgLTAuMDg5MTA2Mjg5IC0wLjAyMDQ5MjQ1NjIgMC4wMDAwMzYzXG5BUDRFMTpCYXNhbC10ZXBzaW46QmFzYWwgICAgICAgLTAuMDExNDI2ODkwIC0wLjA1Njc1NTcyOCAgMC4wMzM5MDE5NDkzIDAuOTk0ODIwN1xuV1Q6U3RhcnZlZC10ZXBzaW46QmFzYWwgICAgICAgIC0wLjAyMzc3NDYyNiAtMC4wNTk1MjQ0NjkgIDAuMDExOTc1MjE3OSAwLjQ3MDUwMDJcbkNvbnRyb2w6U3RhcnZlZC10ZXBzaW46QmFzYWwgICAtMC4wNDgwMTQ4NDAgLTAuMDgzNDgwOTU1IC0wLjAxMjU0ODcyNTMgMC4wMDEwNzE3XG50ZXBzaW46U3RhcnZlZC10ZXBzaW46QmFzYWwgICAgLTAuMDIyNDkzOTQxIC0wLjA1Nzk1MDQ2MiAgMC4wMTI5NjI1ODE0IDAuNTM0MzU0MlxuQVA0RTE6U3RhcnZlZC10ZXBzaW46QmFzYWwgICAgIC0wLjA0NjYzMjgxNCAtMC4wODE5Mjg3ODcgLTAuMDExMzM2ODQxMiAwLjAwMTYxNDhcbldUOlN0YXJ2ZWQtQVA0RTE6QmFzYWwgICAgICAgICAtMC4wMTIzNDc3MzYgLTAuMDQ4OTY2NzI1ICAwLjAyNDI3MTI1MzUgMC45NzExNTM1XG5Db250cm9sOlN0YXJ2ZWQtQVA0RTE6QmFzYWwgICAgLTAuMDM2NTg3OTUxIC0wLjA3MjkyOTk5OCAtMC4wMDAyNDU5MDM0IDAuMDQ3MDc0N1xudGVwc2luOlN0YXJ2ZWQtQVA0RTE6QmFzYWwgICAgIC0wLjAxMTA2NzA1MSAtMC4wNDczOTk3MzYgIDAuMDI1MjY1NjM0NSAwLjk4Mzg0NThcbkFQNEUxOlN0YXJ2ZWQtQVA0RTE6QmFzYWwgICAgICAtMC4wMzUyMDU5MjQgLTAuMDcxMzgxOTUwICAwLjAwMDk3MDEwMDYgMC4wNjMxNDg1XG5Db250cm9sOlN0YXJ2ZWQtV1Q6U3RhcnZlZCAgICAgLTAuMDI0MjQwMjE1IC0wLjA0NzU2NTk5NiAtMC4wMDA5MTQ0MzM1IDAuMDM0OTkyMlxudGVwc2luOlN0YXJ2ZWQtV1Q6U3RhcnZlZCAgICAgICAwLjAwMTI4MDY4NSAtMC4wMjIwMzA1MDggIDAuMDI0NTkxODc3NyAwLjk5OTk5OThcbkFQNEUxOlN0YXJ2ZWQtV1Q6U3RhcnZlZCAgICAgICAtMC4wMjI4NTgxODggLTAuMDQ1OTI0NDUxICAwLjAwMDIwODA3MzkgMC4wNTQxMzgwXG50ZXBzaW46U3RhcnZlZC1Db250cm9sOlN0YXJ2ZWQgIDAuMDI1NTIwOTAwICAwLjAwMjY0NzIwOSAgMC4wNDgzOTQ1OTAzIDAuMDE2NTU0NVxuQVA0RTE6U3RhcnZlZC1Db250cm9sOlN0YXJ2ZWQgICAwLjAwMTM4MjAyNiAtMC4wMjEyNDE5OTggIDAuMDI0MDA2MDUwNiAwLjk5OTk5OTZcbkFQNEUxOlN0YXJ2ZWQtdGVwc2luOlN0YXJ2ZWQgICAtMC4wMjQxMzg4NzMgLTAuMDQ2NzQ3ODU2IC0wLjAwMTUyOTg5MDcgMC4wMjY2OTg3XG4ifQ== -->
-<pre><code>  Tukey multiple comparisons of means
-    95% family-wise confidence level
-
-Fit: aov(formula = temp$MandersLC3MOC ~ temp$Type * temp$BvsS)
-
-$`temp$Type`
-                       diff           lwr          upr     p adj
-Control-WT     -0.010513886 -0.0285381647  0.007510393 0.4380209
-tepsin-WT       0.007304662 -0.0107739628  0.025383286 0.7268080
-AP4E1-WT       -0.014786139 -0.0327694718  0.003197194 0.1490060
-tepsin-Control  0.017818548  0.0006324434  0.035004652 0.0387170
-AP4E1-Control  -0.004272253 -0.0213580884  0.012813582 0.9181248
-AP4E1-tepsin   -0.022090801 -0.0392339569 -0.004947645 0.0051728
-
-$`temp$BvsS`
-                     diff         lwr         upr p adj
-Starved-Basal -0.03057434 -0.04267581 -0.01847287 8e-07
-
-$`temp$Type:temp$BvsS`
-                                       diff          lwr           upr     p adj
-Control:Basal-WT:Basal          0.043107413 -0.011480490  0.0976953173 0.2440210
-tepsin:Basal-WT:Basal           0.034940855 -0.020274002  0.0901557115 0.5377054
-AP4E1:Basal-WT:Basal            0.023513965 -0.032267569  0.0792954989 0.9070061
-WT:Starved-WT:Basal             0.011166229 -0.037154855  0.0594873133 0.9969915
-Control:Starved-WT:Basal       -0.013073986 -0.061185535  0.0350375638 0.9918017
-tepsin:Starved-WT:Basal         0.012446914 -0.035657564  0.0605513923 0.9939186
-AP4E1:Starved-WT:Basal         -0.011691959 -0.059678224  0.0362943051 0.9958069
-tepsin:Basal-Control:Basal     -0.008166559 -0.052018165  0.0356850474 0.9992493
-AP4E1:Basal-Control:Basal      -0.019593448 -0.064156465  0.0249695684 0.8862243
-WT:Starved-Control:Basal       -0.031941184 -0.066714883  0.0028325145 0.0988546
-Control:Starved-Control:Basal  -0.056181399 -0.090663339 -0.0216994597 0.0000223
-tepsin:Starved-Control:Basal   -0.030660499 -0.065132572  0.0038115730 0.1235918
-AP4E1:Starved-Control:Basal    -0.054799373 -0.089106289 -0.0204924562 0.0000363
-AP4E1:Basal-tepsin:Basal       -0.011426890 -0.056755728  0.0339019493 0.9948207
-WT:Starved-tepsin:Basal        -0.023774626 -0.059524469  0.0119752179 0.4705002
-Control:Starved-tepsin:Basal   -0.048014840 -0.083480955 -0.0125487253 0.0010717
-tepsin:Starved-tepsin:Basal    -0.022493941 -0.057950462  0.0129625814 0.5343542
-AP4E1:Starved-tepsin:Basal     -0.046632814 -0.081928787 -0.0113368412 0.0016148
-WT:Starved-AP4E1:Basal         -0.012347736 -0.048966725  0.0242712535 0.9711535
-Control:Starved-AP4E1:Basal    -0.036587951 -0.072929998 -0.0002459034 0.0470747
-tepsin:Starved-AP4E1:Basal     -0.011067051 -0.047399736  0.0252656345 0.9838458
-AP4E1:Starved-AP4E1:Basal      -0.035205924 -0.071381950  0.0009701006 0.0631485
-Control:Starved-WT:Starved     -0.024240215 -0.047565996 -0.0009144335 0.0349922
-tepsin:Starved-WT:Starved       0.001280685 -0.022030508  0.0245918777 0.9999998
-AP4E1:Starved-WT:Starved       -0.022858188 -0.045924451  0.0002080739 0.0541380
-tepsin:Starved-Control:Starved  0.025520900  0.002647209  0.0483945903 0.0165545
-AP4E1:Starved-Control:Starved   0.001382026 -0.021241998  0.0240060506 0.9999996
-AP4E1:Starved-tepsin:Starved   -0.024138873 -0.046747856 -0.0015298907 0.0266987</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW5vdmFMQU1QSW50PC1hb3YodGVtcCRMQU1QMU1lYW5PYmpJbnRlbnNpdHl+dGVtcCRUeXBlKnRlbXAkQnZzUylcbnN1bW1hcnkoYW5vdmFMQU1QSW50KVxuYGBgIn0= -->
-<pre class="r"><code>anovaLAMPInt&lt;-aov(temp$LAMP1MeanObjIntensity~temp$Type*temp$BvsS)
-summary(anovaLAMPInt)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgICBEZiAgICBTdW0gU3EgICBNZWFuIFNxIEYgdmFsdWUgICBQcig+RikgICAgXG50ZW1wJFR5cGUgICAgICAgICAgICAgICAzIDMuNDY1ZSswOCAxLjE1NWUrMDggICAyNS4wOSAzLjMwZS0xNiAqKipcbnRlbXAkQnZzUyAgICAgICAgICAgICAgIDEgMS4wOThlKzA5IDEuMDk4ZSswOSAgMjM4LjQ0ICA8IDJlLTE2ICoqKlxudGVtcCRUeXBlOnRlbXAkQnZzUyAgICAgMyAxLjM4NWUrMDggNC42MTdlKzA3ICAgMTAuMDMgMS4zM2UtMDYgKioqXG5SZXNpZHVhbHMgICAgICAgICAgIDM4MDg1IDEuNzUzZSsxMSA0LjYwNGUrMDYgICAgICAgICAgICAgICAgICAgICBcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuIn0= -->
-<pre><code>                       Df    Sum Sq   Mean Sq F value   Pr(&gt;F)    
-temp$Type               3 3.465e+08 1.155e+08   25.09 3.30e-16 ***
-temp$BvsS               1 1.098e+09 1.098e+09  238.44  &lt; 2e-16 ***
-temp$Type:temp$BvsS     3 1.385e+08 4.617e+07   10.03 1.33e-06 ***
-Residuals           38085 1.753e+11 4.604e+06                     
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEZiBTdW0gU3EgTWVhbiBTcSBGIHZhbHVlIFByKD5GKSAgXG5XQmRhdGEkdHlwZSAgICAgICAgICAgICAgICAgICAzIDE5LjY3NSAgIDYuNTU4ICAgNC4wNjggMC4wNDk5ICpcbldCZGF0YSRCdnNTICAgICAgICAgICAgICAgICAgIDEgIDYuMjUzICAgNi4yNTMgICAzLjg3OCAwLjA4NDQgLlxuV0JkYXRhJHJlcGxpY2F0ZSAgICAgICAgICAgICAgMiAgMi43MTkgICAxLjM2MCAgIDAuODQzIDAuNDY1MiAgXG5XQmRhdGEkdHlwZTpXQmRhdGEkQnZzUyAgICAgICAzICA0LjcyOSAgIDEuNTc2ICAgMC45NzggMC40NTAwICBcbldCZGF0YSR0eXBlOldCZGF0YSRyZXBsaWNhdGUgIDYgIDQuNTE4ICAgMC43NTMgICAwLjQ2NyAwLjgxNTQgIFxuUmVzaWR1YWxzICAgICAgICAgICAgICAgICAgICAgOCAxMi44OTcgICAxLjYxMiAgICAgICAgICAgICAgICAgXG4tLS1cblNpZ25pZi4gY29kZXM6ICAwIOKAmCoqKuKAmSAwLjAwMSDigJgqKuKAmSAwLjAxIOKAmCrigJkgMC4wNSDigJgu4oCZIDAuMSDigJgg4oCZIDFcbiJ9 -->
+<pre><code>                             Df Sum Sq Mean Sq F value Pr(&gt;F)  
+WBdata$type                   3 19.675   6.558   4.068 0.0499 *
+WBdata$BvsS                   1  6.253   6.253   3.878 0.0844 .
+WBdata$replicate              2  2.719   1.360   0.843 0.4652  
+WBdata$type:WBdata$BvsS       3  4.729   1.576   0.978 0.4500  
+WBdata$type:WBdata$replicate  6  4.518   0.753   0.467 0.8154  
+Residuals                     8 12.897   1.612                 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVHVrZXlIU0QoYW5vdmFMQU1QSW50KVxuYGBgIn0= -->
-<pre class="r"><code>TukeyHSD(anovaLAMPInt)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVHVrZXlIU0QoYW5vdmFMQzNyYXRpbylcbmBgYCJ9 -->
+<pre class="r"><code>TukeyHSD(anovaLC3ratio)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICBUdWtleSBtdWx0aXBsZSBjb21wYXJpc29ucyBvZiBtZWFuc1xuICAgIDk1JSBmYW1pbHktd2lzZSBjb25maWRlbmNlIGxldmVsXG5cbkZpdDogYW92KGZvcm11bGEgPSB0ZW1wJExBTVAxTWVhbk9iakludGVuc2l0eSB+IHRlbXAkVHlwZSAqIHRlbXAkQnZzUylcblxuJGB0ZW1wJFR5cGVgXG4gICAgICAgICAgICAgICAgICAgICBkaWZmICAgICAgICBsd3IgICAgICAgdXByICAgICBwIGFkalxuQ29udHJvbC1XVCAgICAgIDI1Ni4xNzM3NCAgMTc2LjY1Nzc1IDMzNS42ODk3MyAwLjAwMDAwMDBcbnRlcHNpbi1XVCAgICAgICAxNDguMDkxMTUgICA2Ny41ODg2NyAyMjguNTkzNjMgMC4wMDAwMTM2XG5BUDRFMS1XVCAgICAgICAgMTk5LjQ2NjIzICAxMTkuNjIzOTIgMjc5LjMwODUzIDAuMDAwMDAwMFxudGVwc2luLUNvbnRyb2wgLTEwOC4wODI1OSAtMTg4LjAyNTQ3IC0yOC4xMzk3MSAwLjAwMjg5MDVcbkFQNEUxLUNvbnRyb2wgICAtNTYuNzA3NTIgLTEzNS45ODU1NiAgMjIuNTcwNTMgMC4yNTU2MjI2XG5BUDRFMS10ZXBzaW4gICAgIDUxLjM3NTA4ICAtMjguODkyMzggMTMxLjY0MjU0IDAuMzUzNjg5NVxuXG4kYHRlbXAkQnZzU2BcbiAgICAgICAgICAgICAgICAgIGRpZmYgICAgICBsd3IgICAgICB1cHIgcCBhZGpcblN0YXJ2ZWQtQmFzYWwgMzUyLjgyNzcgMzA3Ljg2OTMgMzk3Ljc4NjIgICAgIDBcblxuJGB0ZW1wJFR5cGU6dGVtcCRCdnNTYFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRpZmYgICAgICAgIGx3ciAgICAgICB1cHIgICAgIHAgYWRqXG5Db250cm9sOkJhc2FsLVdUOkJhc2FsICAgICAgICAgIDI3OC42MzA4NiAgMTEyLjIyOTU0IDQ0NS4wMzIxNyAwLjAwMDAxMDdcbnRlcHNpbjpCYXNhbC1XVDpCYXNhbCAgICAgICAgICAgIDgxLjI5NTU2ICAtODIuNjEzMjUgMjQ1LjIwNDM4IDAuODA2MDUxMFxuQVA0RTE6QmFzYWwtV1Q6QmFzYWwgICAgICAgICAgICAzNTUuMzMxNTEgIDE5NS40NTc2MSA1MTUuMjA1NDEgMC4wMDAwMDAwXG5XVDpTdGFydmVkLVdUOkJhc2FsICAgICAgICAgICAgIDM3MS43NjU2NSAgMjI2LjAzNDg5IDUxNy40OTY0MCAwLjAwMDAwMDBcbkNvbnRyb2w6U3RhcnZlZC1XVDpCYXNhbCAgICAgICAgNjM3LjY3MDM3ICA0OTEuMzQwNTggNzg0LjAwMDE2IDAuMDAwMDAwMFxudGVwc2luOlN0YXJ2ZWQtV1Q6QmFzYWwgICAgICAgICA2MDguMTk1MTIgIDQ1OS4xODI3NiA3NTcuMjA3NDggMC4wMDAwMDAwXG5BUDRFMTpTdGFydmVkLVdUOkJhc2FsICAgICAgICAgIDUzMi42NjEwMyAgMzgzLjEyNDg5IDY4Mi4xOTcxNyAwLjAwMDAwMDBcbnRlcHNpbjpCYXNhbC1Db250cm9sOkJhc2FsICAgICAtMTk3LjMzNTMwIC0zNTQuOTM0MTcgLTM5LjczNjQyIDAuMDAzNjg4OFxuQVA0RTE6QmFzYWwtQ29udHJvbDpCYXNhbCAgICAgICAgNzYuNzAwNjUgIC03Ni42OTc0MyAyMzAuMDk4NzMgMC43OTk0MDExXG5XVDpTdGFydmVkLUNvbnRyb2w6QmFzYWwgICAgICAgICA5My4xMzQ3OSAgLTQ1LjQ2MDg4IDIzMS43MzA0NiAwLjQ1NjgzMDhcbkNvbnRyb2w6U3RhcnZlZC1Db250cm9sOkJhc2FsICAgMzU5LjAzOTUxICAyMTkuODE0MTAgNDk4LjI2NDkyIDAuMDAwMDAwMFxudGVwc2luOlN0YXJ2ZWQtQ29udHJvbDpCYXNhbCAgICAzMjkuNTY0MjYgIDE4Ny41MjIwNCA0NzEuNjA2NDggMC4wMDAwMDAwXG5BUDRFMTpTdGFydmVkLUNvbnRyb2w6QmFzYWwgICAgIDI1NC4wMzAxOCAgMTExLjQzODU3IDM5Ni42MjE3OCAwLjAwMDAwMTlcbkFQNEUxOkJhc2FsLXRlcHNpbjpCYXNhbCAgICAgICAgMjc0LjAzNTk1ICAxMjMuMzQ1MzAgNDI0LjcyNjYwIDAuMDAwMDAxMFxuV1Q6U3RhcnZlZC10ZXBzaW46QmFzYWwgICAgICAgICAyOTAuNDcwMDkgIDE1NC44NzcwOSA0MjYuMDYzMDggMC4wMDAwMDAwXG5Db250cm9sOlN0YXJ2ZWQtdGVwc2luOkJhc2FsICAgIDU1Ni4zNzQ4MSAgNDIwLjEzODE5IDY5Mi42MTE0MiAwLjAwMDAwMDBcbnRlcHNpbjpTdGFydmVkLXRlcHNpbjpCYXNhbCAgICAgNTI2Ljg5OTU2ICAzODcuNzg1NjAgNjY2LjAxMzUxIDAuMDAwMDAwMFxuQVA0RTE6U3RhcnZlZC10ZXBzaW46QmFzYWwgICAgICA0NTEuMzY1NDcgIDMxMS42OTA2MSA1OTEuMDQwMzMgMC4wMDAwMDAwXG5XVDpTdGFydmVkLUFQNEUxOkJhc2FsICAgICAgICAgICAxNi40MzQxNCAtMTE0LjI1MjYxIDE0Ny4xMjA4OCAwLjk5OTk0NTlcbkNvbnRyb2w6U3RhcnZlZC1BUDRFMTpCYXNhbCAgICAgMjgyLjMzODg2ICAxNTAuOTg0NDUgNDEzLjY5MzI2IDAuMDAwMDAwMFxudGVwc2luOlN0YXJ2ZWQtQVA0RTE6QmFzYWwgICAgICAyNTIuODYzNjEgIDExOC41MjcyNSAzODcuMTk5OTYgMC4wMDAwMDAzXG5BUDRFMTpTdGFydmVkLUFQNEUxOkJhc2FsICAgICAgIDE3Ny4zMjk1MiAgIDQyLjQxMjQwIDMxMi4yNDY2NSAwLjAwMTc0MjdcbkNvbnRyb2w6U3RhcnZlZC1XVDpTdGFydmVkICAgICAgMjY1LjkwNDcyICAxNTIuMTg2NzggMzc5LjYyMjY2IDAuMDAwMDAwMFxudGVwc2luOlN0YXJ2ZWQtV1Q6U3RhcnZlZCAgICAgICAyMzYuNDI5NDcgIDExOS4yNzk3OSAzNTMuNTc5MTUgMC4wMDAwMDAwXG5BUDRFMTpTdGFydmVkLVdUOlN0YXJ2ZWQgICAgICAgIDE2MC44OTUzOCAgIDQzLjA4MDE5IDI3OC43MTA1OCAwLjAwMDkxMTVcbnRlcHNpbjpTdGFydmVkLUNvbnRyb2w6U3RhcnZlZCAgLTI5LjQ3NTI1IC0xNDcuMzY5MjcgIDg4LjQxODc3IDAuOTk1MTAzOVxuQVA0RTE6U3RhcnZlZC1Db250cm9sOlN0YXJ2ZWQgIC0xMDUuMDA5MzQgLTIyMy41NjQ3MCAgMTMuNTQ2MDIgMC4xMjcxNzgyXG5BUDRFMTpTdGFydmVkLXRlcHNpbjpTdGFydmVkICAgIC03NS41MzQwOSAtMTk3LjM4NTAyICA0Ni4zMTY4NSAwLjU2NTU4ODJcbiJ9 -->
+<!-- rnb-output-begin eyJkYXRhIjoiICBUdWtleSBtdWx0aXBsZSBjb21wYXJpc29ucyBvZiBtZWFuc1xuICAgIDk1JSBmYW1pbHktd2lzZSBjb25maWRlbmNlIGxldmVsXG5cbkZpdDogYW92KGZvcm11bGEgPSBXQmRhdGEkTEMzcmF0aW8gfiBXQmRhdGEkdHlwZSAqIFdCZGF0YSRCdnNTICsgV0JkYXRhJHJlcGxpY2F0ZSArIFdCZGF0YSRyZXBsaWNhdGU6V0JkYXRhJHR5cGUpXG5cbiRgV0JkYXRhJHR5cGVgXG4gICAgICAgICAgICAgICAgICAgICBkaWZmICAgICAgICAgbHdyICAgICAgdXByICAgICBwIGFkalxuQ29udHJvbC1XVCAgICAgIDIuMjgzMzMzMyAtMC4wNjQyMjM4NiA0LjYzMDg5MSAwLjA1NjU2NzdcbnRlcHNpbi1XVCAgICAgICAyLjA3MDY2NjcgLTAuMjc2ODkwNTMgNC40MTgyMjQgMC4wODUyMTMwXG5BUDRFMS1XVCAgICAgICAgMS44MTEwMDAwIC0wLjUzNjU1NzE5IDQuMTU4NTU3IDAuMTQwMDU3NVxudGVwc2luLUNvbnRyb2wgLTAuMjEyNjY2NyAtMi41NjAyMjM4NiAyLjEzNDg5MSAwLjk5MDgzOTdcbkFQNEUxLUNvbnRyb2wgIC0wLjQ3MjMzMzMgLTIuODE5ODkwNTMgMS44NzUyMjQgMC45MTQ2MTc2XG5BUDRFMS10ZXBzaW4gICAtMC4yNTk2NjY3IC0yLjYwNzIyMzg2IDIuMDg3ODkxIDAuOTgzNjY4N1xuXG4kYFdCZGF0YSRCdnNTYFxuICAgICAgICAgICAgICAgICAgZGlmZiAgICAgICAgbHdyICAgICAgdXByICAgICBwIGFkalxuU3RhcnZlZC1CYXNhbCAxLjAyMDgzMyAtMC4xNzQ1MDg3IDIuMjE2MTc1IDAuMDg0NDI4NlxuXG4kYFdCZGF0YSRyZXBsaWNhdGVgXG4gICAgICAgIGRpZmYgICAgICAgbHdyICAgICAgdXByICAgICBwIGFkalxuMi0xIDAuNjUyMjUwIC0xLjE2MTgyNiAyLjQ2NjMyNiAwLjU4MTUyNDNcbjMtMSAwLjc2Mjg3NSAtMS4wNTEyMDEgMi41NzY5NTEgMC40ODQ4Mjg2XG4zLTIgMC4xMTA2MjUgLTEuNzAzNDUxIDEuOTI0NzAxIDAuOTgzNDM0OFxuXG4kYFdCZGF0YSR0eXBlOldCZGF0YSRCdnNTYFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBkaWZmICAgICAgIGx3ciAgICAgIHVwciAgICAgcCBhZGpcbkNvbnRyb2w6QmFzYWwtV1Q6QmFzYWwgICAgICAgICAgMy4wNjc2NjY2NyAtMS4wMzQ3NDEgNy4xNzAwNzQgMC4xNzg0MTk0XG50ZXBzaW46QmFzYWwtV1Q6QmFzYWwgICAgICAgICAgIDEuNjQwMzMzMzMgLTIuNDYyMDc0IDUuNzQyNzQxIDAuNzQ5ODU5OFxuQVA0RTE6QmFzYWwtV1Q6QmFzYWwgICAgICAgICAgICAxLjczMDY2NjY3IC0yLjM3MTc0MSA1LjgzMzA3NCAwLjcwNTMwMjBcbldUOlN0YXJ2ZWQtV1Q6QmFzYWwgICAgICAgICAgICAgMS4xNTc2NjY2NyAtMi45NDQ3NDEgNS4yNjAwNzQgMC45MzU0MjYyXG5Db250cm9sOlN0YXJ2ZWQtV1Q6QmFzYWwgICAgICAgIDIuNjU2NjY2NjcgLTEuNDQ1NzQxIDYuNzU5MDc0IDAuMjg5NjE4MFxudGVwc2luOlN0YXJ2ZWQtV1Q6QmFzYWwgICAgICAgICAzLjY1ODY2NjY3IC0wLjQ0Mzc0MSA3Ljc2MTA3NCAwLjA4NjMzMTZcbkFQNEUxOlN0YXJ2ZWQtV1Q6QmFzYWwgICAgICAgICAgMy4wNDkwMDAwMCAtMS4wNTM0MDggNy4xNTE0MDggMC4xODI0ODkyXG50ZXBzaW46QmFzYWwtQ29udHJvbDpCYXNhbCAgICAgLTEuNDI3MzMzMzMgLTUuNTI5NzQxIDIuNjc1MDc0IDAuODQ1NTQ5MVxuQVA0RTE6QmFzYWwtQ29udHJvbDpCYXNhbCAgICAgIC0xLjMzNzAwMDAwIC01LjQzOTQwOCAyLjc2NTQwOCAwLjg4MDIwOTBcbldUOlN0YXJ2ZWQtQ29udHJvbDpCYXNhbCAgICAgICAtMS45MTAwMDAwMCAtNi4wMTI0MDggMi4xOTI0MDggMC42MTQyNDA1XG5Db250cm9sOlN0YXJ2ZWQtQ29udHJvbDpCYXNhbCAgLTAuNDExMDAwMDAgLTQuNTEzNDA4IDMuNjkxNDA4IDAuOTk5ODQzNVxudGVwc2luOlN0YXJ2ZWQtQ29udHJvbDpCYXNhbCAgICAwLjU5MTAwMDAwIC0zLjUxMTQwOCA0LjY5MzQwOCAwLjk5ODM5MjNcbkFQNEUxOlN0YXJ2ZWQtQ29udHJvbDpCYXNhbCAgICAtMC4wMTg2NjY2NyAtNC4xMjEwNzQgNC4wODM3NDEgMS4wMDAwMDAwXG5BUDRFMTpCYXNhbC10ZXBzaW46QmFzYWwgICAgICAgIDAuMDkwMzMzMzMgLTQuMDEyMDc0IDQuMTkyNzQxIDEuMDAwMDAwMFxuV1Q6U3RhcnZlZC10ZXBzaW46QmFzYWwgICAgICAgIC0wLjQ4MjY2NjY3IC00LjU4NTA3NCAzLjYxOTc0MSAwLjk5OTU1MzZcbkNvbnRyb2w6U3RhcnZlZC10ZXBzaW46QmFzYWwgICAgMS4wMTYzMzMzMyAtMy4wODYwNzQgNS4xMTg3NDEgMC45NjUzMjEzXG50ZXBzaW46U3RhcnZlZC10ZXBzaW46QmFzYWwgICAgIDIuMDE4MzMzMzMgLTIuMDg0MDc0IDYuMTIwNzQxIDAuNTU5NTY4N1xuQVA0RTE6U3RhcnZlZC10ZXBzaW46QmFzYWwgICAgICAxLjQwODY2NjY3IC0yLjY5Mzc0MSA1LjUxMTA3NCAwLjg1MzA1MDdcbldUOlN0YXJ2ZWQtQVA0RTE6QmFzYWwgICAgICAgICAtMC41NzMwMDAwMCAtNC42NzU0MDggMy41Mjk0MDggMC45OTg2NzM1XG5Db250cm9sOlN0YXJ2ZWQtQVA0RTE6QmFzYWwgICAgIDAuOTI2MDAwMDAgLTMuMTc2NDA4IDUuMDI4NDA4IDAuOTc4NDc3OFxudGVwc2luOlN0YXJ2ZWQtQVA0RTE6QmFzYWwgICAgICAxLjkyODAwMDAwIC0yLjE3NDQwOCA2LjAzMDQwOCAwLjYwNTA4OTFcbkFQNEUxOlN0YXJ2ZWQtQVA0RTE6QmFzYWwgICAgICAgMS4zMTgzMzMzMyAtMi43ODQwNzQgNS40MjA3NDEgMC44ODY4MzEwXG5Db250cm9sOlN0YXJ2ZWQtV1Q6U3RhcnZlZCAgICAgIDEuNDk5MDAwMDAgLTIuNjAzNDA4IDUuNjAxNDA4IDAuODE1MjY0OFxudGVwc2luOlN0YXJ2ZWQtV1Q6U3RhcnZlZCAgICAgICAyLjUwMTAwMDAwIC0xLjYwMTQwOCA2LjYwMzQwOCAwLjM0NDY5ODNcbkFQNEUxOlN0YXJ2ZWQtV1Q6U3RhcnZlZCAgICAgICAgMS44OTEzMzMzMyAtMi4yMTEwNzQgNS45OTM3NDEgMC42MjM3NDY2XG50ZXBzaW46U3RhcnZlZC1Db250cm9sOlN0YXJ2ZWQgIDEuMDAyMDAwMDAgLTMuMTAwNDA4IDUuMTA0NDA4IDAuOTY3NzAyMVxuQVA0RTE6U3RhcnZlZC1Db250cm9sOlN0YXJ2ZWQgICAwLjM5MjMzMzMzIC0zLjcxMDA3NCA0LjQ5NDc0MSAwLjk5OTg4NDlcbkFQNEUxOlN0YXJ2ZWQtdGVwc2luOlN0YXJ2ZWQgICAtMC42MDk2NjY2NyAtNC43MTIwNzQgMy40OTI3NDEgMC45OTgwNTIxXG5cbiRgV0JkYXRhJHR5cGU6V0JkYXRhJHJlcGxpY2F0ZWBcbiAgICAgICAgICAgICAgICAgICAgICAgZGlmZiAgICAgICBsd3IgICAgICB1cHIgICAgIHAgYWRqXG5Db250cm9sOjEtV1Q6MSAgICAgICAyLjg2MTUgLTIuNjgyODg2IDguNDA1ODg2IDAuNTU4ODA3OFxudGVwc2luOjEtV1Q6MSAgICAgICAgMi45MTY1IC0yLjYyNzg4NiA4LjQ2MDg4NiAwLjUzNzQwMDZcbkFQNEUxOjEtV1Q6MSAgICAgICAgIDEuNzkzNSAtMy43NTA4ODYgNy4zMzc4ODYgMC45MzA1ODY0XG5XVDoyLVdUOjEgICAgICAgICAgICAxLjA3MzUgLTQuNDcwODg2IDYuNjE3ODg2IDAuOTk3OTk0OFxuQ29udHJvbDoyLVdUOjEgICAgICAgMy44NjI1IC0xLjY4MTg4NiA5LjQwNjg4NiAwLjI0NDc3MDVcbnRlcHNpbjoyLVdUOjEgICAgICAgIDIuNzA2NSAtMi44Mzc4ODYgOC4yNTA4ODYgMC42MjAzNzgzXG5BUDRFMToyLVdUOjEgICAgICAgICAyLjUzODAgLTMuMDA2Mzg2IDguMDgyMzg2IDAuNjg3OTM0OFxuV1Q6My1XVDoxICAgICAgICAgICAgMS4zOTY1IC00LjE0Nzg4NiA2Ljk0MDg4NiAwLjk4NTIzOTVcbkNvbnRyb2w6My1XVDoxICAgICAgIDIuNTk2MCAtMi45NDgzODYgOC4xNDAzODYgMC42NjQ3NDE4XG50ZXBzaW46My1XVDoxICAgICAgICAzLjA1OTAgLTIuNDg1Mzg2IDguNjAzMzg2IDAuNDgzNTY2OFxuQVA0RTE6My1XVDoxICAgICAgICAgMy41NzE1IC0xLjk3Mjg4NiA5LjExNTg4NiAwLjMxNzM0NjNcbnRlcHNpbjoxLUNvbnRyb2w6MSAgIDAuMDU1MCAtNS40ODkzODYgNS41OTkzODYgMS4wMDAwMDAwXG5BUDRFMToxLUNvbnRyb2w6MSAgIC0xLjA2ODAgLTYuNjEyMzg2IDQuNDc2Mzg2IDAuOTk4MDc3N1xuV1Q6Mi1Db250cm9sOjEgICAgICAtMS43ODgwIC03LjMzMjM4NiAzLjc1NjM4NiAwLjkzMTczNjNcbkNvbnRyb2w6Mi1Db250cm9sOjEgIDEuMDAxMCAtNC41NDMzODYgNi41NDUzODYgMC45OTg4ODIyXG50ZXBzaW46Mi1Db250cm9sOjEgIC0wLjE1NTAgLTUuNjk5Mzg2IDUuMzg5Mzg2IDEuMDAwMDAwMFxuQVA0RTE6Mi1Db250cm9sOjEgICAtMC4zMjM1IC01Ljg2Nzg4NiA1LjIyMDg4NiAxLjAwMDAwMDBcbldUOjMtQ29udHJvbDoxICAgICAgLTEuNDY1MCAtNy4wMDkzODYgNC4wNzkzODYgMC45Nzk1NzcyXG5Db250cm9sOjMtQ29udHJvbDoxIC0wLjI2NTUgLTUuODA5ODg2IDUuMjc4ODg2IDEuMDAwMDAwMFxudGVwc2luOjMtQ29udHJvbDoxICAgMC4xOTc1IC01LjM0Njg4NiA1Ljc0MTg4NiAxLjAwMDAwMDBcbkFQNEUxOjMtQ29udHJvbDoxICAgIDAuNzEwMCAtNC44MzQzODYgNi4yNTQzODYgMC45OTk5NTA4XG5BUDRFMToxLXRlcHNpbjoxICAgIC0xLjEyMzAgLTYuNjY3Mzg2IDQuNDIxMzg2IDAuOTk3MTA5NVxuV1Q6Mi10ZXBzaW46MSAgICAgICAtMS44NDMwIC03LjM4NzM4NiAzLjcwMTM4NiAwLjkxOTcxNThcbkNvbnRyb2w6Mi10ZXBzaW46MSAgIDAuOTQ2MCAtNC41OTgzODYgNi40OTAzODYgMC45OTkzMTI5XG50ZXBzaW46Mi10ZXBzaW46MSAgIC0wLjIxMDAgLTUuNzU0Mzg2IDUuMzM0Mzg2IDEuMDAwMDAwMFxuQVA0RTE6Mi10ZXBzaW46MSAgICAtMC4zNzg1IC01LjkyMjg4NiA1LjE2NTg4NiAwLjk5OTk5OTlcbldUOjMtdGVwc2luOjEgICAgICAgLTEuNTIwMCAtNy4wNjQzODYgNC4wMjQzODYgMC45NzQwMTA3XG5Db250cm9sOjMtdGVwc2luOjEgIC0wLjMyMDUgLTUuODY0ODg2IDUuMjIzODg2IDEuMDAwMDAwMFxudGVwc2luOjMtdGVwc2luOjEgICAgMC4xNDI1IC01LjQwMTg4NiA1LjY4Njg4NiAxLjAwMDAwMDBcbkFQNEUxOjMtdGVwc2luOjEgICAgIDAuNjU1MCAtNC44ODkzODYgNi4xOTkzODYgMC45OTk5Nzc1XG5XVDoyLUFQNEUxOjEgICAgICAgIC0wLjcyMDAgLTYuMjY0Mzg2IDQuODI0Mzg2IDAuOTk5OTQzOFxuQ29udHJvbDoyLUFQNEUxOjEgICAgMi4wNjkwIC0zLjQ3NTM4NiA3LjYxMzM4NiAwLjg1ODYzOTBcbnRlcHNpbjoyLUFQNEUxOjEgICAgIDAuOTEzMCAtNC42MzEzODYgNi40NTczODYgMC45OTk0OTcwXG5BUDRFMToyLUFQNEUxOjEgICAgICAwLjc0NDUgLTQuNzk5ODg2IDYuMjg4ODg2IDAuOTk5OTIyN1xuV1Q6My1BUDRFMToxICAgICAgICAtMC4zOTcwIC01Ljk0MTM4NiA1LjE0NzM4NiAwLjk5OTk5OTlcbkNvbnRyb2w6My1BUDRFMToxICAgIDAuODAyNSAtNC43NDE4ODYgNi4zNDY4ODYgMC45OTk4NDM3XG50ZXBzaW46My1BUDRFMToxICAgICAxLjI2NTUgLTQuMjc4ODg2IDYuODA5ODg2IDAuOTkyNzIyMlxuQVA0RTE6My1BUDRFMToxICAgICAgMS43NzgwIC0zLjc2NjM4NiA3LjMyMjM4NiAwLjkzMzc5NzNcbkNvbnRyb2w6Mi1XVDoyICAgICAgIDIuNzg5MCAtMi43NTUzODYgOC4zMzMzODYgMC41ODc0Mjc0XG50ZXBzaW46Mi1XVDoyICAgICAgICAxLjYzMzAgLTMuOTExMzg2IDcuMTc3Mzg2IDAuOTU5Mzk3NFxuQVA0RTE6Mi1XVDoyICAgICAgICAgMS40NjQ1IC00LjA3OTg4NiA3LjAwODg4NiAwLjk3OTYyMzRcbldUOjMtV1Q6MiAgICAgICAgICAgIDAuMzIzMCAtNS4yMjEzODYgNS44NjczODYgMS4wMDAwMDAwXG5Db250cm9sOjMtV1Q6MiAgICAgICAxLjUyMjUgLTQuMDIxODg2IDcuMDY2ODg2IDAuOTczNzM0N1xudGVwc2luOjMtV1Q6MiAgICAgICAgMS45ODU1IC0zLjU1ODg4NiA3LjUyOTg4NiAwLjg4MzMwMDJcbkFQNEUxOjMtV1Q6MiAgICAgICAgIDIuNDk4MCAtMy4wNDYzODYgOC4wNDIzODYgMC43MDM4MjE1XG50ZXBzaW46Mi1Db250cm9sOjIgIC0xLjE1NjAgLTYuNzAwMzg2IDQuMzg4Mzg2IDAuOTk2MzYxNlxuQVA0RTE6Mi1Db250cm9sOjIgICAtMS4zMjQ1IC02Ljg2ODg4NiA0LjIxOTg4NiAwLjk4OTg0MTJcbldUOjMtQ29udHJvbDoyICAgICAgLTIuNDY2MCAtOC4wMTAzODYgMy4wNzgzODYgMC43MTY0Mzk3XG5Db250cm9sOjMtQ29udHJvbDoyIC0xLjI2NjUgLTYuODEwODg2IDQuMjc3ODg2IDAuOTkyNjc5M1xudGVwc2luOjMtQ29udHJvbDoyICAtMC44MDM1IC02LjM0Nzg4NiA0Ljc0MDg4NiAwLjk5OTg0MTlcbkFQNEUxOjMtQ29udHJvbDoyICAgLTAuMjkxMCAtNS44MzUzODYgNS4yNTMzODYgMS4wMDAwMDAwXG5BUDRFMToyLXRlcHNpbjoyICAgIC0wLjE2ODUgLTUuNzEyODg2IDUuMzc1ODg2IDEuMDAwMDAwMFxuV1Q6My10ZXBzaW46MiAgICAgICAtMS4zMTAwIC02Ljg1NDM4NiA0LjIzNDM4NiAwLjk5MDYxODJcbkNvbnRyb2w6My10ZXBzaW46MiAgLTAuMTEwNSAtNS42NTQ4ODYgNS40MzM4ODYgMS4wMDAwMDAwXG50ZXBzaW46My10ZXBzaW46MiAgICAwLjM1MjUgLTUuMTkxODg2IDUuODk2ODg2IDEuMDAwMDAwMFxuQVA0RTE6My10ZXBzaW46MiAgICAgMC44NjUwIC00LjY3OTM4NiA2LjQwOTM4NiAwLjk5OTY4OTZcbldUOjMtQVA0RTE6MiAgICAgICAgLTEuMTQxNSAtNi42ODU4ODYgNC40MDI4ODYgMC45OTY3MDcyXG5Db250cm9sOjMtQVA0RTE6MiAgICAwLjA1ODAgLTUuNDg2Mzg2IDUuNjAyMzg2IDEuMDAwMDAwMFxudGVwc2luOjMtQVA0RTE6MiAgICAgMC41MjEwIC01LjAyMzM4NiA2LjA2NTM4NiAwLjk5OTk5NzdcbkFQNEUxOjMtQVA0RTE6MiAgICAgIDEuMDMzNSAtNC41MTA4ODYgNi41Nzc4ODYgMC45OTg1MzY0XG5Db250cm9sOjMtV1Q6MyAgICAgICAxLjE5OTUgLTQuMzQ0ODg2IDYuNzQzODg2IDAuOTk1MTQ4M1xudGVwc2luOjMtV1Q6MyAgICAgICAgMS42NjI1IC0zLjg4MTg4NiA3LjIwNjg4NiAwLjk1NDgzMDlcbkFQNEUxOjMtV1Q6MyAgICAgICAgIDIuMTc1MCAtMy4zNjkzODYgNy43MTkzODYgMC44MjQyMDgxXG50ZXBzaW46My1Db250cm9sOjMgICAwLjQ2MzAgLTUuMDgxMzg2IDYuMDA3Mzg2IDAuOTk5OTk5M1xuQVA0RTE6My1Db250cm9sOjMgICAgMC45NzU1IC00LjU2ODg4NiA2LjUxOTg4NiAwLjk5OTEwMzVcbkFQNEUxOjMtdGVwc2luOjMgICAgIDAuNTEyNSAtNS4wMzE4ODYgNi4wNTY4ODYgMC45OTk5OTgxXG4ifQ== -->
 <pre><code>  Tukey multiple comparisons of means
     95% family-wise confidence level
 
-Fit: aov(formula = temp$LAMP1MeanObjIntensity ~ temp$Type * temp$BvsS)
+Fit: aov(formula = WBdata$LC3ratio ~ WBdata$type * WBdata$BvsS + WBdata$replicate + WBdata$replicate:WBdata$type)
 
-$`temp$Type`
-                     diff        lwr       upr     p adj
-Control-WT      256.17374  176.65775 335.68973 0.0000000
-tepsin-WT       148.09115   67.58867 228.59363 0.0000136
-AP4E1-WT        199.46623  119.62392 279.30853 0.0000000
-tepsin-Control -108.08259 -188.02547 -28.13971 0.0028905
-AP4E1-Control   -56.70752 -135.98556  22.57053 0.2556226
-AP4E1-tepsin     51.37508  -28.89238 131.64254 0.3536895
+$`WBdata$type`
+                     diff         lwr      upr     p adj
+Control-WT      2.2833333 -0.06422386 4.630891 0.0565677
+tepsin-WT       2.0706667 -0.27689053 4.418224 0.0852130
+AP4E1-WT        1.8110000 -0.53655719 4.158557 0.1400575
+tepsin-Control -0.2126667 -2.56022386 2.134891 0.9908397
+AP4E1-Control  -0.4723333 -2.81989053 1.875224 0.9146176
+AP4E1-tepsin   -0.2596667 -2.60722386 2.087891 0.9836687
 
-$`temp$BvsS`
-                  diff      lwr      upr p adj
-Starved-Basal 352.8277 307.8693 397.7862     0
+$`WBdata$BvsS`
+                  diff        lwr      upr     p adj
+Starved-Basal 1.020833 -0.1745087 2.216175 0.0844286
 
-$`temp$Type:temp$BvsS`
-                                     diff        lwr       upr     p adj
-Control:Basal-WT:Basal          278.63086  112.22954 445.03217 0.0000107
-tepsin:Basal-WT:Basal            81.29556  -82.61325 245.20438 0.8060510
-AP4E1:Basal-WT:Basal            355.33151  195.45761 515.20541 0.0000000
-WT:Starved-WT:Basal             371.76565  226.03489 517.49640 0.0000000
-Control:Starved-WT:Basal        637.67037  491.34058 784.00016 0.0000000
-tepsin:Starved-WT:Basal         608.19512  459.18276 757.20748 0.0000000
-AP4E1:Starved-WT:Basal          532.66103  383.12489 682.19717 0.0000000
-tepsin:Basal-Control:Basal     -197.33530 -354.93417 -39.73642 0.0036888
-AP4E1:Basal-Control:Basal        76.70065  -76.69743 230.09873 0.7994011
-WT:Starved-Control:Basal         93.13479  -45.46088 231.73046 0.4568308
-Control:Starved-Control:Basal   359.03951  219.81410 498.26492 0.0000000
-tepsin:Starved-Control:Basal    329.56426  187.52204 471.60648 0.0000000
-AP4E1:Starved-Control:Basal     254.03018  111.43857 396.62178 0.0000019
-AP4E1:Basal-tepsin:Basal        274.03595  123.34530 424.72660 0.0000010
-WT:Starved-tepsin:Basal         290.47009  154.87709 426.06308 0.0000000
-Control:Starved-tepsin:Basal    556.37481  420.13819 692.61142 0.0000000
-tepsin:Starved-tepsin:Basal     526.89956  387.78560 666.01351 0.0000000
-AP4E1:Starved-tepsin:Basal      451.36547  311.69061 591.04033 0.0000000
-WT:Starved-AP4E1:Basal           16.43414 -114.25261 147.12088 0.9999459
-Control:Starved-AP4E1:Basal     282.33886  150.98445 413.69326 0.0000000
-tepsin:Starved-AP4E1:Basal      252.86361  118.52725 387.19996 0.0000003
-AP4E1:Starved-AP4E1:Basal       177.32952   42.41240 312.24665 0.0017427
-Control:Starved-WT:Starved      265.90472  152.18678 379.62266 0.0000000
-tepsin:Starved-WT:Starved       236.42947  119.27979 353.57915 0.0000000
-AP4E1:Starved-WT:Starved        160.89538   43.08019 278.71058 0.0009115
-tepsin:Starved-Control:Starved  -29.47525 -147.36927  88.41877 0.9951039
-AP4E1:Starved-Control:Starved  -105.00934 -223.56470  13.54602 0.1271782
-AP4E1:Starved-tepsin:Starved    -75.53409 -197.38502  46.31685 0.5655882</code></pre>
+$`WBdata$replicate`
+        diff       lwr      upr     p adj
+2-1 0.652250 -1.161826 2.466326 0.5815243
+3-1 0.762875 -1.051201 2.576951 0.4848286
+3-2 0.110625 -1.703451 1.924701 0.9834348
+
+$`WBdata$type:WBdata$BvsS`
+                                      diff       lwr      upr     p adj
+Control:Basal-WT:Basal          3.06766667 -1.034741 7.170074 0.1784194
+tepsin:Basal-WT:Basal           1.64033333 -2.462074 5.742741 0.7498598
+AP4E1:Basal-WT:Basal            1.73066667 -2.371741 5.833074 0.7053020
+WT:Starved-WT:Basal             1.15766667 -2.944741 5.260074 0.9354262
+Control:Starved-WT:Basal        2.65666667 -1.445741 6.759074 0.2896180
+tepsin:Starved-WT:Basal         3.65866667 -0.443741 7.761074 0.0863316
+AP4E1:Starved-WT:Basal          3.04900000 -1.053408 7.151408 0.1824892
+tepsin:Basal-Control:Basal     -1.42733333 -5.529741 2.675074 0.8455491
+AP4E1:Basal-Control:Basal      -1.33700000 -5.439408 2.765408 0.8802090
+WT:Starved-Control:Basal       -1.91000000 -6.012408 2.192408 0.6142405
+Control:Starved-Control:Basal  -0.41100000 -4.513408 3.691408 0.9998435
+tepsin:Starved-Control:Basal    0.59100000 -3.511408 4.693408 0.9983923
+AP4E1:Starved-Control:Basal    -0.01866667 -4.121074 4.083741 1.0000000
+AP4E1:Basal-tepsin:Basal        0.09033333 -4.012074 4.192741 1.0000000
+WT:Starved-tepsin:Basal        -0.48266667 -4.585074 3.619741 0.9995536
+Control:Starved-tepsin:Basal    1.01633333 -3.086074 5.118741 0.9653213
+tepsin:Starved-tepsin:Basal     2.01833333 -2.084074 6.120741 0.5595687
+AP4E1:Starved-tepsin:Basal      1.40866667 -2.693741 5.511074 0.8530507
+WT:Starved-AP4E1:Basal         -0.57300000 -4.675408 3.529408 0.9986735
+Control:Starved-AP4E1:Basal     0.92600000 -3.176408 5.028408 0.9784778
+tepsin:Starved-AP4E1:Basal      1.92800000 -2.174408 6.030408 0.6050891
+AP4E1:Starved-AP4E1:Basal       1.31833333 -2.784074 5.420741 0.8868310
+Control:Starved-WT:Starved      1.49900000 -2.603408 5.601408 0.8152648
+tepsin:Starved-WT:Starved       2.50100000 -1.601408 6.603408 0.3446983
+AP4E1:Starved-WT:Starved        1.89133333 -2.211074 5.993741 0.6237466
+tepsin:Starved-Control:Starved  1.00200000 -3.100408 5.104408 0.9677021
+AP4E1:Starved-Control:Starved   0.39233333 -3.710074 4.494741 0.9998849
+AP4E1:Starved-tepsin:Starved   -0.60966667 -4.712074 3.492741 0.9980521
+
+$`WBdata$type:WBdata$replicate`
+                       diff       lwr      upr     p adj
+Control:1-WT:1       2.8615 -2.682886 8.405886 0.5588078
+tepsin:1-WT:1        2.9165 -2.627886 8.460886 0.5374006
+AP4E1:1-WT:1         1.7935 -3.750886 7.337886 0.9305864
+WT:2-WT:1            1.0735 -4.470886 6.617886 0.9979948
+Control:2-WT:1       3.8625 -1.681886 9.406886 0.2447705
+tepsin:2-WT:1        2.7065 -2.837886 8.250886 0.6203783
+AP4E1:2-WT:1         2.5380 -3.006386 8.082386 0.6879348
+WT:3-WT:1            1.3965 -4.147886 6.940886 0.9852395
+Control:3-WT:1       2.5960 -2.948386 8.140386 0.6647418
+tepsin:3-WT:1        3.0590 -2.485386 8.603386 0.4835668
+AP4E1:3-WT:1         3.5715 -1.972886 9.115886 0.3173463
+tepsin:1-Control:1   0.0550 -5.489386 5.599386 1.0000000
+AP4E1:1-Control:1   -1.0680 -6.612386 4.476386 0.9980777
+WT:2-Control:1      -1.7880 -7.332386 3.756386 0.9317363
+Control:2-Control:1  1.0010 -4.543386 6.545386 0.9988822
+tepsin:2-Control:1  -0.1550 -5.699386 5.389386 1.0000000
+AP4E1:2-Control:1   -0.3235 -5.867886 5.220886 1.0000000
+WT:3-Control:1      -1.4650 -7.009386 4.079386 0.9795772
+Control:3-Control:1 -0.2655 -5.809886 5.278886 1.0000000
+tepsin:3-Control:1   0.1975 -5.346886 5.741886 1.0000000
+AP4E1:3-Control:1    0.7100 -4.834386 6.254386 0.9999508
+AP4E1:1-tepsin:1    -1.1230 -6.667386 4.421386 0.9971095
+WT:2-tepsin:1       -1.8430 -7.387386 3.701386 0.9197158
+Control:2-tepsin:1   0.9460 -4.598386 6.490386 0.9993129
+tepsin:2-tepsin:1   -0.2100 -5.754386 5.334386 1.0000000
+AP4E1:2-tepsin:1    -0.3785 -5.922886 5.165886 0.9999999
+WT:3-tepsin:1       -1.5200 -7.064386 4.024386 0.9740107
+Control:3-tepsin:1  -0.3205 -5.864886 5.223886 1.0000000
+tepsin:3-tepsin:1    0.1425 -5.401886 5.686886 1.0000000
+AP4E1:3-tepsin:1     0.6550 -4.889386 6.199386 0.9999775
+WT:2-AP4E1:1        -0.7200 -6.264386 4.824386 0.9999438
+Control:2-AP4E1:1    2.0690 -3.475386 7.613386 0.8586390
+tepsin:2-AP4E1:1     0.9130 -4.631386 6.457386 0.9994970
+AP4E1:2-AP4E1:1      0.7445 -4.799886 6.288886 0.9999227
+WT:3-AP4E1:1        -0.3970 -5.941386 5.147386 0.9999999
+Control:3-AP4E1:1    0.8025 -4.741886 6.346886 0.9998437
+tepsin:3-AP4E1:1     1.2655 -4.278886 6.809886 0.9927222
+AP4E1:3-AP4E1:1      1.7780 -3.766386 7.322386 0.9337973
+Control:2-WT:2       2.7890 -2.755386 8.333386 0.5874274
+tepsin:2-WT:2        1.6330 -3.911386 7.177386 0.9593974
+AP4E1:2-WT:2         1.4645 -4.079886 7.008886 0.9796234
+WT:3-WT:2            0.3230 -5.221386 5.867386 1.0000000
+Control:3-WT:2       1.5225 -4.021886 7.066886 0.9737347
+tepsin:3-WT:2        1.9855 -3.558886 7.529886 0.8833002
+AP4E1:3-WT:2         2.4980 -3.046386 8.042386 0.7038215
+tepsin:2-Control:2  -1.1560 -6.700386 4.388386 0.9963616
+AP4E1:2-Control:2   -1.3245 -6.868886 4.219886 0.9898412
+WT:3-Control:2      -2.4660 -8.010386 3.078386 0.7164397
+Control:3-Control:2 -1.2665 -6.810886 4.277886 0.9926793
+tepsin:3-Control:2  -0.8035 -6.347886 4.740886 0.9998419
+AP4E1:3-Control:2   -0.2910 -5.835386 5.253386 1.0000000
+AP4E1:2-tepsin:2    -0.1685 -5.712886 5.375886 1.0000000
+WT:3-tepsin:2       -1.3100 -6.854386 4.234386 0.9906182
+Control:3-tepsin:2  -0.1105 -5.654886 5.433886 1.0000000
+tepsin:3-tepsin:2    0.3525 -5.191886 5.896886 1.0000000
+AP4E1:3-tepsin:2     0.8650 -4.679386 6.409386 0.9996896
+WT:3-AP4E1:2        -1.1415 -6.685886 4.402886 0.9967072
+Control:3-AP4E1:2    0.0580 -5.486386 5.602386 1.0000000
+tepsin:3-AP4E1:2     0.5210 -5.023386 6.065386 0.9999977
+AP4E1:3-AP4E1:2      1.0335 -4.510886 6.577886 0.9985364
+Control:3-WT:3       1.1995 -4.344886 6.743886 0.9951483
+tepsin:3-WT:3        1.6625 -3.881886 7.206886 0.9548309
+AP4E1:3-WT:3         2.1750 -3.369386 7.719386 0.8242081
+tepsin:3-Control:3   0.4630 -5.081386 6.007386 0.9999993
+AP4E1:3-Control:3    0.9755 -4.568886 6.519886 0.9991035
+AP4E1:3-tepsin:3     0.5125 -5.031886 6.056886 0.9999981</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW5vdmF0ZXBzaW5LRDwtYW92KFdCZGF0YSR0ZXBzaW5LRH5XQmRhdGEkdHlwZSpXQmRhdGEkQnZzUytXQmRhdGEkcmVwbGljYXRlK1dCZGF0YSRyZXBsaWNhdGU6V0JkYXRhJHR5cGUpXG5zdW1tYXJ5KGFub3ZhdGVwc2luS0QpXG5gYGAifQ== -->
+<pre class="r"><code>anovatepsinKD&lt;-aov(WBdata$tepsinKD~WBdata$type*WBdata$BvsS+WBdata$replicate+WBdata$replicate:WBdata$type)
+summary(anovatepsinKD)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEZiBTdW0gU3EgTWVhbiBTcSBGIHZhbHVlICAgUHIoPkYpICAgIFxuV0JkYXRhJHR5cGUgICAgICAgICAgICAgICAgICAgMyAyLjUzMDAgIDAuODQzMyAgNDMuOTU4IDIuNTdlLTA1ICoqKlxuV0JkYXRhJEJ2c1MgICAgICAgICAgICAgICAgICAgMSAwLjIzMjkgIDAuMjMyOSAgMTIuMTM3ICAwLjAwODI3ICoqIFxuV0JkYXRhJHJlcGxpY2F0ZSAgICAgICAgICAgICAgMiAwLjIwMTQgIDAuMTAwNyAgIDUuMjUwICAwLjAzNDk3ICogIFxuV0JkYXRhJHR5cGU6V0JkYXRhJEJ2c1MgICAgICAgMyAwLjA4NzQgIDAuMDI5MSAgIDEuNTE4ICAwLjI4MjYxICAgIFxuV0JkYXRhJHR5cGU6V0JkYXRhJHJlcGxpY2F0ZSAgNiAwLjQwNzQgIDAuMDY3OSAgIDMuNTM5ICAwLjA1MTQ3IC4gIFxuUmVzaWR1YWxzICAgICAgICAgICAgICAgICAgICAgOCAwLjE1MzUgIDAuMDE5MiAgICAgICAgICAgICAgICAgICAgIFxuLS0tXG5TaWduaWYuIGNvZGVzOiAgMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG4ifQ== -->
+<pre><code>                             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+WBdata$type                   3 2.5300  0.8433  43.958 2.57e-05 ***
+WBdata$BvsS                   1 0.2329  0.2329  12.137  0.00827 ** 
+WBdata$replicate              2 0.2014  0.1007   5.250  0.03497 *  
+WBdata$type:WBdata$BvsS       3 0.0874  0.0291   1.518  0.28261    
+WBdata$type:WBdata$replicate  6 0.4074  0.0679   3.539  0.05147 .  
+Residuals                     8 0.1535  0.0192                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVHVrZXlIU0QoYW5vdmF0ZXBzaW5LRClcbmBgYCJ9 -->
+<pre class="r"><code>TukeyHSD(anovatepsinKD)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICBUdWtleSBtdWx0aXBsZSBjb21wYXJpc29ucyBvZiBtZWFuc1xuICAgIDk1JSBmYW1pbHktd2lzZSBjb25maWRlbmNlIGxldmVsXG5cbkZpdDogYW92KGZvcm11bGEgPSBXQmRhdGEkdGVwc2luS0QgfiBXQmRhdGEkdHlwZSAqIFdCZGF0YSRCdnNTICsgV0JkYXRhJHJlcGxpY2F0ZSArIFdCZGF0YSRyZXBsaWNhdGU6V0JkYXRhJHR5cGUpXG5cbiRgV0JkYXRhJHR5cGVgXG4gICAgICAgICAgICAgICAgICAgICAgZGlmZiAgICAgICAgbHdyICAgICAgICB1cHIgICAgIHAgYWRqXG5Db250cm9sLVdUICAgICAgMC4wMjgzMzMzMyAtMC4yMjc3NTcyICAwLjI4NDQyMzkgMC45ODM2NTc1XG50ZXBzaW4tV1QgICAgICAtMC43NjY4MzMzMyAtMS4wMjI5MjM5IC0wLjUxMDc0MjggMC4wMDAwNTQwXG5BUDRFMS1XVCAgICAgICAtMC4zODU4MzMzMyAtMC42NDE5MjM5IC0wLjEyOTc0MjggMC4wMDU3MzcwXG50ZXBzaW4tQ29udHJvbCAtMC43OTUxNjY2NyAtMS4wNTEyNTcyIC0wLjUzOTA3NjEgMC4wMDAwNDEzXG5BUDRFMS1Db250cm9sICAtMC40MTQxNjY2NyAtMC42NzAyNTcyIC0wLjE1ODA3NjEgMC4wMDM3MjUyXG5BUDRFMS10ZXBzaW4gICAgMC4zODEwMDAwMCAgMC4xMjQ5MDk0ICAwLjYzNzA5MDYgMC4wMDYxODU0XG5cbiRgV0JkYXRhJEJ2c1NgXG4gICAgICAgICAgICAgICAgZGlmZiAgICAgICAgbHdyICAgICAgICB1cHIgICAgcCBhZGpcblN0YXJ2ZWQtQmFzYWwgLTAuMTk3IC0wLjMyNzM5NzYgLTAuMDY2NjAyNCAwLjAwODI3M1xuXG4kYFdCZGF0YSRyZXBsaWNhdGVgXG4gICAgICAgICBkaWZmICAgICAgICBsd3IgICAgICAgICB1cHIgICAgIHAgYWRqXG4yLTEgLTAuMjA4ODc1IC0wLjQwNjc2OTEgLTAuMDEwOTgwODcgMC4wMzk2MjU5XG4zLTEgLTAuMTc1NTAwIC0wLjM3MzM5NDEgIDAuMDIyMzk0MTMgMC4wODA0NTg2XG4zLTIgIDAuMDMzMzc1IC0wLjE2NDUxOTEgIDAuMjMxMjY5MTMgMC44ODE2NTA4XG5cbiRgV0JkYXRhJHR5cGU6V0JkYXRhJEJ2c1NgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRpZmYgICAgICAgICBsd3IgICAgICAgICB1cHIgICAgIHAgYWRqXG5Db250cm9sOkJhc2FsLVdUOkJhc2FsICAgICAgICAgIDAuMTQzMzMzMzMgLTAuMzA0MTkwNTUgIDAuNTkwODU3MjIgMC44ODgzNjcyXG50ZXBzaW46QmFzYWwtV1Q6QmFzYWwgICAgICAgICAgLTAuODE4MDAwMDAgLTEuMjY1NTIzODggLTAuMzcwNDc2MTIgMC4wMDEzMDUzXG5BUDRFMTpCYXNhbC1XVDpCYXNhbCAgICAgICAgICAgLTAuMzU0MzMzMzMgLTAuODAxODU3MjIgIDAuMDkzMTkwNTUgMC4xNDMyMTc0XG5XVDpTdGFydmVkLVdUOkJhc2FsICAgICAgICAgICAgLTAuMTQ5MzMzMzMgLTAuNTk2ODU3MjIgIDAuMjk4MTkwNTUgMC44Njg0NDMzXG5Db250cm9sOlN0YXJ2ZWQtV1Q6QmFzYWwgICAgICAgLTAuMjM2MDAwMDAgLTAuNjgzNTIzODggIDAuMjExNTIzODggMC40ODg5ODUyXG50ZXBzaW46U3RhcnZlZC1XVDpCYXNhbCAgICAgICAgLTAuODY1MDAwMDAgLTEuMzEyNTIzODggLTAuNDE3NDc2MTIgMC4wMDA4ODcxXG5BUDRFMTpTdGFydmVkLVdUOkJhc2FsICAgICAgICAgLTAuNTY2NjY2NjcgLTEuMDE0MTkwNTUgLTAuMTE5MTQyNzggMC4wMTM3NTA5XG50ZXBzaW46QmFzYWwtQ29udHJvbDpCYXNhbCAgICAgLTAuOTYxMzMzMzMgLTEuNDA4ODU3MjIgLTAuNTEzODA5NDUgMC4wMDA0MjExXG5BUDRFMTpCYXNhbC1Db250cm9sOkJhc2FsICAgICAgLTAuNDk3NjY2NjcgLTAuOTQ1MTkwNTUgLTAuMDUwMTQyNzggMC4wMjg3MDIyXG5XVDpTdGFydmVkLUNvbnRyb2w6QmFzYWwgICAgICAgLTAuMjkyNjY2NjcgLTAuNzQwMTkwNTUgIDAuMTU0ODU3MjIgMC4yODEwODcwXG5Db250cm9sOlN0YXJ2ZWQtQ29udHJvbDpCYXNhbCAgLTAuMzc5MzMzMzMgLTAuODI2ODU3MjIgIDAuMDY4MTkwNTUgMC4xMDgwMjA3XG50ZXBzaW46U3RhcnZlZC1Db250cm9sOkJhc2FsICAgLTEuMDA4MzMzMzMgLTEuNDU1ODU3MjIgLTAuNTYwODA5NDUgMC4wMDAyOTg5XG5BUDRFMTpTdGFydmVkLUNvbnRyb2w6QmFzYWwgICAgLTAuNzEwMDAwMDAgLTEuMTU3NTIzODggLTAuMjYyNDc2MTIgMC4wMDMzNzMyXG5BUDRFMTpCYXNhbC10ZXBzaW46QmFzYWwgICAgICAgIDAuNDYzNjY2NjcgIDAuMDE2MTQyNzggIDAuOTExMTkwNTUgMC4wNDE3NTQwXG5XVDpTdGFydmVkLXRlcHNpbjpCYXNhbCAgICAgICAgIDAuNjY4NjY2NjcgIDAuMjIxMTQyNzggIDEuMTE2MTkwNTUgMC4wMDQ5NzEwXG5Db250cm9sOlN0YXJ2ZWQtdGVwc2luOkJhc2FsICAgIDAuNTgyMDAwMDAgIDAuMTM0NDc2MTIgIDEuMDI5NTIzODggMC4wMTE3MzU3XG50ZXBzaW46U3RhcnZlZC10ZXBzaW46QmFzYWwgICAgLTAuMDQ3MDAwMDAgLTAuNDk0NTIzODggIDAuNDAwNTIzODggMC45OTk3ODY2XG5BUDRFMTpTdGFydmVkLXRlcHNpbjpCYXNhbCAgICAgIDAuMjUxMzMzMzMgLTAuMTk2MTkwNTUgIDAuNjk4ODU3MjIgMC40MjUwMzM4XG5XVDpTdGFydmVkLUFQNEUxOkJhc2FsICAgICAgICAgIDAuMjA1MDAwMDAgLTAuMjQyNTIzODggIDAuNjUyNTIzODggMC42Mjk5MjM3XG5Db250cm9sOlN0YXJ2ZWQtQVA0RTE6QmFzYWwgICAgIDAuMTE4MzMzMzMgLTAuMzI5MTkwNTUgIDAuNTY1ODU3MjIgMC45NTIzMzQ2XG50ZXBzaW46U3RhcnZlZC1BUDRFMTpCYXNhbCAgICAgLTAuNTEwNjY2NjcgLTAuOTU4MTkwNTUgLTAuMDYzMTQyNzggMC4wMjQ5MTkxXG5BUDRFMTpTdGFydmVkLUFQNEUxOkJhc2FsICAgICAgLTAuMjEyMzMzMzMgLTAuNjU5ODU3MjIgIDAuMjM1MTkwNTUgMC41OTU3MzU2XG5Db250cm9sOlN0YXJ2ZWQtV1Q6U3RhcnZlZCAgICAgLTAuMDg2NjY2NjcgLTAuNTM0MTkwNTUgIDAuMzYwODU3MjIgMC45OTA2NzU3XG50ZXBzaW46U3RhcnZlZC1XVDpTdGFydmVkICAgICAgLTAuNzE1NjY2NjcgLTEuMTYzMTkwNTUgLTAuMjY4MTQyNzggMC4wMDMyMDIwXG5BUDRFMTpTdGFydmVkLVdUOlN0YXJ2ZWQgICAgICAgLTAuNDE3MzMzMzMgLTAuODY0ODU3MjIgIDAuMDMwMTkwNTUgMC4wNzAyNDM0XG50ZXBzaW46U3RhcnZlZC1Db250cm9sOlN0YXJ2ZWQgLTAuNjI5MDAwMDAgLTEuMDc2NTIzODggLTAuMTgxNDc2MTIgMC4wMDczMDgzXG5BUDRFMTpTdGFydmVkLUNvbnRyb2w6U3RhcnZlZCAgLTAuMzMwNjY2NjcgLTAuNzc4MTkwNTUgIDAuMTE2ODU3MjIgMC4xODY0NTIxXG5BUDRFMTpTdGFydmVkLXRlcHNpbjpTdGFydmVkICAgIDAuMjk4MzMzMzMgLTAuMTQ5MTkwNTUgIDAuNzQ1ODU3MjIgMC4yNjQ3NzM3XG5cbiRgV0JkYXRhJHR5cGU6V0JkYXRhJHJlcGxpY2F0ZWBcbiAgICAgICAgICAgICAgICAgICAgICAgZGlmZiAgICAgICAgIGx3ciAgICAgICAgICB1cHIgICAgIHAgYWRqXG5Db250cm9sOjEtV1Q6MSAgICAgICAwLjI2NDUgLTAuMzQwMzI2NTYgIDAuODY5MzI2NTU5IDAuNzMyNTk0MVxudGVwc2luOjEtV1Q6MSAgICAgICAtMC45NjA1IC0xLjU2NTMyNjU2IC0wLjM1NTY3MzQ0MSAwLjAwMzA4OTZcbkFQNEUxOjEtV1Q6MSAgICAgICAgLTAuNTIwNSAtMS4xMjUzMjY1NiAgMC4wODQzMjY1NTkgMC4xMDQxNzY3XG5XVDoyLVdUOjEgICAgICAgICAgIC0wLjI4ODAgLTAuODkyODI2NTYgIDAuMzE2ODI2NTU5IDAuNjQ3MDUyMlxuQ29udHJvbDoyLVdUOjEgICAgICAtMC4zNjc1IC0wLjk3MjMyNjU2ICAwLjIzNzMyNjU1OSAwLjM3NzM0NzdcbnRlcHNpbjoyLVdUOjEgICAgICAgLTAuNzkxNSAtMS4zOTYzMjY1NiAtMC4xODY2NzM0NDEgMC4wMTA3NDUzXG5BUDRFMToyLVdUOjEgICAgICAgIC0wLjYwNTAgLTEuMjA5ODI2NTYgLTAuMDAwMTczNDQxIDAuMDQ5OTI1M1xuV1Q6My1XVDoxICAgICAgICAgICAtMC4xNjU1IC0wLjc3MDMyNjU2ICAwLjQzOTMyNjU1OSAwLjk3NDMyNTlcbkNvbnRyb2w6My1XVDoxICAgICAgLTAuMjY1NSAtMC44NzAzMjY1NiAgMC4zMzkzMjY1NTkgMC43MjkwMjk4XG50ZXBzaW46My1XVDoxICAgICAgIC0xLjAwMjAgLTEuNjA2ODI2NTYgLTAuMzk3MTczNDQxIDAuMDAyMzIzOFxuQVA0RTE6My1XVDoxICAgICAgICAtMC40ODU1IC0xLjA5MDMyNjU2ICAwLjExOTMyNjU1OSAwLjE0MTQwMTJcbnRlcHNpbjoxLUNvbnRyb2w6MSAgLTEuMjI1MCAtMS44Mjk4MjY1NiAtMC42MjAxNzM0NDEgMC4wMDA1NzIyXG5BUDRFMToxLUNvbnRyb2w6MSAgIC0wLjc4NTAgLTEuMzg5ODI2NTYgLTAuMTgwMTczNDQxIDAuMDExMzA1MlxuV1Q6Mi1Db250cm9sOjEgICAgICAtMC41NTI1IC0xLjE1NzMyNjU2ICAwLjA1MjMyNjU1OSAwLjA3ODc1MTZcbkNvbnRyb2w6Mi1Db250cm9sOjEgLTAuNjMyMCAtMS4yMzY4MjY1NiAtMC4wMjcxNzM0NDEgMC4wMzk2MDk5XG50ZXBzaW46Mi1Db250cm9sOjEgIC0xLjA1NjAgLTEuNjYwODI2NTYgLTAuNDUxMTczNDQxIDAuMDAxNjIzMlxuQVA0RTE6Mi1Db250cm9sOjEgICAtMC44Njk1IC0xLjQ3NDMyNjU2IC0wLjI2NDY3MzQ0MSAwLjAwNTkzOTFcbldUOjMtQ29udHJvbDoxICAgICAgLTAuNDMwMCAtMS4wMzQ4MjY1NiAgMC4xNzQ4MjY1NTkgMC4yMjc2NTk1XG5Db250cm9sOjMtQ29udHJvbDoxIC0wLjUzMDAgLTEuMTM0ODI2NTYgIDAuMDc0ODI2NTU5IDAuMDk1ODY5MVxudGVwc2luOjMtQ29udHJvbDoxICAtMS4yNjY1IC0xLjg3MTMyNjU2IC0wLjY2MTY3MzQ0MSAwLjAwMDQ1MDZcbkFQNEUxOjMtQ29udHJvbDoxICAgLTAuNzUwMCAtMS4zNTQ4MjY1NiAtMC4xNDUxNzM0NDEgMC4wMTQ5MTUxXG5BUDRFMToxLXRlcHNpbjoxICAgICAwLjQ0MDAgLTAuMTY0ODI2NTYgIDEuMDQ0ODI2NTU5IDAuMjA5MjA0N1xuV1Q6Mi10ZXBzaW46MSAgICAgICAgMC42NzI1ICAwLjA2NzY3MzQ0ICAxLjI3NzMyNjU1OSAwLjAyODEzMzVcbkNvbnRyb2w6Mi10ZXBzaW46MSAgIDAuNTkzMCAtMC4wMTE4MjY1NiAgMS4xOTc4MjY1NTkgMC4wNTUzNzUwXG50ZXBzaW46Mi10ZXBzaW46MSAgICAwLjE2OTAgLTAuNDM1ODI2NTYgIDAuNzczODI2NTU5IDAuOTcwNjU2NVxuQVA0RTE6Mi10ZXBzaW46MSAgICAgMC4zNTU1IC0wLjI0OTMyNjU2ICAwLjk2MDMyNjU1OSAwLjQxMzE0OTBcbldUOjMtdGVwc2luOjEgICAgICAgIDAuNzk1MCAgMC4xOTAxNzM0NCAgMS4zOTk4MjY1NTkgMC4wMTA0NTYzXG5Db250cm9sOjMtdGVwc2luOjEgICAwLjY5NTAgIDAuMDkwMTczNDQgIDEuMjk5ODI2NTU5IDAuMDIzMzMzMFxudGVwc2luOjMtdGVwc2luOjEgICAtMC4wNDE1IC0wLjY0NjMyNjU2ICAwLjU2MzMyNjU1OSAwLjk5OTk5OTlcbkFQNEUxOjMtdGVwc2luOjEgICAgIDAuNDc1MCAtMC4xMjk4MjY1NiAgMS4wNzk4MjY1NTkgMC4xNTQ4OTc1XG5XVDoyLUFQNEUxOjEgICAgICAgICAwLjIzMjUgLTAuMzcyMzI2NTYgIDAuODM3MzI2NTU5IDAuODM4Nzk0NlxuQ29udHJvbDoyLUFQNEUxOjEgICAgMC4xNTMwIC0wLjQ1MTgyNjU2ICAwLjc1NzgyNjU1OSAwLjk4NDc5MzVcbnRlcHNpbjoyLUFQNEUxOjEgICAgLTAuMjcxMCAtMC44NzU4MjY1NiAgMC4zMzM4MjY1NTkgMC43MDkyNjIzXG5BUDRFMToyLUFQNEUxOjEgICAgIC0wLjA4NDUgLTAuNjg5MzI2NTYgIDAuNTIwMzI2NTU5IDAuOTk5ODg3NlxuV1Q6My1BUDRFMToxICAgICAgICAgMC4zNTUwIC0wLjI0OTgyNjU2ICAwLjk1OTgyNjU1OSAwLjQxNDY4ODRcbkNvbnRyb2w6My1BUDRFMToxICAgIDAuMjU1MCAtMC4zNDk4MjY1NiAgMC44NTk4MjY1NTkgMC43NjU4Nzg1XG50ZXBzaW46My1BUDRFMToxICAgIC0wLjQ4MTUgLTEuMDg2MzI2NTYgIDAuMTIzMzI2NTU5IDAuMTQ2NDAzOFxuQVA0RTE6My1BUDRFMToxICAgICAgMC4wMzUwIC0wLjU2OTgyNjU2ICAwLjYzOTgyNjU1OSAxLjAwMDAwMDBcbkNvbnRyb2w6Mi1XVDoyICAgICAgLTAuMDc5NSAtMC42ODQzMjY1NiAgMC41MjUzMjY1NTkgMC45OTk5MzY5XG50ZXBzaW46Mi1XVDoyICAgICAgIC0wLjUwMzUgLTEuMTA4MzI2NTYgIDAuMTAxMzI2NTU5IDAuMTIwODY3NFxuQVA0RTE6Mi1XVDoyICAgICAgICAtMC4zMTcwIC0wLjkyMTgyNjU2ICAwLjI4NzgyNjU1OSAwLjU0MTQ5OTZcbldUOjMtV1Q6MiAgICAgICAgICAgIDAuMTIyNSAtMC40ODIzMjY1NiAgMC43MjczMjY1NTkgMC45OTcxMTA2XG5Db250cm9sOjMtV1Q6MiAgICAgICAwLjAyMjUgLTAuNTgyMzI2NTYgIDAuNjI3MzI2NTU5IDEuMDAwMDAwMFxudGVwc2luOjMtV1Q6MiAgICAgICAtMC43MTQwIC0xLjMxODgyNjU2IC0wLjEwOTE3MzQ0MSAwLjAxOTk1ODZcbkFQNEUxOjMtV1Q6MiAgICAgICAgLTAuMTk3NSAtMC44MDIzMjY1NiAgMC40MDczMjY1NTkgMC45MjY5NjY3XG50ZXBzaW46Mi1Db250cm9sOjIgIC0wLjQyNDAgLTEuMDI4ODI2NTYgIDAuMTgwODI2NTU5IDAuMjM5NDE2MFxuQVA0RTE6Mi1Db250cm9sOjIgICAtMC4yMzc1IC0wLjg0MjMyNjU2ICAwLjM2NzMyNjU1OSAwLjgyMzQ4MDZcbldUOjMtQ29udHJvbDoyICAgICAgIDAuMjAyMCAtMC40MDI4MjY1NiAgMC44MDY4MjY1NTkgMC45MTc3MDUzXG5Db250cm9sOjMtQ29udHJvbDoyICAwLjEwMjAgLTAuNTAyODI2NTYgIDAuNzA2ODI2NTU5IDAuOTk5Mzc5NVxudGVwc2luOjMtQ29udHJvbDoyICAtMC42MzQ1IC0xLjIzOTMyNjU2IC0wLjAyOTY3MzQ0MSAwLjAzODc3NTBcbkFQNEUxOjMtQ29udHJvbDoyICAgLTAuMTE4MCAtMC43MjI4MjY1NiAgMC40ODY4MjY1NTkgMC45OTc4NjU4XG5BUDRFMToyLXRlcHNpbjoyICAgICAwLjE4NjUgLTAuNDE4MzI2NTYgIDAuNzkxMzI2NTU5IDAuOTQ2ODYxNFxuV1Q6My10ZXBzaW46MiAgICAgICAgMC42MjYwICAwLjAyMTE3MzQ0ICAxLjIzMDgyNjU1OSAwLjA0MTY5MTVcbkNvbnRyb2w6My10ZXBzaW46MiAgIDAuNTI2MCAtMC4wNzg4MjY1NiAgMS4xMzA4MjY1NTkgMC4wOTkyODMyXG50ZXBzaW46My10ZXBzaW46MiAgIC0wLjIxMDUgLTAuODE1MzI2NTYgIDAuMzk0MzI2NTU5IDAuODk4NDYyMVxuQVA0RTE6My10ZXBzaW46MiAgICAgMC4zMDYwIC0wLjI5ODgyNjU2ICAwLjkxMDgyNjU1OSAwLjU4MTA0OTdcbldUOjMtQVA0RTE6MiAgICAgICAgIDAuNDM5NSAtMC4xNjUzMjY1NiAgMS4wNDQzMjY1NTkgMC4yMTAwOTQ1XG5Db250cm9sOjMtQVA0RTE6MiAgICAwLjMzOTUgLTAuMjY1MzI2NTYgIDAuOTQ0MzI2NTU5IDAuNDY0MjAyMVxudGVwc2luOjMtQVA0RTE6MiAgICAtMC4zOTcwIC0xLjAwMTgyNjU2ICAwLjIwNzgyNjU1OSAwLjI5OTAzMzVcbkFQNEUxOjMtQVA0RTE6MiAgICAgIDAuMTE5NSAtMC40ODUzMjY1NiAgMC43MjQzMjY1NTkgMC45OTc2MzQ0XG5Db250cm9sOjMtV1Q6MyAgICAgIC0wLjEwMDAgLTAuNzA0ODI2NTYgIDAuNTA0ODI2NTU5IDAuOTk5NDc4N1xudGVwc2luOjMtV1Q6MyAgICAgICAtMC44MzY1IC0xLjQ0MTMyNjU2IC0wLjIzMTY3MzQ0MSAwLjAwNzYwMzlcbkFQNEUxOjMtV1Q6MyAgICAgICAgLTAuMzIwMCAtMC45MjQ4MjY1NiAgMC4yODQ4MjY1NTkgMC41MzA4ODIyXG50ZXBzaW46My1Db250cm9sOjMgIC0wLjczNjUgLTEuMzQxMzI2NTYgLTAuMTMxNjczNDQxIDAuMDE2NjI0NFxuQVA0RTE6My1Db250cm9sOjMgICAtMC4yMjAwIC0wLjgyNDgyNjU2ICAwLjM4NDgyNjU1OSAwLjg3NDM1MjJcbkFQNEUxOjMtdGVwc2luOjMgICAgIDAuNTE2NSAtMC4wODgzMjY1NiAgMS4xMjEzMjY1NTkgMC4xMDc4ODU5XG4ifQ== -->
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = WBdata$tepsinKD ~ WBdata$type * WBdata$BvsS + WBdata$replicate + WBdata$replicate:WBdata$type)
+
+$`WBdata$type`
+                      diff        lwr        upr     p adj
+Control-WT      0.02833333 -0.2277572  0.2844239 0.9836575
+tepsin-WT      -0.76683333 -1.0229239 -0.5107428 0.0000540
+AP4E1-WT       -0.38583333 -0.6419239 -0.1297428 0.0057370
+tepsin-Control -0.79516667 -1.0512572 -0.5390761 0.0000413
+AP4E1-Control  -0.41416667 -0.6702572 -0.1580761 0.0037252
+AP4E1-tepsin    0.38100000  0.1249094  0.6370906 0.0061854
+
+$`WBdata$BvsS`
+                diff        lwr        upr    p adj
+Starved-Basal -0.197 -0.3273976 -0.0666024 0.008273
+
+$`WBdata$replicate`
+         diff        lwr         upr     p adj
+2-1 -0.208875 -0.4067691 -0.01098087 0.0396259
+3-1 -0.175500 -0.3733941  0.02239413 0.0804586
+3-2  0.033375 -0.1645191  0.23126913 0.8816508
+
+$`WBdata$type:WBdata$BvsS`
+                                      diff         lwr         upr     p adj
+Control:Basal-WT:Basal          0.14333333 -0.30419055  0.59085722 0.8883672
+tepsin:Basal-WT:Basal          -0.81800000 -1.26552388 -0.37047612 0.0013053
+AP4E1:Basal-WT:Basal           -0.35433333 -0.80185722  0.09319055 0.1432174
+WT:Starved-WT:Basal            -0.14933333 -0.59685722  0.29819055 0.8684433
+Control:Starved-WT:Basal       -0.23600000 -0.68352388  0.21152388 0.4889852
+tepsin:Starved-WT:Basal        -0.86500000 -1.31252388 -0.41747612 0.0008871
+AP4E1:Starved-WT:Basal         -0.56666667 -1.01419055 -0.11914278 0.0137509
+tepsin:Basal-Control:Basal     -0.96133333 -1.40885722 -0.51380945 0.0004211
+AP4E1:Basal-Control:Basal      -0.49766667 -0.94519055 -0.05014278 0.0287022
+WT:Starved-Control:Basal       -0.29266667 -0.74019055  0.15485722 0.2810870
+Control:Starved-Control:Basal  -0.37933333 -0.82685722  0.06819055 0.1080207
+tepsin:Starved-Control:Basal   -1.00833333 -1.45585722 -0.56080945 0.0002989
+AP4E1:Starved-Control:Basal    -0.71000000 -1.15752388 -0.26247612 0.0033732
+AP4E1:Basal-tepsin:Basal        0.46366667  0.01614278  0.91119055 0.0417540
+WT:Starved-tepsin:Basal         0.66866667  0.22114278  1.11619055 0.0049710
+Control:Starved-tepsin:Basal    0.58200000  0.13447612  1.02952388 0.0117357
+tepsin:Starved-tepsin:Basal    -0.04700000 -0.49452388  0.40052388 0.9997866
+AP4E1:Starved-tepsin:Basal      0.25133333 -0.19619055  0.69885722 0.4250338
+WT:Starved-AP4E1:Basal          0.20500000 -0.24252388  0.65252388 0.6299237
+Control:Starved-AP4E1:Basal     0.11833333 -0.32919055  0.56585722 0.9523346
+tepsin:Starved-AP4E1:Basal     -0.51066667 -0.95819055 -0.06314278 0.0249191
+AP4E1:Starved-AP4E1:Basal      -0.21233333 -0.65985722  0.23519055 0.5957356
+Control:Starved-WT:Starved     -0.08666667 -0.53419055  0.36085722 0.9906757
+tepsin:Starved-WT:Starved      -0.71566667 -1.16319055 -0.26814278 0.0032020
+AP4E1:Starved-WT:Starved       -0.41733333 -0.86485722  0.03019055 0.0702434
+tepsin:Starved-Control:Starved -0.62900000 -1.07652388 -0.18147612 0.0073083
+AP4E1:Starved-Control:Starved  -0.33066667 -0.77819055  0.11685722 0.1864521
+AP4E1:Starved-tepsin:Starved    0.29833333 -0.14919055  0.74585722 0.2647737
+
+$`WBdata$type:WBdata$replicate`
+                       diff         lwr          upr     p adj
+Control:1-WT:1       0.2645 -0.34032656  0.869326559 0.7325941
+tepsin:1-WT:1       -0.9605 -1.56532656 -0.355673441 0.0030896
+AP4E1:1-WT:1        -0.5205 -1.12532656  0.084326559 0.1041767
+WT:2-WT:1           -0.2880 -0.89282656  0.316826559 0.6470522
+Control:2-WT:1      -0.3675 -0.97232656  0.237326559 0.3773477
+tepsin:2-WT:1       -0.7915 -1.39632656 -0.186673441 0.0107453
+AP4E1:2-WT:1        -0.6050 -1.20982656 -0.000173441 0.0499253
+WT:3-WT:1           -0.1655 -0.77032656  0.439326559 0.9743259
+Control:3-WT:1      -0.2655 -0.87032656  0.339326559 0.7290298
+tepsin:3-WT:1       -1.0020 -1.60682656 -0.397173441 0.0023238
+AP4E1:3-WT:1        -0.4855 -1.09032656  0.119326559 0.1414012
+tepsin:1-Control:1  -1.2250 -1.82982656 -0.620173441 0.0005722
+AP4E1:1-Control:1   -0.7850 -1.38982656 -0.180173441 0.0113052
+WT:2-Control:1      -0.5525 -1.15732656  0.052326559 0.0787516
+Control:2-Control:1 -0.6320 -1.23682656 -0.027173441 0.0396099
+tepsin:2-Control:1  -1.0560 -1.66082656 -0.451173441 0.0016232
+AP4E1:2-Control:1   -0.8695 -1.47432656 -0.264673441 0.0059391
+WT:3-Control:1      -0.4300 -1.03482656  0.174826559 0.2276595
+Control:3-Control:1 -0.5300 -1.13482656  0.074826559 0.0958691
+tepsin:3-Control:1  -1.2665 -1.87132656 -0.661673441 0.0004506
+AP4E1:3-Control:1   -0.7500 -1.35482656 -0.145173441 0.0149151
+AP4E1:1-tepsin:1     0.4400 -0.16482656  1.044826559 0.2092047
+WT:2-tepsin:1        0.6725  0.06767344  1.277326559 0.0281335
+Control:2-tepsin:1   0.5930 -0.01182656  1.197826559 0.0553750
+tepsin:2-tepsin:1    0.1690 -0.43582656  0.773826559 0.9706565
+AP4E1:2-tepsin:1     0.3555 -0.24932656  0.960326559 0.4131490
+WT:3-tepsin:1        0.7950  0.19017344  1.399826559 0.0104563
+Control:3-tepsin:1   0.6950  0.09017344  1.299826559 0.0233330
+tepsin:3-tepsin:1   -0.0415 -0.64632656  0.563326559 0.9999999
+AP4E1:3-tepsin:1     0.4750 -0.12982656  1.079826559 0.1548975
+WT:2-AP4E1:1         0.2325 -0.37232656  0.837326559 0.8387946
+Control:2-AP4E1:1    0.1530 -0.45182656  0.757826559 0.9847935
+tepsin:2-AP4E1:1    -0.2710 -0.87582656  0.333826559 0.7092623
+AP4E1:2-AP4E1:1     -0.0845 -0.68932656  0.520326559 0.9998876
+WT:3-AP4E1:1         0.3550 -0.24982656  0.959826559 0.4146884
+Control:3-AP4E1:1    0.2550 -0.34982656  0.859826559 0.7658785
+tepsin:3-AP4E1:1    -0.4815 -1.08632656  0.123326559 0.1464038
+AP4E1:3-AP4E1:1      0.0350 -0.56982656  0.639826559 1.0000000
+Control:2-WT:2      -0.0795 -0.68432656  0.525326559 0.9999369
+tepsin:2-WT:2       -0.5035 -1.10832656  0.101326559 0.1208674
+AP4E1:2-WT:2        -0.3170 -0.92182656  0.287826559 0.5414996
+WT:3-WT:2            0.1225 -0.48232656  0.727326559 0.9971106
+Control:3-WT:2       0.0225 -0.58232656  0.627326559 1.0000000
+tepsin:3-WT:2       -0.7140 -1.31882656 -0.109173441 0.0199586
+AP4E1:3-WT:2        -0.1975 -0.80232656  0.407326559 0.9269667
+tepsin:2-Control:2  -0.4240 -1.02882656  0.180826559 0.2394160
+AP4E1:2-Control:2   -0.2375 -0.84232656  0.367326559 0.8234806
+WT:3-Control:2       0.2020 -0.40282656  0.806826559 0.9177053
+Control:3-Control:2  0.1020 -0.50282656  0.706826559 0.9993795
+tepsin:3-Control:2  -0.6345 -1.23932656 -0.029673441 0.0387750
+AP4E1:3-Control:2   -0.1180 -0.72282656  0.486826559 0.9978658
+AP4E1:2-tepsin:2     0.1865 -0.41832656  0.791326559 0.9468614
+WT:3-tepsin:2        0.6260  0.02117344  1.230826559 0.0416915
+Control:3-tepsin:2   0.5260 -0.07882656  1.130826559 0.0992832
+tepsin:3-tepsin:2   -0.2105 -0.81532656  0.394326559 0.8984621
+AP4E1:3-tepsin:2     0.3060 -0.29882656  0.910826559 0.5810497
+WT:3-AP4E1:2         0.4395 -0.16532656  1.044326559 0.2100945
+Control:3-AP4E1:2    0.3395 -0.26532656  0.944326559 0.4642021
+tepsin:3-AP4E1:2    -0.3970 -1.00182656  0.207826559 0.2990335
+AP4E1:3-AP4E1:2      0.1195 -0.48532656  0.724326559 0.9976344
+Control:3-WT:3      -0.1000 -0.70482656  0.504826559 0.9994787
+tepsin:3-WT:3       -0.8365 -1.44132656 -0.231673441 0.0076039
+AP4E1:3-WT:3        -0.3200 -0.92482656  0.284826559 0.5308822
+tepsin:3-Control:3  -0.7365 -1.34132656 -0.131673441 0.0166244
+AP4E1:3-Control:3   -0.2200 -0.82482656  0.384826559 0.8743522
+AP4E1:3-tepsin:3     0.5165 -0.08832656  1.121326559 0.1078859</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW5vdmFBUDRFS0Q8LWFvdihXQmRhdGEkQVA0RUtEfldCZGF0YSR0eXBlKldCZGF0YSRCdnNTK1dCZGF0YSRyZXBsaWNhdGUrV0JkYXRhJHJlcGxpY2F0ZTpXQmRhdGEkdHlwZSlcbnN1bW1hcnkoYW5vdmFBUDRFS0QpXG5gYGAifQ== -->
+<pre class="r"><code>anovaAP4EKD&lt;-aov(WBdata$AP4EKD~WBdata$type*WBdata$BvsS+WBdata$replicate+WBdata$replicate:WBdata$type)
+summary(anovaAP4EKD)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEZiBTdW0gU3EgTWVhbiBTcSBGIHZhbHVlICAgUHIoPkYpICAgIFxuV0JkYXRhJHR5cGUgICAgICAgICAgICAgICAgICAgMyAzLjE0NzEgIDEuMDQ5MCAgNDUuMzUzIDIuMjllLTA1ICoqKlxuV0JkYXRhJEJ2c1MgICAgICAgICAgICAgICAgICAgMSAwLjEzNTIgIDAuMTM1MiAgIDUuODQzIDAuMDQyMDMwICogIFxuV0JkYXRhJHJlcGxpY2F0ZSAgICAgICAgICAgICAgMiAxLjMzNjMgIDAuNjY4MiAgMjguODg3IDAuMDAwMjE5ICoqKlxuV0JkYXRhJHR5cGU6V0JkYXRhJEJ2c1MgICAgICAgMyAwLjEzNDggIDAuMDQ0OSAgIDEuOTQzIDAuMjAxMjQ1ICAgIFxuV0JkYXRhJHR5cGU6V0JkYXRhJHJlcGxpY2F0ZSAgNiAxLjI1MTIgIDAuMjA4NSAgIDkuMDE2IDAuMDAzMzI3ICoqIFxuUmVzaWR1YWxzICAgICAgICAgICAgICAgICAgICAgOCAwLjE4NTAgIDAuMDIzMSAgICAgICAgICAgICAgICAgICAgIFxuLS0tXG5TaWduaWYuIGNvZGVzOiAgMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG4ifQ== -->
+<pre><code>                             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+WBdata$type                   3 3.1471  1.0490  45.353 2.29e-05 ***
+WBdata$BvsS                   1 0.1352  0.1352   5.843 0.042030 *  
+WBdata$replicate              2 1.3363  0.6682  28.887 0.000219 ***
+WBdata$type:WBdata$BvsS       3 0.1348  0.0449   1.943 0.201245    
+WBdata$type:WBdata$replicate  6 1.2512  0.2085   9.016 0.003327 ** 
+Residuals                     8 0.1850  0.0231                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVHVrZXlIU0QoYW5vdmFBUDRFS0QpXG5gYGAifQ== -->
+<pre class="r"><code>TukeyHSD(anovaAP4EKD)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICBUdWtleSBtdWx0aXBsZSBjb21wYXJpc29ucyBvZiBtZWFuc1xuICAgIDk1JSBmYW1pbHktd2lzZSBjb25maWRlbmNlIGxldmVsXG5cbkZpdDogYW92KGZvcm11bGEgPSBXQmRhdGEkQVA0RUtEIH4gV0JkYXRhJHR5cGUgKiBXQmRhdGEkQnZzUyArIFdCZGF0YSRyZXBsaWNhdGUgKyBXQmRhdGEkcmVwbGljYXRlOldCZGF0YSR0eXBlKVxuXG4kYFdCZGF0YSR0eXBlYFxuICAgICAgICAgICAgICAgICAgICAgIGRpZmYgICAgICAgICBsd3IgICAgICAgIHVwciAgICAgcCBhZGpcbkNvbnRyb2wtV1QgICAgICAwLjE5ODMzMzMzIC0wLjA4Mjg1NDA3ICAwLjQ3OTUyMDcgMC4xODczMTQzXG50ZXBzaW4tV1QgICAgICAgMC4xNzU1MDAwMCAtMC4xMDU2ODc0MSAgMC40NTY2ODc0IDAuMjY0NDkyM1xuQVA0RTEtV1QgICAgICAgLTAuNjkyNjY2NjcgLTAuOTczODU0MDcgLTAuNDExNDc5MyAwLjAwMDIyMjNcbnRlcHNpbi1Db250cm9sIC0wLjAyMjgzMzMzIC0wLjMwNDAyMDc0ICAwLjI1ODM1NDEgMC45OTMzNDcwXG5BUDRFMS1Db250cm9sICAtMC44OTEwMDAwMCAtMS4xNzIxODc0MSAtMC42MDk4MTI2IDAuMDAwMDM1NVxuQVA0RTEtdGVwc2luICAgLTAuODY4MTY2NjcgLTEuMTQ5MzU0MDcgLTAuNTg2OTc5MyAwLjAwMDA0MzBcblxuJGBXQmRhdGEkQnZzU2BcbiAgICAgICAgICAgICAgICAgICAgZGlmZiAgICAgICAgbHdyICAgICAgICAgIHVwciAgICAgcCBhZGpcblN0YXJ2ZWQtQmFzYWwgLTAuMTUwMDgzMyAtMC4yOTMyNTk5IC0wLjAwNjkwNjc4NyAwLjA0MjAzMDRcblxuJGBXQmRhdGEkcmVwbGljYXRlYFxuICAgICAgICAgZGlmZiAgICAgICAgbHdyICAgICAgICB1cHIgICAgIHAgYWRqXG4yLTEgLTAuNDc2NzUwIC0wLjY5NDAzNzcgLTAuMjU5NDYyMyAwLjAwMDYxOTNcbjMtMSAtMC41MjEzNzUgLTAuNzM4NjYyNyAtMC4zMDQwODczIDAuMDAwMzM2NVxuMy0yIC0wLjA0NDYyNSAtMC4yNjE5MTI3ICAwLjE3MjY2MjcgMC44MzA4MTkxXG5cbiRgV0JkYXRhJHR5cGU6V0JkYXRhJEJ2c1NgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRpZmYgICAgICAgIGx3ciAgICAgICAgIHVwciAgICAgcCBhZGpcbkNvbnRyb2w6QmFzYWwtV1Q6QmFzYWwgICAgICAgICAgMC4zMDU2NjY2NyAtMC4xODU3MTQ1ICAwLjc5NzA0NzgyIDAuMzI1ODUzNlxudGVwc2luOkJhc2FsLVdUOkJhc2FsICAgICAgICAgICAwLjA5ODAwMDAwIC0wLjM5MzM4MTIgIDAuNTg5MzgxMTUgMC45ODkwMDIyXG5BUDRFMTpCYXNhbC1XVDpCYXNhbCAgICAgICAgICAgLTAuNzY2MzMzMzMgLTEuMjU3NzE0NSAtMC4yNzQ5NTIxOCAwLjAwMzc3MjBcbldUOlN0YXJ2ZWQtV1Q6QmFzYWwgICAgICAgICAgICAtMC4xNzIwMDAwMCAtMC42NjMzODEyICAwLjMxOTM4MTE1IDAuODQyMDE3M1xuQ29udHJvbDpTdGFydmVkLVdUOkJhc2FsICAgICAgIC0wLjA4MTAwMDAwIC0wLjU3MjM4MTIgIDAuNDEwMzgxMTUgMC45OTYzNDc5XG50ZXBzaW46U3RhcnZlZC1XVDpCYXNhbCAgICAgICAgIDAuMDgxMDAwMDAgLTAuNDEwMzgxMiAgMC41NzIzODExNSAwLjk5NjM0NzlcbkFQNEUxOlN0YXJ2ZWQtV1Q6QmFzYWwgICAgICAgICAtMC43OTEwMDAwMCAtMS4yODIzODEyIC0wLjI5OTYxODg1IDAuMDAzMDY2M1xudGVwc2luOkJhc2FsLUNvbnRyb2w6QmFzYWwgICAgIC0wLjIwNzY2NjY3IC0wLjY5OTA0NzggIDAuMjgzNzE0NDkgMC43MDM3NTUwXG5BUDRFMTpCYXNhbC1Db250cm9sOkJhc2FsICAgICAgLTEuMDcyMDAwMDAgLTEuNTYzMzgxMiAtMC41ODA2MTg4NSAwLjAwMDM3NjlcbldUOlN0YXJ2ZWQtQ29udHJvbDpCYXNhbCAgICAgICAtMC40Nzc2NjY2NyAtMC45NjkwNDc4ICAwLjAxMzcxNDQ5IDAuMDU3NTI4NFxuQ29udHJvbDpTdGFydmVkLUNvbnRyb2w6QmFzYWwgIC0wLjM4NjY2NjY3IC0wLjg3ODA0NzggIDAuMTA0NzE0NDkgMC4xNDY3NjEwXG50ZXBzaW46U3RhcnZlZC1Db250cm9sOkJhc2FsICAgLTAuMjI0NjY2NjcgLTAuNzE2MDQ3OCAgMC4yNjY3MTQ0OSAwLjYzMTcyNTdcbkFQNEUxOlN0YXJ2ZWQtQ29udHJvbDpCYXNhbCAgICAtMS4wOTY2NjY2NyAtMS41ODgwNDc4IC0wLjYwNTI4NTUxIDAuMDAwMzIwMVxuQVA0RTE6QmFzYWwtdGVwc2luOkJhc2FsICAgICAgIC0wLjg2NDMzMzMzIC0xLjM1NTcxNDUgLTAuMzcyOTUyMTggMC4wMDE2OTU5XG5XVDpTdGFydmVkLXRlcHNpbjpCYXNhbCAgICAgICAgLTAuMjcwMDAwMDAgLTAuNzYxMzgxMiAgMC4yMjEzODExNSAwLjQ0NzEwNjNcbkNvbnRyb2w6U3RhcnZlZC10ZXBzaW46QmFzYWwgICAtMC4xNzkwMDAwMCAtMC42NzAzODEyICAwLjMxMjM4MTE1IDAuODE3MjY1MlxudGVwc2luOlN0YXJ2ZWQtdGVwc2luOkJhc2FsICAgIC0wLjAxNzAwMDAwIC0wLjUwODM4MTIgIDAuNDc0MzgxMTUgMC45OTk5OTk5XG5BUDRFMTpTdGFydmVkLXRlcHNpbjpCYXNhbCAgICAgLTAuODg5MDAwMDAgLTEuMzgwMzgxMiAtMC4zOTc2MTg4NSAwLjAwMTQwMDNcbldUOlN0YXJ2ZWQtQVA0RTE6QmFzYWwgICAgICAgICAgMC41OTQzMzMzMyAgMC4xMDI5NTIyICAxLjA4NTcxNDQ5IDAuMDE3OTQ5M1xuQ29udHJvbDpTdGFydmVkLUFQNEUxOkJhc2FsICAgICAwLjY4NTMzMzMzICAwLjE5Mzk1MjIgIDEuMTc2NzE0NDkgMC4wMDc2NjY3XG50ZXBzaW46U3RhcnZlZC1BUDRFMTpCYXNhbCAgICAgIDAuODQ3MzMzMzMgIDAuMzU1OTUyMiAgMS4zMzg3MTQ0OSAwLjAwMTkzOTZcbkFQNEUxOlN0YXJ2ZWQtQVA0RTE6QmFzYWwgICAgICAtMC4wMjQ2NjY2NyAtMC41MTYwNDc4ICAwLjQ2NjcxNDQ5IDAuOTk5OTk4NVxuQ29udHJvbDpTdGFydmVkLVdUOlN0YXJ2ZWQgICAgICAwLjA5MTAwMDAwIC0wLjQwMDM4MTIgIDAuNTgyMzgxMTUgMC45OTI3NzIwXG50ZXBzaW46U3RhcnZlZC1XVDpTdGFydmVkICAgICAgIDAuMjUzMDAwMDAgLTAuMjM4MzgxMiAgMC43NDQzODExNSAwLjUxMzQyNzFcbkFQNEUxOlN0YXJ2ZWQtV1Q6U3RhcnZlZCAgICAgICAtMC42MTkwMDAwMCAtMS4xMTAzODEyIC0wLjEyNzYxODg1IDAuMDE0MTc0NFxudGVwc2luOlN0YXJ2ZWQtQ29udHJvbDpTdGFydmVkICAwLjE2MjAwMDAwIC0wLjMyOTM4MTIgIDAuNjUzMzgxMTUgMC44NzQ1NjcxXG5BUDRFMTpTdGFydmVkLUNvbnRyb2w6U3RhcnZlZCAgLTAuNzEwMDAwMDAgLTEuMjAxMzgxMiAtMC4yMTg2MTg4NSAwLjAwNjE0NzhcbkFQNEUxOlN0YXJ2ZWQtdGVwc2luOlN0YXJ2ZWQgICAtMC44NzIwMDAwMCAtMS4zNjMzODEyIC0wLjM4MDYxODg1IDAuMDAxNTk3M1xuXG4kYFdCZGF0YSR0eXBlOldCZGF0YSRyZXBsaWNhdGVgXG4gICAgICAgICAgICAgICAgICAgICAgIGRpZmYgICAgICAgICAgbHdyICAgICAgICAgIHVwciAgICAgcCBhZGpcbkNvbnRyb2w6MS1XVDoxICAgICAgIDAuODI2MCAgMC4xNjE5MDA1MzIgIDEuNDkwMDk5NDY4IDAuMDE0NjQ1OVxudGVwc2luOjEtV1Q6MSAgICAgICAgMC44NjUwICAwLjIwMDkwMDUzMiAgMS41MjkwOTk0NjggMC4wMTEwNjA1XG5BUDRFMToxLVdUOjEgICAgICAgIC0wLjYzOTAgLTEuMzAzMDk5NDY4ICAwLjAyNTA5OTQ2OCAwLjA2MDkyOTZcbldUOjItV1Q6MSAgICAgICAgICAgIDAuMDE2MCAtMC42NDgwOTk0NjggIDAuNjgwMDk5NDY4IDEuMDAwMDAwMFxuQ29udHJvbDoyLVdUOjEgICAgICAtMC4xMzU1IC0wLjc5OTU5OTQ2OCAgMC41Mjg1OTk0NjggMC45OTY5MzUyXG50ZXBzaW46Mi1XVDoxICAgICAgIC0wLjEzODAgLTAuODAyMDk5NDY4ICAwLjUyNjA5OTQ2OCAwLjk5NjQ1NjdcbkFQNEUxOjItV1Q6MSAgICAgICAgLTAuNTk3NSAtMS4yNjE1OTk0NjggIDAuMDY2NTk5NDY4IDAuMDg0Njk1MlxuV1Q6My1XVDoxICAgICAgICAgICAgMC4wMTQwIC0wLjY1MDA5OTQ2OCAgMC42NzgwOTk0NjggMS4wMDAwMDAwXG5Db250cm9sOjMtV1Q6MSAgICAgIC0wLjA2NTUgLTAuNzI5NTk5NDY4ICAwLjU5ODU5OTQ2OCAwLjk5OTk5NjNcbnRlcHNpbjozLVdUOjEgICAgICAgLTAuMTcwNSAtMC44MzQ1OTk0NjggIDAuNDkzNTk5NDY4IDAuOTgzMTcwNFxuQVA0RTE6My1XVDoxICAgICAgICAtMC44MTE1IC0xLjQ3NTU5OTQ2OCAtMC4xNDc0MDA1MzIgMC4wMTYyODMzXG50ZXBzaW46MS1Db250cm9sOjEgICAwLjAzOTAgLTAuNjI1MDk5NDY4ICAwLjcwMzA5OTQ2OCAxLjAwMDAwMDBcbkFQNEUxOjEtQ29udHJvbDoxICAgLTEuNDY1MCAtMi4xMjkwOTk0NjggLTAuODAwOTAwNTMyIDAuMDAwMzA5MVxuV1Q6Mi1Db250cm9sOjEgICAgICAtMC44MTAwIC0xLjQ3NDA5OTQ2OCAtMC4xNDU5MDA1MzIgMC4wMTY0NjM2XG5Db250cm9sOjItQ29udHJvbDoxIC0wLjk2MTUgLTEuNjI1NTk5NDY4IC0wLjI5NzQwMDUzMiAwLjAwNTY3MzhcbnRlcHNpbjoyLUNvbnRyb2w6MSAgLTAuOTY0MCAtMS42MjgwOTk0NjggLTAuMjk5OTAwNTMyIDAuMDA1NTc5NFxuQVA0RTE6Mi1Db250cm9sOjEgICAtMS40MjM1IC0yLjA4NzU5OTQ2OCAtMC43NTk0MDA1MzIgMC4wMDAzODA3XG5XVDozLUNvbnRyb2w6MSAgICAgIC0wLjgxMjAgLTEuNDc2MDk5NDY4IC0wLjE0NzkwMDUzMiAwLjAxNjIyMzZcbkNvbnRyb2w6My1Db250cm9sOjEgLTAuODkxNSAtMS41NTU1OTk0NjggLTAuMjI3NDAwNTMyIDAuMDA5MTcyNFxudGVwc2luOjMtQ29udHJvbDoxICAtMC45OTY1IC0xLjY2MDU5OTQ2OCAtMC4zMzI0MDA1MzIgMC4wMDQ0OTY1XG5BUDRFMTozLUNvbnRyb2w6MSAgIC0xLjYzNzUgLTIuMzAxNTk5NDY4IC0wLjk3MzQwMDUzMiAwLjAwMDEzNjJcbkFQNEUxOjEtdGVwc2luOjEgICAgLTEuNTA0MCAtMi4xNjgwOTk0NjggLTAuODM5OTAwNTMyIDAuMDAwMjU1MlxuV1Q6Mi10ZXBzaW46MSAgICAgICAtMC44NDkwIC0xLjUxMzA5OTQ2OCAtMC4xODQ5MDA1MzIgMC4wMTI0MDE1XG5Db250cm9sOjItdGVwc2luOjEgIC0xLjAwMDUgLTEuNjY0NTk5NDY4IC0wLjMzNjQwMDUzMiAwLjAwNDM4MDBcbnRlcHNpbjoyLXRlcHNpbjoxICAgLTEuMDAzMCAtMS42NjcwOTk0NjggLTAuMzM4OTAwNTMyIDAuMDA0MzA4OFxuQVA0RTE6Mi10ZXBzaW46MSAgICAtMS40NjI1IC0yLjEyNjU5OTQ2OCAtMC43OTg0MDA1MzIgMC4wMDAzMTI5XG5XVDozLXRlcHNpbjoxICAgICAgIC0wLjg1MTAgLTEuNTE1MDk5NDY4IC0wLjE4NjkwMDUzMiAwLjAxMjIyNDZcbkNvbnRyb2w6My10ZXBzaW46MSAgLTAuOTMwNSAtMS41OTQ1OTk0NjggLTAuMjY2NDAwNTMyIDAuMDA3MDAxMVxudGVwc2luOjMtdGVwc2luOjEgICAtMS4wMzU1IC0xLjY5OTU5OTQ2OCAtMC4zNzE0MDA1MzIgMC4wMDM0OTA1XG5BUDRFMTozLXRlcHNpbjoxICAgIC0xLjY3NjUgLTIuMzQwNTk5NDY4IC0xLjAxMjQwMDUzMiAwLjAwMDExNDNcbldUOjItQVA0RTE6MSAgICAgICAgIDAuNjU1MCAtMC4wMDkwOTk0NjggIDEuMzE5MDk5NDY4IDAuMDUzNzA2M1xuQ29udHJvbDoyLUFQNEUxOjEgICAgMC41MDM1IC0wLjE2MDU5OTQ2OCAgMS4xNjc1OTk0NjggMC4xNzg1MTc1XG50ZXBzaW46Mi1BUDRFMToxICAgICAwLjUwMTAgLTAuMTYzMDk5NDY4ICAxLjE2NTA5OTQ2OCAwLjE4MjA0NDBcbkFQNEUxOjItQVA0RTE6MSAgICAgIDAuMDQxNSAtMC42MjI1OTk0NjggIDAuNzA1NTk5NDY4IDEuMDAwMDAwMFxuV1Q6My1BUDRFMToxICAgICAgICAgMC42NTMwIC0wLjAxMTA5OTQ2OCAgMS4zMTcwOTk0NjggMC4wNTQ1NTg1XG5Db250cm9sOjMtQVA0RTE6MSAgICAwLjU3MzUgLTAuMDkwNTk5NDY4ICAxLjIzNzU5OTQ2OCAwLjEwMjUzNzNcbnRlcHNpbjozLUFQNEUxOjEgICAgIDAuNDY4NSAtMC4xOTU1OTk0NjggIDEuMTMyNTk5NDY4IDAuMjM0MDkwNVxuQVA0RTE6My1BUDRFMToxICAgICAtMC4xNzI1IC0wLjgzNjU5OTQ2OCAgMC40OTE1OTk0NjggMC45ODE3ODY3XG5Db250cm9sOjItV1Q6MiAgICAgIC0wLjE1MTUgLTAuODE1NTk5NDY4ICAwLjUxMjU5OTQ2OCAwLjk5Mjc1MDdcbnRlcHNpbjoyLVdUOjIgICAgICAgLTAuMTU0MCAtMC44MTgwOTk0NjggIDAuNTEwMDk5NDY4IDAuOTkxODE3NlxuQVA0RTE6Mi1XVDoyICAgICAgICAtMC42MTM1IC0xLjI3NzU5OTQ2OCAgMC4wNTA1OTk0NjggMC4wNzQ1NzU2XG5XVDozLVdUOjIgICAgICAgICAgIC0wLjAwMjAgLTAuNjY2MDk5NDY4ICAwLjY2MjA5OTQ2OCAxLjAwMDAwMDBcbkNvbnRyb2w6My1XVDoyICAgICAgLTAuMDgxNSAtMC43NDU1OTk0NjggIDAuNTgyNTk5NDY4IDAuOTk5OTY3NFxudGVwc2luOjMtV1Q6MiAgICAgICAtMC4xODY1IC0wLjg1MDU5OTQ2OCAgMC40Nzc1OTk0NjggMC45Njk3MDgzXG5BUDRFMTozLVdUOjIgICAgICAgIC0wLjgyNzUgLTEuNDkxNTk5NDY4IC0wLjE2MzQwMDUzMiAwLjAxNDQ4NjlcbnRlcHNpbjoyLUNvbnRyb2w6MiAgLTAuMDAyNSAtMC42NjY1OTk0NjggIDAuNjYxNTk5NDY4IDEuMDAwMDAwMFxuQVA0RTE6Mi1Db250cm9sOjIgICAtMC40NjIwIC0xLjEyNjA5OTQ2OCAgMC4yMDIwOTk0NjggMC4yNDU5NzMzXG5XVDozLUNvbnRyb2w6MiAgICAgICAwLjE0OTUgLTAuNTE0NTk5NDY4ICAwLjgxMzU5OTQ2OCAwLjk5MzQzNjBcbkNvbnRyb2w6My1Db250cm9sOjIgIDAuMDcwMCAtMC41OTQwOTk0NjggIDAuNzM0MDk5NDY4IDAuOTk5OTkyN1xudGVwc2luOjMtQ29udHJvbDoyICAtMC4wMzUwIC0wLjY5OTA5OTQ2OCAgMC42MjkwOTk0NjggMS4wMDAwMDAwXG5BUDRFMTozLUNvbnRyb2w6MiAgIC0wLjY3NjAgLTEuMzQwMDk5NDY4IC0wLjAxMTkwMDUzMiAwLjA0NTU1MDNcbkFQNEUxOjItdGVwc2luOjIgICAgLTAuNDU5NSAtMS4xMjM1OTk0NjggIDAuMjA0NTk5NDY4IDAuMjUwNjgxOVxuV1Q6My10ZXBzaW46MiAgICAgICAgMC4xNTIwIC0wLjUxMjA5OTQ2OCAgMC44MTYwOTk0NjggMC45OTI1NzEwXG5Db250cm9sOjMtdGVwc2luOjIgICAwLjA3MjUgLTAuNTkxNTk5NDY4ICAwLjczNjU5OTQ2OCAwLjk5OTk4OTdcbnRlcHNpbjozLXRlcHNpbjoyICAgLTAuMDMyNSAtMC42OTY1OTk0NjggIDAuNjMxNTk5NDY4IDEuMDAwMDAwMFxuQVA0RTE6My10ZXBzaW46MiAgICAtMC42NzM1IC0xLjMzNzU5OTQ2OCAtMC4wMDk0MDA1MzIgMC4wNDY0NDk1XG5XVDozLUFQNEUxOjIgICAgICAgICAwLjYxMTUgLTAuMDUyNTk5NDY4ICAxLjI3NTU5OTQ2OCAwLjA3NTc3MDFcbkNvbnRyb2w6My1BUDRFMToyICAgIDAuNTMyMCAtMC4xMzIwOTk0NjggIDEuMTk2MDk5NDY4IDAuMTQyNjE0NlxudGVwc2luOjMtQVA0RTE6MiAgICAgMC40MjcwIC0wLjIzNzA5OTQ2OCAgMS4wOTEwOTk0NjggMC4zMTkxNzQ4XG5BUDRFMTozLUFQNEUxOjIgICAgIC0wLjIxNDAgLTAuODc4MDk5NDY4ICAwLjQ1MDA5OTQ2OCAwLjkzMjAyMTNcbkNvbnRyb2w6My1XVDozICAgICAgLTAuMDc5NSAtMC43NDM1OTk0NjggIDAuNTg0NTk5NDY4IDAuOTk5OTc0NFxudGVwc2luOjMtV1Q6MyAgICAgICAtMC4xODQ1IC0wLjg0ODU5OTQ2OCAgMC40Nzk1OTk0NjggMC45NzE3MDQ5XG5BUDRFMTozLVdUOjMgICAgICAgIC0wLjgyNTUgLTEuNDg5NTk5NDY4IC0wLjE2MTQwMDUzMiAwLjAxNDY5OTNcbnRlcHNpbjozLUNvbnRyb2w6MyAgLTAuMTA1MCAtMC43NjkwOTk0NjggIDAuNTU5MDk5NDY4IDAuOTk5NjUwMFxuQVA0RTE6My1Db250cm9sOjMgICAtMC43NDYwIC0xLjQxMDA5OTQ2OCAtMC4wODE5MDA1MzIgMC4wMjY1NTQ3XG5BUDRFMTozLXRlcHNpbjozICAgIC0wLjY0MTAgLTEuMzA1MDk5NDY4ICAwLjAyMzA5OTQ2OCAwLjA1OTk3NDNcbiJ9 -->
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = WBdata$AP4EKD ~ WBdata$type * WBdata$BvsS + WBdata$replicate + WBdata$replicate:WBdata$type)
+
+$`WBdata$type`
+                      diff         lwr        upr     p adj
+Control-WT      0.19833333 -0.08285407  0.4795207 0.1873143
+tepsin-WT       0.17550000 -0.10568741  0.4566874 0.2644923
+AP4E1-WT       -0.69266667 -0.97385407 -0.4114793 0.0002223
+tepsin-Control -0.02283333 -0.30402074  0.2583541 0.9933470
+AP4E1-Control  -0.89100000 -1.17218741 -0.6098126 0.0000355
+AP4E1-tepsin   -0.86816667 -1.14935407 -0.5869793 0.0000430
+
+$`WBdata$BvsS`
+                    diff        lwr          upr     p adj
+Starved-Basal -0.1500833 -0.2932599 -0.006906787 0.0420304
+
+$`WBdata$replicate`
+         diff        lwr        upr     p adj
+2-1 -0.476750 -0.6940377 -0.2594623 0.0006193
+3-1 -0.521375 -0.7386627 -0.3040873 0.0003365
+3-2 -0.044625 -0.2619127  0.1726627 0.8308191
+
+$`WBdata$type:WBdata$BvsS`
+                                      diff        lwr         upr     p adj
+Control:Basal-WT:Basal          0.30566667 -0.1857145  0.79704782 0.3258536
+tepsin:Basal-WT:Basal           0.09800000 -0.3933812  0.58938115 0.9890022
+AP4E1:Basal-WT:Basal           -0.76633333 -1.2577145 -0.27495218 0.0037720
+WT:Starved-WT:Basal            -0.17200000 -0.6633812  0.31938115 0.8420173
+Control:Starved-WT:Basal       -0.08100000 -0.5723812  0.41038115 0.9963479
+tepsin:Starved-WT:Basal         0.08100000 -0.4103812  0.57238115 0.9963479
+AP4E1:Starved-WT:Basal         -0.79100000 -1.2823812 -0.29961885 0.0030663
+tepsin:Basal-Control:Basal     -0.20766667 -0.6990478  0.28371449 0.7037550
+AP4E1:Basal-Control:Basal      -1.07200000 -1.5633812 -0.58061885 0.0003769
+WT:Starved-Control:Basal       -0.47766667 -0.9690478  0.01371449 0.0575284
+Control:Starved-Control:Basal  -0.38666667 -0.8780478  0.10471449 0.1467610
+tepsin:Starved-Control:Basal   -0.22466667 -0.7160478  0.26671449 0.6317257
+AP4E1:Starved-Control:Basal    -1.09666667 -1.5880478 -0.60528551 0.0003201
+AP4E1:Basal-tepsin:Basal       -0.86433333 -1.3557145 -0.37295218 0.0016959
+WT:Starved-tepsin:Basal        -0.27000000 -0.7613812  0.22138115 0.4471063
+Control:Starved-tepsin:Basal   -0.17900000 -0.6703812  0.31238115 0.8172652
+tepsin:Starved-tepsin:Basal    -0.01700000 -0.5083812  0.47438115 0.9999999
+AP4E1:Starved-tepsin:Basal     -0.88900000 -1.3803812 -0.39761885 0.0014003
+WT:Starved-AP4E1:Basal          0.59433333  0.1029522  1.08571449 0.0179493
+Control:Starved-AP4E1:Basal     0.68533333  0.1939522  1.17671449 0.0076667
+tepsin:Starved-AP4E1:Basal      0.84733333  0.3559522  1.33871449 0.0019396
+AP4E1:Starved-AP4E1:Basal      -0.02466667 -0.5160478  0.46671449 0.9999985
+Control:Starved-WT:Starved      0.09100000 -0.4003812  0.58238115 0.9927720
+tepsin:Starved-WT:Starved       0.25300000 -0.2383812  0.74438115 0.5134271
+AP4E1:Starved-WT:Starved       -0.61900000 -1.1103812 -0.12761885 0.0141744
+tepsin:Starved-Control:Starved  0.16200000 -0.3293812  0.65338115 0.8745671
+AP4E1:Starved-Control:Starved  -0.71000000 -1.2013812 -0.21861885 0.0061478
+AP4E1:Starved-tepsin:Starved   -0.87200000 -1.3633812 -0.38061885 0.0015973
+
+$`WBdata$type:WBdata$replicate`
+                       diff          lwr          upr     p adj
+Control:1-WT:1       0.8260  0.161900532  1.490099468 0.0146459
+tepsin:1-WT:1        0.8650  0.200900532  1.529099468 0.0110605
+AP4E1:1-WT:1        -0.6390 -1.303099468  0.025099468 0.0609296
+WT:2-WT:1            0.0160 -0.648099468  0.680099468 1.0000000
+Control:2-WT:1      -0.1355 -0.799599468  0.528599468 0.9969352
+tepsin:2-WT:1       -0.1380 -0.802099468  0.526099468 0.9964567
+AP4E1:2-WT:1        -0.5975 -1.261599468  0.066599468 0.0846952
+WT:3-WT:1            0.0140 -0.650099468  0.678099468 1.0000000
+Control:3-WT:1      -0.0655 -0.729599468  0.598599468 0.9999963
+tepsin:3-WT:1       -0.1705 -0.834599468  0.493599468 0.9831704
+AP4E1:3-WT:1        -0.8115 -1.475599468 -0.147400532 0.0162833
+tepsin:1-Control:1   0.0390 -0.625099468  0.703099468 1.0000000
+AP4E1:1-Control:1   -1.4650 -2.129099468 -0.800900532 0.0003091
+WT:2-Control:1      -0.8100 -1.474099468 -0.145900532 0.0164636
+Control:2-Control:1 -0.9615 -1.625599468 -0.297400532 0.0056738
+tepsin:2-Control:1  -0.9640 -1.628099468 -0.299900532 0.0055794
+AP4E1:2-Control:1   -1.4235 -2.087599468 -0.759400532 0.0003807
+WT:3-Control:1      -0.8120 -1.476099468 -0.147900532 0.0162236
+Control:3-Control:1 -0.8915 -1.555599468 -0.227400532 0.0091724
+tepsin:3-Control:1  -0.9965 -1.660599468 -0.332400532 0.0044965
+AP4E1:3-Control:1   -1.6375 -2.301599468 -0.973400532 0.0001362
+AP4E1:1-tepsin:1    -1.5040 -2.168099468 -0.839900532 0.0002552
+WT:2-tepsin:1       -0.8490 -1.513099468 -0.184900532 0.0124015
+Control:2-tepsin:1  -1.0005 -1.664599468 -0.336400532 0.0043800
+tepsin:2-tepsin:1   -1.0030 -1.667099468 -0.338900532 0.0043088
+AP4E1:2-tepsin:1    -1.4625 -2.126599468 -0.798400532 0.0003129
+WT:3-tepsin:1       -0.8510 -1.515099468 -0.186900532 0.0122246
+Control:3-tepsin:1  -0.9305 -1.594599468 -0.266400532 0.0070011
+tepsin:3-tepsin:1   -1.0355 -1.699599468 -0.371400532 0.0034905
+AP4E1:3-tepsin:1    -1.6765 -2.340599468 -1.012400532 0.0001143
+WT:2-AP4E1:1         0.6550 -0.009099468  1.319099468 0.0537063
+Control:2-AP4E1:1    0.5035 -0.160599468  1.167599468 0.1785175
+tepsin:2-AP4E1:1     0.5010 -0.163099468  1.165099468 0.1820440
+AP4E1:2-AP4E1:1      0.0415 -0.622599468  0.705599468 1.0000000
+WT:3-AP4E1:1         0.6530 -0.011099468  1.317099468 0.0545585
+Control:3-AP4E1:1    0.5735 -0.090599468  1.237599468 0.1025373
+tepsin:3-AP4E1:1     0.4685 -0.195599468  1.132599468 0.2340905
+AP4E1:3-AP4E1:1     -0.1725 -0.836599468  0.491599468 0.9817867
+Control:2-WT:2      -0.1515 -0.815599468  0.512599468 0.9927507
+tepsin:2-WT:2       -0.1540 -0.818099468  0.510099468 0.9918176
+AP4E1:2-WT:2        -0.6135 -1.277599468  0.050599468 0.0745756
+WT:3-WT:2           -0.0020 -0.666099468  0.662099468 1.0000000
+Control:3-WT:2      -0.0815 -0.745599468  0.582599468 0.9999674
+tepsin:3-WT:2       -0.1865 -0.850599468  0.477599468 0.9697083
+AP4E1:3-WT:2        -0.8275 -1.491599468 -0.163400532 0.0144869
+tepsin:2-Control:2  -0.0025 -0.666599468  0.661599468 1.0000000
+AP4E1:2-Control:2   -0.4620 -1.126099468  0.202099468 0.2459733
+WT:3-Control:2       0.1495 -0.514599468  0.813599468 0.9934360
+Control:3-Control:2  0.0700 -0.594099468  0.734099468 0.9999927
+tepsin:3-Control:2  -0.0350 -0.699099468  0.629099468 1.0000000
+AP4E1:3-Control:2   -0.6760 -1.340099468 -0.011900532 0.0455503
+AP4E1:2-tepsin:2    -0.4595 -1.123599468  0.204599468 0.2506819
+WT:3-tepsin:2        0.1520 -0.512099468  0.816099468 0.9925710
+Control:3-tepsin:2   0.0725 -0.591599468  0.736599468 0.9999897
+tepsin:3-tepsin:2   -0.0325 -0.696599468  0.631599468 1.0000000
+AP4E1:3-tepsin:2    -0.6735 -1.337599468 -0.009400532 0.0464495
+WT:3-AP4E1:2         0.6115 -0.052599468  1.275599468 0.0757701
+Control:3-AP4E1:2    0.5320 -0.132099468  1.196099468 0.1426146
+tepsin:3-AP4E1:2     0.4270 -0.237099468  1.091099468 0.3191748
+AP4E1:3-AP4E1:2     -0.2140 -0.878099468  0.450099468 0.9320213
+Control:3-WT:3      -0.0795 -0.743599468  0.584599468 0.9999744
+tepsin:3-WT:3       -0.1845 -0.848599468  0.479599468 0.9717049
+AP4E1:3-WT:3        -0.8255 -1.489599468 -0.161400532 0.0146993
+tepsin:3-Control:3  -0.1050 -0.769099468  0.559099468 0.9996500
+AP4E1:3-Control:3   -0.7460 -1.410099468 -0.081900532 0.0265547
+AP4E1:3-tepsin:3    -0.6410 -1.305099468  0.023099468 0.0599743</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiMzAtU3RhdGlzdGljYWwtQW5hbHlzaXMiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCkFOT1ZBIG9mIElhbGwgbWV0cmljcwoKYGBge3J9CnRlbXAkUmVwPC1hcy5mYWN0b3IodGVtcCRSZXApCgphbm92YVB1bmN0YVZvbDwtYW92KHRlbXAkTEMzVm9sdW1lfnRlbXAkVHlwZSp0ZW1wJEJ2c1MrdGVtcCRSZXArdGVtcCRSZXA6dGVtcCRUeXBlKQpzdW1tYXJ5KGFub3ZhUHVuY3RhVm9sKQpUdWtleUhTRChhbm92YVB1bmN0YVZvbCkKCmFub3ZhUHVuY3RhTG9nVm9sPC1hb3YodGVtcCRMb2dMQzNWb2x1bWV+dGVtcCRUeXBlKnRlbXAkQnZzUyt0ZW1wJFJlcCt0ZW1wJFJlcDp0ZW1wJFR5cGUpCnN1bW1hcnkoYW5vdmFQdW5jdGFMb2dWb2wpClR1a2V5SFNEKGFub3ZhUHVuY3RhTG9nVm9sKQoKYW5vdmFQdW5jdGFJbnQ8LWFvdih0ZW1wJExDM01lYW5PYmpJbnRlbnNpdHl+dGVtcCRUeXBlKnRlbXAkQnZzUyt0ZW1wJFJlcCt0ZW1wJFJlcDp0ZW1wJFR5cGUpCnN1bW1hcnkoYW5vdmFQdW5jdGFJbnQpClR1a2V5SFNEKGFub3ZhUHVuY3RhSW50KQoKYW5vdmFMQzNNT0M8LWFvdih0ZW1wJE1hbmRlcnNMQzNNT0N+dGVtcCRUeXBlKnRlbXAkQnZzUyt0ZW1wJFJlcCt0ZW1wJFJlcDp0ZW1wJFR5cGUpCnN1bW1hcnkoYW5vdmFMQzNNT0MpClR1a2V5SFNEKGFub3ZhTEMzTU9DKQoKYW5vdmFMQU1QSW50PC1hb3YodGVtcCRMQU1QMU1lYW5PYmpJbnRlbnNpdHl+dGVtcCRUeXBlKnRlbXAkQnZzUyt0ZW1wJFJlcCt0ZW1wJFJlcDp0ZW1wJFR5cGUpCnN1bW1hcnkoYW5vdmFMQU1QSW50KQpUdWtleUhTRChhbm92YUxBTVBJbnQpCmBgYAoKc2luZ2xlIHJlcGxpY2F0ZSBBTk9WQSBvZiBJbmRpdmlkdWFsIFB1bmN0YSBWb2x1bWVzIAoqZm9yIHN0YXRzIG9mIHNpbmdsZSByZXBsaWNhdGVzKgpgYGB7cn0KYW5vdmFQdW5jdGFWb2w8LWFvdih0ZW1wJExDM1ZvbHVtZX50ZW1wJFR5cGUqdGVtcCRCdnNTKQpzdW1tYXJ5KGFub3ZhUHVuY3RhVm9sKQpUdWtleUhTRChhbm92YVB1bmN0YVZvbCkKCmFub3ZhUHVuY3RhTG9nVm9sPC1hb3YodGVtcCRMb2dMQzNWb2x1bWV+dGVtcCRUeXBlKnRlbXAkQnZzUykKc3VtbWFyeShhbm92YVB1bmN0YUxvZ1ZvbCkKVHVrZXlIU0QoYW5vdmFQdW5jdGFMb2dWb2wpCgphbm92YVB1bmN0YUludDwtYW92KHRlbXAkTEMzTWVhbk9iakludGVuc2l0eX50ZW1wJFR5cGUqdGVtcCRCdnNTKQpzdW1tYXJ5KGFub3ZhUHVuY3RhSW50KQpUdWtleUhTRChhbm92YVB1bmN0YUludCkKCmFub3ZhTEMzTU9DPC1hb3YodGVtcCRNYW5kZXJzTEMzTU9DfnRlbXAkVHlwZSp0ZW1wJEJ2c1MpCnN1bW1hcnkoYW5vdmFMQzNNT0MpClR1a2V5SFNEKGFub3ZhTEMzTU9DKQoKYW5vdmFMQU1QSW50PC1hb3YodGVtcCRMQU1QMU1lYW5PYmpJbnRlbnNpdHl+dGVtcCRUeXBlKnRlbXAkQnZzUykKc3VtbWFyeShhbm92YUxBTVBJbnQpClR1a2V5SFNEKGFub3ZhTEFNUEludCkKYGBg</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiMzEtV0Itc3RhdGlzdGljYWwtYW5hbHlzaXMiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCgpgYGB7cn0KV0JkYXRhJHJlcGxpY2F0ZTwtYXMuZmFjdG9yKFdCZGF0YSRyZXBsaWNhdGUpCgphbm92YUxDM3JhdGlvPC1hb3YoV0JkYXRhJExDM3JhdGlvfldCZGF0YSR0eXBlKldCZGF0YSRCdnNTK1dCZGF0YSRyZXBsaWNhdGUrV0JkYXRhJHJlcGxpY2F0ZTpXQmRhdGEkdHlwZSkKc3VtbWFyeShhbm92YUxDM3JhdGlvKQpUdWtleUhTRChhbm92YUxDM3JhdGlvKQoKYW5vdmF0ZXBzaW5LRDwtYW92KFdCZGF0YSR0ZXBzaW5LRH5XQmRhdGEkdHlwZSpXQmRhdGEkQnZzUytXQmRhdGEkcmVwbGljYXRlK1dCZGF0YSRyZXBsaWNhdGU6V0JkYXRhJHR5cGUpCnN1bW1hcnkoYW5vdmF0ZXBzaW5LRCkKVHVrZXlIU0QoYW5vdmF0ZXBzaW5LRCkKCmFub3ZhQVA0RUtEPC1hb3YoV0JkYXRhJEFQNEVLRH5XQmRhdGEkdHlwZSpXQmRhdGEkQnZzUytXQmRhdGEkcmVwbGljYXRlK1dCZGF0YSRyZXBsaWNhdGU6V0JkYXRhJHR5cGUpCnN1bW1hcnkoYW5vdmFBUDRFS0QpClR1a2V5SFNEKGFub3ZhQVA0RUtEKQpgYGAKCgoK</div>
 
 
 
@@ -2163,7 +2233,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("30-Statistical-Analysis.Rmd");
+  window.initializeSourceEmbed("31-WB-Statistical-Analysis.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
