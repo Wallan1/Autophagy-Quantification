@@ -8,6 +8,37 @@ CSV import
 ```{r}
 WBdata=read.csv(file="~/Desktop/analysis_20Aug20/WB-quant/15Mar-NSW3001-NSW3005_quant-results_17Sep20.csv",header=TRUE)
 
+```
 
+Calculate mean for each condition
+```{r}
+WBdata$LC3ratioAve<-NA
+
+for (t in c("WT", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+  WBdata$LC3ratioAve[which(WBdata$type==t & WBdata$BvsS==bs)]<-sum(WBdata$LC3ratio[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3ratio)])/length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3ratio))
+  }
+}
+
+WBdata$tepsinKDAve<-NA
+
+for (t in c("WT", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+  WBdata$tepsinKDAve[which(WBdata$type==t & WBdata$BvsS==bs)]<-sum(WBdata$tepsinKD[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$tepsinKD)])/length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$tepsinKD))
+  }
+}
+
+WBdata$AP4EKDAve<-NA
+
+for (t in c("WT", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+  WBdata$AP4EKDAve[which(WBdata$type==t & WBdata$BvsS==bs)]<-sum(WBdata$AP4EKD[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$AP4EKD)])/length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$AP4EKD))
+  }
+}
+```
+
+Remove duplicate rows from replicates
+```{r}
+WBdata_nodup<-WBdata[!duplicated(WBdata$LC3ratioAve),]
 ```
 

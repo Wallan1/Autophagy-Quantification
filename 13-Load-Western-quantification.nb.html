@@ -1752,17 +1752,53 @@ summary {
 <p>CSV import <em>change input file path</em></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuV0JkYXRhPXJlYWQuY3N2KGZpbGU9XCJ+L0Rlc2t0b3AvYW5hbHlzaXNfMjBBdWcyMC9XQi1xdWFudC8xNU1hci1OU1czMDAxLU5TVzMwMDVfcXVhbnQtcmVzdWx0c18xN1NlcDIwLmNzdlwiLGhlYWRlcj1UUlVFKVxuXG5XQmRhdGEkQnZzUzwtZmFjdG9yKFdCZGF0YSRCdnNTLCBsZXZlbHM9YyhcIkJhc2FsXCIsIFwiU3RhcnZlZFwiKSlcblxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuV0JkYXRhPXJlYWQuY3N2KGZpbGU9XCJ+L0Rlc2t0b3AvYW5hbHlzaXNfMjBBdWcyMC9XQi1xdWFudC8xNU1hci1OU1czMDAxLU5TVzMwMDVfcXVhbnQtcmVzdWx0c18xN1NlcDIwLmNzdlwiLGhlYWRlcj1UUlVFKVxuXG5gYGAifQ== -->
 <pre class="r"><code>WBdata=read.csv(file=&quot;~/Desktop/analysis_20Aug20/WB-quant/15Mar-NSW3001-NSW3005_quant-results_17Sep20.csv&quot;,header=TRUE)
-
-WBdata$BvsS&lt;-factor(WBdata$BvsS, levels=c(&quot;Basal&quot;, &quot;Starved&quot;))
 </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Calculate mean for each condition</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuV0JkYXRhJExDM3JhdGlvQXZlPC1OQVxuXG5mb3IgKHQgaW4gYyhcIldUXCIsIFwiQ29udHJvbFwiLCBcInRlcHNpblwiLCBcIkFQNEUxXCIpKSB7XG4gIGZvciAoYnMgaW4gYyhcIkJhc2FsXCIsIFwiU3RhcnZlZFwiKSkge1xuICBXQmRhdGEkTEMzcmF0aW9BdmVbd2hpY2goV0JkYXRhJHR5cGU9PXQgJiBXQmRhdGEkQnZzUz09YnMpXTwtc3VtKFdCZGF0YSRMQzNyYXRpb1t3aGljaChXQmRhdGEkdHlwZT09dCAmIFdCZGF0YSRCdnNTPT1icyAmIFdCZGF0YSRMQzNyYXRpbyldKS9sZW5ndGgod2hpY2goV0JkYXRhJHR5cGU9PXQgJiBXQmRhdGEkQnZzUz09YnMgJiBXQmRhdGEkTEMzcmF0aW8pKVxuICB9XG59XG5cbldCZGF0YSR0ZXBzaW5LREF2ZTwtTkFcblxuZm9yICh0IGluIGMoXCJXVFwiLCBcIkNvbnRyb2xcIiwgXCJ0ZXBzaW5cIiwgXCJBUDRFMVwiKSkge1xuICBmb3IgKGJzIGluIGMoXCJCYXNhbFwiLCBcIlN0YXJ2ZWRcIikpIHtcbiAgV0JkYXRhJHRlcHNpbktEQXZlW3doaWNoKFdCZGF0YSR0eXBlPT10ICYgV0JkYXRhJEJ2c1M9PWJzKV08LXN1bShXQmRhdGEkdGVwc2luS0Rbd2hpY2goV0JkYXRhJHR5cGU9PXQgJiBXQmRhdGEkQnZzUz09YnMgJiBXQmRhdGEkdGVwc2luS0QpXSkvbGVuZ3RoKHdoaWNoKFdCZGF0YSR0eXBlPT10ICYgV0JkYXRhJEJ2c1M9PWJzICYgV0JkYXRhJHRlcHNpbktEKSlcbiAgfVxufVxuXG5XQmRhdGEkQVA0RUtEQXZlPC1OQVxuXG5mb3IgKHQgaW4gYyhcIldUXCIsIFwiQ29udHJvbFwiLCBcInRlcHNpblwiLCBcIkFQNEUxXCIpKSB7XG4gIGZvciAoYnMgaW4gYyhcIkJhc2FsXCIsIFwiU3RhcnZlZFwiKSkge1xuICBXQmRhdGEkQVA0RUtEQXZlW3doaWNoKFdCZGF0YSR0eXBlPT10ICYgV0JkYXRhJEJ2c1M9PWJzKV08LXN1bShXQmRhdGEkQVA0RUtEW3doaWNoKFdCZGF0YSR0eXBlPT10ICYgV0JkYXRhJEJ2c1M9PWJzICYgV0JkYXRhJEFQNEVLRCldKS9sZW5ndGgod2hpY2goV0JkYXRhJHR5cGU9PXQgJiBXQmRhdGEkQnZzUz09YnMgJiBXQmRhdGEkQVA0RUtEKSlcbiAgfVxufVxuYGBgIn0= -->
+<pre class="r"><code>WBdata$LC3ratioAve&lt;-NA
+
+for (t in c(&quot;WT&quot;, &quot;Control&quot;, &quot;tepsin&quot;, &quot;AP4E1&quot;)) {
+  for (bs in c(&quot;Basal&quot;, &quot;Starved&quot;)) {
+  WBdata$LC3ratioAve[which(WBdata$type==t &amp; WBdata$BvsS==bs)]&lt;-sum(WBdata$LC3ratio[which(WBdata$type==t &amp; WBdata$BvsS==bs &amp; WBdata$LC3ratio)])/length(which(WBdata$type==t &amp; WBdata$BvsS==bs &amp; WBdata$LC3ratio))
+  }
+}
+
+WBdata$tepsinKDAve&lt;-NA
+
+for (t in c(&quot;WT&quot;, &quot;Control&quot;, &quot;tepsin&quot;, &quot;AP4E1&quot;)) {
+  for (bs in c(&quot;Basal&quot;, &quot;Starved&quot;)) {
+  WBdata$tepsinKDAve[which(WBdata$type==t &amp; WBdata$BvsS==bs)]&lt;-sum(WBdata$tepsinKD[which(WBdata$type==t &amp; WBdata$BvsS==bs &amp; WBdata$tepsinKD)])/length(which(WBdata$type==t &amp; WBdata$BvsS==bs &amp; WBdata$tepsinKD))
+  }
+}
+
+WBdata$AP4EKDAve&lt;-NA
+
+for (t in c(&quot;WT&quot;, &quot;Control&quot;, &quot;tepsin&quot;, &quot;AP4E1&quot;)) {
+  for (bs in c(&quot;Basal&quot;, &quot;Starved&quot;)) {
+  WBdata$AP4EKDAve[which(WBdata$type==t &amp; WBdata$BvsS==bs)]&lt;-sum(WBdata$AP4EKD[which(WBdata$type==t &amp; WBdata$BvsS==bs &amp; WBdata$AP4EKD)])/length(which(WBdata$type==t &amp; WBdata$BvsS==bs &amp; WBdata$AP4EKD))
+  }
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Remove duplicate rows from replicates</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuV0JkYXRhX25vZHVwPC1XQmRhdGFbIWR1cGxpY2F0ZWQoV0JkYXRhJExDM3JhdGlvQXZlKSxdXG5gYGAifQ== -->
+<pre class="r"><code>WBdata_nodup&lt;-WBdata[!duplicated(WBdata$LC3ratioAve),]</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiMTMtTG9hZC1XZXN0ZXJuLXF1YW50aWZpY2F0aW9uIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgpDU1YgaW1wb3J0CipjaGFuZ2UgaW5wdXQgZmlsZSBwYXRoKgpgYGB7cn0KV0JkYXRhPXJlYWQuY3N2KGZpbGU9In4vRGVza3RvcC9hbmFseXNpc18yMEF1ZzIwL1dCLXF1YW50LzE1TWFyLU5TVzMwMDEtTlNXMzAwNV9xdWFudC1yZXN1bHRzXzE3U2VwMjAuY3N2IixoZWFkZXI9VFJVRSkKCgpgYGAKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiMTMtTG9hZC1XZXN0ZXJuLXF1YW50aWZpY2F0aW9uIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgpDU1YgaW1wb3J0CipjaGFuZ2UgaW5wdXQgZmlsZSBwYXRoKgpgYGB7cn0KV0JkYXRhPXJlYWQuY3N2KGZpbGU9In4vRGVza3RvcC9hbmFseXNpc18yMEF1ZzIwL1dCLXF1YW50LzE1TWFyLU5TVzMwMDEtTlNXMzAwNV9xdWFudC1yZXN1bHRzXzE3U2VwMjAuY3N2IixoZWFkZXI9VFJVRSkKCmBgYAoKQ2FsY3VsYXRlIG1lYW4gZm9yIGVhY2ggY29uZGl0aW9uCmBgYHtyfQpXQmRhdGEkTEMzcmF0aW9BdmU8LU5BCgpmb3IgKHQgaW4gYygiV1QiLCAiQ29udHJvbCIsICJ0ZXBzaW4iLCAiQVA0RTEiKSkgewogIGZvciAoYnMgaW4gYygiQmFzYWwiLCAiU3RhcnZlZCIpKSB7CiAgV0JkYXRhJExDM3JhdGlvQXZlW3doaWNoKFdCZGF0YSR0eXBlPT10ICYgV0JkYXRhJEJ2c1M9PWJzKV08LXN1bShXQmRhdGEkTEMzcmF0aW9bd2hpY2goV0JkYXRhJHR5cGU9PXQgJiBXQmRhdGEkQnZzUz09YnMgJiBXQmRhdGEkTEMzcmF0aW8pXSkvbGVuZ3RoKHdoaWNoKFdCZGF0YSR0eXBlPT10ICYgV0JkYXRhJEJ2c1M9PWJzICYgV0JkYXRhJExDM3JhdGlvKSkKICB9Cn0KCldCZGF0YSR0ZXBzaW5LREF2ZTwtTkEKCmZvciAodCBpbiBjKCJXVCIsICJDb250cm9sIiwgInRlcHNpbiIsICJBUDRFMSIpKSB7CiAgZm9yIChicyBpbiBjKCJCYXNhbCIsICJTdGFydmVkIikpIHsKICBXQmRhdGEkdGVwc2luS0RBdmVbd2hpY2goV0JkYXRhJHR5cGU9PXQgJiBXQmRhdGEkQnZzUz09YnMpXTwtc3VtKFdCZGF0YSR0ZXBzaW5LRFt3aGljaChXQmRhdGEkdHlwZT09dCAmIFdCZGF0YSRCdnNTPT1icyAmIFdCZGF0YSR0ZXBzaW5LRCldKS9sZW5ndGgod2hpY2goV0JkYXRhJHR5cGU9PXQgJiBXQmRhdGEkQnZzUz09YnMgJiBXQmRhdGEkdGVwc2luS0QpKQogIH0KfQoKV0JkYXRhJEFQNEVLREF2ZTwtTkEKCmZvciAodCBpbiBjKCJXVCIsICJDb250cm9sIiwgInRlcHNpbiIsICJBUDRFMSIpKSB7CiAgZm9yIChicyBpbiBjKCJCYXNhbCIsICJTdGFydmVkIikpIHsKICBXQmRhdGEkQVA0RUtEQXZlW3doaWNoKFdCZGF0YSR0eXBlPT10ICYgV0JkYXRhJEJ2c1M9PWJzKV08LXN1bShXQmRhdGEkQVA0RUtEW3doaWNoKFdCZGF0YSR0eXBlPT10ICYgV0JkYXRhJEJ2c1M9PWJzICYgV0JkYXRhJEFQNEVLRCldKS9sZW5ndGgod2hpY2goV0JkYXRhJHR5cGU9PXQgJiBXQmRhdGEkQnZzUz09YnMgJiBXQmRhdGEkQVA0RUtEKSkKICB9Cn0KYGBgCgpSZW1vdmUgZHVwbGljYXRlIHJvd3MgZnJvbSByZXBsaWNhdGVzCmBgYHtyfQpXQmRhdGFfbm9kdXA8LVdCZGF0YVshZHVwbGljYXRlZChXQmRhdGEkTEMzcmF0aW9BdmUpLF0KYGBgCgo=</div>
 
 
 
