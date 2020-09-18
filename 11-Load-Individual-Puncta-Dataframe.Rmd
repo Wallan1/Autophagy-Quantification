@@ -180,3 +180,49 @@ for (t in c("WT","Mock", "Control", "tepsin", "AP4E1")) {
 }
 ```
 
+
+DELETE
+CSV import
+*change input file path*
+```{r}
+WBdata=read.csv(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/Calculated-PercEnlarged-AveVolEnlarged_17Sep20.csv",header=TRUE)
+```
+
+Calculate mean for each condition
+```{r}
+WBdata$PercEnlargedAve<-NA
+WBdata$AveEnlargedVolAve<-NA
+
+for (t in c("WT", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+  WBdata$PercEnlargedAve[which(WBdata$type==t & WBdata$BvsS==bs)]<-sum(WBdata$PercEnlarged[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$PercEnlarged)])/length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$PercEnlarged))
+ 
+  WBdata$AveEnlargedVolAve[which(WBdata$type==t & WBdata$BvsS==bs)]<-sum(WBdata$AveVolEnlarged[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$AveVolEnlarged)])/length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$AveVolEnlarged))
+  
+   }
+}
+
+
+```
+
+Calculate standard deviation for each condition
+```{r}
+WBdata$PercEnlSD<-NA
+WBdata$AveEnlVolSD<-NA
+
+
+for (t in c("WT", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+  WBdata$PercEnlSD[which(WBdata$type==t & WBdata$BvsS==bs)]<-sd(WBdata$PercEnlarged[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$PercEnlarged)])
+ 
+  WBdata$AveEnlVolSD[which(WBdata$type==t & WBdata$BvsS==bs)]<-sd(WBdata$AveVolEnlarged[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$AveVolEnlarged)])
+  
+   }
+}
+```
+
+Remove duplicate rows from replicates
+```{r}
+WBdata_nodup<-WBdata[!duplicated(WBdata$PercEnlargedAve),]
+```
+
