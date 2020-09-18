@@ -5,8 +5,8 @@ output: html_notebook
 
 
 ```{r}
-WBdata$type<-factor(WBdata$type, levels=c("WT", "Control", "tepsin", "AP4E1"))
-WBdata$BvsS<-factor(WBdata$BvsS, levels=c("Basal", "Starved"))
+WBdata_nodup$type<-factor(WBdata_nodup$type, levels=c("WT", "Control", "tepsin", "AP4E1"))
+WBdata_nodup$BvsS<-factor(WBdata_nodup$BvsS, levels=c("Basal", "Starved"))
 library(ggplot2)
 # install.packages("remotes")
 remotes::install_github("coolbutuseless/ggpattern")
@@ -29,7 +29,7 @@ plotme<-function(yaxis,sd,labelme,mytitle){
       ylab(labelme)+
       ggtitle(mytitle)+
       theme_minimal()+
-      scale_x_discrete(limits= rev(unique(sort(WBdata_nodup$type))))+
+      #scale_x_discrete(limits= rev(unique(sort(WBdata_nodup$type))))+
       theme(plot.title=element_text(hjust=.5))+
         scale_fill_viridis(discrete=TRUE,end=.9) +
         scale_color_viridis(discrete=TRUE,end=.9)+
@@ -37,17 +37,19 @@ plotme<-function(yaxis,sd,labelme,mytitle){
   
 }
 
-tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_LC3ratio.tiff",width=3000,height=2800,res=600)
-plotme(WBdata_nodup$LC3ratioAve,WBdata_nodup$LC3ratioSD, expression("Normalized LC3 II/I (A.U.)"),"LC3 II/I ratio")
-dev.off()
+#tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_LC3ratio.tiff",width=3000,height=3000,res=600)
+#plotme(WBdata_nodup$LC3ratioAve,WBdata_nodup$LC3ratioSD, expression("Normalized LC3 II/I (A.U.)"),"LC3 II/I ratio")
+#dev.off()
 
-tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_tepsinKD.tiff",width=3000,height=2800,res=600)
-plotme(WBdata_nodup$tepsinKDAve,WBdata_nodup$tepsinKDSD,"Normalized tepsin expression (A.U.)","tepsin siRNA knockdown")
-dev.off()
+#tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_tepsinKD.tiff",width=3000,height=3000,res=600)
+#plotme(WBdata_nodup$tepsinKDAve,WBdata_nodup$tepsinKDSD,"Normalized tepsin expression (A.U.)","tepsin siRNA knockdown")
+#dev.off()
 
-tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_AP4KD.tiff",width=3000,height=3000,res=600)
-plotme(WBdata_nodup$AP4EKDAve,WBdata_nodup$AP4EKDSD,"Normalized AP4E1 expression (A.U.)","AP4 epsilon siRNA knockdown")
-dev.off()
+#tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_AP4KD.tiff",width=3000,height=3000,res=600)
+#plotme(WBdata_nodup$AP4EKDAve,WBdata_nodup$AP4EKDSD,"Normalized AP4E1 expression (A.U.)","AP4 epsilon siRNA knockdown")
+#dev.off()
+
+
 ```
 
 

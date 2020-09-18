@@ -53,3 +53,6 @@ Remove duplicate rows from replicates
 WBdata_nodup<-WBdata[!duplicated(WBdata$LC3ratioAve),]
 ```
 
+
+
+
