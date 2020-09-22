@@ -52,6 +52,8 @@ plotme(Countdata_nodup$PercEnlargedAve,Countdata_nodup$PercEnlargedSD, expressio
 plotme(Countdata_nodup$AveVolEnlargedAve,Countdata_nodup$AveVolEnlargedSD, expression("Average Volume of Enlarged Puncta (um"^'3'*")"),"Average Enlarged LC3 Puncta Volume")
 #dev.off()
 
-
+tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/graphs/rep2-3-combined_HiIntLC3Puncta.tiff",width=3000,height=3000,res=600)
+plotme(Countdata_nodup$HiIntPunctaAve,Countdata_nodup$HiIntPunctaSD, expression("Number of High Intensity LC3 Puncta Puncta (A.U.)"),"Number of High intensity LC3 Puncta")
+dev.off()
 
 ```

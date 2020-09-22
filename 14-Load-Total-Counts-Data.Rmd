@@ -24,6 +24,7 @@ Countdata$PunctaTotAve<-NA
 Countdata$LC3EnlargedAve<-NA
 Countdata$PercEnlargedAve<-NA
 Countdata$AveVolEnlargedAve<-NA
+Countdata$HiIntPunctaAve<-NA
 
 
 for (t in c("WT", "Control", "tepsin", "AP4E1")) {
@@ -36,6 +37,8 @@ for (t in c("WT", "Control", "tepsin", "AP4E1")) {
   
    Countdata$AveVolEnlargedAve[which(Countdata$type==t & Countdata$BvsS==bs)]<-sum(Countdata$AveVolEnlarged[which(Countdata$type==t & Countdata$BvsS==bs & Countdata$AveVolEnlarged)])/length(which(Countdata$type==t & Countdata$BvsS==bs & Countdata$AveVolEnlarged))
  
+   Countdata$HiIntPunctaAve[which(Countdata$type==t & Countdata$BvsS==bs)]<-sum(Countdata$HiIntPuncta[which(Countdata$type==t & Countdata$BvsS==bs & Countdata$HiIntPuncta)])/length(which(Countdata$type==t & Countdata$BvsS==bs & Countdata$HiIntPuncta))
+   
    }
 }
 
@@ -48,6 +51,7 @@ Countdata$PunctaTotSD<-NA
 Countdata$LC3EnlargedSD<-NA
 Countdata$PercEnlargedSD<-NA
 Countdata$AveVolEnlargedSD<-NA
+Countdata$HiIntPunctaSD<-NA
 
 for (t in c("WT", "Control", "tepsin", "AP4E1")) {
   for (bs in c("Basal", "Starved")) {
@@ -60,7 +64,7 @@ for (t in c("WT", "Control", "tepsin", "AP4E1")) {
   
    Countdata$AveVolEnlargedSD[which(Countdata$type==t & Countdata$BvsS==bs)]<-sd(Countdata$AveVolEnlarged[which(Countdata$type==t & Countdata$BvsS==bs & Countdata$AveVolEnlarged)])
   
-  
+  Countdata$HiIntPunctaSD[which(Countdata$type==t & Countdata$BvsS==bs)]<-sd(Countdata$HiIntPuncta[which(Countdata$type==t & Countdata$BvsS==bs & Countdata$HiIntPuncta)])
    }
 }
 ```
