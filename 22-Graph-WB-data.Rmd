@@ -37,8 +37,24 @@ plotme<-function(yaxis,sd,labelme,mytitle){
   
 }
 
-#tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_LC3ratio.tiff",width=3000,height=3000,res=600)
-#plotme(WBdata_nodup$LC3ratioAve,WBdata_nodup$LC3ratioSD, expression("Normalized LC3 II/I (A.U.)"),"LC3 II/I ratio")
+#tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_LC3ratioUnNorm.tiff",width=3000,height=3000,res=600)
+plotme(WBdata_nodup$LC3ratioAve,WBdata_nodup$LC3ratioSD, expression("LC3 II/I (A.U.)"),"LC3 II/I ratio")
+#dev.off()
+
+#tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_LC3ratioNorm.tiff",width=3000,height=3000,res=600)
+plotme(WBdata_nodup$LC3ratioNormAve,WBdata_nodup$LC3ratioNormSD, expression("Normalized LC3 II/I (A.U.)"),"Normalized LC3 II/I ratio")
+#dev.off()
+
+#tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_LC3IInormTot.tiff",width=3000,height=3000,res=600)
+plotme(WBdata_nodup$LC3IItotAve,WBdata_nodup$LC3IItotSD, expression("Normalized LC3 II/total LC3 expression (A.U.)"),"LC3 II/total LC3 expression")
+#dev.off()
+
+#tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_LC3II.tiff",width=3000,height=3000,res=600)
+plotme(WBdata_nodup$LC3IIAve,WBdata_nodup$LC3IISD, expression("Normalized LC3 II expression (A.U.)"),"LC3 II expression")
+#dev.off()
+
+#tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_LC3tot.tiff",width=3000,height=3000,res=600)
+plotme(WBdata_nodup$LC3totAve,WBdata_nodup$LC3totSD, expression("Total LC3 expression (A.U.)"),"Total LC3 expression")
 #dev.off()
 
 #tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_tepsinKD.tiff",width=3000,height=3000,res=600)
