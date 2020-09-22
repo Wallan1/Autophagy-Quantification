@@ -4,8 +4,8 @@ output: html_notebook
 ---
 
 ```{r}
-Countdata_nodup$type<-factor(WBdata_nodup$type, levels=c("WT", "Control", "tepsin", "AP4E1"))
-Countdata_nodup$BvsS<-factor(WBdata_nodup$BvsS, levels=c("Basal", "Starved"))
+Countdata_nodup$type<-factor(Countdata_nodup$type, levels=c("WT", "Control", "tepsin", "AP4E1"))
+Countdata_nodup$BvsS<-factor(Countdata_nodup$BvsS, levels=c("Basal", "Starved"))
 library(ggplot2)
 # install.packages("remotes")
 remotes::install_github("coolbutuseless/ggpattern")
