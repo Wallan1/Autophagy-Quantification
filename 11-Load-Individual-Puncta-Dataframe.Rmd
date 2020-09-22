@@ -137,6 +137,22 @@ for (t in c("WT","Mock", "Control", "tepsin", "AP4E1")) {
 
 ```
 
+calculating number of high intensity puncta
+
+```{r}
+temp$HiIntPunctaCount<-NA
+
+temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
+
+for (t in c("WT","Mock", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+    temp$HiIntPunctaCount[which(temp$Type==t & temp$BvsS==bs)]<-length(which(temp$Type==t & temp$BvsS==bs & temp$LC3MeanObjIntensity >4000))
+  }
+}
+
+```
+
+
 Average volume of enlarged puncta
 ```{r}
 temp$EnlargedPunctaAveVol<-NA
@@ -178,51 +194,5 @@ for (t in c("WT","Mock", "Control", "tepsin", "AP4E1")) {
   tempTotals_nodup$TotalLC3PunctaCount[which(tempTotals_nodup$Type==t & tempTotals_nodup$BvsS==bs)]<-sum(tempTotals_nodup$LC3punctaCount[which(tempTotals_nodup$Type==t & tempTotals_nodup$BvsS==bs)])
    }
 }
-```
-
-
-DELETE
-CSV import
-*change input file path*
-```{r}
-WBdata=read.csv(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/Calculated-PercEnlarged-AveVolEnlarged_17Sep20.csv",header=TRUE)
-```
-
-Calculate mean for each condition
-```{r}
-WBdata$PercEnlargedAve<-NA
-WBdata$AveEnlargedVolAve<-NA
-
-for (t in c("WT", "Control", "tepsin", "AP4E1")) {
-  for (bs in c("Basal", "Starved")) {
-  WBdata$PercEnlargedAve[which(WBdata$type==t & WBdata$BvsS==bs)]<-sum(WBdata$PercEnlarged[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$PercEnlarged)])/length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$PercEnlarged))
- 
-  WBdata$AveEnlargedVolAve[which(WBdata$type==t & WBdata$BvsS==bs)]<-sum(WBdata$AveVolEnlarged[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$AveVolEnlarged)])/length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$AveVolEnlarged))
-  
-   }
-}
-
-
-```
-
-Calculate standard deviation for each condition
-```{r}
-WBdata$PercEnlSD<-NA
-WBdata$AveEnlVolSD<-NA
-
-
-for (t in c("WT", "Control", "tepsin", "AP4E1")) {
-  for (bs in c("Basal", "Starved")) {
-  WBdata$PercEnlSD[which(WBdata$type==t & WBdata$BvsS==bs)]<-sd(WBdata$PercEnlarged[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$PercEnlarged)])
- 
-  WBdata$AveEnlVolSD[which(WBdata$type==t & WBdata$BvsS==bs)]<-sd(WBdata$AveVolEnlarged[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$AveVolEnlarged)])
-  
-   }
-}
-```
-
-Remove duplicate rows from replicates
-```{r}
-WBdata_nodup<-WBdata[!duplicated(WBdata$PercEnlargedAve),]
 ```
 
