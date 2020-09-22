@@ -1749,21 +1749,87 @@ summary {
 
 
 <!-- rnb-text-begin -->
-<p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a> Notebook. When you execute code within the notebook, the results appear beneath the code.</p>
-<p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Cmd+Shift+Enter</em>.</p>
+<p>CSV import <em>change input file path</em></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
-<pre class="r"><code>plot(cars)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQ291bnRkYXRhPXJlYWQuY3N2KGZpbGU9XCJ+L0Rlc2t0b3AvYW5hbHlzaXNfMjBBdWcyMC9MQzMtTEFNUF9hbmFseXNpcy9jbGVhbmVkXzlTZXAyMC9DYWxjdWxhdGVkLVBlcmNFbmxhcmdlZC1BdmVWb2xFbmxhcmdlZF8xN1NlcDIwLmNzdlwiLGhlYWRlcj1UUlVFKVxuXG5gYGAifQ== -->
+<pre class="r"><code>Countdata=read.csv(file=&quot;~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/Calculated-PercEnlarged-AveVolEnlarged_17Sep20.csv&quot;,header=TRUE)
+</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Cmd+Option+I</em>.</p>
-<p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Cmd+Shift+K</em> to preview the HTML file).</p>
-<p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
+<p>To remove a replicate <em>only use to remove data</em></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQ291bnRkYXRhJHJlcGxpY2F0ZTwtZmFjdG9yKENvdW50ZGF0YSRyZXBsaWNhdGUsIGxldmVscz1jKFwiMVwiLCBcIjJcIixcIjNcIikpXG5Db3VudGRhdGE8LUNvdW50ZGF0YVt3aGljaChDb3VudGRhdGEkcmVwbGljYXRlIT1cIjFcIiksXVxuYGBgIn0= -->
+<pre class="r"><code>Countdata$replicate&lt;-factor(Countdata$replicate, levels=c(&quot;1&quot;, &quot;2&quot;,&quot;3&quot;))
+Countdata&lt;-Countdata[which(Countdata$replicate!=&quot;1&quot;),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Calculate mean for each condition</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQ291bnRkYXRhJFB1bmN0YVRvdEF2ZTwtTkFcbkNvdW50ZGF0YSRMQzNFbmxhcmdlZEF2ZTwtTkFcbkNvdW50ZGF0YSRQZXJjRW5sYXJnZWRBdmU8LU5BXG5Db3VudGRhdGEkQXZlVm9sRW5sYXJnZWRBdmU8LU5BXG5cblxuZm9yICh0IGluIGMoXCJXVFwiLCBcIkNvbnRyb2xcIiwgXCJ0ZXBzaW5cIiwgXCJBUDRFMVwiKSkge1xuICBmb3IgKGJzIGluIGMoXCJCYXNhbFwiLCBcIlN0YXJ2ZWRcIikpIHtcbiAgQ291bnRkYXRhJFB1bmN0YVRvdEF2ZVt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyldPC1zdW0oQ291bnRkYXRhJFB1bmN0YVRvdFt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyAmIENvdW50ZGF0YSRQdW5jdGFUb3QpXSkvbGVuZ3RoKHdoaWNoKENvdW50ZGF0YSR0eXBlPT10ICYgQ291bnRkYXRhJEJ2c1M9PWJzICYgQ291bnRkYXRhJFB1bmN0YVRvdCkpXG4gIFxuICBDb3VudGRhdGEkTEMzRW5sYXJnZWRBdmVbd2hpY2goQ291bnRkYXRhJHR5cGU9PXQgJiBDb3VudGRhdGEkQnZzUz09YnMpXTwtc3VtKENvdW50ZGF0YSRMQzNFbmxhcmdlZFt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyAmIENvdW50ZGF0YSRMQzNFbmxhcmdlZCldKS9sZW5ndGgod2hpY2goQ291bnRkYXRhJHR5cGU9PXQgJiBDb3VudGRhdGEkQnZzUz09YnMgJiBDb3VudGRhdGEkTEMzRW5sYXJnZWQpKVxuICBcbiAgQ291bnRkYXRhJFBlcmNFbmxhcmdlZEF2ZVt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyldPC1zdW0oQ291bnRkYXRhJFBlcmNFbmxhcmdlZFt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyAmIENvdW50ZGF0YSRQZXJjRW5sYXJnZWQpXSkvbGVuZ3RoKHdoaWNoKENvdW50ZGF0YSR0eXBlPT10ICYgQ291bnRkYXRhJEJ2c1M9PWJzICYgQ291bnRkYXRhJFBlcmNFbmxhcmdlZCkpXG4gIFxuICAgQ291bnRkYXRhJEF2ZVZvbEVubGFyZ2VkQXZlW3doaWNoKENvdW50ZGF0YSR0eXBlPT10ICYgQ291bnRkYXRhJEJ2c1M9PWJzKV08LXN1bShDb3VudGRhdGEkQXZlVm9sRW5sYXJnZWRbd2hpY2goQ291bnRkYXRhJHR5cGU9PXQgJiBDb3VudGRhdGEkQnZzUz09YnMgJiBDb3VudGRhdGEkQXZlVm9sRW5sYXJnZWQpXSkvbGVuZ3RoKHdoaWNoKENvdW50ZGF0YSR0eXBlPT10ICYgQ291bnRkYXRhJEJ2c1M9PWJzICYgQ291bnRkYXRhJEF2ZVZvbEVubGFyZ2VkKSlcbiBcbiAgIH1cbn1cblxuXG5gYGAifQ== -->
+<pre class="r"><code>Countdata$PunctaTotAve&lt;-NA
+Countdata$LC3EnlargedAve&lt;-NA
+Countdata$PercEnlargedAve&lt;-NA
+Countdata$AveVolEnlargedAve&lt;-NA
+
+
+for (t in c(&quot;WT&quot;, &quot;Control&quot;, &quot;tepsin&quot;, &quot;AP4E1&quot;)) {
+  for (bs in c(&quot;Basal&quot;, &quot;Starved&quot;)) {
+  Countdata$PunctaTotAve[which(Countdata$type==t &amp; Countdata$BvsS==bs)]&lt;-sum(Countdata$PunctaTot[which(Countdata$type==t &amp; Countdata$BvsS==bs &amp; Countdata$PunctaTot)])/length(which(Countdata$type==t &amp; Countdata$BvsS==bs &amp; Countdata$PunctaTot))
+  
+  Countdata$LC3EnlargedAve[which(Countdata$type==t &amp; Countdata$BvsS==bs)]&lt;-sum(Countdata$LC3Enlarged[which(Countdata$type==t &amp; Countdata$BvsS==bs &amp; Countdata$LC3Enlarged)])/length(which(Countdata$type==t &amp; Countdata$BvsS==bs &amp; Countdata$LC3Enlarged))
+  
+  Countdata$PercEnlargedAve[which(Countdata$type==t &amp; Countdata$BvsS==bs)]&lt;-sum(Countdata$PercEnlarged[which(Countdata$type==t &amp; Countdata$BvsS==bs &amp; Countdata$PercEnlarged)])/length(which(Countdata$type==t &amp; Countdata$BvsS==bs &amp; Countdata$PercEnlarged))
+  
+   Countdata$AveVolEnlargedAve[which(Countdata$type==t &amp; Countdata$BvsS==bs)]&lt;-sum(Countdata$AveVolEnlarged[which(Countdata$type==t &amp; Countdata$BvsS==bs &amp; Countdata$AveVolEnlarged)])/length(which(Countdata$type==t &amp; Countdata$BvsS==bs &amp; Countdata$AveVolEnlarged))
+ 
+   }
+}
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Calculate standard deviation for each condition</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQ291bnRkYXRhJFB1bmN0YVRvdFNEPC1OQVxuQ291bnRkYXRhJExDM0VubGFyZ2VkU0Q8LU5BXG5Db3VudGRhdGEkUGVyY0VubGFyZ2VkU0Q8LU5BXG5Db3VudGRhdGEkQXZlVm9sRW5sYXJnZWRTRDwtTkFcblxuZm9yICh0IGluIGMoXCJXVFwiLCBcIkNvbnRyb2xcIiwgXCJ0ZXBzaW5cIiwgXCJBUDRFMVwiKSkge1xuICBmb3IgKGJzIGluIGMoXCJCYXNhbFwiLCBcIlN0YXJ2ZWRcIikpIHtcbiAgXG4gIENvdW50ZGF0YSRQdW5jdGFUb3RTRFt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyldPC1zZChDb3VudGRhdGEkUHVuY3RhVG90W3doaWNoKENvdW50ZGF0YSR0eXBlPT10ICYgQ291bnRkYXRhJEJ2c1M9PWJzICYgQ291bnRkYXRhJFB1bmN0YVRvdCldKVxuICBcbiAgQ291bnRkYXRhJExDM0VubGFyZ2VkU0Rbd2hpY2goQ291bnRkYXRhJHR5cGU9PXQgJiBDb3VudGRhdGEkQnZzUz09YnMpXTwtc2QoQ291bnRkYXRhJExDM0VubGFyZ2VkW3doaWNoKENvdW50ZGF0YSR0eXBlPT10ICYgQ291bnRkYXRhJEJ2c1M9PWJzICYgQ291bnRkYXRhJExDM0VubGFyZ2VkKV0pXG4gIFxuICBDb3VudGRhdGEkUGVyY0VubGFyZ2VkU0Rbd2hpY2goQ291bnRkYXRhJHR5cGU9PXQgJiBDb3VudGRhdGEkQnZzUz09YnMpXTwtc2QoQ291bnRkYXRhJFBlcmNFbmxhcmdlZFt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyAmIENvdW50ZGF0YSRQZXJjRW5sYXJnZWQpXSlcbiAgXG4gICBDb3VudGRhdGEkQXZlVm9sRW5sYXJnZWRTRFt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyldPC1zZChDb3VudGRhdGEkQXZlVm9sRW5sYXJnZWRbd2hpY2goQ291bnRkYXRhJHR5cGU9PXQgJiBDb3VudGRhdGEkQnZzUz09YnMgJiBDb3VudGRhdGEkQXZlVm9sRW5sYXJnZWQpXSlcbiAgXG4gIFxuICAgfVxufVxuYGBgIn0= -->
+<pre class="r"><code>Countdata$PunctaTotSD&lt;-NA
+Countdata$LC3EnlargedSD&lt;-NA
+Countdata$PercEnlargedSD&lt;-NA
+Countdata$AveVolEnlargedSD&lt;-NA
+
+for (t in c(&quot;WT&quot;, &quot;Control&quot;, &quot;tepsin&quot;, &quot;AP4E1&quot;)) {
+  for (bs in c(&quot;Basal&quot;, &quot;Starved&quot;)) {
+  
+  Countdata$PunctaTotSD[which(Countdata$type==t &amp; Countdata$BvsS==bs)]&lt;-sd(Countdata$PunctaTot[which(Countdata$type==t &amp; Countdata$BvsS==bs &amp; Countdata$PunctaTot)])
+  
+  Countdata$LC3EnlargedSD[which(Countdata$type==t &amp; Countdata$BvsS==bs)]&lt;-sd(Countdata$LC3Enlarged[which(Countdata$type==t &amp; Countdata$BvsS==bs &amp; Countdata$LC3Enlarged)])
+  
+  Countdata$PercEnlargedSD[which(Countdata$type==t &amp; Countdata$BvsS==bs)]&lt;-sd(Countdata$PercEnlarged[which(Countdata$type==t &amp; Countdata$BvsS==bs &amp; Countdata$PercEnlarged)])
+  
+   Countdata$AveVolEnlargedSD[which(Countdata$type==t &amp; Countdata$BvsS==bs)]&lt;-sd(Countdata$AveVolEnlarged[which(Countdata$type==t &amp; Countdata$BvsS==bs &amp; Countdata$AveVolEnlarged)])
+  
+  
+   }
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Remove duplicate rows from replicates</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQ291bnRkYXRhX25vZHVwPC1Db3VudGRhdGFbIWR1cGxpY2F0ZWQoQ291bnRkYXRhJFB1bmN0YVRvdEF2ZSksXVxuYGBgIn0= -->
+<pre class="r"><code>Countdata_nodup&lt;-Countdata[!duplicated(Countdata$PunctaTotAve),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiMTQtTG9hZC1Ub3RhbC1QdW5jdGEtQ291bnQtRGF0YSIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2suIFdoZW4geW91IGV4ZWN1dGUgY29kZSB3aXRoaW4gdGhlIG5vdGVib29rLCB0aGUgcmVzdWx0cyBhcHBlYXIgYmVuZWF0aCB0aGUgY29kZS4gCgpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ21kK1NoaWZ0K0VudGVyKi4gCgpgYGB7cn0KcGxvdChjYXJzKQpgYGAKCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDbWQrT3B0aW9uK0kqLgoKV2hlbiB5b3Ugc2F2ZSB0aGUgbm90ZWJvb2ssIGFuIEhUTUwgZmlsZSBjb250YWluaW5nIHRoZSBjb2RlIGFuZCBvdXRwdXQgd2lsbCBiZSBzYXZlZCBhbG9uZ3NpZGUgaXQgKGNsaWNrIHRoZSAqUHJldmlldyogYnV0dG9uIG9yIHByZXNzICpDbWQrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4gCgpUaGUgcHJldmlldyBzaG93cyB5b3UgYSByZW5kZXJlZCBIVE1MIGNvcHkgb2YgdGhlIGNvbnRlbnRzIG9mIHRoZSBlZGl0b3IuIENvbnNlcXVlbnRseSwgdW5saWtlICpLbml0KiwgKlByZXZpZXcqIGRvZXMgbm90IHJ1biBhbnkgUiBjb2RlIGNodW5rcy4gSW5zdGVhZCwgdGhlIG91dHB1dCBvZiB0aGUgY2h1bmsgd2hlbiBpdCB3YXMgbGFzdCBydW4gaW4gdGhlIGVkaXRvciBpcyBkaXNwbGF5ZWQuCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiMTQtTG9hZC1Ub3RhbC1QdW5jdGEtQ291bnQtRGF0YSIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKQ1NWIGltcG9ydAoqY2hhbmdlIGlucHV0IGZpbGUgcGF0aCoKYGBge3J9CkNvdW50ZGF0YT1yZWFkLmNzdihmaWxlPSJ+L0Rlc2t0b3AvYW5hbHlzaXNfMjBBdWcyMC9MQzMtTEFNUF9hbmFseXNpcy9jbGVhbmVkXzlTZXAyMC9DYWxjdWxhdGVkLVBlcmNFbmxhcmdlZC1BdmVWb2xFbmxhcmdlZF8xN1NlcDIwLmNzdiIsaGVhZGVyPVRSVUUpCgpgYGAKClRvIHJlbW92ZSBhIHJlcGxpY2F0ZQoqb25seSB1c2UgdG8gcmVtb3ZlIGRhdGEqCmBgYHtyfQpDb3VudGRhdGEkcmVwbGljYXRlPC1mYWN0b3IoQ291bnRkYXRhJHJlcGxpY2F0ZSwgbGV2ZWxzPWMoIjEiLCAiMiIsIjMiKSkKQ291bnRkYXRhPC1Db3VudGRhdGFbd2hpY2goQ291bnRkYXRhJHJlcGxpY2F0ZSE9IjEiKSxdCmBgYAoKCkNhbGN1bGF0ZSBtZWFuIGZvciBlYWNoIGNvbmRpdGlvbgpgYGB7cn0KQ291bnRkYXRhJFB1bmN0YVRvdEF2ZTwtTkEKQ291bnRkYXRhJExDM0VubGFyZ2VkQXZlPC1OQQpDb3VudGRhdGEkUGVyY0VubGFyZ2VkQXZlPC1OQQpDb3VudGRhdGEkQXZlVm9sRW5sYXJnZWRBdmU8LU5BCgoKZm9yICh0IGluIGMoIldUIiwgIkNvbnRyb2wiLCAidGVwc2luIiwgIkFQNEUxIikpIHsKICBmb3IgKGJzIGluIGMoIkJhc2FsIiwgIlN0YXJ2ZWQiKSkgewogIENvdW50ZGF0YSRQdW5jdGFUb3RBdmVbd2hpY2goQ291bnRkYXRhJHR5cGU9PXQgJiBDb3VudGRhdGEkQnZzUz09YnMpXTwtc3VtKENvdW50ZGF0YSRQdW5jdGFUb3Rbd2hpY2goQ291bnRkYXRhJHR5cGU9PXQgJiBDb3VudGRhdGEkQnZzUz09YnMgJiBDb3VudGRhdGEkUHVuY3RhVG90KV0pL2xlbmd0aCh3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyAmIENvdW50ZGF0YSRQdW5jdGFUb3QpKQogIAogIENvdW50ZGF0YSRMQzNFbmxhcmdlZEF2ZVt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyldPC1zdW0oQ291bnRkYXRhJExDM0VubGFyZ2VkW3doaWNoKENvdW50ZGF0YSR0eXBlPT10ICYgQ291bnRkYXRhJEJ2c1M9PWJzICYgQ291bnRkYXRhJExDM0VubGFyZ2VkKV0pL2xlbmd0aCh3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyAmIENvdW50ZGF0YSRMQzNFbmxhcmdlZCkpCiAgCiAgQ291bnRkYXRhJFBlcmNFbmxhcmdlZEF2ZVt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyldPC1zdW0oQ291bnRkYXRhJFBlcmNFbmxhcmdlZFt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyAmIENvdW50ZGF0YSRQZXJjRW5sYXJnZWQpXSkvbGVuZ3RoKHdoaWNoKENvdW50ZGF0YSR0eXBlPT10ICYgQ291bnRkYXRhJEJ2c1M9PWJzICYgQ291bnRkYXRhJFBlcmNFbmxhcmdlZCkpCiAgCiAgIENvdW50ZGF0YSRBdmVWb2xFbmxhcmdlZEF2ZVt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyldPC1zdW0oQ291bnRkYXRhJEF2ZVZvbEVubGFyZ2VkW3doaWNoKENvdW50ZGF0YSR0eXBlPT10ICYgQ291bnRkYXRhJEJ2c1M9PWJzICYgQ291bnRkYXRhJEF2ZVZvbEVubGFyZ2VkKV0pL2xlbmd0aCh3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyAmIENvdW50ZGF0YSRBdmVWb2xFbmxhcmdlZCkpCiAKICAgfQp9CgoKYGBgCgpDYWxjdWxhdGUgc3RhbmRhcmQgZGV2aWF0aW9uIGZvciBlYWNoIGNvbmRpdGlvbgpgYGB7cn0KQ291bnRkYXRhJFB1bmN0YVRvdFNEPC1OQQpDb3VudGRhdGEkTEMzRW5sYXJnZWRTRDwtTkEKQ291bnRkYXRhJFBlcmNFbmxhcmdlZFNEPC1OQQpDb3VudGRhdGEkQXZlVm9sRW5sYXJnZWRTRDwtTkEKCmZvciAodCBpbiBjKCJXVCIsICJDb250cm9sIiwgInRlcHNpbiIsICJBUDRFMSIpKSB7CiAgZm9yIChicyBpbiBjKCJCYXNhbCIsICJTdGFydmVkIikpIHsKICAKICBDb3VudGRhdGEkUHVuY3RhVG90U0Rbd2hpY2goQ291bnRkYXRhJHR5cGU9PXQgJiBDb3VudGRhdGEkQnZzUz09YnMpXTwtc2QoQ291bnRkYXRhJFB1bmN0YVRvdFt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyAmIENvdW50ZGF0YSRQdW5jdGFUb3QpXSkKICAKICBDb3VudGRhdGEkTEMzRW5sYXJnZWRTRFt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyldPC1zZChDb3VudGRhdGEkTEMzRW5sYXJnZWRbd2hpY2goQ291bnRkYXRhJHR5cGU9PXQgJiBDb3VudGRhdGEkQnZzUz09YnMgJiBDb3VudGRhdGEkTEMzRW5sYXJnZWQpXSkKICAKICBDb3VudGRhdGEkUGVyY0VubGFyZ2VkU0Rbd2hpY2goQ291bnRkYXRhJHR5cGU9PXQgJiBDb3VudGRhdGEkQnZzUz09YnMpXTwtc2QoQ291bnRkYXRhJFBlcmNFbmxhcmdlZFt3aGljaChDb3VudGRhdGEkdHlwZT09dCAmIENvdW50ZGF0YSRCdnNTPT1icyAmIENvdW50ZGF0YSRQZXJjRW5sYXJnZWQpXSkKICAKICAgQ291bnRkYXRhJEF2ZVZvbEVubGFyZ2VkU0Rbd2hpY2goQ291bnRkYXRhJHR5cGU9PXQgJiBDb3VudGRhdGEkQnZzUz09YnMpXTwtc2QoQ291bnRkYXRhJEF2ZVZvbEVubGFyZ2VkW3doaWNoKENvdW50ZGF0YSR0eXBlPT10ICYgQ291bnRkYXRhJEJ2c1M9PWJzICYgQ291bnRkYXRhJEF2ZVZvbEVubGFyZ2VkKV0pCiAgCiAgCiAgIH0KfQpgYGAKClJlbW92ZSBkdXBsaWNhdGUgcm93cyBmcm9tIHJlcGxpY2F0ZXMKYGBge3J9CkNvdW50ZGF0YV9ub2R1cDwtQ291bnRkYXRhWyFkdXBsaWNhdGVkKENvdW50ZGF0YSRQdW5jdGFUb3RBdmUpLF0KYGBgCgoK</div>
 
 
 

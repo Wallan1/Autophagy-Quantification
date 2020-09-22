@@ -3,17 +3,71 @@ title: "14-Load-Total-Puncta-Count-Data"
 output: html_notebook
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
-
+CSV import
+*change input file path*
 ```{r}
-plot(cars)
+Countdata=read.csv(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/Calculated-PercEnlarged-AveVolEnlarged_17Sep20.csv",header=TRUE)
+
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+To remove a replicate
+*only use to remove data*
+```{r}
+Countdata$replicate<-factor(Countdata$replicate, levels=c("1", "2","3"))
+Countdata<-Countdata[which(Countdata$replicate!="1"),]
+```
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+Calculate mean for each condition
+```{r}
+Countdata$PunctaTotAve<-NA
+Countdata$LC3EnlargedAve<-NA
+Countdata$PercEnlargedAve<-NA
+Countdata$AveVolEnlargedAve<-NA
+
+
+for (t in c("WT", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+  Countdata$PunctaTotAve[which(Countdata$type==t & Countdata$BvsS==bs)]<-sum(Countdata$PunctaTot[which(Countdata$type==t & Countdata$BvsS==bs & Countdata$PunctaTot)])/length(which(Countdata$type==t & Countdata$BvsS==bs & Countdata$PunctaTot))
+  
+  Countdata$LC3EnlargedAve[which(Countdata$type==t & Countdata$BvsS==bs)]<-sum(Countdata$LC3Enlarged[which(Countdata$type==t & Countdata$BvsS==bs & Countdata$LC3Enlarged)])/length(which(Countdata$type==t & Countdata$BvsS==bs & Countdata$LC3Enlarged))
+  
+  Countdata$PercEnlargedAve[which(Countdata$type==t & Countdata$BvsS==bs)]<-sum(Countdata$PercEnlarged[which(Countdata$type==t & Countdata$BvsS==bs & Countdata$PercEnlarged)])/length(which(Countdata$type==t & Countdata$BvsS==bs & Countdata$PercEnlarged))
+  
+   Countdata$AveVolEnlargedAve[which(Countdata$type==t & Countdata$BvsS==bs)]<-sum(Countdata$AveVolEnlarged[which(Countdata$type==t & Countdata$BvsS==bs & Countdata$AveVolEnlarged)])/length(which(Countdata$type==t & Countdata$BvsS==bs & Countdata$AveVolEnlarged))
+ 
+   }
+}
+
+
+```
+
+Calculate standard deviation for each condition
+```{r}
+Countdata$PunctaTotSD<-NA
+Countdata$LC3EnlargedSD<-NA
+Countdata$PercEnlargedSD<-NA
+Countdata$AveVolEnlargedSD<-NA
+
+for (t in c("WT", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+  
+  Countdata$PunctaTotSD[which(Countdata$type==t & Countdata$BvsS==bs)]<-sd(Countdata$PunctaTot[which(Countdata$type==t & Countdata$BvsS==bs & Countdata$PunctaTot)])
+  
+  Countdata$LC3EnlargedSD[which(Countdata$type==t & Countdata$BvsS==bs)]<-sd(Countdata$LC3Enlarged[which(Countdata$type==t & Countdata$BvsS==bs & Countdata$LC3Enlarged)])
+  
+  Countdata$PercEnlargedSD[which(Countdata$type==t & Countdata$BvsS==bs)]<-sd(Countdata$PercEnlarged[which(Countdata$type==t & Countdata$BvsS==bs & Countdata$PercEnlarged)])
+  
+   Countdata$AveVolEnlargedSD[which(Countdata$type==t & Countdata$BvsS==bs)]<-sd(Countdata$AveVolEnlarged[which(Countdata$type==t & Countdata$BvsS==bs & Countdata$AveVolEnlarged)])
+  
+  
+   }
+}
+```
+
+Remove duplicate rows from replicates
+```{r}
+Countdata_nodup<-Countdata[!duplicated(Countdata$PunctaTotAve),]
+```
+
 
