@@ -1,0 +1,28 @@
+---
+title: "32-Count-data_statistical-analysis"
+output: html_notebook
+---
+
+```{r}
+Countdata$replicate<-as.factor(Countdata$replicate)
+
+anovaPunctaTot<-aov(Countdata$PunctaTot~Countdata$type*Countdata$BvsS+Countdata$replicate+Countdata$replicate:Countdata$type)
+summary(anovaPunctaTot)
+TukeyHSD(anovaPunctaTot)
+
+anovaLC3Enlarged<-aov(Countdata$LC3Enlarged~Countdata$type*Countdata$BvsS+Countdata$replicate+Countdata$replicate:Countdata$type)
+summary(anovaLC3Enlarged)
+TukeyHSD(anovaLC3Enlarged)
+
+anovaPercEnlarged<-aov(Countdata$PercEnlarged~Countdata$type*Countdata$BvsS+Countdata$replicate+Countdata$replicate:Countdata$type)
+summary(anovaPercEnlarged)
+TukeyHSD(anovaPercEnlarged)
+
+anovaAveVolEnlarged<-aov(Countdata$AveVolEnlarged~Countdata$type*Countdata$BvsS+Countdata$replicate+Countdata$replicate:Countdata$type)
+summary(anovaAveVolEnlarged)
+TukeyHSD(anovaAveVolEnlarged)
+
+anovaHiIntPuncta<-aov(Countdata$HiIntPuncta~Countdata$type*Countdata$BvsS+Countdata$replicate+Countdata$replicate:Countdata$type)
+summary(anovaHiIntPuncta)
+TukeyHSD(anovaHiIntPuncta)
+```
