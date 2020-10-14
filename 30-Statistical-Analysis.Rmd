@@ -3,7 +3,7 @@ title: "30-Statistical-Analysis"
 output: html_notebook
 ---
 
-ANOVA of Iall metrics
+ANOVA of all metrics
 
 ```{r}
 temp$Rep<-as.factor(temp$Rep)
