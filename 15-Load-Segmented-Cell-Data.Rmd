@@ -1,0 +1,47 @@
+---
+title: "15-Load-Segmented-Cell-Data"
+output: html_notebook
+---
+
+CSV import
+*change input file path*
+```{r}
+testdata=read.csv(file="~/Desktop/21Jan21_analysis/NSW3010_Basal_count_20Jan21.csv",header=TRUE)
+testdata$BvsS<-"Basal"
+testdata$Rep<-1
+nobs=nrow(testdata)
+for (i in 1:nobs) {
+  if (is.na(testdata[i,3])) {
+    testdata[i,1]<-fname
+    testdata[i,2]<-CellID
+    testdata[i,3]<-LC3PunctaCount
+    testdata[i,4]<-LAMPObjCount
+  } 
+  else {
+    fname=testdata[i,1]
+    CellID=testdata[i,2]
+    LC3PunctaCount=testdata[i,3]
+    LMAPObjCount=testdata[i,4]
+  }
+}
+
+testdata2=read.csv(file="~/Desktop/21Jan21_analysis/NSW3010_Starved_count_20Jan21.csv",header=TRUE)
+testdata$BvsS<-"Starved"
+testdata$Rep<-1
+nobs=nrow(testdata2)
+for (i in 1:nobs) {
+  if (is.na(testdata2[i,3])) {
+    testdata2[i,1]<-fname
+    testdata2[i,2]<-CellID
+    testdata2[i,3]<-LC3PunctaCount
+    testdata2[i,4]<-LAMPObjCount
+  } 
+  else {
+    fname=testdata2[i,1]
+    CellID=testdata2[i,2]
+    LC3PunctaCount=testdata2[i,3]
+    LMAPObjCount=testdata2[i,4]
+  }
+}
+```
+
