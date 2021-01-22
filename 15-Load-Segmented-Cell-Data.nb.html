@@ -1752,16 +1752,69 @@ summary {
 <p>CSV import <em>change input file path</em></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdGRhdGE9cmVhZC5jc3YoZmlsZT1cIn4vRGVza3RvcC8yMUphbjIxX2FuYWx5c2lzL05TVzMwMTBfQmFzYWxfY291bnRfMjBKYW4yMS5jc3ZcIixoZWFkZXI9VFJVRSlcbnRlc3RkYXRhJEJ2c1M8LVwiQmFzYWxcIlxudGVzdGRhdGEkUmVwPC0xXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdGRhdGE9cmVhZC5jc3YoZmlsZT1cIn4vRGVza3RvcC8yMUphbjIxX2FuYWx5c2lzL05TVzMwMTBfQmFzYWxfY291bnRfMjBKYW4yMS5jc3ZcIixoZWFkZXI9VFJVRSlcbnRlc3RkYXRhJEJ2c1M8LVwiQmFzYWxcIlxudGVzdGRhdGEkUmVwPC0xXG5ub2JzPW5yb3codGVzdGRhdGEpXG5mb3IgKGkgaW4gMTpub2JzKSB7XG4gIGlmICh0ZXN0ZGF0YVtpLDFdPT1cIlwiKSB7XG4gICAgdGVzdGRhdGFbaSwxXTwtZm5hbWVcblxuICB9IFxuICBlbHNlIHtcbiAgICBmbmFtZT10ZXN0ZGF0YVtpLDFdXG5cbiAgfVxufVxuXG50ZXN0ZGF0YTI9cmVhZC5jc3YoZmlsZT1cIn4vRGVza3RvcC8yMUphbjIxX2FuYWx5c2lzL05TVzMwMTBfU3RhcnZlZF9jb3VudF8yMEphbjIxLmNzdlwiLGhlYWRlcj1UUlVFKVxudGVzdGRhdGEyJEJ2c1M8LVwiU3RhcnZlZFwiXG50ZXN0ZGF0YTIkUmVwPC0xXG5ub2JzPW5yb3codGVzdGRhdGEyKVxuZm9yIChpIGluIDE6bm9icykge1xuICBpZiAodGVzdGRhdGEyW2ksMV09PVwiXCIpIHtcbiAgICB0ZXN0ZGF0YTJbaSwxXTwtZm5hbWVcblxuICB9IFxuICBlbHNlIHtcbiAgICBmbmFtZT10ZXN0ZGF0YTJbaSwxXVxuXG4gIH1cbn1cblxudGVtcDwtcmJpbmQodGVzdGRhdGEsdGVzdGRhdGEyKVxuYGBgIn0= -->
 <pre class="r"><code>testdata=read.csv(file=&quot;~/Desktop/21Jan21_analysis/NSW3010_Basal_count_20Jan21.csv&quot;,header=TRUE)
 testdata$BvsS&lt;-&quot;Basal&quot;
-testdata$Rep&lt;-1</code></pre>
+testdata$Rep&lt;-1
+nobs=nrow(testdata)
+for (i in 1:nobs) {
+  if (testdata[i,1]==&quot;&quot;) {
+    testdata[i,1]&lt;-fname
+
+  } 
+  else {
+    fname=testdata[i,1]
+
+  }
+}
+
+testdata2=read.csv(file=&quot;~/Desktop/21Jan21_analysis/NSW3010_Starved_count_20Jan21.csv&quot;,header=TRUE)
+testdata2$BvsS&lt;-&quot;Starved&quot;
+testdata2$Rep&lt;-1
+nobs=nrow(testdata2)
+for (i in 1:nobs) {
+  if (testdata2[i,1]==&quot;&quot;) {
+    testdata2[i,1]&lt;-fname
+
+  } 
+  else {
+    fname=testdata2[i,1]
+
+  }
+}
+
+temp&lt;-rbind(testdata,testdata2)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Adding type designation <em>if necessary update substring values based on filename in input document</em></p>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVtcCRUeXBlPC1OQVxubnRlbXA8LW5yb3codGVtcClcblxuXG5mb3IgKGMgaW4gMTpudGVtcCkge1xuICBpZiAoc3Vic3RyKHRlbXBbYywxXSw0OSw0OSk9PVwiV1wiKSB7XG4gICAgdGVtcCRUeXBlW2NdPC1cIldUXCJcbiAgfVxuICBlbHNlIGlmIChzdWJzdHIodGVtcFtjLDFdLDQ5LDQ5KT09XCJDXCIpIHtcbiAgICB0ZW1wJFR5cGVbY108LVwiQ29udHJvbFwiXG4gIH1cbiAgZWxzZSBpZiAoc3Vic3RyKHRlbXBbYywxXSw0OSw0OSk9PVwidFwiKSB7XG4gICAgdGVtcCRUeXBlW2NdPC1cInRlcHNpblwiXG4gIH1cbiAgZWxzZSB7XG4gICAgdGVtcCRUeXBlW2NdPC1cIkFQNEUxXCJcbiAgfVxuICBcbn1cbnRlbXAkVHlwZTwtZmFjdG9yKHRlbXAkVHlwZSwgbGV2ZWxzPWMoXCJXVFwiLCBcIk1vY2tcIiwgXCJDb250cm9sXCIsIFwidGVwc2luXCIsIFwiQVA0RTFcIikpXG5gYGAifQ== -->
+<pre class="r"><code>temp$Type&lt;-NA
+ntemp&lt;-nrow(temp)
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiMTUtTG9hZC1TZWdtZW50ZWQtQ2VsbC1EYXRhIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgpDU1YgaW1wb3J0CipjaGFuZ2UgaW5wdXQgZmlsZSBwYXRoKgpgYGB7cn0KdGVzdGRhdGE9cmVhZC5jc3YoZmlsZT0ifi9EZXNrdG9wLzIxSmFuMjFfYW5hbHlzaXMvTlNXMzAxMF9CYXNhbF9jb3VudF8yMEphbjIxLmNzdiIsaGVhZGVyPVRSVUUpCnRlc3RkYXRhJEJ2c1M8LSJCYXNhbCIKdGVzdGRhdGEkUmVwPC0xCm5vYnM9bnJvdyh0ZXN0ZGF0YSkKZm9yIChpIGluIDE6bm9icykgewogIGlmIChpcy5uYSh0ZXN0ZGF0YVtpLDNdKSkgewogICAgdGVzdGRhdGFbaSwxXTwtZm5hbWUKICAgIHRlc3RkYXRhW2ksMl08LUNlbGxJRAogICAgdGVzdGRhdGFbaSwzXTwtTEMzUHVuY3RhQ291bnQKICAgIHRlc3RkYXRhW2ksNF08LUxBTVBPYmpDb3VudAogIH0gCiAgZWxzZSB7CiAgICBmbmFtZT10ZXN0ZGF0YVtpLDFdCiAgICBDZWxsSUQ9dGVzdGRhdGFbaSwyXQogICAgTEMzUHVuY3RhQ291bnQ9dGVzdGRhdGFbaSwzXQogICAgTE1BUE9iakNvdW50PXRlc3RkYXRhW2ksNF0KICB9Cn0KCnRlc3RkYXRhMj1yZWFkLmNzdihmaWxlPSJ+L0Rlc2t0b3AvMjFKYW4yMV9hbmFseXNpcy9OU1czMDEwX1N0YXJ2ZWRfY291bnRfMjBKYW4yMS5jc3YiLGhlYWRlcj1UUlVFKQp0ZXN0ZGF0YSRCdnNTPC0iU3RhcnZlZCIKdGVzdGRhdGEkUmVwPC0xCm5vYnM9bnJvdyh0ZXN0ZGF0YTIpCmZvciAoaSBpbiAxOm5vYnMpIHsKICBpZiAoaXMubmEodGVzdGRhdGEyW2ksM10pKSB7CiAgICB0ZXN0ZGF0YTJbaSwxXTwtZm5hbWUKICAgIHRlc3RkYXRhMltpLDJdPC1DZWxsSUQKICAgIHRlc3RkYXRhMltpLDNdPC1MQzNQdW5jdGFDb3VudAogICAgdGVzdGRhdGEyW2ksNF08LUxBTVBPYmpDb3VudAogIH0gCiAgZWxzZSB7CiAgICBmbmFtZT10ZXN0ZGF0YTJbaSwxXQogICAgQ2VsbElEPXRlc3RkYXRhMltpLDJdCiAgICBMQzNQdW5jdGFDb3VudD10ZXN0ZGF0YTJbaSwzXQogICAgTE1BUE9iakNvdW50PXRlc3RkYXRhMltpLDRdCiAgfQp9CmBgYAoK</div>
+
+for (c in 1:ntemp) {
+  if (substr(temp[c,1],49,49)==&quot;W&quot;) {
+    temp$Type[c]&lt;-&quot;WT&quot;
+  }
+  else if (substr(temp[c,1],49,49)==&quot;C&quot;) {
+    temp$Type[c]&lt;-&quot;Control&quot;
+  }
+  else if (substr(temp[c,1],49,49)==&quot;t&quot;) {
+    temp$Type[c]&lt;-&quot;tepsin&quot;
+  }
+  else {
+    temp$Type[c]&lt;-&quot;AP4E1&quot;
+  }
+  
+}
+temp$Type&lt;-factor(temp$Type, levels=c(&quot;WT&quot;, &quot;Mock&quot;, &quot;Control&quot;, &quot;tepsin&quot;, &quot;AP4E1&quot;))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiMTUtTG9hZC1TZWdtZW50ZWQtQ2VsbC1EYXRhIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgpDU1YgaW1wb3J0CipjaGFuZ2UgaW5wdXQgZmlsZSBwYXRoKgpgYGB7cn0KdGVzdGRhdGE9cmVhZC5jc3YoZmlsZT0ifi9EZXNrdG9wLzIxSmFuMjFfYW5hbHlzaXMvTlNXMzAxMF9CYXNhbF9jb3VudF8yMEphbjIxLmNzdiIsaGVhZGVyPVRSVUUpCnRlc3RkYXRhJEJ2c1M8LSJCYXNhbCIKdGVzdGRhdGEkUmVwPC0xCm5vYnM9bnJvdyh0ZXN0ZGF0YSkKZm9yIChpIGluIDE6bm9icykgewogIGlmICh0ZXN0ZGF0YVtpLDFdPT0iIikgewogICAgdGVzdGRhdGFbaSwxXTwtZm5hbWUKCiAgfSAKICBlbHNlIHsKICAgIGZuYW1lPXRlc3RkYXRhW2ksMV0KCiAgfQp9Cgp0ZXN0ZGF0YTI9cmVhZC5jc3YoZmlsZT0ifi9EZXNrdG9wLzIxSmFuMjFfYW5hbHlzaXMvTlNXMzAxMF9TdGFydmVkX2NvdW50XzIwSmFuMjEuY3N2IixoZWFkZXI9VFJVRSkKdGVzdGRhdGEyJEJ2c1M8LSJTdGFydmVkIgp0ZXN0ZGF0YTIkUmVwPC0xCm5vYnM9bnJvdyh0ZXN0ZGF0YTIpCmZvciAoaSBpbiAxOm5vYnMpIHsKICBpZiAodGVzdGRhdGEyW2ksMV09PSIiKSB7CiAgICB0ZXN0ZGF0YTJbaSwxXTwtZm5hbWUKCiAgfSAKICBlbHNlIHsKICAgIGZuYW1lPXRlc3RkYXRhMltpLDFdCgogIH0KfQoKdGVtcDwtcmJpbmQodGVzdGRhdGEsdGVzdGRhdGEyKQpgYGAKCkFkZGluZyB0eXBlIGRlc2lnbmF0aW9uCippZiBuZWNlc3NhcnkgdXBkYXRlIHN1YnN0cmluZyB2YWx1ZXMgYmFzZWQgb24gZmlsZW5hbWUgaW4gaW5wdXQgZG9jdW1lbnQqCgpgYGB7cn0KdGVtcCRUeXBlPC1OQQpudGVtcDwtbnJvdyh0ZW1wKQoKCmZvciAoYyBpbiAxOm50ZW1wKSB7CiAgaWYgKHN1YnN0cih0ZW1wW2MsMV0sNDksNDkpPT0iVyIpIHsKICAgIHRlbXAkVHlwZVtjXTwtIldUIgogIH0KICBlbHNlIGlmIChzdWJzdHIodGVtcFtjLDFdLDQ5LDQ5KT09IkMiKSB7CiAgICB0ZW1wJFR5cGVbY108LSJDb250cm9sIgogIH0KICBlbHNlIGlmIChzdWJzdHIodGVtcFtjLDFdLDQ5LDQ5KT09InQiKSB7CiAgICB0ZW1wJFR5cGVbY108LSJ0ZXBzaW4iCiAgfQogIGVsc2UgewogICAgdGVtcCRUeXBlW2NdPC0iQVA0RTEiCiAgfQogIAp9CnRlbXAkVHlwZTwtZmFjdG9yKHRlbXAkVHlwZSwgbGV2ZWxzPWMoIldUIiwgIk1vY2siLCAiQ29udHJvbCIsICJ0ZXBzaW4iLCAiQVA0RTEiKSkKYGBgCg==</div>
 
 
 

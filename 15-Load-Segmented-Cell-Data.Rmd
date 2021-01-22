@@ -11,37 +11,56 @@ testdata$BvsS<-"Basal"
 testdata$Rep<-1
 nobs=nrow(testdata)
 for (i in 1:nobs) {
-  if (is.na(testdata[i,3])) {
+  if (testdata[i,1]=="") {
     testdata[i,1]<-fname
-    testdata[i,2]<-CellID
-    testdata[i,3]<-LC3PunctaCount
-    testdata[i,4]<-LAMPObjCount
+
   } 
   else {
     fname=testdata[i,1]
-    CellID=testdata[i,2]
-    LC3PunctaCount=testdata[i,3]
-    LMAPObjCount=testdata[i,4]
+
   }
 }
 
 testdata2=read.csv(file="~/Desktop/21Jan21_analysis/NSW3010_Starved_count_20Jan21.csv",header=TRUE)
-testdata$BvsS<-"Starved"
-testdata$Rep<-1
+testdata2$BvsS<-"Starved"
+testdata2$Rep<-1
 nobs=nrow(testdata2)
 for (i in 1:nobs) {
-  if (is.na(testdata2[i,3])) {
+  if (testdata2[i,1]=="") {
     testdata2[i,1]<-fname
-    testdata2[i,2]<-CellID
-    testdata2[i,3]<-LC3PunctaCount
-    testdata2[i,4]<-LAMPObjCount
+
   } 
   else {
     fname=testdata2[i,1]
-    CellID=testdata2[i,2]
-    LC3PunctaCount=testdata2[i,3]
-    LMAPObjCount=testdata2[i,4]
+
   }
 }
+
+temp<-rbind(testdata,testdata2)
 ```
 
+Adding type designation
+*if necessary update substring values based on filename in input document*
+
+```{r}
+temp$Type<-NA
+ntemp<-nrow(temp)
+
+
+for (c in 1:ntemp) {
+  if (substr(temp[c,1],49,49)=="W") {
+    temp$Type[c]<-"WT"
+  }
+  else if (substr(temp[c,1],49,49)=="C") {
+    temp$Type[c]<-"Control"
+  }
+  else if (substr(temp[c,1],49,49)=="t") {
+    temp$Type[c]<-"tepsin"
+  }
+  else {
+    temp$Type[c]<-"AP4E1"
+  }
+  
+}
+temp$Type<-factor(temp$Type, levels=c("WT", "Mock", "Control", "tepsin", "AP4E1"))
+```
