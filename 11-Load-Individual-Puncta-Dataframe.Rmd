@@ -9,9 +9,9 @@ Input CSV file and filling in rows
 *change replicate #*
 
 ```{r}
-testdata=read.csv(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/9Sep20_cleaned-15Mar20_basal.csv",header=TRUE)
+testdata=read.csv(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/9Sep20_cleaned-NSW3005_basal.csv",header=TRUE)
 testdata$BvsS<-"Basal"
-testdata$Rep<-1
+testdata$Rep<-3
 nobs=nrow(testdata)
 for (i in 1:nobs) {
   if (is.na(testdata[i,3])) {
@@ -38,9 +38,9 @@ for (i in 1:nobs) {
   }
 }
 
-testdata2=read.csv(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/9Sep20_cleaned-15Mar20_starved.csv",header=TRUE)
+testdata2=read.csv(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/9Sep20_cleaned-NSW3005_starved.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
-testdata2$Rep<-1
+testdata2$Rep<-3
 nobs=nrow(testdata2)
 for (i in 1:nobs) {
   if (is.na(testdata2[i,3])) {

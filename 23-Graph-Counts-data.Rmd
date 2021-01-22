@@ -95,24 +95,24 @@ plotme<-function(yaxis,labelme,mytitle){
   
 }
 
-#tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/graphs/combined2-3_boxplot_totPunctaCount.tiff",width=3000,height=3000,res=600)
+tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/graphs/combined_boxplot_totPunctaCount.tiff",width=3000,height=3000,res=600)
 plotme(Countdata$PunctaTot, "Number of LC3 positive puncta (A.U.)","Number of LC3 Puncta")
-#dev.off()
+dev.off()
 
-#tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/graphs/combined2-3_boxplot_EnlargedPunctaCount.tiff",width=3000,height=3000,res=600)
-plotme(Countdata$LC3EnlargedAve, "Number of Enlarged LC3 Puncta (A.U.)","Number of Enlarged LC3 Puncta")
-#dev.off()
+tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/graphs/combined_boxplot_EnlargedPunctaCount.tiff",width=3000,height=3000,res=600)
+plotme(Countdata$LC3Enlarged, "Number of Enlarged LC3 Puncta (A.U.)","Number of Enlarged LC3 Puncta")
+dev.off()
 
-#tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/graphs/combined2-3_boxplot_PercEnlargedPuncta.tiff",width=3000,height=3000,res=600)
-plotme(Countdata$PercEnlargedAve, expression("Percent Enlarged LC3 Puncta (A.U.)"),"Percent Enlarged LC3 Puncta")
-#dev.off()
+tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/graphs/combined_boxplot_PercEnlargedPuncta.tiff",width=3000,height=3000,res=600)
+plotme(Countdata$PercEnlarged, expression("Percent Enlarged LC3 Puncta (A.U.)"),"Percent Enlarged LC3 Puncta")
+dev.off()
 
-#tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/graphs/combined2-3_boxplot_AveEnlargedVol.tiff",width=3000,height=3000,res=600)
-plotme(Countdata$AveVolEnlargedAve, expression("Average Volume of Enlarged Puncta (um"^'3'*")"),"Average Enlarged LC3 Puncta Volume")
-#dev.off()
+tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/graphs/combined_boxplot_AveEnlargedVol.tiff",width=3000,height=3000,res=600)
+plotme(Countdata$AveVolEnlarged, expression("Average Volume of Enlarged Puncta (um"^'3'*")"),"Average Enlarged LC3 Puncta Volume")
+dev.off()
 
-#tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/graphs/combined2-3_boxplot_HiIntLC3Puncta.tiff",width=3000,height=3000,res=600)
-plotme(Countdata$HiIntPunctaAve, expression("Number of High Intensity LC3 Puncta Puncta (A.U.)"),"Number of High intensity LC3 Puncta")
-#dev.off()
+tiff(file="~/Desktop/analysis_20Aug20/LC3-LAMP_analysis/cleaned_9Sep20/graphs/combined_boxplot_HiIntLC3Puncta.tiff",width=3000,height=3000,res=600)
+plotme(Countdata$HiIntPuncta, expression("Number of High Intensity LC3 Puncta Puncta (A.U.)"),"Number of High intensity LC3 Puncta")
+dev.off()
 ```
 
