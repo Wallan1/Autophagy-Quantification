@@ -14,7 +14,7 @@ library(ggpattern)
 library(viridis)
 
 plotme<-function(yaxis,labelme,mytitle){
-   ggplot(temp,aes(x=type,y=yaxis,fill=type, pattern=BvsS)) + 
+   ggplot(temp,aes(x=type,y=yaxis,fill=Type, pattern=BvsS)) + 
       geom_boxplot(width=.5,position = position_dodge(0.9),alpha=.5, outlier.shape = NA) +
     geom_jitter(position = position_jitterdodge(0.9),alpha=.8) +
     facet_wrap(~BvsS)+
@@ -39,6 +39,7 @@ plotme<-function(yaxis,labelme,mytitle){
   
 }
 
-tiff(file="~/Desktop/21Jan21_analysis/LC3PunctaCounts_boxplot_21Jan21.tiff",width=3000,height=3000,res=600)
-plotme(temp$LC3PunctaCount, "Number of LC3 positive puncta (A.U.)","Number of LC3 Puncta")
-dev.off()
+#tiff(file="~/Desktop/21Jan21_analysis/LC3PunctaCounts_boxplot_21Jan21.tiff",width=3000,height=3000,res=600)
+plotme(temp$LC3PunctaCount, "Number of LC3 positive puncta per cell","Number of LC3 Puncta")
+#dev.off()
+```
