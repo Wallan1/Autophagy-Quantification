@@ -8,17 +8,15 @@ CSV import
 testdata=read.csv(file="~/Desktop/21Jan21_analysis/NSW3010_Basal_Vol-Int_20Jan21.csv",header=TRUE)
 testdata$BvsS<-"Basal"
 testdata$Rep<-1
-testdata$ImageID<-NA
 nobs=nrow(testdata)
 for (i in 1:nobs) {
   if (testdata[i,1]=="") {
     testdata[i,1]<-fname
-    testdata[i,testdata$ImageID]=substr(temp[i,1],92,94)
+    
 
   } 
   else {
     fname=testdata[i,1]
-    testdata[i,testdata$ImageID]=substr(temp[i,1],92,94)
   }
 }
 
@@ -40,9 +38,8 @@ for (i in 1:nobs) {
 temp<-rbind(testdata,testdata2)
 ```
 
-Adding type designation and Image numbers
+Adding type designation
 *if necessary update substring values based on filename in input document*
-
 ```{r}
 temp$Type<-NA
 ntemp<-nrow(temp)
@@ -66,68 +63,97 @@ for (c in 1:ntemp) {
 temp$Type<-factor(temp$Type, levels=c("WT", "Control", "tepsin", "AP4E1"))
 ```
 
+Getting average or sum values per cell for LC3 metrics
 ```{r}
-temp$Type<-NA
 ntemp<-nrow(temp)
-temp$ImageID<-NA
-
-temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
-
-for (c in 1:ntemp) {
-  for (t in c("WT", "Control", "tepsin", "AP4E1")) {
-   for (bs in c("Basal", "Starved")) {
-      if (substr(temp[c,1],49,49)=="W" & bs=="Basal") {
-    temp$ImageID[c]<-substr(temp[c,1],89,91)
+temp[,2]<-as.numeric(temp[,2])
+temp$AveLC3VolPerCell <- NA
+temp$AveLC3IntPerCell<- NA
+temp$AveLC3SumIntPerCell<-NA
+temp$TotLC3IntPerCell<-NA
+rs<-c()
+cid<-1
+for (i in 1:ntemp) {
+  if (!is.na(temp[i,2])){
+    if (temp[i,2]!=cid) {
+      temp$AveLC3VolPerCell[rs]<-mean(temp$LC3PunctaVol[rs])
+      temp$AveLC3IntPerCell[rs]<-mean(temp$LC3PunctaMeanInt[rs])
+      temp$AveLC3SumIntPerCell[rs]<-mean(temp$LC3SumObjInt[rs])
+      temp$TotLC3IntPerCell[rs]<-sum(temp$LC3SumObjInt[rs])
+      rs<-c(i)
+      cid<-temp[i,2]
+    }
+    else {
+      rs<-c(rs,i)
+    }
   }
-  else if (substr(temp[c,1],49,49)=="C") {
-    temp$Type[c]<-"Control"
-    temp$ImageID[c]<-substr(temp[c,1],94,96)
-  }
-  else if (substr(temp[c,1],49,49)=="t") {
-    temp$Type[c]<-"tepsin"
-    temp$ImageID[c]<-substr(temp[c,1],93,95)
-  }
-  else {
-    temp$Type[c]<-"AP4E1"
-    temp$ImageID[c]<-substr(temp[c,1],92,94)
-  }
-  
-   }
+  if (i==ntemp){
+    temp$AveLC3VolPerCell[rs]<-mean(temp$LC3PunctaVol[rs])
+    temp$AveLC3IntPerCell[rs]<-mean(temp$LC3PunctaMeanInt[rs])
+    temp$AveLC3SumIntPerCell[rs]<-mean(temp$LC3SumObjInt[rs])
+    temp$TotLC3IntPerCell[rs]<-sum(temp$LC3SumObjInt[rs])
   }
 }
 ```
 
-
-Making Image numbers as factors
+Getting average or sum values per cell for LAMP1 metrics
 ```{r}
-temp$ImageID<-NA
-
-temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
-
-
-for (s in temp$Filename) {
-  
-  temp$ImageID[]=substr(s,92,94)
+ntemp<-nrow(temp)
+temp[,6]<-as.numeric(temp[,6])
+temp$AveLAMPVolPerCell <- NA
+temp$AveLAMPIntPerCell<- NA
+temp$AveLAMPSumIntPerCell<-NA
+temp$TotLAMPIntPerCell<-NA
+rs<-c()
+cid<-1
+for (i in 1:ntemp) {
+  if (!is.na(temp[i,6])){
+    if (temp[i,6]!=cid) {
+      temp$AveLAMPVolPerCell[rs]<-mean(temp$LAMPObjVol[rs])
+      temp$AveLAMPIntPerCell[rs]<-mean(temp$LAMPMeanObjInt[rs])
+      temp$AveLAMPSumIntPerCell[rs]<-mean(temp$LAMPSumObjInt[rs])
+      temp$TotLAMPIntPerCell[rs]<-sum(temp$LAMPSumObjInt[rs])
+      rs<-c(i)
+      cid<-temp[i,6]
+    }
+    else {
+      rs<-c(rs,i)
+    }
+  }
+  if (i==ntemp){
+    temp$AveLAMPVolPerCell[rs]<-mean(temp$LAMPObjVol[rs])
+    temp$AveLAMPIntPerCell[rs]<-mean(temp$LAMPMeanObjInt[rs])
+    temp$AveLAMPSumIntPerCell[rs]<-mean(temp$LAMPSumObjInt[rs])
+    temp$TotLAMPIntPerCell[rs]<-sum(temp$LAMPSumObjInt[rs])
+  }
 }
-
 ```
 
-
-
-Averaging Volumes per Cell
+Removing unnecessary columns and duplicate rows to have values per cell
+*LC3; also renames CellID column to prepare for merging*
 ```{r}
-temp$AvePuncVolPerCell<-NA
+LC3noDup<-temp[!duplicated(temp[,13:14]),c(1,2,10,11,12,13,14,15,16)]
+LC3noDup<-LC3noDup[which(!is.na(LC3noDup[,2])),]
+names(LC3noDup)[names(LC3noDup)=="LC3CellID"]<-"CellID"
+```
 
-temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
+Removing unnecessary columns and duplicate rows to have values per cell
+*LAMP; also renames CellID column to prepare for merging*
+```{r}
+LAMPnoDup<-temp[!duplicated(temp[,17:18]),c(1,6,10,11,12,17,18,19,20)]
+LAMPnoDup<-LAMPnoDup[which(!is.na(LAMPnoDup[,8])),]
+names(LAMPnoDup)[names(LAMPnoDup)=="LAMPCellID"]<-"CellID"
+```
 
-temp$LC3CellID<-as.factor(temp$LC3CellID)
+Merging LC3 and LAMP cleaned data frames for graphing
+*replaces NA values with 0 if desired*
+```{r}
+test <- merge(LC3noDup,LAMPnoDup, all = TRUE)
+test[is.na(test)]<-0
+```
 
-for (t in c("WT", "Control", "tepsin", "AP4E1")) {
-  for (bs in c("Basal", "Starved")) {
-    for (id in levels(temp$LC3CellID)) {
-    temp$AvePuncVolPerCell[which(temp$Type==t & temp$BvsS==bs & temp$LC3CellID==id)]<-sum(temp$LC3PunctaVol[which(temp$Type==t & temp$BvsS==bs & temp$LC3CellID==id)])/length(which(temp$Type==t & temp$BvsS==bs & temp$LC3CellID==id))
-  }
-}
-  }
+Option to merge per cell metrics with object counts per cell dataframe
+```{r}
+test2 <- merge(test,counts, all = TRUE)
 ```
 
