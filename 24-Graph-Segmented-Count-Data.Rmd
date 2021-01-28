@@ -13,8 +13,8 @@ remotes::install_github("coolbutuseless/ggpattern")
 library(ggpattern)
 library(viridis)
 
-plotme<-function(yaxis,labelme,mytitle){
-   ggplot(temp,aes(x=Type,y=yaxis,fill=Type, pattern=BvsS)) + 
+plotme<-function(dat,yaxis,labelme,mytitle){
+   ggplot(dat,aes(x=Type,y=yaxis,fill=Type, pattern=BvsS)) + 
       #geom_boxplot(width=.7,position = position_dodge(0.9),alpha=0.5, outlier.shape = 20, outlier.size = -1) +
     #geom_jitter(position = position_jitterdodge(1.4),alpha=.6, color = "grey") +
     facet_wrap(~BvsS)+
@@ -39,7 +39,7 @@ plotme<-function(yaxis,labelme,mytitle){
   
 }
 
-tiff(file="~/Desktop/21Jan21_analysis/LC3PunctaCounts_boxplot_21Jan21.tiff",width=3000,height=3000,res=600)
-plotme(temp$LC3PunctaCount, "Number of LC3 positive puncta per cell","Number of LC3 Puncta")
-dev.off()
+#tiff(file="~/Desktop/21Jan21_analysis/LC3PunctaCounts_boxplot_21Jan21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LC3PunctaCount, "Number of LC3 positive puncta per cell","Number of LC3 Puncta")
+#dev.off()
 ```
