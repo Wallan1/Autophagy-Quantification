@@ -109,5 +109,3 @@ for (t in c("WT", "Control", "tepsin", "AP4E1")) {
     }
 }
 ```
-
-s
