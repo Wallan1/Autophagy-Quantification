@@ -73,15 +73,17 @@ temp$AveLC3SumIntPerCell<-NA
 temp$TotLC3IntPerCell<-NA
 rs<-c()
 cid<-1
+fname<-temp[1,1]
 for (i in 1:ntemp) {
   if (!is.na(temp[i,2])){
-    if (temp[i,2]!=cid) {
+    if (temp[i,2]!=cid | temp[i,1]!=fname) {
       temp$AveLC3VolPerCell[rs]<-mean(temp$LC3PunctaVol[rs])
       temp$AveLC3IntPerCell[rs]<-mean(temp$LC3PunctaMeanInt[rs])
       temp$AveLC3SumIntPerCell[rs]<-mean(temp$LC3SumObjInt[rs])
       temp$TotLC3IntPerCell[rs]<-sum(temp$LC3SumObjInt[rs])
       rs<-c(i)
       cid<-temp[i,2]
+      fname<-temp[i,1]
     }
     else {
       rs<-c(rs,i)
@@ -106,15 +108,17 @@ temp$AveLAMPSumIntPerCell<-NA
 temp$TotLAMPIntPerCell<-NA
 rs<-c()
 cid<-1
+fname<-temp[1,1]
 for (i in 1:ntemp) {
   if (!is.na(temp[i,6])){
-    if (temp[i,6]!=cid) {
+    if (temp[i,6]!=cid | temp[i,1]!=fname) {
       temp$AveLAMPVolPerCell[rs]<-mean(temp$LAMPObjVol[rs])
       temp$AveLAMPIntPerCell[rs]<-mean(temp$LAMPMeanObjInt[rs])
       temp$AveLAMPSumIntPerCell[rs]<-mean(temp$LAMPSumObjInt[rs])
       temp$TotLAMPIntPerCell[rs]<-sum(temp$LAMPSumObjInt[rs])
       rs<-c(i)
       cid<-temp[i,6]
+      fname<-temp[i,1]
     }
     else {
       rs<-c(rs,i)
@@ -132,7 +136,7 @@ for (i in 1:ntemp) {
 Removing unnecessary columns and duplicate rows to have values per cell
 *LC3; also renames CellID column to prepare for merging*
 ```{r}
-LC3noDup<-temp[!duplicated(temp[,13:14]),c(1,2,10,11,12,13,14,15,16)]
+LC3noDup<-temp[!duplicated(temp[,c(1,2,13,14)]),c(1,2,10,11,12,13,14,15,16)]
 LC3noDup<-LC3noDup[which(!is.na(LC3noDup[,2])),]
 names(LC3noDup)[names(LC3noDup)=="LC3CellID"]<-"CellID"
 ```
@@ -140,7 +144,7 @@ names(LC3noDup)[names(LC3noDup)=="LC3CellID"]<-"CellID"
 Removing unnecessary columns and duplicate rows to have values per cell
 *LAMP; also renames CellID column to prepare for merging*
 ```{r}
-LAMPnoDup<-temp[!duplicated(temp[,17:18]),c(1,6,10,11,12,17,18,19,20)]
+LAMPnoDup<-temp[!duplicated(temp[,c(1,6)]),c(1,6,10,11,12,17,18,19,20)]
 LAMPnoDup<-LAMPnoDup[which(!is.na(LAMPnoDup[,8])),]
 names(LAMPnoDup)[names(LAMPnoDup)=="LAMPCellID"]<-"CellID"
 ```
@@ -149,7 +153,7 @@ Merging LC3 and LAMP cleaned data frames for graphing
 *replaces NA values with 0 if desired*
 ```{r}
 test <- merge(LC3noDup,LAMPnoDup, all = TRUE)
-test[is.na(test)]<-0
+#test[is.na(test)]<-0
 ```
 
 Option to merge per cell metrics with object counts per cell dataframe
