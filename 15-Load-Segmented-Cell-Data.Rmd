@@ -67,6 +67,7 @@ temp$Type<-factor(temp$Type, levels=c("WT", "Control", "tepsin", "AP4E1"))
 Find files where number of Nuclei does not match number of segmented cells (based on LAMPCellID):
 
 These files should be evaluated to identify images where cells were not segmented properly as all cells should have LAMP1 signal. 
+*added condition to ignore NA values in LAMP counts column, must check fro presence of na values with is.na function to and manually note these erroneous images*
 ```{r}
 ntemp<-nrow(temp)
 temp[,2]<-as.numeric(temp[,2])
