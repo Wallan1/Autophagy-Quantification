@@ -5,9 +5,9 @@ output: html_notebook
 CSV import
 *change input file path*
 ```{r}
-testdata=read.csv(file="~/Desktop/21Jan21_analysis/final/NSW3016_Basal_Vol-Int_9Feb21.csv",header=TRUE)
+testdata=read.csv(file="~/Desktop/21Jan21_analysis/final/NSW3010_Basal_Vol-Int_1Feb21.csv",header=TRUE)
 testdata$BvsS<-"Basal"
-testdata$Rep<-3
+testdata$Rep<-1
 nobs=nrow(testdata)
 for (i in 1:nobs) {
   if (testdata[i,1]=="") {
@@ -20,9 +20,9 @@ for (i in 1:nobs) {
   }
 }
 
-testdata2=read.csv(file="~/Desktop/21Jan21_analysis/final/NSW3016_Starved_Vol-Int_9Feb21.csv",header=TRUE)
+testdata2=read.csv(file="~/Desktop/21Jan21_analysis/final/NSW3010_Starved_Vol-Int_1Feb21.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
-testdata2$Rep<-3
+testdata2$Rep<-1
 nobs=nrow(testdata2)
 for (i in 1:nobs) {
   if (testdata2[i,1]=="") {

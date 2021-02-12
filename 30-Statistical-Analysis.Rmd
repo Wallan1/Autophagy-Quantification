@@ -44,23 +44,35 @@ TukeyHSD(anovaTotLAMPInt)
 single replicate ANOVA of Individual Puncta Volumes 
 *for stats of single replicates*
 ```{r}
-anovaPunctaCount<-aov(temp$LC3PunctaCount~temp$Type*temp$BvsS)
-summary(anovaPunctaCount)
-TukeyHSD(anovaPunctaCount)
+anovaLC3Vol<-aov(temp$AveLC3VolPerCell~temp$Type*temp$BvsS)
+summary(anovaLC3Vol)
+TukeyHSD(anovaLC3Vol)
 
-#anovaPunctaLogVol<-aov(temp$LogLC3Volume~temp$Type*temp$BvsS)
-#summary(anovaPunctaLogVol)
-#TukeyHSD(anovaPunctaLogVol)
+anovaMeanLC3PuncInt<-aov(temp$AveLC3IntPerCell~temp$Type*temp$BvsS)
+summary(anovaMeanLC3PuncInt)
+TukeyHSD(anovaMeanLC3PuncInt)
 
-#anovaPunctaInt<-aov(temp$LC3MeanObjIntensity~temp$Type*temp$BvsS)
-#summary(anovaPunctaInt)
-#TukeyHSD(anovaPunctaInt)
+anovaSumLC3PuncInt<-aov(temp$AveLC3SumIntPerCell~temp$Type*temp$BvsS)
+summary(anovaSumLC3PuncInt)
+TukeyHSD(anovaSumLC3PuncInt)
 
-#anovaLC3MOC<-aov(temp$MandersLC3MOC~temp$Type*temp$BvsS)
-#summary(anovaLC3MOC)
-#TukeyHSD(anovaLC3MOC)
+anovaTotLC3Int<-aov(temp$TotLC3IntPerCell~temp$Type*temp$BvsS)
+summary(anovaTotLC3Int)
+TukeyHSD(anovaTotLC3Int)
 
-#anovaLAMPInt<-aov(temp$LAMP1MeanObjIntensity~temp$Type*temp$BvsS)
-#summary(anovaLAMPInt)
-#TukeyHSD(anovaLAMPInt)
+anovaLAMPVol<-aov(temp$AveLAMPVolPerCell~temp$Type*temp$BvsS)
+summary(anovaLAMPVol)
+TukeyHSD(anovaLAMPVol)
+
+anovaMeanLAMPPuncInt<-aov(temp$AveLAMPIntPerCell~temp$Type*temp$BvsS)
+summary(anovaMeanLAMPPuncInt)
+TukeyHSD(anovaMeanLAMPPuncInt)
+
+anovaSumLAMPPuncInt<-aov(temp$AveLAMPSumIntPerCell~temp$Type*temp$BvsS)
+summary(anovaSumLAMPPuncInt)
+TukeyHSD(anovaSumLAMPPuncInt)
+
+anovaTotLAMPInt<-aov(temp$TotLAMPIntPerCell~temp$Type*temp$BvsS)
+summary(anovaTotLAMPInt)
+TukeyHSD(anovaTotLAMPInt)
 ```
