@@ -19,6 +19,7 @@ plotme<-function(dat,yaxis,labelme,mytitle){
     #geom_jitter(position = position_jitterdodge(1.4),alpha=.6, color = "grey") +
     facet_wrap(~BvsS)+
     geom_jitter(position = position_jitterdodge(1.4),alpha=0.8, color= "dark grey") +
+    stat_boxplot(geom = "errorbar", width = 0.4) +
     geom_boxplot_pattern(
     aes(),width=0.7,position = position_dodge(0.9),outlier.shape=NA, alpha=0.5,
             pattern_spacing = 0.025,
@@ -39,8 +40,8 @@ plotme<-function(dat,yaxis,labelme,mytitle){
   
 }
 
-#tiff(file="~/Desktop/21Jan21_analysis/final/graphs/LC3PunctaCounts_boxplot_rep1-3_zoom0-175_11Feb21.tiff",width=3000,height=3000,res=600)
-#plotme(temp,temp$LC3PunctaCount, "Number of LC3 positive puncta per cell","Number of LC3 Puncta")
+#tiff(file="~/Desktop/21Jan21_analysis/final/graphs/LC3PunctaCounts_boxplot_rep1_15Feb21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LC3PunctaCount, "Number of LC3 positive puncta per cell","Number of LC3 Puncta")
 #dev.off()
 
 #tiff(file="~/Desktop/21Jan21_analysis/final/graphs/LC3PunctaVol_boxplot_zoom0-2_rep1-3_11Feb21.tiff",width=3000,height=3000,res=600)
@@ -73,6 +74,6 @@ plotme<-function(dat,yaxis,labelme,mytitle){
 #dev.off()
 
 #tiff(file="~/Desktop/21Jan21_analysis/final/graphs/TotLAMPInt_boxplot_zoom_rep1-3_11Feb21.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$TotLAMPIntPerCell, "Total LAMP1 puncta intensity (A.U.)","LAMP1 Sum Intensity per Cell")
+#plotme(temp,temp$TotLAMPIntPerCell, "Total LAMP1 puncta intensity (A.U.)","LAMP1 Sum Intensity per Cell")
 #dev.off()
 ```
