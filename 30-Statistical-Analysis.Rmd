@@ -2,9 +2,25 @@
 title: "30-Statistical-Analysis"
 output: html_notebook
 ---
+ANOVA of object counts
+*multiple replicates*
+```{r}
+anovaLC3Counts<-aov(temp$LC3PunctaCount~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+summary(anovaLC3Counts)
+TukeyHSD(anovaLC3Counts)
+```
 
-ANOVA of all metrics
+ANOVA of object counts
+*1 replicate*
+```{r}
+anovaLC3Counts<-aov(temp$LC3PunctaCount~temp$Type*temp$BvsS)
+summary(anovaLC3Counts)
+TukeyHSD(anovaLC3Counts)
+```
 
+
+ANOVA of all object metrics
+*multiple replicates*
 ```{r}
 temp$Rep<-as.factor(temp$Rep)
 
@@ -41,7 +57,7 @@ summary(anovaTotLAMPInt)
 TukeyHSD(anovaTotLAMPInt)
 ```
 
-single replicate ANOVA of Individual Puncta Volumes 
+single replicate ANOVA of Individual Puncta metrics
 *for stats of single replicates*
 ```{r}
 anovaLC3Vol<-aov(temp$AveLC3VolPerCell~temp$Type*temp$BvsS)
