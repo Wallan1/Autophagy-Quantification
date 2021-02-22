@@ -5,6 +5,8 @@ output: html_notebook
 ANOVA of object counts
 *multiple replicates*
 ```{r}
+temp$Rep<-as.factor(temp$Rep)
+
 anovaLC3Counts<-aov(temp$LC3PunctaCount~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
 summary(anovaLC3Counts)
 TukeyHSD(anovaLC3Counts)
