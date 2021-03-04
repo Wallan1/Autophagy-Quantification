@@ -32,7 +32,7 @@ plotme<-function(dat,yaxis,labelme,mytitle){
      ylab(labelme)+
      ggtitle(mytitle)+
      theme_minimal()+
-     scale_y_continuous(name=labelme,limits = c(0,20000000))+
+     #scale_y_continuous(name=labelme,limits = c(0,175))+
      theme(plot.title=element_text(hjust=.5))+
         scale_fill_viridis(discrete=TRUE,end=.9) +
         scale_color_viridis(discrete=TRUE,end=.9)+
@@ -40,9 +40,9 @@ plotme<-function(dat,yaxis,labelme,mytitle){
   
 }
 
-#tiff(file="~/Desktop/21Jan21_analysis/final/graphs/LC3PunctaCounts_boxplot_rep1-3_zoom0-200_15Feb21.tiff",width=3000,height=3000,res=600)
-#plotme(temp,temp$LC3PunctaCount, "Number of LC3 positive puncta per cell","Number of LC3 Puncta")
-#dev.off()
+tiff(file="~/Desktop/EqCellSum_22Feb21/Final/graphs/LC3PunctaCounts_boxplot_EqCell_016_4Mar21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LC3PunctaCount, "Number of LC3 positive puncta per cell","Number of LC3 Puncta")
+dev.off()
 
 #tiff(file="~/Desktop/21Jan21_analysis/final/graphs/LC3PunctaVol_boxplot_rep3_16Feb21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$AveLC3VolPerCell, expression("LC3 Puncta Volume (um"^'3'*")"),"Rep 3: Average Volume of LC3 Puncta")
