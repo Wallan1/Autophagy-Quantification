@@ -3,3 +3,38 @@ title: "17-Load-Flux-Data"
 output: html_notebook
 ---
 
+CSV import - Mac
+*change input file path*
+```{r}
+testdata=read.csv(file="~/Desktop/mRFP-GFP_analysis_24Feb21/test-dataset/NSW3011_BafA_basal_24Feb21.csv",header=TRUE)
+testdata$BvsS<-"Basal"
+testdata$Rep<-1
+nobs=nrow(testdata)
+for (i in 1:nobs) {
+  if (testdata[i,1]=="") {
+    testdata[i,1]<-fname
+
+  } 
+  else {
+    fname=testdata[i,1]
+
+  }
+}
+
+testdata2=read.csv(file="~/Desktop/mRFP-GFP_analysis_24Feb21/test-dataset/NSW3011_BafA_starved_24Feb21.csv",header=TRUE)
+testdata2$BvsS<-"Starved"
+testdata2$Rep<-1
+nobs=nrow(testdata2)
+for (i in 1:nobs) {
+  if (testdata2[i,1]=="") {
+    testdata2[i,1]<-fname
+
+  } 
+  else {
+    fname=testdata2[i,1]
+
+  }
+}
+
+temp<-rbind(testdata,testdata2)
+```
