@@ -292,12 +292,12 @@ CSV import - *Windows*
 &lt;!-- rnb-chunk-begin --&gt;
 
 
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdGRhdGE9cmVhZC5jc3YoZmlsZT1cIi4vQW5hbHlzaXMtZmlsZXMvZXFDZWxsc3VtX2FuYWx5c2lzL05TVzMwMTBfRXFDZWxsU3VtX0Jhc2FsX2NvdW50XzI0RmViMjEuY3N2XCIsaGVhZGVyPVRSVUUpXG50ZXN0ZGF0YSRCdnNTPC1cIkJhc2FsXCJcbnRlc3RkYXRhJFJlcDwtMVxubm9icz1ucm93KHRlc3RkYXRhKVxuZm9yIChpIGluIDE6bm9icykge1xuICBpZiAodGVzdGRhdGFbaSwxXT09XCJcIikge1xuICAgIHRlc3RkYXRhW2ksMV08LWZuYW1lXG5cbiAgfSBcbiAgZWxzZSB7XG4gICAgZm5hbWU9dGVzdGRhdGFbaSwxXVxuXG4gIH1cbn1cblxudGVzdGRhdGEyPXJlYWQuY3N2KGZpbGU9XCIuL0FuYWx5c2lzLWZpbGVzL2VxQ2VsbHN1bV9hbmFseXNpcy9OU1czMDEwX0VxQ2VsbFN1bV9TdGFydmVkX2NvdW50XzI0RmViMjEuY3N2XCIsaGVhZGVyPVRSVUUpXG50ZXN0ZGF0YTIkQnZzUzwtXCJTdGFydmVkXCJcbnRlc3RkYXRhMiRSZXA8LTFcbm5vYnM9bnJvdyh0ZXN0ZGF0YTIpXG5mb3IgKGkgaW4gMTpub2JzKSB7XG4gIGlmICh0ZXN0ZGF0YTJbaSwxXT09XCJcIikge1xuICAgIHRlc3RkYXRhMltpLDFdPC1mbmFtZVxuXG4gIH0gXG4gIGVsc2Uge1xuICAgIGZuYW1lPXRlc3RkYXRhMltpLDFdXG5cbiAgfVxufVxuXG50ZW1wPC1yYmluZCh0ZXN0ZGF0YSx0ZXN0ZGF0YTIpXG5gYGAifQ== --&gt;
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdGRhdGE9cmVhZC5jc3YoZmlsZT1cIi4vQW5hbHlzaXMtZmlsZXMvZXFDZWxsc3VtX2FuYWx5c2lzL05TVzMwMTZfRXFDZWxsU3VtX0Jhc2FsX1ZvbC1JbnRfMjJGZWIyMS5jc3ZcIixoZWFkZXI9VFJVRSlcbnRlc3RkYXRhJEJ2c1M8LVwiQmFzYWxcIlxudGVzdGRhdGEkUmVwPC0zXG5ub2JzPW5yb3codGVzdGRhdGEpXG5mb3IgKGkgaW4gMTpub2JzKSB7XG4gIGlmICh0ZXN0ZGF0YVtpLDFdPT1cIlwiKSB7XG4gICAgdGVzdGRhdGFbaSwxXTwtZm5hbWVcblxuICB9IFxuICBlbHNlIHtcbiAgICBmbmFtZT10ZXN0ZGF0YVtpLDFdXG5cbiAgfVxufVxuXG50ZXN0ZGF0YTI9cmVhZC5jc3YoZmlsZT1cIi4vQW5hbHlzaXMtZmlsZXMvZXFDZWxsc3VtX2FuYWx5c2lzL05TVzMwMTZfRXFDZWxsU3VtX1N0YXJ2ZWRfVm9sLUludF8yM0ZlYjIxLmNzdlwiLGhlYWRlcj1UUlVFKVxudGVzdGRhdGEyJEJ2c1M8LVwiU3RhcnZlZFwiXG50ZXN0ZGF0YTIkUmVwPC0zXG5ub2JzPW5yb3codGVzdGRhdGEyKVxuZm9yIChpIGluIDE6bm9icykge1xuICBpZiAodGVzdGRhdGEyW2ksMV09PVwiXCIpIHtcbiAgICB0ZXN0ZGF0YTJbaSwxXTwtZm5hbWVcblxuICB9IFxuICBlbHNlIHtcbiAgICBmbmFtZT10ZXN0ZGF0YTJbaSwxXVxuXG4gIH1cbn1cblxudGVtcDwtcmJpbmQodGVzdGRhdGEsdGVzdGRhdGEyKVxuYGBgIn0= --&gt;
 
 ```r
-testdata=read.csv(file=&quot;./Analysis-files/eqCellsum_analysis/NSW3010_EqCellSum_Basal_count_24Feb21.csv&quot;,header=TRUE)
+testdata=read.csv(file=&quot;./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Basal_Vol-Int_22Feb21.csv&quot;,header=TRUE)
 testdata$BvsS&lt;-&quot;Basal&quot;
-testdata$Rep&lt;-1
+testdata$Rep&lt;-3
 nobs=nrow(testdata)
 for (i in 1:nobs) {
   if (testdata[i,1]==&quot;&quot;) {
@@ -310,9 +310,9 @@ for (i in 1:nobs) {
   }
 }
 
-testdata2=read.csv(file=&quot;./Analysis-files/eqCellsum_analysis/NSW3010_EqCellSum_Starved_count_24Feb21.csv&quot;,header=TRUE)
+testdata2=read.csv(file=&quot;./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Starved_Vol-Int_23Feb21.csv&quot;,header=TRUE)
 testdata2$BvsS&lt;-&quot;Starved&quot;
-testdata2$Rep&lt;-1
+testdata2$Rep&lt;-3
 nobs=nrow(testdata2)
 for (i in 1:nobs) {
   if (testdata2[i,1]==&quot;&quot;) {
@@ -332,50 +332,35 @@ temp&lt;-rbind(testdata,testdata2)</code></pre>
 <p>Adding type designation <em>if necessary update substring values based on filename in input document</em></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudGVtcCRUeXBlPC1OQVxubnRlbXA8LW5yb3codGVtcClcblxuXG5mb3IgKGMgaW4gMTpudGVtcCkge1xuICBpZiAoc3Vic3RyKHRlbXBbYywxXSw0NSw0NSk9PVxcV1xcKSB7XG4gICAgdGVtcCRUeXBlW2NdPC1cXFdUXFxcbiAgfVxuICBlbHNlIGlmIChzdWJzdHIodGVtcFtjLDFdLDQ1LDQ1KT09XFxDXFwpIHtcbiAgICB0ZW1wJFR5cGVbY108LVxcQ29udHJvbFxcXG4gIH1cbiAgZWxzZSBpZiAoc3Vic3RyKHRlbXBbYywxXSw0NSw0NSk9PVxcdFxcKSB7XG4gICAgdGVtcCRUeXBlW2NdPC1cXHRlcHNpblxcXG4gIH1cbiAgZWxzZSB7XG4gICAgdGVtcCRUeXBlW2NdPC1cXEFQNEUxXFxcbiAgfVxuICBcbn1cbnRlbXAkVHlwZTwtZmFjdG9yKHRlbXAkVHlwZSwgbGV2ZWxzPWMoXFxXVFxcLCBcXENvbnRyb2xcXCwgXFx0ZXBzaW5cXCwgXFxBUDRFMVxcKSlcbmBgYFxuYGBgIn0= -->
-<pre class="r"><code>```r
-temp$Type&lt;-NA
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVtcCRUeXBlPC1OQVxubnRlbXA8LW5yb3codGVtcClcblxuXG5mb3IgKGMgaW4gMTpudGVtcCkge1xuICBpZiAoc3Vic3RyKHRlbXBbYywxXSw0NSw0NSk9PVwiV1wiKSB7XG4gICAgdGVtcCRUeXBlW2NdPC1cIldUXCJcbiAgfVxuICBlbHNlIGlmIChzdWJzdHIodGVtcFtjLDFdLDQ1LDQ1KT09XCJDXCIpIHtcbiAgICB0ZW1wJFR5cGVbY108LVwiQ29udHJvbFwiXG4gIH1cbiAgZWxzZSBpZiAoc3Vic3RyKHRlbXBbYywxXSw0NSw0NSk9PVwidFwiKSB7XG4gICAgdGVtcCRUeXBlW2NdPC1cInRlcHNpblwiXG4gIH1cbiAgZWxzZSB7XG4gICAgdGVtcCRUeXBlW2NdPC1cIkFQNEUxXCJcbiAgfVxuICBcbn1cbnRlbXAkVHlwZTwtZmFjdG9yKHRlbXAkVHlwZSwgbGV2ZWxzPWMoXCJXVFwiLCBcIkNvbnRyb2xcIiwgXCJ0ZXBzaW5cIiwgXCJBUDRFMVwiKSlcbmBgYCJ9 -->
+<pre class="r"><code>temp$Type&lt;-NA
 ntemp&lt;-nrow(temp)
 
 
 for (c in 1:ntemp) {
-  if (substr(temp[c,1],45,45)==\W\) {
-    temp$Type[c]&lt;-\WT\
+  if (substr(temp[c,1],45,45)==&quot;W&quot;) {
+    temp$Type[c]&lt;-&quot;WT&quot;
   }
-  else if (substr(temp[c,1],45,45)==\C\) {
-    temp$Type[c]&lt;-\Control\
+  else if (substr(temp[c,1],45,45)==&quot;C&quot;) {
+    temp$Type[c]&lt;-&quot;Control&quot;
   }
-  else if (substr(temp[c,1],45,45)==\t\) {
-    temp$Type[c]&lt;-\tepsin\
+  else if (substr(temp[c,1],45,45)==&quot;t&quot;) {
+    temp$Type[c]&lt;-&quot;tepsin&quot;
   }
   else {
-    temp$Type[c]&lt;-\AP4E1\
+    temp$Type[c]&lt;-&quot;AP4E1&quot;
   }
   
 }
-temp$Type&lt;-factor(temp$Type, levels=c(\WT\, \Control\, \tepsin\, \AP4E1\))</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-Getting average or sum values per cell for LC3 metrics
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubnRlbXA8LW5yb3codGVtcClcbnRlbXBbLDJdPC1hcy5udW1lcmljKHRlbXBbLDJdKVxudGVtcCRBdmVMQzNWb2xQZXJDZWxsIDwtIE5BXG50ZW1wJEF2ZUxDM0ludFBlckNlbGw8LSBOQVxudGVtcCRBdmVMQzNTdW1JbnRQZXJDZWxsPC1OQVxudGVtcCRUb3RMQzNJbnRQZXJDZWxsPC1OQVxucnM8LWMoKVxuY2lkPC0xXG5mbmFtZTwtdGVtcFsxLDFdXG5mb3IgKGkgaW4gMTpudGVtcCkge1xuICBpZiAoIWlzLm5hKHRlbXBbaSwyXSkpe1xuICAgIGlmICh0ZW1wW2ksMl0hPWNpZCB8IHRlbXBbaSwxXSE9Zm5hbWUpIHtcbiAgICAgIHRlbXAkQXZlTEMzVm9sUGVyQ2VsbFtyc108LW1lYW4odGVtcCRMQzNQdW5jdGFWb2xbcnNdKVxuICAgICAgdGVtcCRBdmVMQzNJbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExDM1B1bmN0YU1lYW5JbnRbcnNdKVxuICAgICAgdGVtcCRBdmVMQzNTdW1JbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExDM1N1bU9iakludFtyc10pXG4gICAgICB0ZW1wJFRvdExDM0ludFBlckNlbGxbcnNdPC1zdW0odGVtcCRMQzNTdW1PYmpJbnRbcnNdKVxuICAgICAgcnM8LWMoaSlcbiAgICAgIGNpZDwtdGVtcFtpLDJdXG4gICAgICBmbmFtZTwtdGVtcFtpLDFdXG4gICAgfVxuICAgIGVsc2Uge1xuICAgICAgcnM8LWMocnMsaSlcbiAgICB9XG4gIH1cbiAgaWYgKGk9PW50ZW1wKXtcbiAgICB0ZW1wJEF2ZUxDM1ZvbFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEMzUHVuY3RhVm9sW3JzXSlcbiAgICB0ZW1wJEF2ZUxDM0ludFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEMzUHVuY3RhTWVhbkludFtyc10pXG4gICAgdGVtcCRBdmVMQzNTdW1JbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExDM1N1bU9iakludFtyc10pXG4gICAgdGVtcCRUb3RMQzNJbnRQZXJDZWxsW3JzXTwtc3VtKHRlbXAkTEMzU3VtT2JqSW50W3JzXSlcbiAgfVxufVxuYGBgXG5gYGAifQ== --&gt;
-
-```r
-```r
-ntemp&lt;-nrow(temp)
+temp$Type&lt;-factor(temp$Type, levels=c(&quot;WT&quot;, &quot;Control&quot;, &quot;tepsin&quot;, &quot;AP4E1&quot;))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Getting average or sum values per cell for LC3 metrics</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnRlbXA8LW5yb3codGVtcClcbnRlbXBbLDJdPC1hcy5udW1lcmljKHRlbXBbLDJdKVxudGVtcCRBdmVMQzNWb2xQZXJDZWxsIDwtIE5BXG50ZW1wJEF2ZUxDM0ludFBlckNlbGw8LSBOQVxudGVtcCRBdmVMQzNTdW1JbnRQZXJDZWxsPC1OQVxudGVtcCRUb3RMQzNJbnRQZXJDZWxsPC1OQVxucnM8LWMoKVxuY2lkPC0xXG5mbmFtZTwtdGVtcFsxLDFdXG5mb3IgKGkgaW4gMTpudGVtcCkge1xuICBpZiAoIWlzLm5hKHRlbXBbaSwyXSkpe1xuICAgIGlmICh0ZW1wW2ksMl0hPWNpZCB8IHRlbXBbaSwxXSE9Zm5hbWUpIHtcbiAgICAgIHRlbXAkQXZlTEMzVm9sUGVyQ2VsbFtyc108LW1lYW4odGVtcCRMQzNQdW5jdGFWb2xbcnNdKVxuICAgICAgdGVtcCRBdmVMQzNJbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExDM1B1bmN0YU1lYW5JbnRbcnNdKVxuICAgICAgdGVtcCRBdmVMQzNTdW1JbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExDM1N1bU9iakludFtyc10pXG4gICAgICB0ZW1wJFRvdExDM0ludFBlckNlbGxbcnNdPC1zdW0odGVtcCRMQzNTdW1PYmpJbnRbcnNdKVxuICAgICAgcnM8LWMoaSlcbiAgICAgIGNpZDwtdGVtcFtpLDJdXG4gICAgICBmbmFtZTwtdGVtcFtpLDFdXG4gICAgfVxuICAgIGVsc2Uge1xuICAgICAgcnM8LWMocnMsaSlcbiAgICB9XG4gIH1cbiAgaWYgKGk9PW50ZW1wKXtcbiAgICB0ZW1wJEF2ZUxDM1ZvbFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEMzUHVuY3RhVm9sW3JzXSlcbiAgICB0ZW1wJEF2ZUxDM0ludFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEMzUHVuY3RhTWVhbkludFtyc10pXG4gICAgdGVtcCRBdmVMQzNTdW1JbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExDM1N1bU9iakludFtyc10pXG4gICAgdGVtcCRUb3RMQzNJbnRQZXJDZWxsW3JzXTwtc3VtKHRlbXAkTEMzU3VtT2JqSW50W3JzXSlcbiAgfVxufVxuYGBgIn0= -->
+<pre class="r"><code>ntemp&lt;-nrow(temp)
 temp[,2]&lt;-as.numeric(temp[,2])
 temp$AveLC3VolPerCell &lt;- NA
 temp$AveLC3IntPerCell&lt;- NA
@@ -406,28 +391,14 @@ for (i in 1:ntemp) {
     temp$TotLC3IntPerCell[rs]&lt;-sum(temp$LC3SumObjInt[rs])
   }
 }</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-Getting average or sum values per cell for LAMP1 metrics
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubnRlbXA8LW5yb3codGVtcClcbnRlbXBbLDZdPC1hcy5udW1lcmljKHRlbXBbLDZdKVxudGVtcCRBdmVMQU1QVm9sUGVyQ2VsbCA8LSBOQVxudGVtcCRBdmVMQU1QSW50UGVyQ2VsbDwtIE5BXG50ZW1wJEF2ZUxBTVBTdW1JbnRQZXJDZWxsPC1OQVxudGVtcCRUb3RMQU1QSW50UGVyQ2VsbDwtTkFcbnJzPC1jKClcbmNpZDwtMVxuZm5hbWU8LXRlbXBbMSwxXVxuZm9yIChpIGluIDE6bnRlbXApIHtcbiAgaWYgKCFpcy5uYSh0ZW1wW2ksNl0pKXtcbiAgICBpZiAodGVtcFtpLDZdIT1jaWQgfCB0ZW1wW2ksMV0hPWZuYW1lKSB7XG4gICAgICB0ZW1wJEF2ZUxBTVBWb2xQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExBTVBPYmpWb2xbcnNdKVxuICAgICAgdGVtcCRBdmVMQU1QSW50UGVyQ2VsbFtyc108LW1lYW4odGVtcCRMQU1QTWVhbk9iakludFtyc10pXG4gICAgICB0ZW1wJEF2ZUxBTVBTdW1JbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExBTVBTdW1PYmpJbnRbcnNdKVxuICAgICAgdGVtcCRUb3RMQU1QSW50UGVyQ2VsbFtyc108LXN1bSh0ZW1wJExBTVBTdW1PYmpJbnRbcnNdKVxuICAgICAgcnM8LWMoaSlcbiAgICAgIGNpZDwtdGVtcFtpLDZdXG4gICAgICBmbmFtZTwtdGVtcFtpLDFdXG4gICAgfVxuICAgIGVsc2Uge1xuICAgICAgcnM8LWMocnMsaSlcbiAgICB9XG4gIH1cbiAgaWYgKGk9PW50ZW1wKXtcbiAgICB0ZW1wJEF2ZUxBTVBWb2xQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExBTVBPYmpWb2xbcnNdKVxuICAgIHRlbXAkQXZlTEFNUEludFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEFNUE1lYW5PYmpJbnRbcnNdKVxuICAgIHRlbXAkQXZlTEFNUFN1bUludFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEFNUFN1bU9iakludFtyc10pXG4gICAgdGVtcCRUb3RMQU1QSW50UGVyQ2VsbFtyc108LXN1bSh0ZW1wJExBTVBTdW1PYmpJbnRbcnNdKVxuICB9XG59XG5gYGBcbmBgYCJ9 --&gt;
-
-```r
-```r
-ntemp&lt;-nrow(temp)
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Getting average or sum values per cell for LAMP1 metrics</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnRlbXA8LW5yb3codGVtcClcbnRlbXBbLDZdPC1hcy5udW1lcmljKHRlbXBbLDZdKVxudGVtcCRBdmVMQU1QVm9sUGVyQ2VsbCA8LSBOQVxudGVtcCRBdmVMQU1QSW50UGVyQ2VsbDwtIE5BXG50ZW1wJEF2ZUxBTVBTdW1JbnRQZXJDZWxsPC1OQVxudGVtcCRUb3RMQU1QSW50UGVyQ2VsbDwtTkFcbnJzPC1jKClcbmNpZDwtMVxuZm5hbWU8LXRlbXBbMSwxXVxuZm9yIChpIGluIDE6bnRlbXApIHtcbiAgaWYgKCFpcy5uYSh0ZW1wW2ksNl0pKXtcbiAgICBpZiAodGVtcFtpLDZdIT1jaWQgfCB0ZW1wW2ksMV0hPWZuYW1lKSB7XG4gICAgICB0ZW1wJEF2ZUxBTVBWb2xQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExBTVBPYmpWb2xbcnNdKVxuICAgICAgdGVtcCRBdmVMQU1QSW50UGVyQ2VsbFtyc108LW1lYW4odGVtcCRMQU1QTWVhbk9iakludFtyc10pXG4gICAgICB0ZW1wJEF2ZUxBTVBTdW1JbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExBTVBTdW1PYmpJbnRbcnNdKVxuICAgICAgdGVtcCRUb3RMQU1QSW50UGVyQ2VsbFtyc108LXN1bSh0ZW1wJExBTVBTdW1PYmpJbnRbcnNdKVxuICAgICAgcnM8LWMoaSlcbiAgICAgIGNpZDwtdGVtcFtpLDZdXG4gICAgICBmbmFtZTwtdGVtcFtpLDFdXG4gICAgfVxuICAgIGVsc2Uge1xuICAgICAgcnM8LWMocnMsaSlcbiAgICB9XG4gIH1cbiAgaWYgKGk9PW50ZW1wKXtcbiAgICB0ZW1wJEF2ZUxBTVBWb2xQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExBTVBPYmpWb2xbcnNdKVxuICAgIHRlbXAkQXZlTEFNUEludFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEFNUE1lYW5PYmpJbnRbcnNdKVxuICAgIHRlbXAkQXZlTEFNUFN1bUludFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEFNUFN1bU9iakludFtyc10pXG4gICAgdGVtcCRUb3RMQU1QSW50UGVyQ2VsbFtyc108LXN1bSh0ZW1wJExBTVBTdW1PYmpJbnRbcnNdKVxuICB9XG59XG5gYGAifQ== -->
+<pre class="r"><code>ntemp&lt;-nrow(temp)
 temp[,6]&lt;-as.numeric(temp[,6])
 temp$AveLAMPVolPerCell &lt;- NA
 temp$AveLAMPIntPerCell&lt;- NA
@@ -458,123 +429,43 @@ for (i in 1:ntemp) {
     temp$TotLAMPIntPerCell[rs]&lt;-sum(temp$LAMPSumObjInt[rs])
   }
 }</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-Removing unnecessary columns and duplicate rows to have values per cell
-*LC3; also renames CellID column to prepare for merging*
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuTEMzbm9EdXA8LXRlbXBbIWR1cGxpY2F0ZWQodGVtcFssYygxLDIsMTMsMTQpXSksYygxLDIsMTAsMTEsMTIsMTMsMTQsMTUsMTYpXVxuTEMzbm9EdXA8LUxDM25vRHVwW3doaWNoKCFpcy5uYShMQzNub0R1cFssMl0pKSxdXG5uYW1lcyhMQzNub0R1cClbbmFtZXMoTEMzbm9EdXApPT1cXExDM0NlbGxJRFxcXTwtXFxDZWxsSURcXFxuYGBgXG5gYGAifQ== --&gt;
-
-```r
-```r
-LC3noDup&lt;-temp[!duplicated(temp[,c(1,2,13,14)]),c(1,2,10,11,12,13,14,15,16)]
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Removing unnecessary columns and duplicate rows to have values per cell <em>LC3; also renames CellID column to prepare for merging</em></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTEMzbm9EdXA8LXRlbXBbIWR1cGxpY2F0ZWQodGVtcFssYygxLDIsMTMsMTQpXSksYygxLDIsMTAsMTEsMTIsMTMsMTQsMTUsMTYpXVxuTEMzbm9EdXA8LUxDM25vRHVwW3doaWNoKCFpcy5uYShMQzNub0R1cFssMl0pKSxdXG5uYW1lcyhMQzNub0R1cClbbmFtZXMoTEMzbm9EdXApPT1cIkxDM0NlbGxJRFwiXTwtXCJDZWxsSURcIlxuYGBgIn0= -->
+<pre class="r"><code>LC3noDup&lt;-temp[!duplicated(temp[,c(1,2,13,14)]),c(1,2,10,11,12,13,14,15,16)]
 LC3noDup&lt;-LC3noDup[which(!is.na(LC3noDup[,2])),]
-names(LC3noDup)[names(LC3noDup)==\LC3CellID\]&lt;-\CellID\</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-Removing unnecessary columns and duplicate rows to have values per cell
-*LAMP; also renames CellID column to prepare for merging*
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuTEFNUG5vRHVwPC10ZW1wWyFkdXBsaWNhdGVkKHRlbXBbLGMoMSw2KV0pLGMoMSw2LDEwLDExLDEyLDE3LDE4LDE5LDIwKV1cbkxBTVBub0R1cDwtTEFNUG5vRHVwW3doaWNoKCFpcy5uYShMQU1Qbm9EdXBbLDhdKSksXVxubmFtZXMoTEFNUG5vRHVwKVtuYW1lcyhMQU1Qbm9EdXApPT1cXExBTVBDZWxsSURcXF08LVxcQ2VsbElEXFxcbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-LAMPnoDup&lt;-temp[!duplicated(temp[,c(1,6)]),c(1,6,10,11,12,17,18,19,20)]
+names(LC3noDup)[names(LC3noDup)==&quot;LC3CellID&quot;]&lt;-&quot;CellID&quot;</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Removing unnecessary columns and duplicate rows to have values per cell <em>LAMP; also renames CellID column to prepare for merging</em></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTEFNUG5vRHVwPC10ZW1wWyFkdXBsaWNhdGVkKHRlbXBbLGMoMSw2KV0pLGMoMSw2LDEwLDExLDEyLDE3LDE4LDE5LDIwKV1cbkxBTVBub0R1cDwtTEFNUG5vRHVwW3doaWNoKCFpcy5uYShMQU1Qbm9EdXBbLDhdKSksXVxubmFtZXMoTEFNUG5vRHVwKVtuYW1lcyhMQU1Qbm9EdXApPT1cIkxBTVBDZWxsSURcIl08LVwiQ2VsbElEXCJcbmBgYCJ9 -->
+<pre class="r"><code>LAMPnoDup&lt;-temp[!duplicated(temp[,c(1,6)]),c(1,6,10,11,12,17,18,19,20)]
 LAMPnoDup&lt;-LAMPnoDup[which(!is.na(LAMPnoDup[,8])),]
-names(LAMPnoDup)[names(LAMPnoDup)==\LAMPCellID\]&lt;-\CellID\</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-Merging LC3 and LAMP cleaned data frames for graphing
-*replaces NA values with 0 if desired*
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudGVzdCA8LSBtZXJnZShMQzNub0R1cCxMQU1Qbm9EdXAsIGFsbCA9IFRSVUUpXG4jdGVzdFtpcy5uYSh0ZXN0KV08LTBcbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-test &lt;- merge(LC3noDup,LAMPnoDup, all = TRUE)
+names(LAMPnoDup)[names(LAMPnoDup)==&quot;LAMPCellID&quot;]&lt;-&quot;CellID&quot;</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Merging LC3 and LAMP cleaned data frames for graphing <em>replaces NA values with 0 if desired</em></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdCA8LSBtZXJnZShMQzNub0R1cCxMQU1Qbm9EdXAsIGFsbCA9IFRSVUUpXG4jdGVzdFtpcy5uYSh0ZXN0KV08LTBcbmBgYCJ9 -->
+<pre class="r"><code>test &lt;- merge(LC3noDup,LAMPnoDup, all = TRUE)
 #test[is.na(test)]&lt;-0</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-Option to merge per cell metrics with object counts per cell dataframe
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudGVzdDIgPC0gbWVyZ2UodGVzdCxjb3VudHMsIGFsbCA9IFRSVUUpXG5gYGBcbmBgYCJ9 --&gt;
-
-```r
-```r
-test2 &lt;- merge(test,counts, all = TRUE)</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-print list of images with high LC3 intensity
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuXG5udGVtcDwtbnJvdyh0ZW1wKVxudGVtcCRCdnNTPC1mYWN0b3IodGVtcCRCdnNTLCBsZXZlbHM9YyhcXEJhc2FsXFwsIFxcU3RhcnZlZFxcKSlcbmltZzwtYygpXG5cbmZvciAoaSBpbiAxOm50ZW1wKSB7XG4gIGlmICghaXMubmEodGVtcFtpLDldKSAmIHRlbXBbaSw5XT4yMDAwMDAwMCkge1xuICAgIGltZzwtYyhpbWcsaS0xKVxuICB9XG59XG5cbmJyaWdodENlbGxzPC1kYXRhLmZyYW1lKHRlbXBbaW1nLF0pXG5cbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>print list of images with high LC3 intensity</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuXG5udGVtcDwtbnJvdyh0ZW1wKVxudGVtcCRCdnNTPC1mYWN0b3IodGVtcCRCdnNTLCBsZXZlbHM9YyhcXEJhc2FsXFwsIFxcU3RhcnZlZFxcKSlcbmltZzwtYygpXG5cbmZvciAoaSBpbiAxOm50ZW1wKSB7XG4gIGlmICghaXMubmEodGVtcFtpLDldKSAmIHRlbXBbaSw5XT4yMDAwMDAwMCkge1xuICAgIGltZzwtYyhpbWcsaS0xKVxuICB9XG59XG5cbmJyaWdodENlbGxzPC1kYXRhLmZyYW1lKHRlbXBbaW1nLF0pXG5cbmBgYFxuYGBgIn0= -->
+<pre class="r"><code>```r
 
 ntemp&lt;-nrow(temp)
 temp$BvsS&lt;-factor(temp$BvsS, levels=c(\Basal\, \Starved\))
@@ -588,13 +479,32 @@ for (i in 1:ntemp) {
 
 brightCells&lt;-data.frame(temp[img,])
 </code></pre>
-<p>```</p>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+Option to merge per cell metrics with object counts per cell dataframe
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdDIgPC0gbWVyZ2UodGVzdCxjb3VudHMsIGFsbCA9IFRSVUUpXG5gYGAifQ== --&gt;
+
+```r
+test2 &lt;- merge(test,counts, all = TRUE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIjE2LUxvYWQtU2VnLUluZC1QdW5jdGEtRGF0YSINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQpDU1YgaW1wb3J0IC0gTWFjDQoqY2hhbmdlIGlucHV0IGZpbGUgcGF0aCoNCmBgYHtyfQ0KdGVzdGRhdGE9cmVhZC5jc3YoZmlsZT0ifi9EZXNrdG9wLzIxSmFuMjFfYW5hbHlzaXMvZmluYWwvTlNXMzAxNl9CYXNhbF9Wb2wtSW50XzE1RmViMjEuY3N2IixoZWFkZXI9VFJVRSkNCnRlc3RkYXRhJEJ2c1M8LSJCYXNhbCINCnRlc3RkYXRhJFJlcDwtMw0Kbm9icz1ucm93KHRlc3RkYXRhKQ0KZm9yIChpIGluIDE6bm9icykgew0KICBpZiAodGVzdGRhdGFbaSwxXT09IiIpIHsNCiAgICB0ZXN0ZGF0YVtpLDFdPC1mbmFtZQ0KICAgIA0KDQogIH0gDQogIGVsc2Ugew0KICAgIGZuYW1lPXRlc3RkYXRhW2ksMV0NCiAgfQ0KfQ0KDQp0ZXN0ZGF0YTI9cmVhZC5jc3YoZmlsZT0ifi9EZXNrdG9wLzIxSmFuMjFfYW5hbHlzaXMvZmluYWwvTlNXMzAxNl9TdGFydmVkX1ZvbC1JbnRfMTVGZWIyMS5jc3YiLGhlYWRlcj1UUlVFKQ0KdGVzdGRhdGEyJEJ2c1M8LSJTdGFydmVkIg0KdGVzdGRhdGEyJFJlcDwtMw0Kbm9icz1ucm93KHRlc3RkYXRhMikNCmZvciAoaSBpbiAxOm5vYnMpIHsNCiAgaWYgKHRlc3RkYXRhMltpLDFdPT0iIikgew0KICAgIHRlc3RkYXRhMltpLDFdPC1mbmFtZQ0KDQogIH0gDQogIGVsc2Ugew0KICAgIGZuYW1lPXRlc3RkYXRhMltpLDFdDQoNCiAgfQ0KfQ0KDQp0ZW1wPC1yYmluZCh0ZXN0ZGF0YSx0ZXN0ZGF0YTIpDQpgYGANCg0KQ1NWIGltcG9ydCAtICpXaW5kb3dzKg0KKk1VU1QgSEFWRSBGSUxFUyBJTiBSIFBST0pFQ1QgV0QqIA0KKmNoYW5nZSBpbnB1dCBmaWxlIHBhdGgqDQpgYGB7cn0NCnRlc3RkYXRhPXJlYWQuY3N2KGZpbGU9Ii4vQW5hbHlzaXMtZmlsZXMvZXFDZWxsc3VtX2FuYWx5c2lzL05TVzMwMTBfRXFDZWxsU3VtX0Jhc2FsX2NvdW50XzI0RmViMjEuY3N2IixoZWFkZXI9VFJVRSkNCnRlc3RkYXRhJEJ2c1M8LSJCYXNhbCINCnRlc3RkYXRhJFJlcDwtMQ0Kbm9icz1ucm93KHRlc3RkYXRhKQ0KZm9yIChpIGluIDE6bm9icykgew0KICBpZiAodGVzdGRhdGFbaSwxXT09IiIpIHsNCiAgICB0ZXN0ZGF0YVtpLDFdPC1mbmFtZQ0KDQogIH0gDQogIGVsc2Ugew0KICAgIGZuYW1lPXRlc3RkYXRhW2ksMV0NCg0KICB9DQp9DQoNCnRlc3RkYXRhMj1yZWFkLmNzdihmaWxlPSIuL0FuYWx5c2lzLWZpbGVzL2VxQ2VsbHN1bV9hbmFseXNpcy9OU1czMDEwX0VxQ2VsbFN1bV9TdGFydmVkX2NvdW50XzI0RmViMjEuY3N2IixoZWFkZXI9VFJVRSkNCnRlc3RkYXRhMiRCdnNTPC0iU3RhcnZlZCINCnRlc3RkYXRhMiRSZXA8LTENCm5vYnM9bnJvdyh0ZXN0ZGF0YTIpDQpmb3IgKGkgaW4gMTpub2JzKSB7DQogIGlmICh0ZXN0ZGF0YTJbaSwxXT09IiIpIHsNCiAgICB0ZXN0ZGF0YTJbaSwxXTwtZm5hbWUNCg0KICB9IA0KICBlbHNlIHsNCiAgICBmbmFtZT10ZXN0ZGF0YTJbaSwxXQ0KDQogIH0NCn0NCg0KdGVtcDwtcmJpbmQodGVzdGRhdGEsdGVzdGRhdGEyKQ0KYGBgDQoNCg0KQWRkaW5nIHR5cGUgZGVzaWduYXRpb24NCippZiBuZWNlc3NhcnkgdXBkYXRlIHN1YnN0cmluZyB2YWx1ZXMgYmFzZWQgb24gZmlsZW5hbWUgaW4gaW5wdXQgZG9jdW1lbnQqDQpgYGB7cn0NCnRlbXAkVHlwZTwtTkENCm50ZW1wPC1ucm93KHRlbXApDQoNCg0KZm9yIChjIGluIDE6bnRlbXApIHsNCiAgaWYgKHN1YnN0cih0ZW1wW2MsMV0sNDUsNDUpPT0iVyIpIHsNCiAgICB0ZW1wJFR5cGVbY108LSJXVCINCiAgfQ0KICBlbHNlIGlmIChzdWJzdHIodGVtcFtjLDFdLDQ1LDQ1KT09IkMiKSB7DQogICAgdGVtcCRUeXBlW2NdPC0iQ29udHJvbCINCiAgfQ0KICBlbHNlIGlmIChzdWJzdHIodGVtcFtjLDFdLDQ1LDQ1KT09InQiKSB7DQogICAgdGVtcCRUeXBlW2NdPC0idGVwc2luIg0KICB9DQogIGVsc2Ugew0KICAgIHRlbXAkVHlwZVtjXTwtIkFQNEUxIg0KICB9DQogIA0KfQ0KdGVtcCRUeXBlPC1mYWN0b3IodGVtcCRUeXBlLCBsZXZlbHM9YygiV1QiLCAiQ29udHJvbCIsICJ0ZXBzaW4iLCAiQVA0RTEiKSkNCmBgYA0KDQpHZXR0aW5nIGF2ZXJhZ2Ugb3Igc3VtIHZhbHVlcyBwZXIgY2VsbCBmb3IgTEMzIG1ldHJpY3MNCmBgYHtyfQ0KbnRlbXA8LW5yb3codGVtcCkNCnRlbXBbLDJdPC1hcy5udW1lcmljKHRlbXBbLDJdKQ0KdGVtcCRBdmVMQzNWb2xQZXJDZWxsIDwtIE5BDQp0ZW1wJEF2ZUxDM0ludFBlckNlbGw8LSBOQQ0KdGVtcCRBdmVMQzNTdW1JbnRQZXJDZWxsPC1OQQ0KdGVtcCRUb3RMQzNJbnRQZXJDZWxsPC1OQQ0KcnM8LWMoKQ0KY2lkPC0xDQpmbmFtZTwtdGVtcFsxLDFdDQpmb3IgKGkgaW4gMTpudGVtcCkgew0KICBpZiAoIWlzLm5hKHRlbXBbaSwyXSkpew0KICAgIGlmICh0ZW1wW2ksMl0hPWNpZCB8IHRlbXBbaSwxXSE9Zm5hbWUpIHsNCiAgICAgIHRlbXAkQXZlTEMzVm9sUGVyQ2VsbFtyc108LW1lYW4odGVtcCRMQzNQdW5jdGFWb2xbcnNdKQ0KICAgICAgdGVtcCRBdmVMQzNJbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExDM1B1bmN0YU1lYW5JbnRbcnNdKQ0KICAgICAgdGVtcCRBdmVMQzNTdW1JbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExDM1N1bU9iakludFtyc10pDQogICAgICB0ZW1wJFRvdExDM0ludFBlckNlbGxbcnNdPC1zdW0odGVtcCRMQzNTdW1PYmpJbnRbcnNdKQ0KICAgICAgcnM8LWMoaSkNCiAgICAgIGNpZDwtdGVtcFtpLDJdDQogICAgICBmbmFtZTwtdGVtcFtpLDFdDQogICAgfQ0KICAgIGVsc2Ugew0KICAgICAgcnM8LWMocnMsaSkNCiAgICB9DQogIH0NCiAgaWYgKGk9PW50ZW1wKXsNCiAgICB0ZW1wJEF2ZUxDM1ZvbFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEMzUHVuY3RhVm9sW3JzXSkNCiAgICB0ZW1wJEF2ZUxDM0ludFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEMzUHVuY3RhTWVhbkludFtyc10pDQogICAgdGVtcCRBdmVMQzNTdW1JbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExDM1N1bU9iakludFtyc10pDQogICAgdGVtcCRUb3RMQzNJbnRQZXJDZWxsW3JzXTwtc3VtKHRlbXAkTEMzU3VtT2JqSW50W3JzXSkNCiAgfQ0KfQ0KYGBgDQoNCkdldHRpbmcgYXZlcmFnZSBvciBzdW0gdmFsdWVzIHBlciBjZWxsIGZvciBMQU1QMSBtZXRyaWNzDQpgYGB7cn0NCm50ZW1wPC1ucm93KHRlbXApDQp0ZW1wWyw2XTwtYXMubnVtZXJpYyh0ZW1wWyw2XSkNCnRlbXAkQXZlTEFNUFZvbFBlckNlbGwgPC0gTkENCnRlbXAkQXZlTEFNUEludFBlckNlbGw8LSBOQQ0KdGVtcCRBdmVMQU1QU3VtSW50UGVyQ2VsbDwtTkENCnRlbXAkVG90TEFNUEludFBlckNlbGw8LU5BDQpyczwtYygpDQpjaWQ8LTENCmZuYW1lPC10ZW1wWzEsMV0NCmZvciAoaSBpbiAxOm50ZW1wKSB7DQogIGlmICghaXMubmEodGVtcFtpLDZdKSl7DQogICAgaWYgKHRlbXBbaSw2XSE9Y2lkIHwgdGVtcFtpLDFdIT1mbmFtZSkgew0KICAgICAgdGVtcCRBdmVMQU1QVm9sUGVyQ2VsbFtyc108LW1lYW4odGVtcCRMQU1QT2JqVm9sW3JzXSkNCiAgICAgIHRlbXAkQXZlTEFNUEludFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEFNUE1lYW5PYmpJbnRbcnNdKQ0KICAgICAgdGVtcCRBdmVMQU1QU3VtSW50UGVyQ2VsbFtyc108LW1lYW4odGVtcCRMQU1QU3VtT2JqSW50W3JzXSkNCiAgICAgIHRlbXAkVG90TEFNUEludFBlckNlbGxbcnNdPC1zdW0odGVtcCRMQU1QU3VtT2JqSW50W3JzXSkNCiAgICAgIHJzPC1jKGkpDQogICAgICBjaWQ8LXRlbXBbaSw2XQ0KICAgICAgZm5hbWU8LXRlbXBbaSwxXQ0KICAgIH0NCiAgICBlbHNlIHsNCiAgICAgIHJzPC1jKHJzLGkpDQogICAgfQ0KICB9DQogIGlmIChpPT1udGVtcCl7DQogICAgdGVtcCRBdmVMQU1QVm9sUGVyQ2VsbFtyc108LW1lYW4odGVtcCRMQU1QT2JqVm9sW3JzXSkNCiAgICB0ZW1wJEF2ZUxBTVBJbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExBTVBNZWFuT2JqSW50W3JzXSkNCiAgICB0ZW1wJEF2ZUxBTVBTdW1JbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExBTVBTdW1PYmpJbnRbcnNdKQ0KICAgIHRlbXAkVG90TEFNUEludFBlckNlbGxbcnNdPC1zdW0odGVtcCRMQU1QU3VtT2JqSW50W3JzXSkNCiAgfQ0KfQ0KYGBgDQoNClJlbW92aW5nIHVubmVjZXNzYXJ5IGNvbHVtbnMgYW5kIGR1cGxpY2F0ZSByb3dzIHRvIGhhdmUgdmFsdWVzIHBlciBjZWxsDQoqTEMzOyBhbHNvIHJlbmFtZXMgQ2VsbElEIGNvbHVtbiB0byBwcmVwYXJlIGZvciBtZXJnaW5nKg0KYGBge3J9DQpMQzNub0R1cDwtdGVtcFshZHVwbGljYXRlZCh0ZW1wWyxjKDEsMiwxMywxNCldKSxjKDEsMiwxMCwxMSwxMiwxMywxNCwxNSwxNildDQpMQzNub0R1cDwtTEMzbm9EdXBbd2hpY2goIWlzLm5hKExDM25vRHVwWywyXSkpLF0NCm5hbWVzKExDM25vRHVwKVtuYW1lcyhMQzNub0R1cCk9PSJMQzNDZWxsSUQiXTwtIkNlbGxJRCINCmBgYA0KDQpSZW1vdmluZyB1bm5lY2Vzc2FyeSBjb2x1bW5zIGFuZCBkdXBsaWNhdGUgcm93cyB0byBoYXZlIHZhbHVlcyBwZXIgY2VsbA0KKkxBTVA7IGFsc28gcmVuYW1lcyBDZWxsSUQgY29sdW1uIHRvIHByZXBhcmUgZm9yIG1lcmdpbmcqDQpgYGB7cn0NCkxBTVBub0R1cDwtdGVtcFshZHVwbGljYXRlZCh0ZW1wWyxjKDEsNildKSxjKDEsNiwxMCwxMSwxMiwxNywxOCwxOSwyMCldDQpMQU1Qbm9EdXA8LUxBTVBub0R1cFt3aGljaCghaXMubmEoTEFNUG5vRHVwWyw4XSkpLF0NCm5hbWVzKExBTVBub0R1cClbbmFtZXMoTEFNUG5vRHVwKT09IkxBTVBDZWxsSUQiXTwtIkNlbGxJRCINCmBgYA0KDQpNZXJnaW5nIExDMyBhbmQgTEFNUCBjbGVhbmVkIGRhdGEgZnJhbWVzIGZvciBncmFwaGluZw0KKnJlcGxhY2VzIE5BIHZhbHVlcyB3aXRoIDAgaWYgZGVzaXJlZCoNCmBgYHtyfQ0KdGVzdCA8LSBtZXJnZShMQzNub0R1cCxMQU1Qbm9EdXAsIGFsbCA9IFRSVUUpDQojdGVzdFtpcy5uYSh0ZXN0KV08LTANCmBgYA0KDQpPcHRpb24gdG8gbWVyZ2UgcGVyIGNlbGwgbWV0cmljcyB3aXRoIG9iamVjdCBjb3VudHMgcGVyIGNlbGwgZGF0YWZyYW1lDQpgYGB7cn0NCnRlc3QyIDwtIG1lcmdlKHRlc3QsY291bnRzLCBhbGwgPSBUUlVFKQ0KYGBgDQoNCnByaW50IGxpc3Qgb2YgaW1hZ2VzIHdpdGggaGlnaCBMQzMgaW50ZW5zaXR5DQpgYGB7cn0NCg0KbnRlbXA8LW5yb3codGVtcCkNCnRlbXAkQnZzUzwtZmFjdG9yKHRlbXAkQnZzUywgbGV2ZWxzPWMoIkJhc2FsIiwgIlN0YXJ2ZWQiKSkNCmltZzwtYygpDQoNCmZvciAoaSBpbiAxOm50ZW1wKSB7DQogIGlmICghaXMubmEodGVtcFtpLDldKSAmIHRlbXBbaSw5XT4yMDAwMDAwMCkgew0KICAgIGltZzwtYyhpbWcsaS0xKQ0KICB9DQp9DQoNCmJyaWdodENlbGxzPC1kYXRhLmZyYW1lKHRlbXBbaW1nLF0pDQoNCmBgYA0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIjE2LUxvYWQtU2VnLUluZC1QdW5jdGEtRGF0YSINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQpDU1YgaW1wb3J0IC0gTWFjDQoqY2hhbmdlIGlucHV0IGZpbGUgcGF0aCoNCmBgYHtyfQ0KdGVzdGRhdGE9cmVhZC5jc3YoZmlsZT0ifi9EZXNrdG9wLzIxSmFuMjFfYW5hbHlzaXMvZmluYWwvTlNXMzAxNl9CYXNhbF9Wb2wtSW50XzE1RmViMjEuY3N2IixoZWFkZXI9VFJVRSkNCnRlc3RkYXRhJEJ2c1M8LSJCYXNhbCINCnRlc3RkYXRhJFJlcDwtMw0Kbm9icz1ucm93KHRlc3RkYXRhKQ0KZm9yIChpIGluIDE6bm9icykgew0KICBpZiAodGVzdGRhdGFbaSwxXT09IiIpIHsNCiAgICB0ZXN0ZGF0YVtpLDFdPC1mbmFtZQ0KICAgIA0KDQogIH0gDQogIGVsc2Ugew0KICAgIGZuYW1lPXRlc3RkYXRhW2ksMV0NCiAgfQ0KfQ0KDQp0ZXN0ZGF0YTI9cmVhZC5jc3YoZmlsZT0ifi9EZXNrdG9wLzIxSmFuMjFfYW5hbHlzaXMvZmluYWwvTlNXMzAxNl9TdGFydmVkX1ZvbC1JbnRfMTVGZWIyMS5jc3YiLGhlYWRlcj1UUlVFKQ0KdGVzdGRhdGEyJEJ2c1M8LSJTdGFydmVkIg0KdGVzdGRhdGEyJFJlcDwtMw0Kbm9icz1ucm93KHRlc3RkYXRhMikNCmZvciAoaSBpbiAxOm5vYnMpIHsNCiAgaWYgKHRlc3RkYXRhMltpLDFdPT0iIikgew0KICAgIHRlc3RkYXRhMltpLDFdPC1mbmFtZQ0KDQogIH0gDQogIGVsc2Ugew0KICAgIGZuYW1lPXRlc3RkYXRhMltpLDFdDQoNCiAgfQ0KfQ0KDQp0ZW1wPC1yYmluZCh0ZXN0ZGF0YSx0ZXN0ZGF0YTIpDQpgYGANCg0KQ1NWIGltcG9ydCAtICpXaW5kb3dzKg0KKk1VU1QgSEFWRSBGSUxFUyBJTiBSIFBST0pFQ1QgV0QqIA0KKmNoYW5nZSBpbnB1dCBmaWxlIHBhdGgqDQpgYGB7cn0NCnRlc3RkYXRhPXJlYWQuY3N2KGZpbGU9Ii4vQW5hbHlzaXMtZmlsZXMvZXFDZWxsc3VtX2FuYWx5c2lzL05TVzMwMTZfRXFDZWxsU3VtX0Jhc2FsX1ZvbC1JbnRfMjJGZWIyMS5jc3YiLGhlYWRlcj1UUlVFKQ0KdGVzdGRhdGEkQnZzUzwtIkJhc2FsIg0KdGVzdGRhdGEkUmVwPC0zDQpub2JzPW5yb3codGVzdGRhdGEpDQpmb3IgKGkgaW4gMTpub2JzKSB7DQogIGlmICh0ZXN0ZGF0YVtpLDFdPT0iIikgew0KICAgIHRlc3RkYXRhW2ksMV08LWZuYW1lDQoNCiAgfSANCiAgZWxzZSB7DQogICAgZm5hbWU9dGVzdGRhdGFbaSwxXQ0KDQogIH0NCn0NCg0KdGVzdGRhdGEyPXJlYWQuY3N2KGZpbGU9Ii4vQW5hbHlzaXMtZmlsZXMvZXFDZWxsc3VtX2FuYWx5c2lzL05TVzMwMTZfRXFDZWxsU3VtX1N0YXJ2ZWRfVm9sLUludF8yM0ZlYjIxLmNzdiIsaGVhZGVyPVRSVUUpDQp0ZXN0ZGF0YTIkQnZzUzwtIlN0YXJ2ZWQiDQp0ZXN0ZGF0YTIkUmVwPC0zDQpub2JzPW5yb3codGVzdGRhdGEyKQ0KZm9yIChpIGluIDE6bm9icykgew0KICBpZiAodGVzdGRhdGEyW2ksMV09PSIiKSB7DQogICAgdGVzdGRhdGEyW2ksMV08LWZuYW1lDQoNCiAgfSANCiAgZWxzZSB7DQogICAgZm5hbWU9dGVzdGRhdGEyW2ksMV0NCg0KICB9DQp9DQoNCnRlbXA8LXJiaW5kKHRlc3RkYXRhLHRlc3RkYXRhMikNCmBgYA0KDQoNCkFkZGluZyB0eXBlIGRlc2lnbmF0aW9uDQoqaWYgbmVjZXNzYXJ5IHVwZGF0ZSBzdWJzdHJpbmcgdmFsdWVzIGJhc2VkIG9uIGZpbGVuYW1lIGluIGlucHV0IGRvY3VtZW50Kg0KYGBge3J9DQp0ZW1wJFR5cGU8LU5BDQpudGVtcDwtbnJvdyh0ZW1wKQ0KDQoNCmZvciAoYyBpbiAxOm50ZW1wKSB7DQogIGlmIChzdWJzdHIodGVtcFtjLDFdLDQ1LDQ1KT09IlciKSB7DQogICAgdGVtcCRUeXBlW2NdPC0iV1QiDQogIH0NCiAgZWxzZSBpZiAoc3Vic3RyKHRlbXBbYywxXSw0NSw0NSk9PSJDIikgew0KICAgIHRlbXAkVHlwZVtjXTwtIkNvbnRyb2wiDQogIH0NCiAgZWxzZSBpZiAoc3Vic3RyKHRlbXBbYywxXSw0NSw0NSk9PSJ0Iikgew0KICAgIHRlbXAkVHlwZVtjXTwtInRlcHNpbiINCiAgfQ0KICBlbHNlIHsNCiAgICB0ZW1wJFR5cGVbY108LSJBUDRFMSINCiAgfQ0KICANCn0NCnRlbXAkVHlwZTwtZmFjdG9yKHRlbXAkVHlwZSwgbGV2ZWxzPWMoIldUIiwgIkNvbnRyb2wiLCAidGVwc2luIiwgIkFQNEUxIikpDQpgYGANCg0KR2V0dGluZyBhdmVyYWdlIG9yIHN1bSB2YWx1ZXMgcGVyIGNlbGwgZm9yIExDMyBtZXRyaWNzDQpgYGB7cn0NCm50ZW1wPC1ucm93KHRlbXApDQp0ZW1wWywyXTwtYXMubnVtZXJpYyh0ZW1wWywyXSkNCnRlbXAkQXZlTEMzVm9sUGVyQ2VsbCA8LSBOQQ0KdGVtcCRBdmVMQzNJbnRQZXJDZWxsPC0gTkENCnRlbXAkQXZlTEMzU3VtSW50UGVyQ2VsbDwtTkENCnRlbXAkVG90TEMzSW50UGVyQ2VsbDwtTkENCnJzPC1jKCkNCmNpZDwtMQ0KZm5hbWU8LXRlbXBbMSwxXQ0KZm9yIChpIGluIDE6bnRlbXApIHsNCiAgaWYgKCFpcy5uYSh0ZW1wW2ksMl0pKXsNCiAgICBpZiAodGVtcFtpLDJdIT1jaWQgfCB0ZW1wW2ksMV0hPWZuYW1lKSB7DQogICAgICB0ZW1wJEF2ZUxDM1ZvbFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEMzUHVuY3RhVm9sW3JzXSkNCiAgICAgIHRlbXAkQXZlTEMzSW50UGVyQ2VsbFtyc108LW1lYW4odGVtcCRMQzNQdW5jdGFNZWFuSW50W3JzXSkNCiAgICAgIHRlbXAkQXZlTEMzU3VtSW50UGVyQ2VsbFtyc108LW1lYW4odGVtcCRMQzNTdW1PYmpJbnRbcnNdKQ0KICAgICAgdGVtcCRUb3RMQzNJbnRQZXJDZWxsW3JzXTwtc3VtKHRlbXAkTEMzU3VtT2JqSW50W3JzXSkNCiAgICAgIHJzPC1jKGkpDQogICAgICBjaWQ8LXRlbXBbaSwyXQ0KICAgICAgZm5hbWU8LXRlbXBbaSwxXQ0KICAgIH0NCiAgICBlbHNlIHsNCiAgICAgIHJzPC1jKHJzLGkpDQogICAgfQ0KICB9DQogIGlmIChpPT1udGVtcCl7DQogICAgdGVtcCRBdmVMQzNWb2xQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExDM1B1bmN0YVZvbFtyc10pDQogICAgdGVtcCRBdmVMQzNJbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExDM1B1bmN0YU1lYW5JbnRbcnNdKQ0KICAgIHRlbXAkQXZlTEMzU3VtSW50UGVyQ2VsbFtyc108LW1lYW4odGVtcCRMQzNTdW1PYmpJbnRbcnNdKQ0KICAgIHRlbXAkVG90TEMzSW50UGVyQ2VsbFtyc108LXN1bSh0ZW1wJExDM1N1bU9iakludFtyc10pDQogIH0NCn0NCmBgYA0KDQpHZXR0aW5nIGF2ZXJhZ2Ugb3Igc3VtIHZhbHVlcyBwZXIgY2VsbCBmb3IgTEFNUDEgbWV0cmljcw0KYGBge3J9DQpudGVtcDwtbnJvdyh0ZW1wKQ0KdGVtcFssNl08LWFzLm51bWVyaWModGVtcFssNl0pDQp0ZW1wJEF2ZUxBTVBWb2xQZXJDZWxsIDwtIE5BDQp0ZW1wJEF2ZUxBTVBJbnRQZXJDZWxsPC0gTkENCnRlbXAkQXZlTEFNUFN1bUludFBlckNlbGw8LU5BDQp0ZW1wJFRvdExBTVBJbnRQZXJDZWxsPC1OQQ0KcnM8LWMoKQ0KY2lkPC0xDQpmbmFtZTwtdGVtcFsxLDFdDQpmb3IgKGkgaW4gMTpudGVtcCkgew0KICBpZiAoIWlzLm5hKHRlbXBbaSw2XSkpew0KICAgIGlmICh0ZW1wW2ksNl0hPWNpZCB8IHRlbXBbaSwxXSE9Zm5hbWUpIHsNCiAgICAgIHRlbXAkQXZlTEFNUFZvbFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEFNUE9ialZvbFtyc10pDQogICAgICB0ZW1wJEF2ZUxBTVBJbnRQZXJDZWxsW3JzXTwtbWVhbih0ZW1wJExBTVBNZWFuT2JqSW50W3JzXSkNCiAgICAgIHRlbXAkQXZlTEFNUFN1bUludFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEFNUFN1bU9iakludFtyc10pDQogICAgICB0ZW1wJFRvdExBTVBJbnRQZXJDZWxsW3JzXTwtc3VtKHRlbXAkTEFNUFN1bU9iakludFtyc10pDQogICAgICByczwtYyhpKQ0KICAgICAgY2lkPC10ZW1wW2ksNl0NCiAgICAgIGZuYW1lPC10ZW1wW2ksMV0NCiAgICB9DQogICAgZWxzZSB7DQogICAgICByczwtYyhycyxpKQ0KICAgIH0NCiAgfQ0KICBpZiAoaT09bnRlbXApew0KICAgIHRlbXAkQXZlTEFNUFZvbFBlckNlbGxbcnNdPC1tZWFuKHRlbXAkTEFNUE9ialZvbFtyc10pDQogICAgdGVtcCRBdmVMQU1QSW50UGVyQ2VsbFtyc108LW1lYW4odGVtcCRMQU1QTWVhbk9iakludFtyc10pDQogICAgdGVtcCRBdmVMQU1QU3VtSW50UGVyQ2VsbFtyc108LW1lYW4odGVtcCRMQU1QU3VtT2JqSW50W3JzXSkNCiAgICB0ZW1wJFRvdExBTVBJbnRQZXJDZWxsW3JzXTwtc3VtKHRlbXAkTEFNUFN1bU9iakludFtyc10pDQogIH0NCn0NCmBgYA0KDQpSZW1vdmluZyB1bm5lY2Vzc2FyeSBjb2x1bW5zIGFuZCBkdXBsaWNhdGUgcm93cyB0byBoYXZlIHZhbHVlcyBwZXIgY2VsbA0KKkxDMzsgYWxzbyByZW5hbWVzIENlbGxJRCBjb2x1bW4gdG8gcHJlcGFyZSBmb3IgbWVyZ2luZyoNCmBgYHtyfQ0KTEMzbm9EdXA8LXRlbXBbIWR1cGxpY2F0ZWQodGVtcFssYygxLDIsMTMsMTQpXSksYygxLDIsMTAsMTEsMTIsMTMsMTQsMTUsMTYpXQ0KTEMzbm9EdXA8LUxDM25vRHVwW3doaWNoKCFpcy5uYShMQzNub0R1cFssMl0pKSxdDQpuYW1lcyhMQzNub0R1cClbbmFtZXMoTEMzbm9EdXApPT0iTEMzQ2VsbElEIl08LSJDZWxsSUQiDQpgYGANCg0KUmVtb3ZpbmcgdW5uZWNlc3NhcnkgY29sdW1ucyBhbmQgZHVwbGljYXRlIHJvd3MgdG8gaGF2ZSB2YWx1ZXMgcGVyIGNlbGwNCipMQU1QOyBhbHNvIHJlbmFtZXMgQ2VsbElEIGNvbHVtbiB0byBwcmVwYXJlIGZvciBtZXJnaW5nKg0KYGBge3J9DQpMQU1Qbm9EdXA8LXRlbXBbIWR1cGxpY2F0ZWQodGVtcFssYygxLDYpXSksYygxLDYsMTAsMTEsMTIsMTcsMTgsMTksMjApXQ0KTEFNUG5vRHVwPC1MQU1Qbm9EdXBbd2hpY2goIWlzLm5hKExBTVBub0R1cFssOF0pKSxdDQpuYW1lcyhMQU1Qbm9EdXApW25hbWVzKExBTVBub0R1cCk9PSJMQU1QQ2VsbElEIl08LSJDZWxsSUQiDQpgYGANCg0KTWVyZ2luZyBMQzMgYW5kIExBTVAgY2xlYW5lZCBkYXRhIGZyYW1lcyBmb3IgZ3JhcGhpbmcNCipyZXBsYWNlcyBOQSB2YWx1ZXMgd2l0aCAwIGlmIGRlc2lyZWQqDQpgYGB7cn0NCnRlc3QgPC0gbWVyZ2UoTEMzbm9EdXAsTEFNUG5vRHVwLCBhbGwgPSBUUlVFKQ0KI3Rlc3RbaXMubmEodGVzdCldPC0wDQpgYGANCg0KDQpwcmludCBsaXN0IG9mIGltYWdlcyB3aXRoIGhpZ2ggTEMzIGludGVuc2l0eQ0KYGBge3J9DQoNCm50ZW1wPC1ucm93KHRlbXApDQp0ZW1wJEJ2c1M8LWZhY3Rvcih0ZW1wJEJ2c1MsIGxldmVscz1jKCJCYXNhbCIsICJTdGFydmVkIikpDQppbWc8LWMoKQ0KDQpmb3IgKGkgaW4gMTpudGVtcCkgew0KICBpZiAoIWlzLm5hKHRlbXBbaSw5XSkgJiB0ZW1wW2ksOV0+MjAwMDAwMDApIHsNCiAgICBpbWc8LWMoaW1nLGktMSkNCiAgfQ0KfQ0KDQpicmlnaHRDZWxsczwtZGF0YS5mcmFtZSh0ZW1wW2ltZyxdKQ0KDQpgYGANCg0KT3B0aW9uIHRvIG1lcmdlIHBlciBjZWxsIG1ldHJpY3Mgd2l0aCBvYmplY3QgY291bnRzIHBlciBjZWxsIGRhdGFmcmFtZQ0KDQpgYGB7cn0NCnRlc3QyIDwtIG1lcmdlKHRlc3QsY291bnRzLCBhbGwgPSBUUlVFKQ0KYGBgDQo=</div>
 
 
 

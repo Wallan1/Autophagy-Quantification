@@ -42,9 +42,9 @@ CSV import - *Windows*
 *MUST HAVE FILES IN R PROJECT WD* 
 *change input file path*
 ```{r}
-testdata=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3010_EqCellSum_Basal_count_24Feb21.csv",header=TRUE)
+testdata=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Basal_Vol-Int_22Feb21.csv",header=TRUE)
 testdata$BvsS<-"Basal"
-testdata$Rep<-1
+testdata$Rep<-3
 nobs=nrow(testdata)
 for (i in 1:nobs) {
   if (testdata[i,1]=="") {
@@ -57,9 +57,9 @@ for (i in 1:nobs) {
   }
 }
 
-testdata2=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3010_EqCellSum_Starved_count_24Feb21.csv",header=TRUE)
+testdata2=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Starved_Vol-Int_23Feb21.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
-testdata2$Rep<-1
+testdata2$Rep<-3
 nobs=nrow(testdata2)
 for (i in 1:nobs) {
   if (testdata2[i,1]=="") {
@@ -194,10 +194,6 @@ test <- merge(LC3noDup,LAMPnoDup, all = TRUE)
 #test[is.na(test)]<-0
 ```
 
-Option to merge per cell metrics with object counts per cell dataframe
-```{r}
-test2 <- merge(test,counts, all = TRUE)
-```
 
 print list of images with high LC3 intensity
 ```{r}
@@ -216,3 +212,8 @@ brightCells<-data.frame(temp[img,])
 
 ```
 
+Option to merge per cell metrics with object counts per cell dataframe
+
+```{r}
+test2 <- merge(test,counts, all = TRUE)
+```
