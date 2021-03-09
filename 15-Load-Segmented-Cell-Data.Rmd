@@ -3,7 +3,7 @@ title: "15-Load-Segmented-Cell-Data"
 output: html_notebook
 ---
 
-CSV import
+CSV import - Mac
 *change input file path*
 ```{r}
 testdata=read.csv(file="~/Desktop/EqCellSum_22Feb21/Final/NSW3016_EqCellSum_Basal_count_22Feb21.csv",header=TRUE)
@@ -38,6 +38,44 @@ for (i in 1:nobs) {
 
 temp<-rbind(testdata,testdata2)
 ```
+
+CSV import - *Windows*
+*MUST HAVE FILES IN R PROJECT WD* 
+*change input file path*
+```{r}
+testdata=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3010_EqCellSum_Basal_count_24Feb21.csv",header=TRUE)
+testdata$BvsS<-"Basal"
+testdata$Rep<-1
+nobs=nrow(testdata)
+for (i in 1:nobs) {
+  if (testdata[i,1]=="") {
+    testdata[i,1]<-fname
+
+  } 
+  else {
+    fname=testdata[i,1]
+
+  }
+}
+
+testdata2=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3010_EqCellSum_Starved_count_24Feb21.csv",header=TRUE)
+testdata2$BvsS<-"Starved"
+testdata2$Rep<-1
+nobs=nrow(testdata2)
+for (i in 1:nobs) {
+  if (testdata2[i,1]=="") {
+    testdata2[i,1]<-fname
+
+  } 
+  else {
+    fname=testdata2[i,1]
+
+  }
+}
+
+temp<-rbind(testdata,testdata2)
+```
+
 
 Adding type designation
 *if necessary update substring values based on filename in input document*
