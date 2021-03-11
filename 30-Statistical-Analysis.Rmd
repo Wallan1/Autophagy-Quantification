@@ -62,35 +62,38 @@ TukeyHSD(anovaTotLAMPInt)
 single replicate ANOVA of Individual Puncta metrics
 *for stats of single replicates*
 ```{r}
-anovaLC3Vol<-aov(temp$AveLC3VolPerCell~temp$Type*temp$BvsS)
-summary(anovaLC3Vol)
-TukeyHSD(anovaLC3Vol)
+#anovaLC3Vol<-aov(temp$AveLC3VolPerCell~temp$Type*temp$BvsS)
+#summary(anovaLC3Vol)
+#TukeyHSD(anovaLC3Vol)
 
-anovaMeanLC3PuncInt<-aov(temp$AveLC3IntPerCell~temp$Type*temp$BvsS)
-summary(anovaMeanLC3PuncInt)
-TukeyHSD(anovaMeanLC3PuncInt)
+#anovaMeanLC3PuncInt<-aov(temp$AveLC3IntPerCell~temp$Type*temp$BvsS)
+#summary(anovaMeanLC3PuncInt)
+#TukeyHSD(anovaMeanLC3PuncInt)
 
 anovaSumLC3PuncInt<-aov(temp$AveLC3SumIntPerCell~temp$Type*temp$BvsS)
 summary(anovaSumLC3PuncInt)
 TukeyHSD(anovaSumLC3PuncInt)
 
-anovaTotLC3Int<-aov(temp$TotLC3IntPerCell~temp$Type*temp$BvsS)
-summary(anovaTotLC3Int)
-TukeyHSD(anovaTotLC3Int)
+#anovaTotLC3Int<-aov(temp$TotLC3IntPerCell~temp$Type*temp$BvsS)
+#summary(anovaTotLC3Int)
+#TukeyHSD(anovaTotLC3Int)
 
-anovaLAMPVol<-aov(temp$AveLAMPVolPerCell~temp$Type*temp$BvsS)
-summary(anovaLAMPVol)
-TukeyHSD(anovaLAMPVol)
+#anovaLAMPVol<-aov(temp$AveLAMPVolPerCell~temp$Type*temp$BvsS)
+#summary(anovaLAMPVol)
+#TukeyHSD(anovaLAMPVol)
 
-anovaMeanLAMPPuncInt<-aov(temp$AveLAMPIntPerCell~temp$Type*temp$BvsS)
-summary(anovaMeanLAMPPuncInt)
-TukeyHSD(anovaMeanLAMPPuncInt)
+#anovaMeanLAMPPuncInt<-aov(temp$AveLAMPIntPerCell~temp$Type*temp$BvsS)
+#summary(anovaMeanLAMPPuncInt)
+#TukeyHSD(anovaMeanLAMPPuncInt)
 
-anovaSumLAMPPuncInt<-aov(temp$AveLAMPSumIntPerCell~temp$Type*temp$BvsS)
-summary(anovaSumLAMPPuncInt)
-TukeyHSD(anovaSumLAMPPuncInt)
+#anovaSumLAMPPuncInt<-aov(temp$AveLAMPSumIntPerCell~temp$Type*temp$BvsS)
+#summary(anovaSumLAMPPuncInt)
+#TukeyHSD(anovaSumLAMPPuncInt)
 
-anovaTotLAMPInt<-aov(temp$TotLAMPIntPerCell~temp$Type*temp$BvsS)
-summary(anovaTotLAMPInt)
-TukeyHSD(anovaTotLAMPInt)
+#anovaTotLAMPInt<-aov(temp$TotLAMPIntPerCell~temp$Type*temp$BvsS)
+#summary(anovaTotLAMPInt)
+#TukeyHSD(anovaTotLAMPInt)
 ```
+
+
+Single replicate T-test for analysis of basal versus starved
