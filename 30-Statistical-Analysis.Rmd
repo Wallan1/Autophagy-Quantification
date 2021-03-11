@@ -97,10 +97,19 @@ TukeyHSD(anovaSumLC3PuncInt)
 
 
 Single replicate T-test for analysis of basal versus starved
+*visualize in environment tab*
 ```{r}
+x<-"AveLC3VolPerCell"
 for (t in c("WT", "Control", "tepsin", "AP4E1")) {
-  ttestLC3Vol<-t.test(temp$AveLC3VolPerCell~temp$BvsS)
-  summary(ttestLC3Vol)
+  for (x in c("AveLC3VolPerCell","AveLC3IntPerCell","AveLC3SumIntPerCell","TotLC3IntPerCell","AveLAMPVolPerCell","AveLAMPIntPerCell","AveLAMPSumIntPerCell","TotLAMPIntPerCell")){
+  s<-temp[[x]][which(temp$BvsS=="Starved" & temp$Type==t)]
+  b<-temp[[x]][which(temp$BvsS=="Basal" & temp$Type==t)]
+  
+  nam<-paste("t",x,t,sep="")
+  assign(nam,t.test(s,b))
+  }
 }
+
+
 
 ```
