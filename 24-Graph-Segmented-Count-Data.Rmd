@@ -109,7 +109,7 @@ plotme<-function(dat,yaxis,labelme,mytitle){
      ylab(labelme)+
      ggtitle(mytitle)+
      theme_minimal()+
-     #scale_y_continuous(name=labelme,limits = c(0,175))+
+     #scale_y_continuous(name=labelme,limits = c(0,13))+
      theme(plot.title=element_text(hjust=.5))+
         scale_fill_viridis(discrete=TRUE,end=.9) +
         scale_color_viridis(discrete=TRUE,end=.9)+
@@ -117,39 +117,39 @@ plotme<-function(dat,yaxis,labelme,mytitle){
   
 }
 
-#tiff(file="~/Desktop/EqCellSum_22Feb21/Final/graphs/LC3PunctaCounts_boxplot_EqCell_016_4Mar21.tiff",width=3000,height=3000,res=600)
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/LC3PunctaCounts_boxplot_EqCell_016_4Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$LC3PunctaCount, "Number of LC3 positive puncta per cell","Number of LC3 Puncta")
 #dev.off()
 
-tiff(file="./Analysis-files/eqCellsum_analysis/graphs/LC3PunctaVol_boxplot_rep1_9Mar21.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$AveLC3VolPerCell, expression("LC3 Puncta Volume (um"^'3'*")"),"Rep 3: Average Volume of LC3 Puncta")
-dev.off()
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/LC3PunctaVol_boxplot_rep3_10Mar21.tiff",width=3000,height=3000,res=600)
+#plotme(temp,temp$AveLC3VolPerCell, expression("LC3 Puncta Volume (um"^'3'*")"),"Rep 3: Average Volume of LC3 Puncta")
+#dev.off()
 
-#tiff(file="~/Desktop/21Jan21_analysis/final/graphs/AveLC3Int_boxplot_rep3_16Feb21.tiff",width=3000,height=3000,res=600)
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLC3Int_boxplot_rep3_10Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$AveLC3IntPerCell, "Average LC3 puncta intensity (A.U.)","Rep 3: Average LC3 Puncta Intensity")
 #dev.off()
 
-#tiff(file="~/Desktop/21Jan21_analysis/final/graphs/AveLC3SumInt_boxplot_rep3_16Feb21.tiff",width=3000,height=3000,res=600)
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLC3SumInt_boxplot_rep3_10Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$AveLC3SumIntPerCell, "Average  LC3 puncta sum intensity (A.U.)","Rep 3: Average LC3 Puncta Sum Intensity")
 #dev.off()
 
-#tiff(file="~/Desktop/21Jan21_analysis/final/graphs/TotLC3Int_boxplot_zoom_rep3_16Feb21.tiff",width=3000,height=3000,res=600)
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/TotLC3Int_boxplot_rep3_10Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$TotLC3IntPerCell, "Total LC3 puncta intensity (A.U.)","Rep 3: LC3 Puncta Sum Intensity per Cell")
 #dev.off()
 
-#tiff(file="~/Desktop/21Jan21_analysis/final/graphs/LAMPVol_boxplot_rep3_16Feb21.tiff",width=3000,height=3000,res=600)
-#plotme(temp,temp$AveLAMPVolPerCell, expression("LAMP1 Volume (um"^'3'*")"),"Rep 3: Average Volume of LAMP1 Puncta")
-#dev.off()
+tiff(file="./Analysis-files/eqCellsum_analysis/graphs/LAMPVol_boxplot_zoom_rep3_10Mar21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$AveLAMPVolPerCell, expression("LAMP1 Volume (um"^'3'*")"),"Rep 3: Average Volume of LAMP1 Puncta")
+dev.off()
 
-#tiff(file="~/Desktop/21Jan21_analysis/final/graphs/AveLAMPInt_boxplot_rep3_16Feb21.tiff",width=3000,height=3000,res=600)
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLAMPInt_boxplot_rep3_10Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$AveLAMPIntPerCell, "Average LAMP1 puncta intensity (A.U.)","Rep 3: Average LAMP1 Puncta Intensity")
 #dev.off()
 
-#tiff(file="~/Desktop/21Jan21_analysis/final/graphs/AveLampSumInt_boxplot_rep3_16Feb21.tiff",width=3000,height=3000,res=600)
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLampSumInt_boxplot_rep3_10Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$AveLAMPSumIntPerCell, "Average LAMP1 puncta sum intensity (A.U.)","Rep 3: Average LAMP1 Puncta Sum Intensity")
 #dev.off()
 
-#tiff(file="~/Desktop/21Jan21_analysis/final/graphs/TotLAMPInt_boxplot_rep3_16Feb21.tiff",width=3000,height=3000,res=600)
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/TotLAMPInt_boxplot_rep3_10Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$TotLAMPIntPerCell, "Total LAMP1 puncta intensity (A.U.)","Rep 3: LAMP1 Sum Intensity per Cell")
 #dev.off()
 ```
