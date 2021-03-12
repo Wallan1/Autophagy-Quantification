@@ -3,7 +3,7 @@ title: "22-Graph-WB-data"
 output: html_notebook
 ---
 
-
+bar graphs with standard deviation
 ```{r}
 WBdata_nodup$type<-factor(WBdata_nodup$type, levels=c("WT", "Control", "tepsin", "AP4E1"))
 WBdata_nodup$BvsS<-factor(WBdata_nodup$BvsS, levels=c("Basal", "Starved"))
@@ -45,27 +45,81 @@ plotme(WBdata_nodup$LC3ratioAve,WBdata_nodup$LC3ratioSD, expression("LC3 II/I (A
 plotme(WBdata_nodup$LC3ratioNormAve,WBdata_nodup$LC3ratioNormSD, expression("Normalized LC3 II/I (A.U.)"),"Normalized LC3 II/I ratio")
 #dev.off()
 
-#tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_LC3IInormTot.tiff",width=3000,height=3000,res=600)
-plotme(WBdata_nodup$LC3IItotAve,WBdata_nodup$LC3IItotSD, expression("Normalized LC3 II/total LC3 expression (A.U.)"),"LC3 II/total LC3 expression")
-#dev.off()
 
 #tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_LC3II.tiff",width=3000,height=3000,res=600)
 plotme(WBdata_nodup$LC3IIAve,WBdata_nodup$LC3IISD, expression("Normalized LC3 II expression (A.U.)"),"LC3 II expression")
 #dev.off()
 
-#tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_LC3tot.tiff",width=3000,height=3000,res=600)
-plotme(WBdata_nodup$LC3totAve,WBdata_nodup$LC3totSD, expression("Total LC3 expression (A.U.)"),"Total LC3 expression")
-#dev.off()
-
 #tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_tepsinKD.tiff",width=3000,height=3000,res=600)
-#plotme(WBdata_nodup$tepsinKDAve,WBdata_nodup$tepsinKDSD,"Normalized tepsin expression (A.U.)","tepsin siRNA knockdown")
+plotme(WBdata_nodup$tepsinKDAve,WBdata_nodup$tepsinKDSD,"Normalized tepsin expression (A.U.)","tepsin siRNA knockdown")
 #dev.off()
 
 #tiff(file="~/Desktop/analysis_20Aug20/WB-quant/plots/WB-combined_AP4KD.tiff",width=3000,height=3000,res=600)
-#plotme(WBdata_nodup$AP4EKDAve,WBdata_nodup$AP4EKDSD,"Normalized AP4E1 expression (A.U.)","AP4 epsilon siRNA knockdown")
+plotme(WBdata_nodup$AP4EKDAve,WBdata_nodup$AP4EKDSD,"Normalized AP4E1 expression (A.U.)","AP4 epsilon siRNA knockdown")
 #dev.off()
 
 
 ```
 
+bar graphs with standard error
+
+*Windows needs save files mapped to local project working folder*
+  usually file format is similar to ./Analysis-files/WB-Analysis/graphs/filename.tiff
+  Mac file mapping is from root directory so ~/Desktop/(filepath to desired save directory)
+```{r}
+WBdata_nodup$type<-factor(WBdata_nodup$type, levels=c("WT", "Control", "tepsin", "AP4E1"))
+WBdata_nodup$BvsS<-factor(WBdata_nodup$BvsS, levels=c("Basal", "Starved"))
+library(ggplot2)
+# install.packages("remotes")
+remotes::install_github("coolbutuseless/ggpattern")
+library(ggpattern)
+library(viridis)
+
+plotme<-function(yaxis,se,labelme,mytitle){
+   ggplot(WBdata_nodup,aes(x=type,y=yaxis,fill=type, pattern=BvsS)) + 
+      geom_bar_pattern(binaxis='y', width=.5, position = position_dodge(0.9),alpha=.5, stat = "identity",
+              color = "black", 
+              pattern_fill = "black",
+              pattern_angle = 45,
+              pattern_density = 0.1,
+              pattern_spacing = 0.025,
+              pattern_key_scale_factor = 0.6) + 
+        geom_errorbar(aes(ymin=yaxis-se,ymax=yaxis+se),binaxis='y',width=0.4,position = position_dodge(0.9),alpha=.9, colour="black", size=0.8) +
+                guides(pattern = guide_legend(override.aes = list(fill = "white")),
+         fill = guide_legend(override.aes = list(pattern = "none")))+
+      #geom_dotplot(binaxis='y', stackdir='center', stackratio= 0.8, dotsize = 0.5, position = position_dodge(0.9),alpha=.5)+
+      ylab(labelme)+
+      ggtitle(mytitle)+
+      theme_minimal()+
+      #scale_x_discrete(limits= rev(unique(sort(WBdata_nodup$type))))+
+      theme(plot.title=element_text(hjust=.5))+
+        scale_fill_viridis(discrete=TRUE,end=.9) +
+        scale_color_viridis(discrete=TRUE,end=.9)+
+        scale_pattern_manual(values = c(Basal = "none", Starved = "stripe"))
+  
+}
+
+tiff(file="./Analysis-files/WB-Analysis/graphs/WB-combined_6rep_LC3ratioUnNorm_12Mar21.tiff",width=3000,height=3000,res=600)
+plotme(WBdata_nodup$LC3ratioAve,WBdata_nodup$LC3ratioSE, expression("LC3 II/I (A.U.)"),"LC3 II/I ratio")
+dev.off()
+
+tiff(file="./Analysis-files/WB-Analysis/graphs/WB-combined_6rep_LC3ratioNorm_12Mar21.tiff",width=3000,height=3000,res=600)
+plotme(WBdata_nodup$LC3ratioNormAve,WBdata_nodup$LC3ratioNormSE, expression("Normalized LC3 II/I (A.U.)"),"Normalized LC3 II/I ratio")
+dev.off()
+
+
+tiff(file="./Analysis-files/WB-Analysis/graphs/WB-combined_6rep_LC3II_12Mar21.tiff",width=3000,height=3000,res=600)
+plotme(WBdata_nodup$LC3IIAve,WBdata_nodup$LC3IISE, expression("Normalized LC3 II expression (A.U.)"),"LC3 II expression")
+dev.off()
+
+tiff(file="./Analysis-files/WB-Analysis/graphs/WB-combined_6rep_tepsinKD_12Mar21.tiff",width=3000,height=3000,res=600)
+plotme(WBdata_nodup$tepsinKDAve,WBdata_nodup$tepsinKDSE,"Normalized tepsin expression (A.U.)","tepsin siRNA knockdown")
+dev.off()
+
+tiff(file="./Analysis-files/WB-Analysis/graphs/WB-combined_6rep_AP4KD_12Mar21.tiff",width=3000,height=3000,res=600)
+plotme(WBdata_nodup$AP4EKDAve,WBdata_nodup$AP4EKDSE,"Normalized AP4E1 expression (A.U.)","AP4 epsilon siRNA knockdown")
+dev.off()
+
+
+```
 
