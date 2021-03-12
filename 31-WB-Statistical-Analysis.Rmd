@@ -7,9 +7,9 @@ output: html_notebook
 ```{r}
 WBdata$replicate<-as.factor(WBdata$replicate)
 
-anovaLC3ratio<-aov(WBdata$LC3ratio~WBdata$type*WBdata$BvsS+WBdata$replicate+WBdata$replicate:WBdata$type)
-summary(anovaLC3ratio)
-TukeyHSD(anovaLC3ratio)
+anovaLC3ratioNorm<-aov(WBdata$LC3ratioNorm~WBdata$type*WBdata$BvsS+WBdata$replicate+WBdata$replicate:WBdata$type)
+summary(anovaLC3ratioNorm)
+TukeyHSD(anovaLC3ratioNorm)
 
 anovatepsinKD<-aov(WBdata$tepsinKD~WBdata$type*WBdata$BvsS+WBdata$replicate+WBdata$replicate:WBdata$type)
 summary(anovatepsinKD)
@@ -21,4 +21,19 @@ TukeyHSD(anovaAP4EKD)
 ```
 
 
+
+T-Test of LC3 ratio, individual replicates
+```{r}
+x<-"LC3ratioNorm"
+for (t in c("WT", "Control", "tepsin", "AP4E1")) {
+  
+  s<-WBdata[[x]][which(WBdata$BvsS=="Starved" & WBdata$type==t)]
+  b<-WBdata[[x]][which(WBdata$BvsS=="Basal" & WBdata$type==t)]
+  
+  nam<-paste("t",x,t,sep="")
+  assign(nam,t.test(s,b))
+  }
+
+
+```
 
