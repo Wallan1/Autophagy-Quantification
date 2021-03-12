@@ -26,37 +26,37 @@ ANOVA of all object metrics
 ```{r}
 temp$Rep<-as.factor(temp$Rep)
 
-anovaLC3Vol<-aov(temp$AveLC3VolPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
-summary(anovaLC3Vol)
-TukeyHSD(anovaLC3Vol)
+#anovaLC3Vol<-aov(temp$AveLC3VolPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+#summary(anovaLC3Vol)
+#TukeyHSD(anovaLC3Vol)
 
-anovaMeanLC3PuncInt<-aov(temp$AveLC3IntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
-summary(anovaMeanLC3PuncInt)
-TukeyHSD(anovaMeanLC3PuncInt)
+#anovaMeanLC3PuncInt<-aov(temp$AveLC3IntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+#summary(anovaMeanLC3PuncInt)
+#TukeyHSD(anovaMeanLC3PuncInt)
 
-anovaSumLC3PuncInt<-aov(temp$AveLC3SumIntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
-summary(anovaSumLC3PuncInt)
-TukeyHSD(anovaSumLC3PuncInt)
+#anovaSumLC3PuncInt<-aov(temp$AveLC3SumIntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+#summary(anovaSumLC3PuncInt)
+#TukeyHSD(anovaSumLC3PuncInt)
 
 anovaTotLC3Int<-aov(temp$TotLC3IntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
 summary(anovaTotLC3Int)
 TukeyHSD(anovaTotLC3Int)
 
-anovaLAMPVol<-aov(temp$AveLAMPVolPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
-summary(anovaLAMPVol)
-TukeyHSD(anovaLAMPVol)
+#anovaLAMPVol<-aov(temp$AveLAMPVolPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+#summary(anovaLAMPVol)
+#TukeyHSD(anovaLAMPVol)
 
-anovaMeanLAMPPuncInt<-aov(temp$AveLAMPIntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
-summary(anovaMeanLAMPPuncInt)
-TukeyHSD(anovaMeanLAMPPuncInt)
+#anovaMeanLAMPPuncInt<-aov(temp$AveLAMPIntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+#summary(anovaMeanLAMPPuncInt)
+#TukeyHSD(anovaMeanLAMPPuncInt)
 
-anovaSumLAMPPuncInt<-aov(temp$AveLAMPSumIntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
-summary(anovaSumLAMPPuncInt)
-TukeyHSD(anovaSumLAMPPuncInt)
+#anovaSumLAMPPuncInt<-aov(temp$AveLAMPSumIntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+#summary(anovaSumLAMPPuncInt)
+#TukeyHSD(anovaSumLAMPPuncInt)
 
-anovaTotLAMPInt<-aov(temp$TotLAMPIntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
-summary(anovaTotLAMPInt)
-TukeyHSD(anovaTotLAMPInt)
+#anovaTotLAMPInt<-aov(temp$TotLAMPIntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+#summary(anovaTotLAMPInt)
+#TukeyHSD(anovaTotLAMPInt)
 ```
 
 single replicate ANOVA of Individual Puncta metrics
@@ -70,9 +70,9 @@ single replicate ANOVA of Individual Puncta metrics
 #summary(anovaMeanLC3PuncInt)
 #TukeyHSD(anovaMeanLC3PuncInt)
 
-anovaSumLC3PuncInt<-aov(temp$AveLC3SumIntPerCell~temp$Type*temp$BvsS)
-summary(anovaSumLC3PuncInt)
-TukeyHSD(anovaSumLC3PuncInt)
+#anovaSumLC3PuncInt<-aov(temp$AveLC3SumIntPerCell~temp$Type*temp$BvsS)
+#summary(anovaSumLC3PuncInt)
+#TukeyHSD(anovaSumLC3PuncInt)
 
 #anovaTotLC3Int<-aov(temp$TotLC3IntPerCell~temp$Type*temp$BvsS)
 #summary(anovaTotLC3Int)
@@ -90,16 +90,28 @@ TukeyHSD(anovaSumLC3PuncInt)
 #summary(anovaSumLAMPPuncInt)
 #TukeyHSD(anovaSumLAMPPuncInt)
 
-#anovaTotLAMPInt<-aov(temp$TotLAMPIntPerCell~temp$Type*temp$BvsS)
-#summary(anovaTotLAMPInt)
-#TukeyHSD(anovaTotLAMPInt)
+anovaTotLAMPInt<-aov(temp$TotLAMPIntPerCell~temp$Type*temp$BvsS)
+summary(anovaTotLAMPInt)
+TukeyHSD(anovaTotLAMPInt)
 ```
 
+Use for ANOVA run to cycle through basal and starved separately on single replicates
+*need to manually run summary and TukeyHSD*
+```{r}
+for (b in c("Basal","Starved")) {
+    for (x in c("AveLC3VolPerCell","AveLC3IntPerCell","AveLC3SumIntPerCell","TotLC3IntPerCell","AveLAMPVolPerCell","AveLAMPIntPerCell","AveLAMPSumIntPerCell","TotLAMPIntPerCell")){
+      for (r in c("1","2","3")) {
+  nam<-paste("a",r,b,x,sep="")
+  assign(nam,aov(temp[[x]][which(temp$BvsS==b & temp$Rep==r)] ~ temp$Type[which(temp$BvsS==b & temp$Rep==r)]))
+  
+    }
+}
+  }
+```
 
 Single replicate T-test for analysis of basal versus starved
 *visualize in environment tab*
 ```{r}
-x<-"AveLC3VolPerCell"
 for (t in c("WT", "Control", "tepsin", "AP4E1")) {
   for (x in c("AveLC3VolPerCell","AveLC3IntPerCell","AveLC3SumIntPerCell","TotLC3IntPerCell","AveLAMPVolPerCell","AveLAMPIntPerCell","AveLAMPSumIntPerCell","TotLAMPIntPerCell")){
   s<-temp[[x]][which(temp$BvsS=="Starved" & temp$Type==t)]
@@ -109,7 +121,5 @@ for (t in c("WT", "Control", "tepsin", "AP4E1")) {
   assign(nam,t.test(s,b))
   }
 }
-
-
 
 ```
