@@ -13,7 +13,7 @@ WBdata=read.csv(file="~/Desktop/analysis_20Aug20/WB-quant/15Mar-NSW3001-NSW3005_
 CSV import - Windows
 *change input file path*
 ```{r}
-WBdata=read.csv(file="./Analysis-files/WB-Analysis/NSW3010-12-16_WB-compiled_12Mar21.csv",header=TRUE)
+WBdata=read.csv(file="./Analysis-files/WB-Analysis/6replicate_compiled_12Mar21.csv",header=TRUE)
 
 ```
 
