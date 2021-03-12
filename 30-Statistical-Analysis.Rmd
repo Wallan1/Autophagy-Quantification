@@ -20,6 +20,20 @@ summary(anovaLC3Counts)
 TukeyHSD(anovaLC3Counts)
 ```
 
+T-Test of object counts, individual replicates
+```{r}
+x<-"LC3PunctaCount"
+for (t in c("WT", "Control", "tepsin", "AP4E1")) {
+  
+  s<-temp[[x]][which(temp$BvsS=="Starved" & temp$Type==t)]
+  b<-temp[[x]][which(temp$BvsS=="Basal" & temp$Type==t)]
+  
+  nam<-paste("t",x,t,sep="")
+  assign(nam,t.test(s,b))
+  }
+
+
+```
 
 ANOVA of all object metrics
 *multiple replicates*
@@ -90,13 +104,14 @@ single replicate ANOVA of Individual Puncta metrics
 #summary(anovaSumLAMPPuncInt)
 #TukeyHSD(anovaSumLAMPPuncInt)
 
-anovaTotLAMPInt<-aov(temp$TotLAMPIntPerCell~temp$Type*temp$BvsS)
-summary(anovaTotLAMPInt)
-TukeyHSD(anovaTotLAMPInt)
+#anovaTotLAMPInt<-aov(temp$TotLAMPIntPerCell~temp$Type*temp$BvsS)
+#summary(anovaTotLAMPInt)
+#TukeyHSD(anovaTotLAMPInt)
 ```
 
 Use for ANOVA run to cycle through basal and starved separately on single replicates
 *need to manually run summary and TukeyHSD*
+
 ```{r}
 for (b in c("Basal","Starved")) {
     for (x in c("AveLC3VolPerCell","AveLC3IntPerCell","AveLC3SumIntPerCell","TotLC3IntPerCell","AveLAMPVolPerCell","AveLAMPIntPerCell","AveLAMPSumIntPerCell","TotLAMPIntPerCell")){
