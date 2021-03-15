@@ -42,7 +42,7 @@ CSV import - *Windows*
 *MUST HAVE FILES IN R PROJECT WD* 
 *change input file path*
 ```{r}
-testdata=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3010_EqCellSum_Basal_Vol-Int_24Feb21.csv",header=TRUE)
+testdata=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Basal_Vol-Int_22Feb21.csv",header=TRUE)
 testdata$BvsS<-"Basal"
 testdata$Rep<-1
 nobs=nrow(testdata)
@@ -57,7 +57,7 @@ for (i in 1:nobs) {
   }
 }
 
-testdata2=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3010_EqCellSum_Starved_Vol-Int_23Feb21.csv",header=TRUE)
+testdata2=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Starved_Vol-Int_23Feb21.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
 testdata2$Rep<-1
 nobs=nrow(testdata2)
@@ -195,7 +195,7 @@ test <- merge(LC3noDup,LAMPnoDup, all = TRUE)
 ```
 
 
-print list of images with high LC3 intensity
+print list of images with high LC3 total sum intensity
 ```{r}
 
 ntemp<-nrow(temp)
@@ -203,14 +203,69 @@ temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
 img<-c()
 
 for (i in 1:ntemp) {
-  if (!is.na(temp[i,9]) & temp[i,9]>20000000) {
-    img<-c(img,i-1)
+  if (!is.na(temp[i,9]) & temp[i,9]>3750000) {
+    img<-c(img,i)
   }
 }
 
 brightCells<-data.frame(temp[img,])
 
 ```
+
+print list of images with high LC3 Puncta sum intensity
+```{r}
+
+ntemp<-nrow(temp)
+temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
+img<-c()
+
+for (i in 1:ntemp) {
+  if (!is.na(temp[i,8]) & temp[i,8]>150000) {
+    img<-c(img,i)
+  }
+}
+
+brightPuncta<-data.frame(temp[img,])
+
+```
+
+
+print list of images with outlier LC3 volumes
+```{r}
+
+ntemp<-nrow(temp)
+temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
+img<-c()
+
+for (i in 1:ntemp) {
+  if (!is.na(temp[i,6]) & temp[i,6]>0.80) {
+    img<-c(img,i)
+  }
+}
+
+largeVol<-data.frame(temp[img,])
+
+```
+
+
+print list of images with outlier LC3 volumes
+```{r}
+
+ntemp<-nrow(temp)
+temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
+img<-c()
+
+for (i in 1:ntemp) {
+  if (!is.na(temp[i,6]) & temp[i,6]>0.5) {
+    img<-c(img,i)
+  }
+}
+
+largeVol<-data.frame(temp[img,])
+
+```
+
+
 
 Option to merge per cell metrics with object counts per cell dataframe
 
