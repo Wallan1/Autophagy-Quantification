@@ -45,7 +45,7 @@ CSV import - *Windows*
 ```{r}
 testdata=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Basal_count_22Feb21.csv",header=TRUE)
 testdata$BvsS<-"Basal"
-testdata$Rep<-3
+testdata$Rep<-1
 nobs=nrow(testdata)
 for (i in 1:nobs) {
   if (testdata[i,1]=="") {
@@ -60,7 +60,7 @@ for (i in 1:nobs) {
 
 testdata2=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Starved_count_23Feb21.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
-testdata2$Rep<-3
+testdata2$Rep<-1
 nobs=nrow(testdata2)
 for (i in 1:nobs) {
   if (testdata2[i,1]=="") {
@@ -149,4 +149,22 @@ for (t in c("WT", "Control", "tepsin", "AP4E1")) {
     }
   }
 }
+```
+
+
+print list of images with high LC3 puncta counts to find image artifacts
+```{r}
+
+ntemp<-nrow(temp)
+temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
+img<-c()
+
+for (i in 1:ntemp) {
+  if (!is.na(temp[i,4]) & temp[i,4]>50) {
+    img<-c(img,i)
+  }
+}
+
+HighCounts<-data.frame(temp[img,])
+
 ```
