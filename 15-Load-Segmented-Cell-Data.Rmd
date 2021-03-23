@@ -43,7 +43,7 @@ CSV import - *Windows*
 *MUST HAVE FILES IN R PROJECT WD* 
 *change input file path*
 ```{r}
-testdata=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Basal_count_22Feb21.csv",header=TRUE)
+testdata=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3010_EqCellSum_Basal_count_18Mar21.csv",header=TRUE)
 testdata$BvsS<-"Basal"
 testdata$Rep<-1
 nobs=nrow(testdata)
@@ -58,7 +58,7 @@ for (i in 1:nobs) {
   }
 }
 
-testdata2=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Starved_count_23Feb21.csv",header=TRUE)
+testdata2=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3010_EqCellSum_Starved_count_18Mar21.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
 testdata2$Rep<-1
 nobs=nrow(testdata2)
