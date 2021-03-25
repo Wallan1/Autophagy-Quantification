@@ -44,7 +44,7 @@ CSV import - *Windows*
 ```{r}
 testdata=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Basal_Vol-Int_22Feb21.csv",header=TRUE)
 testdata$BvsS<-"Basal"
-testdata$Rep<-1
+testdata$Rep<-3
 nobs=nrow(testdata)
 for (i in 1:nobs) {
   if (testdata[i,1]=="") {
@@ -59,7 +59,7 @@ for (i in 1:nobs) {
 
 testdata2=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Starved_Vol-Int_23Feb21.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
-testdata2$Rep<-1
+testdata2$Rep<-3
 nobs=nrow(testdata2)
 for (i in 1:nobs) {
   if (testdata2[i,1]=="") {
@@ -203,7 +203,7 @@ temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
 img<-c()
 
 for (i in 1:ntemp) {
-  if (!is.na(temp[i,9]) & temp[i,9]>3750000) {
+  if (!is.na(temp[i,9]) & temp[i,9]>20000000) {
     img<-c(img,i)
   }
 }
@@ -212,7 +212,7 @@ brightCells<-data.frame(temp[img,])
 
 ```
 
-print list of images with high LC3 Puncta sum intensity
+print list of images with high Ave LC3 Puncta sum intensity
 ```{r}
 
 ntemp<-nrow(temp)
@@ -220,7 +220,7 @@ temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
 img<-c()
 
 for (i in 1:ntemp) {
-  if (!is.na(temp[i,8]) & temp[i,8]>150000) {
+  if (!is.na(temp[i,8]) & temp[i,8]>400000) {
     img<-c(img,i)
   }
 }
@@ -238,7 +238,7 @@ temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
 img<-c()
 
 for (i in 1:ntemp) {
-  if (!is.na(temp[i,6]) & temp[i,6]>0.80) {
+  if (!is.na(temp[i,6]) & temp[i,6]>1.5) {
     img<-c(img,i)
   }
 }
@@ -248,7 +248,7 @@ largeVol<-data.frame(temp[img,])
 ```
 
 
-print list of images with outlier LC3 volumes
+print list of images with outlier LAMP sum intensity per cell
 ```{r}
 
 ntemp<-nrow(temp)
@@ -256,12 +256,12 @@ temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
 img<-c()
 
 for (i in 1:ntemp) {
-  if (!is.na(temp[i,6]) & temp[i,6]>0.5) {
+  if (!is.na(temp[i,13]) & temp[i,13]>125000000) {
     img<-c(img,i)
   }
 }
 
-largeVol<-data.frame(temp[img,])
+LAMPcells<-data.frame(temp[img,])
 
 ```
 
