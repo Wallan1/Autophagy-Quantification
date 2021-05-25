@@ -109,7 +109,7 @@ plotme<-function(dat,yaxis,labelme,mytitle){
      ylab(labelme)+
      ggtitle(mytitle)+
      theme_minimal()+
-     scale_y_continuous(name=labelme,limits = c(0,125000000))+
+     #scale_y_continuous(name=labelme,limits = c(0,125000000))+
      theme(plot.title=element_text(hjust=.5))+
         scale_fill_viridis(discrete=TRUE,end=.9) +
         scale_color_viridis(discrete=TRUE,end=.9)+
@@ -117,9 +117,17 @@ plotme<-function(dat,yaxis,labelme,mytitle){
   
 }
 
-#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/LC3PunctaCounts_boxplot_EqCell_combined_23Mar21.tiff",width=3000,height=3000,res=600)
-#plotme(temp,temp$LC3PunctaCount, "Number of LC3 positive puncta per cell","Number of LC3 Puncta")
-#dev.off()
+tiff(file="./Analysis-files/eqCellsum_analysis/graphs/data-norm/LC3PunctaCounts_boxplot_all-raw_24May21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LC3PunctaCount, "Number of LC3 positive puncta per cell","Raw-all: Number of LC3 Puncta")
+dev.off()
+
+tiff(file="./Analysis-files/eqCellsum_analysis/graphs/data-norm/LC3PunctaCounts_boxplot_all-MM_24May21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LC3CountMinMax, "Number of LC3 positive puncta per cell","Min Max-all: Number of LC3 Puncta")
+dev.off()
+
+tiff(file="./Analysis-files/eqCellsum_analysis/graphs/data-norm/LC3PunctaCounts_boxplot_all-RS_24May21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LC3CountRS, "Number of LC3 positive puncta per cell","Robust Scalar-all: Number of LC3 Puncta")
+dev.off()
 
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/LC3PunctaVol_boxplot_combined_adj-scale_24Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$AveLC3VolPerCell, expression("LC3 Puncta Volume (um"^'3'*")"),"Average Volume of LC3 Puncta")
@@ -149,7 +157,8 @@ plotme<-function(dat,yaxis,labelme,mytitle){
 #plotme(temp,temp$AveLAMPSumIntPerCell, "Average LAMP1 puncta sum intensity (A.U.)","Average LAMP1 Puncta Sum Intensity")
 #dev.off()
 
-tiff(file="./Analysis-files/eqCellsum_analysis/graphs/TotLAMPInt_boxplot_combined_adj-scale_24Mar21.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$TotLAMPIntPerCell, "Total LAMP1 puncta intensity (A.U.)","LAMP1 Sum Intensity per Cell")
-dev.off()
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/TotLAMPInt_boxplot_combined_adj-scale_24Mar21.tiff",width=3000,height=3000,res=600)
+#plotme(temp,temp$TotLAMPIntPerCell, "Total LAMP1 puncta intensity (A.U.)","LAMP1 Sum Intensity per Cell")
+#dev.off()
+
 ```
