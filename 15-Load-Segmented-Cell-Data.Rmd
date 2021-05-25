@@ -6,7 +6,7 @@ output: html_notebook
 CSV import - Mac
 *change input file path*
 ```{r}
-testdata=read.csv(file="~/Desktop/EqCellSum_22Feb21/Final/NSW3016_EqCellSum_Basal_count_22Feb21.csv",header=TRUE)
+testdata=read.csv(file="~/Desktop/EqCellSum_22Feb21/Final/NSW3010_EqCellSum_Basal_count_18Mar21.csv",header=TRUE)
 testdata$BvsS<-"Basal"
 testdata$Rep<-3
 nobs=nrow(testdata)
@@ -21,7 +21,7 @@ for (i in 1:nobs) {
   }
 }
 
-testdata2=read.csv(file="~/Desktop/EqCellSum_22Feb21/Final/NSW3016_EqCellSum_Starved_count_23Feb21.csv",header=TRUE)
+testdata2=read.csv(file="~/Desktop/EqCellSum_22Feb21/Final/NSW3010_EqCellSum_Starved_count_18Mar21.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
 testdata2$Rep<-3
 nobs=nrow(testdata2)
@@ -151,8 +151,52 @@ for (t in c("WT", "Control", "tepsin", "AP4E1")) {
 }
 ```
 
+Apply Min-Max normalization to data
+```{r}
+temp$LC3CountMinMax<-NA
+
+norm_minmax <- function(x){
+                (x-min(x))/(max(x)-min(x))
+}
+
+temp$LC3CountMinMax<-norm_minmax(temp$LC3PunctaCount)
+
+```
 
 print list of images with high LC3 puncta counts to find image artifacts
+```{r}
+
+ntemp<-nrow(temp)
+temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
+img<-c()
+
+for (i in 1:ntemp) {
+  if (!is.na(temp[i,4]) & temp[i,4]>150) {
+    img<-c(img,i)
+  }
+}
+
+HighCounts<-data.frame(temp[img,])
+
+```
+
+find mean count/cell per type
+```{r}
+temp$meanCount<-NA
+ntemp<-nrow(temp)
+
+for (t in c("WT", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+    for (r in c("1", "2","3")) {
+      
+       temp$meanCount[which(temp$Type==t & temp$BvsS==bs & temp$Rep==r)]<-mean(temp$LC3PunctaCount[which(temp$Type==t & temp$BvsS==bs &temp$Rep==r)],na.rm = TRUE)
+   
+    }
+  }
+}
+```
+
+print list of images with near mean values
 ```{r}
 
 ntemp<-nrow(temp)
