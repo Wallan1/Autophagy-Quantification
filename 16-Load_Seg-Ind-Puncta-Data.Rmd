@@ -39,7 +39,7 @@ temp<-rbind(testdata,testdata2)
 ```
 
 CSV import - *Windows*
-*MUST HAVE FILES IN R PROJECT WD* 
+*MUST HAVE FILES IN R PROJECT WORKING DIRECTORY* 
 *change input file path*
 ```{r}
 testdata=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Basal_Vol-Int_22Feb21.csv",header=TRUE)
