@@ -43,9 +43,9 @@ CSV import - *Windows*
 *MUST HAVE FILES IN R PROJECT WD* 
 *change input file path*
 ```{r}
-testdata=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Basal_count_22Feb21.csv",header=TRUE)
+testdata=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3012_EqCellSum_Basal_count_23Feb21.csv",header=TRUE)
 testdata$BvsS<-"Basal"
-testdata$Rep<-3
+testdata$Rep<-2
 nobs=nrow(testdata)
 for (i in 1:nobs) {
   if (testdata[i,1]=="") {
@@ -58,9 +58,9 @@ for (i in 1:nobs) {
   }
 }
 
-testdata2=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3016_EqCellSum_Starved_count_23Feb21.csv",header=TRUE)
+testdata2=read.csv(file="./Analysis-files/eqCellsum_analysis/NSW3012_EqCellSum_Starved_count_22Feb21.csv",header=TRUE)
 testdata2$BvsS<-"Starved"
-testdata2$Rep<-3
+testdata2$Rep<-2
 nobs=nrow(testdata2)
 for (i in 1:nobs) {
   if (testdata2[i,1]=="") {
@@ -154,13 +154,27 @@ for (t in c("WT", "Control", "tepsin", "AP4E1")) {
 Apply Min-Max normalization to data
 ```{r}
 temp$LC3CountMinMax<-NA
+ntemp<-nrow(temp)
+
 
 norm_minmax <- function(x){
                 (x-min(x))/(max(x)-min(x))
 }
 
-temp$LC3CountMinMax<-norm_minmax(temp$LC3PunctaCount)
+  temp$LC3CountMinMax<-norm_minmax(temp$LC3PunctaCount)
+  
 
+```
+
+Apply Robust Scalar normalization
+```{r}
+temp$LC3CountRS<-NA
+
+robust_scalar <- function(x){
+                  (x-median(x))/ (quantile(x,probs= 0.75)-quantile(x,probs=0.25))
+}
+
+temp$LC3CountRS <- robust_scalar(temp$LC3PunctaCount)
 ```
 
 print list of images with high LC3 puncta counts to find image artifacts
