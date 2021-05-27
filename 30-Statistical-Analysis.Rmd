@@ -16,40 +16,35 @@ summary(anovaLC3CountsMM)
 TukeyHSD(anovaLC3CountsMM)
 
 ```
+
 ANOVA of object counts; separate Basal vs Starved analysis
 *multiple replicates*
 ```{r}
-temp$Rep<-as.factor(temp$Rep)
-ntemp<-nrow(temp)
+#to test segmentation of dataset
+#subsetB<-temp[temp$BvsS == "Basal",]
 
-for (i in 1:ntemp) {
-  if (temp[i,7]=="Basal") {
-anovaBLC3Counts<-aov(temp$LC3PunctaCount~temp$Type*temp$Rep)
+#Basal
+anovaLC3CountsBasal<-aov(LC3PunctaCount~Type+Rep, temp[temp$BvsS == "Basal",])
 
+summary(anovaLC3CountsBasal)
+TukeyHSD(anovaLC3CountsBasal)
 
-anovaBLC3CountsMM<-aov(temp$LC3CountMinMax~temp$Type*temp$Rep)
+anovaLC3CountsMMbasal<-aov(LC3CountMinMax~Type+Rep, temp[temp$BvsS == "Basal",])
 
-  }
-  else {
-anovaSLC3Counts<-aov(temp$LC3PunctaCount~temp$Type*temp$Rep)
+summary(anovaLC3CountsMMbasal)
+TukeyHSD(anovaLC3CountsMMbasal)
 
+#Starved
+anovaLC3CountsStarved<-aov(LC3PunctaCount~Type+Rep, temp[temp$BvsS == "Starved",])
 
-anovaSLC3CountsMM<-aov(temp$LC3CountMinMax~temp$Type*temp$Rep)
+summary(anovaLC3CountsStarved)
+TukeyHSD(anovaLC3CountsStarved)
 
-  }
-}
+anovaLC3CountsMMstarved<-aov(LC3CountMinMax~Type+Rep, temp[temp$BvsS == "Starved",])
 
-summary(anovaBLC3Counts)
-TukeyHSD(anovaBLC3Counts)
+summary(anovaLC3CountsMMstarved)
+TukeyHSD(anovaLC3CountsMMstarved)
 
-summary(anovaBLC3CountsMM)
-TukeyHSD(anovaBLC3CountsMM)
-
-summary(anovaSLC3Counts)
-TukeyHSD(anovaSLC3Counts)
-
-summary(anovaSLC3CountsMM)
-TukeyHSD(anovaSLC3CountsMM)
 ```
 
 ANOVA of object counts
