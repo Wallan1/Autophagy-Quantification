@@ -3,26 +3,21 @@ title: "13-Load-Western-quantification"
 output: html_notebook
 ---
 
-CSV import - Mac
+CSV import
 *change input file path*
 ```{r}
-WBdata=read.csv(file="~/Desktop/analysis_20Aug20/WB-quant/15Mar-NSW3001-NSW3005_quant-results_17Sep20.csv",header=TRUE)
+WBdata=read.csv(file="~/Desktop/BafA_analysis_12May21/BafA_HeLa-KD_gel1_quant_12May21.csv",header=TRUE)
 
 ```
 
-CSV import - Windows
-*change input file path*
-```{r}
-WBdata=read.csv(file="./Analysis-files/WB-Analysis/6replicate_compiled_12Mar21.csv",header=TRUE)
-
-```
-
-
-Calculate mean for each condition
+standard KD quantification:
+-Calculate mean for each condition
 ```{r}
 WBdata$LC3ratioAve<-NA
 WBdata$LC3ratioNormAve<-NA
+WBdata$LC3IItotAve<-NA
 WBdata$LC3IIAve<-NA
+WBdata$LC3totAve<-NA
 WBdata$tepsinKDAve<-NA
 WBdata$AP4EKDAve<-NA
 
@@ -32,7 +27,11 @@ for (t in c("WT", "Control", "tepsin", "AP4E1")) {
   
   WBdata$LC3ratioNormAve[which(WBdata$type==t & WBdata$BvsS==bs)]<-sum(WBdata$LC3ratioNorm[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3ratioNorm)])/length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3ratioNorm))
   
+  WBdata$LC3IItotAve[which(WBdata$type==t & WBdata$BvsS==bs)]<-sum(WBdata$LC3IItot[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3IItot)])/length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3IItot))
+  
    WBdata$LC3IIAve[which(WBdata$type==t & WBdata$BvsS==bs)]<-sum(WBdata$LC3II[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3II)])/length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3II))
+  
+  WBdata$LC3totAve[which(WBdata$type==t & WBdata$BvsS==bs)]<-sum(WBdata$LC3tot[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3tot)])/length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3tot))
  
   WBdata$tepsinKDAve[which(WBdata$type==t & WBdata$BvsS==bs)]<-sum(WBdata$tepsinKD[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$tepsinKD)])/length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$tepsinKD))
   
@@ -44,11 +43,14 @@ for (t in c("WT", "Control", "tepsin", "AP4E1")) {
 
 ```
 
-Calculate standard deviation for each condition
+standard KD quantification: 
+-Calculate standard deviation for each condition
 ```{r}
 WBdata$LC3ratioSD<-NA
 WBdata$LC3ratioNormSD<-NA
+WBdata$LC3IItotSD<-NA
 WBdata$LC3IISD<-NA
+WBdata$LC3totSD<-NA
 WBdata$tepsinKDSD<-NA
 WBdata$AP4EKDSD<-NA
 
@@ -58,7 +60,11 @@ for (t in c("WT", "Control", "tepsin", "AP4E1")) {
  
   WBdata$LC3ratioNormSD[which(WBdata$type==t & WBdata$BvsS==bs)]<-sd(WBdata$LC3ratioNorm[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3ratioNorm)])
   
+  WBdata$LC3IItotSD[which(WBdata$type==t & WBdata$BvsS==bs)]<-sd(WBdata$LC3IItot[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3IItot)])
+  
   WBdata$LC3IISD[which(WBdata$type==t & WBdata$BvsS==bs)]<-sd(WBdata$LC3II[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3II)])
+  
+  WBdata$LC3totSD[which(WBdata$type==t & WBdata$BvsS==bs)]<-sd(WBdata$LC3tot[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3tot)])
   
   WBdata$tepsinKDSD[which(WBdata$type==t & WBdata$BvsS==bs)]<-sd(WBdata$tepsinKD[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$tepsinKD)])
   
@@ -68,34 +74,80 @@ for (t in c("WT", "Control", "tepsin", "AP4E1")) {
 }
 ```
 
-Calculate standard error for each condition
-```{r}
-WBdata$LC3ratioSE<-NA
-WBdata$LC3ratioNormSE<-NA
-WBdata$LC3IISE<-NA
-WBdata$tepsinKDSE<-NA
-WBdata$AP4EKDSE<-NA
-
-for (t in c("WT", "Control", "tepsin", "AP4E1")) {
-  for (bs in c("Basal", "Starved")) {
-  WBdata$LC3ratioSE[which(WBdata$type==t & WBdata$BvsS==bs)]<-sd(WBdata$LC3ratio[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3ratio)])/sqrt(length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3ratio)))
- 
-  WBdata$LC3ratioNormSE[which(WBdata$type==t & WBdata$BvsS==bs)]<-sd(WBdata$LC3ratioNorm[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3ratioNorm)])/sqrt(length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3ratioNorm)))
-  
-  WBdata$LC3IISE[which(WBdata$type==t & WBdata$BvsS==bs)]<-sd(WBdata$LC3II[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3II)])/sqrt(length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$LC3II)))
-  
-  WBdata$tepsinKDSE[which(WBdata$type==t & WBdata$BvsS==bs)]<-sd(WBdata$tepsinKD[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$tepsinKD)])/sqrt(length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$tepsinKD)))
-  
-  WBdata$AP4EKDSE[which(WBdata$type==t & WBdata$BvsS==bs)]<-sd(WBdata$AP4EKD[which(WBdata$type==t & WBdata$BvsS==bs & WBdata$AP4EKD)])/sqrt(length(which(WBdata$type==t & WBdata$BvsS==bs & WBdata$AP4EKD)))
-  
-   }
-}
-```
-
-
 Remove duplicate rows from replicates
 ```{r}
 WBdata_nodup<-WBdata[!duplicated(WBdata$LC3ratioAve),]
+```
+
+
+Following codes optimized for BafA HeLa experiments
+
+BafA KD quantification:
+-Calculate mean for each condition
+```{r}
+WBdata$LC3ratioNormAve<-NA
+WBdata$LC3IAve<-NA
+WBdata$LC3IIAve<-NA
+WBdata$LC3totAve<-NA
+WBdata$tepsinKDAve<-NA
+WBdata$AP4EKDAve<-NA
+
+for (t in c("WT", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+    for (baf in c("Y", "N")) {
+ 
+  WBdata$LC3ratioNormAve[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf)]<-sum(WBdata$LC3ratioFC[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$LC3ratioFC)])/length(WBdata$LC3ratioFC[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$LC3ratioFC)])
+  
+  WBdata$LC3IAve[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf)]<-sum(WBdata$relLC3I[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relLC3I)])/length(which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relLC3I))
+  
+   WBdata$LC3IIAve[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf)]<-sum(WBdata$relLC3II[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relLC3II)])/length(which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relLC3II))
+  
+  WBdata$LC3totAve[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf)]<-sum(WBdata$relTotLC3[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relTotLC3)])/length(which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relTotLC3))
+ 
+  WBdata$tepsinKDAve[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf)]<-sum(WBdata$relTepsin[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relTepsin)])/length(which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relTepsin))
+  
+  WBdata$AP4EKDAve[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf)]<-sum(WBdata$relEpsilon[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relEpsilon)])/length(which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relEpsilon))
+  
+   }
+}
+  }
+
+```
+
+BafA KD quantification: 
+-Calculate standard deviation for each condition
+```{r}
+WBdata$LC3ratioNormSD<-NA
+WBdata$LC3ISD<-NA
+WBdata$LC3IISD<-NA
+WBdata$LC3totSD<-NA
+WBdata$tepsinKDSD<-NA
+WBdata$AP4EKDSD<-NA
+
+for (t in c("WT", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+    for (baf in c("Y", "N")) {
+ 
+  WBdata$LC3ratioNormSD[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf)]<-sd(WBdata$LC3ratioFC[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$LC3ratioFC)])
+  
+  WBdata$LC3ISD[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf )]<-sd(WBdata$relLC3I[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relLC3I)])
+  
+  WBdata$LC3IISD[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf)]<-sd(WBdata$relLC3II[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relLC3II)])
+  
+  WBdata$LC3totSD[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf)]<-sd(WBdata$relTotLC3[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relTotLC3)])
+  
+  WBdata$tepsinKDSD[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf)]<-sd(WBdata$relTepsin[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relTepsin)])
+  
+  WBdata$AP4EKDSD[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf)]<-sd(WBdata$relEpsilon[which(WBdata$Type==t & WBdata$BvsS==bs & WBdata$BafA==baf & WBdata$relEpsilon)])
+  
+   }
+  }
+}
+```
+
+Remove duplicate rows from replicates
+```{r}
+WBdata_nodup<-WBdata[!duplicated(WBdata$LC3ratioNormAve),]
 ```
 
 
