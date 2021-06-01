@@ -29,7 +29,7 @@ anovaLC3CountsBasal<-aov(LC3PunctaCount~Type+Rep, temp[temp$BvsS == "Basal",])
 summary(anovaLC3CountsBasal)
 TukeyHSD(anovaLC3CountsBasal)
 
-anovaLC3CountsMMbasal<-aov(LC3CountMinMax~Type+Rep, temp[temp$BvsS == "Basal",])
+anovaLC3CountsMMbasal<-aov(LC3CountMinMax~Type, temp[temp$BvsS == "Basal",])
 
 summary(anovaLC3CountsMMbasal)
 TukeyHSD(anovaLC3CountsMMbasal)
