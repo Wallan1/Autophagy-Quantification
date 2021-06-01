@@ -102,16 +102,20 @@ for (t in c("WT", "Control", "tepsin", "AP4E1")) {
 
 U-Test of object counts, for nonparametric distributions
 ```{r}
-x<-"LC3CountMinMax"
-for (t in c("WT", "Control", "tepsin", "AP4E1")) {
-  
-  s<-temp[[x]][which(temp$BvsS=="Starved" & temp$Type==t)]
-  b<-temp[[x]][which(temp$BvsS=="Basal" & temp$Type==t)]
-  
-  nam<-paste("t",x,t,sep="")
-  assign(nam,wilcox.test(b~s))
-  }
 
+for (t in c("WT", "Control", "tepsin", "AP4E1")) {
+  for (x in c("AveLC3VolPerCell","AveLC3IntPerCell","AveLC3SumIntPerCell","TotLC3IntPerCell","AveLAMPVolPerCell","AveLAMPIntPerCell","AveLAMPSumIntPerCell","TotLAMPIntPerCell")){
+    ds<-wilcox_test(data=temp[which(temp$Type==t),], as.formula(paste(x,"BvsS",sep="~")), paired = FALSE)
+    assign(paste(t,x,sep="_"),ds)
+    
+  }
+}
+
+```
+
+U-Test of object counts, for nonparametric distributions
+```{r}
+wilcox_test(data=temp[which(temp$Type=="WT"),], LC3VolMinMax~BvsS, paired = FALSE)
 
 ```
 
@@ -196,86 +200,137 @@ Kruskal-Wallis Test of ind puncta measurements; separate Basal vs Starved analys
 #subsetB<-temp[temp$BvsS == "Basal",]
 
 #Basal
-KW_LC3Volb<-kruskal_test(AveLC3VolPerCell~Type, data=temp[temp$BvsS == "Basal",])
-summary(KW_LC3Volb)
-dunn_test(AveLC3VolPerCell~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
+#KW_LC3Volb<-kruskal_test(AveLC3VolPerCell~Type, data=temp[temp$BvsS == "Basal",])
+#summary(KW_LC3Volb)
+#dunn_test(AveLC3VolPerCell~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
 
 KW_LC3VolMMb<-kruskal_test(LC3VolMinMax~Type, data=temp[temp$BvsS == "Basal",])
 summary(KW_LC3VolMMb)
 dunn_test(LC3VolMinMax~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
 
-KW_LC3Intb<-kruskal_test(AveLC3IntPerCell~Type, data=temp[temp$BvsS == "Basal",])
-
-summary(KW_LC3Intb)
-dunn_test(AveLC3IntPerCell~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
+#KW_LC3Intb<-kruskal_test(AveLC3IntPerCell~Type, data=temp[temp$BvsS == "Basal",])
+#summary(KW_LC3Intb)
+#dunn_test(AveLC3IntPerCell~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
 
 KW_LC3IntMMb<-kruskal_test(LC3IntMinMax~Type, data=temp[temp$BvsS == "Basal",])
-
 summary(KW_LC3IntMMb)
 dunn_test(LC3IntMinMax~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
 
-KW_LC3SumIntb<-kruskal_test(AveLC3SumIntPerCell~Type, data=temp[temp$BvsS == "Basal",])
-
-summary(KW_LC3SumIntb)
-dunn_test(AveLC3SumIntPerCell~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
+#KW_LC3SumIntb<-kruskal_test(AveLC3SumIntPerCell~Type, data=temp[temp$BvsS == "Basal",])
+#summary(KW_LC3SumIntb)
+#dunn_test(AveLC3SumIntPerCell~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
 
 KW_LC3SumIntMMb<-kruskal_test(LC3SumIntMinMax~Type, data=temp[temp$BvsS == "Basal",])
-
 summary(KW_LC3SumIntMMb)
 dunn_test(LC3SumIntMinMax~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
 
-KW_LC3totIntb<-kruskal_test(TotLC3IntPerCell~Type, data=temp[temp$BvsS == "Basal",])
-
-summary(KW_LC3totIntb)
-dunn_test(TotLC3IntPerCell~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
+#KW_LC3totIntb<-kruskal_test(TotLC3IntPerCell~Type, data=temp[temp$BvsS == "Basal",])
+#summary(KW_LC3totIntb)
+#dunn_test(TotLC3IntPerCell~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
 
 KW_LC3totIntMMb<-kruskal_test(LC3totIntMinMax~Type, data=temp[temp$BvsS == "Basal",])
-
 summary(KW_LC3totIntMMb)
 dunn_test(LC3totIntMinMax~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
+
+#KW_LAMPVolb<-kruskal_test(AveLAMPVolPerCell~Type, data=temp[temp$BvsS == "Basal",])
+#summary(KW_LAMPVolb)
+#dunn_test(AveLAMPVolPerCell~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
+
+KW_LAMPVolMMb<-kruskal_test(LAMPVolMinMax~Type, data=temp[temp$BvsS == "Basal",])
+summary(KW_LAMPVolMMb)
+dunn_test(LAMPVolMinMax~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
+
+#KW_LAMPIntb<-kruskal_test(AveLAMPIntPerCell~Type, data=temp[temp$BvsS == "Basal",])
+#summary(KW_LAMPIntb)
+#dunn_test(AveLAMPIntPerCell~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
+
+KW_LAMPIntMMb<-kruskal_test(LAMPIntMinMax~Type, data=temp[temp$BvsS == "Basal",])
+summary(KW_LAMPIntMMb)
+dunn_test(LAMPIntMinMax~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
+
+#KW_LAMPSumIntb<-kruskal_test(AveLAMPSumIntPerCell~Type, data=temp[temp$BvsS == "Basal",])
+#summary(KW_LAMPSumIntb)
+#dunn_test(AveLAMPSumIntPerCell~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
+
+KW_LAMPSumIntMMb<-kruskal_test(LAMPSumIntMinMax~Type, data=temp[temp$BvsS == "Basal",])
+summary(KW_LAMPSumIntMMb)
+dunn_test(LAMPSumIntMinMax~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
+
+#KW_LAMPtotIntb<-kruskal_test(TotLAMPIntPerCell~Type, data=temp[temp$BvsS == "Basal",])
+#summary(KW_LAMPtotIntb)
+#dunn_test(TotLAMPIntPerCell~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
+
+KW_LAMPtotIntMMb<-kruskal_test(LAMPtotIntMinMax~Type, data=temp[temp$BvsS == "Basal",])
+summary(KW_LAMPtotIntMMb)
+dunn_test(LAMPtotIntMinMax~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
 
 
 
 #Starved
-KW_LC3Volb<-kruskal_test(AveLC3VolPerCell~Type, data=temp[temp$BvsS == "Starved",])
 
-summary(KW_LC3Volb)
-dunn_test(AveLC3VolPerCell~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
+#KW_LC3Volb<-kruskal_test(AveLC3VolPerCell~Type, data=temp[temp$BvsS == "Starved",])
+#summary(KW_LC3Volb)
+#dunn_test(AveLC3VolPerCell~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
 
 KW_LC3VolMMb<-kruskal_test(LC3VolMinMax~Type, data=temp[temp$BvsS == "Starved",])
-
 summary(KW_LC3VolMMb)
 dunn_test(LC3VolMinMax~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
 
-KW_LC3Intb<-kruskal_test(AveLC3IntPerCell~Type, data=temp[temp$BvsS == "Starved",])
-
-summary(KW_LC3Intb)
-dunn_test(AveLC3IntPerCell~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
+#KW_LC3Intb<-kruskal_test(AveLC3IntPerCell~Type, data=temp[temp$BvsS == "Starved",])
+#summary(KW_LC3Intb)
+#dunn_test(AveLC3IntPerCell~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
 
 KW_LC3IntMMb<-kruskal_test(LC3IntMinMax~Type, data=temp[temp$BvsS == "Starved",])
-
 summary(KW_LC3IntMMb)
 dunn_test(LC3IntMinMax~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
 
-KW_LC3SumIntb<-kruskal_test(AveLC3SumIntPerCell~Type, data=temp[temp$BvsS == "Starved",])
-
-summary(KW_LC3SumIntb)
-dunn_test(AveLC3SumIntPerCell~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
+#KW_LC3SumIntb<-kruskal_test(AveLC3SumIntPerCell~Type, data=temp[temp$BvsS == "Starved",])
+#summary(KW_LC3SumIntb)
+#dunn_test(AveLC3SumIntPerCell~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
 
 KW_LC3SumIntMMb<-kruskal_test(LC3SumIntMinMax~Type, data=temp[temp$BvsS == "Starved",])
-
 summary(KW_LC3SumIntMMb)
 dunn_test(LC3SumIntMinMax~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
 
-KW_LC3totIntb<-kruskal_test(TotLC3IntPerCell~Type, data=temp[temp$BvsS == "Starved",])
-
-summary(KW_LC3totIntb)
-dunn_test(TotLC3IntPerCell~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
+#KW_LC3totIntb<-kruskal_test(TotLC3IntPerCell~Type, data=temp[temp$BvsS == "Starved",])
+#summary(KW_LC3totIntb)
+#dunn_test(TotLC3IntPerCell~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
 
 KW_LC3totIntMMb<-kruskal_test(LC3totIntMinMax~Type, data=temp[temp$BvsS == "Starved",])
-
 summary(KW_LC3totIntMMb)
 dunn_test(LC3totIntMinMax~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
+
+#KW_LAMPVolb<-kruskal_test(AveLAMPVolPerCell~Type, data=temp[temp$BvsS == "Starved",])
+#summary(KW_LAMPVolb)
+#dunn_test(AveLAMPVolPerCell~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
+
+KW_LAMPVolMMb<-kruskal_test(LAMPVolMinMax~Type, data=temp[temp$BvsS == "Starved",])
+summary(KW_LAMPVolMMb)
+dunn_test(LAMPVolMinMax~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
+
+#KW_LAMPIntb<-kruskal_test(AveLAMPIntPerCell~Type, data=temp[temp$BvsS == "Starved",])
+#summary(KW_LAMPIntb)
+#dunn_test(AveLAMPIntPerCell~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
+
+KW_LAMPIntMMb<-kruskal_test(LAMPIntMinMax~Type, data=temp[temp$BvsS == "Starved",])
+summary(KW_LAMPIntMMb)
+dunn_test(LAMPIntMinMax~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
+
+#KW_LAMPSumIntb<-kruskal_test(AveLAMPSumIntPerCell~Type, data=temp[temp$BvsS == "Starved",])
+#summary(KW_LAMPSumIntb)
+#dunn_test(AveLAMPSumIntPerCell~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
+
+KW_LAMPSumIntMMb<-kruskal_test(LAMPSumIntMinMax~Type, data=temp[temp$BvsS == "Starved",])
+summary(KW_LAMPSumIntMMb)
+dunn_test(LAMPSumIntMinMax~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
+
+#KW_LAMPtotIntb<-kruskal_test(TotLAMPIntPerCell~Type, data=temp[temp$BvsS == "Starved",])
+#summary(KW_LAMPtotIntb)
+#dunn_test(TotLAMPIntPerCell~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
+
+KW_LAMPtotIntMMb<-kruskal_test(LAMPtotIntMinMax~Type, data=temp[temp$BvsS == "Starved",])
+summary(KW_LAMPtotIntMMb)
+dunn_test(LAMPtotIntMinMax~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
 ```
 
 single replicate ANOVA of Individual Puncta metrics
