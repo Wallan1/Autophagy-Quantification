@@ -70,40 +70,76 @@ for (t in c("WT", "Control", "tepsin", "AP4E1")) {
 
 ```
 
+
 ANOVA of all object metrics
 *multiple replicates*
 ```{r}
 temp$Rep<-as.factor(temp$Rep)
 
-anovaLC3Vol<-aov(temp$AveLC3VolPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+#Basal
+anovaLC3Vol<-aov(temp$LC3VolMinMax~Type+Rep, temp[temp$BvsS == "Basal",])
 summary(anovaLC3Vol)
 TukeyHSD(anovaLC3Vol)
 
-#anovaMeanLC3PuncInt<-aov(temp$AveLC3IntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
-#summary(anovaMeanLC3PuncInt)
-#TukeyHSD(anovaMeanLC3PuncInt)
+anovaBMeanLC3PuncInt<-aov(temp$LC3IntMinMax~Type+Rep, temp[temp$BvsS == "Basal",])
+summary(anovaMeanLC3PuncInt)
+TukeyHSD(anovaMeanLC3PuncInt)
 
-anovaSumLC3PuncInt<-aov(temp$AveLC3SumIntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+anovaBSumLC3PuncInt<-aov(temp$LC3SumIntMinMax~Type+Rep, temp[temp$BvsS == "Basal",])
 summary(anovaSumLC3PuncInt)
 TukeyHSD(anovaSumLC3PuncInt)
 
-anovaTotLC3Int<-aov(temp$TotLC3IntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+anovaBTotLC3Int<-aov(temp$LC3totIntMinMax~Type+Rep, temp[temp$BvsS == "Basal",])
 summary(anovaTotLC3Int)
 TukeyHSD(anovaTotLC3Int)
 
-anovaLAMPVol<-aov(temp$AveLAMPVolPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+anovaBLAMPVol<-aov(temp$LAMPVolMinMax~Type+Rep, temp[temp$BvsS == "Basal",])
 summary(anovaLAMPVol)
 TukeyHSD(anovaLAMPVol)
 
-#anovaMeanLAMPPuncInt<-aov(temp$AveLAMPIntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+#anovaBMeanLAMPPuncInt<-aov(temp$LAMPIntMinMax~Type+Rep, temp[temp$BvsS == "Basal",])
 #summary(anovaMeanLAMPPuncInt)
 #TukeyHSD(anovaMeanLAMPPuncInt)
 
-anovaSumLAMPPuncInt<-aov(temp$AveLAMPSumIntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+anovaBSumLAMPPuncInt<-aov(temp$LAMPSumIntMinMax~Type+Rep, temp[temp$BvsS == "Basal",])
 summary(anovaSumLAMPPuncInt)
 TukeyHSD(anovaSumLAMPPuncInt)
 
-anovaTotLAMPInt<-aov(temp$TotLAMPIntPerCell~temp$Type*temp$BvsS+temp$Rep+temp$Rep:temp$Type)
+anovaBTotLAMPInt<-aov(temp$LAMPtotIntMinMax~Type+Rep, temp[temp$BvsS == "Basal",])
+summary(anovaTotLAMPInt)
+TukeyHSD(anovaTotLAMPInt)
+
+
+#Starved
+anovaSLC3Vol<-aov(temp$LC3VolMinMax~Type+Rep, temp[temp$BvsS == "Starved",])
+summary(anovaLC3Vol)
+TukeyHSD(anovaLC3Vol)
+
+anovaSMeanLC3PuncInt<-aov(temp$LC3IntMinMax~Type+Rep, temp[temp$BvsS == "Starved",])
+summary(anovaMeanLC3PuncInt)
+TukeyHSD(anovaMeanLC3PuncInt)
+
+anovaSSumLC3PuncInt<-aov(temp$LC3SumIntMinMax~Type+Rep, temp[temp$BvsS == "Starved",])
+summary(anovaSumLC3PuncInt)
+TukeyHSD(anovaSumLC3PuncInt)
+
+anovaSTotLC3Int<-aov(temp$LC3totIntMinMax~Type+Rep, temp[temp$BvsS == "Starved",])
+summary(anovaTotLC3Int)
+TukeyHSD(anovaTotLC3Int)
+
+anovaSLAMPVol<-aov(temp$LAMPVolMinMax~Type+Rep, temp[temp$BvsS == "Starved",])
+summary(anovaLAMPVol)
+TukeyHSD(anovaLAMPVol)
+
+#anovaSMeanLAMPPuncInt<-aov(temp$LAMPIntMinMax~Type+Rep, temp[temp$BvsS == "Starved",])
+#summary(anovaMeanLAMPPuncInt)
+#TukeyHSD(anovaMeanLAMPPuncInt)
+
+anovaSSumLAMPPuncInt<-aov(temp$LAMPSumIntMinMax~Type+Rep, temp[temp$BvsS == "Starved",])
+summary(anovaSumLAMPPuncInt)
+TukeyHSD(anovaSumLAMPPuncInt)
+
+anovaSTotLAMPInt<-aov(temp$LAMPtotIntMinMax~Type+Rep, temp[temp$BvsS == "Starved",])
 summary(anovaTotLAMPInt)
 TukeyHSD(anovaTotLAMPInt)
 ```
@@ -142,6 +178,12 @@ single replicate ANOVA of Individual Puncta metrics
 #anovaTotLAMPInt<-aov(temp$TotLAMPIntPerCell~temp$Type*temp$BvsS)
 #summary(anovaTotLAMPInt)
 #TukeyHSD(anovaTotLAMPInt)
+```
+
+Kruskal-Wallis test for non parametric (non normal distributed data)
+*Considering most of the metrics I measure do not have symmetrical boxplots it may be more appropriate to run this than ANOVAs*
+```{r}
+
 ```
 
 Use for ANOVA run to cycle through basal and starved separately on single replicates
