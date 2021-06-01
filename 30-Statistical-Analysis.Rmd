@@ -47,6 +47,36 @@ TukeyHSD(anovaLC3CountsMMstarved)
 
 ```
 
+Kruskal-Wallis Test of object counts; separate Basal vs Starved analysis
+*multiple replicates*
+```{r}
+#to test segmentation of dataset
+#subsetB<-temp[temp$BvsS == "Basal",]
+
+#Basal
+KW_LC3CountsBasal<-kruskal_test(LC3PunctaCount~Type, data=temp[temp$BvsS == "Basal",])
+
+summary(KW_LC3CountsBasal)
+dunn_test(LC3PunctaCount~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
+
+KW_LC3CountsMMbasal<-kruskal_test(LC3CountMinMax~Type, data=temp[temp$BvsS == "Basal",])
+
+summary(KW_LC3CountsMMbasal)
+dunn_test(LC3CountMinMax~Type, data=temp[temp$BvsS == "Basal",], p.adjust.method = "bonferroni")
+
+#Starved
+KW_LC3CountsStarved<-kruskal_test(LC3PunctaCount~Type, data=temp[temp$BvsS == "Starved",])
+
+summary(KW_LC3CountsStarved)
+dunn_test(LC3PunctaCount~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
+
+KW_LC3CountsMMstarved<-kruskal_test(LC3CountMinMax~Type, data=temp[temp$BvsS == "Starved",])
+
+summary(KW_LC3CountsMMstarved)
+dunn_test(LC3CountMinMax~Type, data=temp[temp$BvsS == "Starved",], p.adjust.method = "bonferroni")
+
+```
+
 ANOVA of object counts
 *1 replicate*
 ```{r}
@@ -180,10 +210,10 @@ single replicate ANOVA of Individual Puncta metrics
 #TukeyHSD(anovaTotLAMPInt)
 ```
 
-Kruskal-Wallis test for non parametric (non normal distributed data)
+Kruskal-Wallis test for non parametric (non normal distributed) Individual object data
 *Considering most of the metrics I measure do not have symmetrical boxplots it may be more appropriate to run this than ANOVAs*
 ```{r}
-
+B.kruskal.LC3Vol<-kruskal_test(temp$LC3VolMinMax~Type+Rep, data= temp[temp$BvsS == "Basal",])
 ```
 
 Use for ANOVA run to cycle through basal and starved separately on single replicates
