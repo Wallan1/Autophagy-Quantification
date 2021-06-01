@@ -190,10 +190,39 @@ names(LAMPnoDup)[names(LAMPnoDup)=="LAMPCellID"]<-"CellID"
 Merging LC3 and LAMP cleaned data frames for graphing
 *replaces NA values with 0 if desired*
 ```{r}
-test <- merge(LC3noDup,LAMPnoDup, all = TRUE)
+tidy <- merge(LC3noDup,LAMPnoDup, all = TRUE)
 #test[is.na(test)]<-0
 ```
 
+Apply Min-Max normalization to data
+```{r}
+tidy$LC3VolMinMax<-NA
+tidy$LC3IntMinMax<-NA
+tidy$LC3SumIntMinMax<-NA
+tidy$LC3totIntMinMax<-NA
+tidy$LAMPVolMinMax<-NA
+tidy$LAMPIntMinMax<-NA
+tidy$LAMPSumIntMinMax<-NA
+tidy$LAMPtotIntMinMax<-NA
+
+ntidy<-nrow(tidy)
+
+
+norm_minmax <- function(x){
+                (x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))
+  }
+
+
+  tidy$LC3VolMinMax<-norm_minmax(tidy$AveLC3VolPerCell)
+  tidy$LC3IntMinMax<-norm_minmax(tidy$AveLC3IntPerCell)
+  tidy$LC3SumIntMinMax<-norm_minmax(tidy$AveLC3SumIntPerCell)
+  tidy$LC3totIntMinMax<-norm_minmax(tidy$TotLC3IntPerCell)
+  tidy$LAMPVolMinMax<-norm_minmax(tidy$AveLAMPVolPerCell)
+  tidy$LAMPIntMinMax<-norm_minmax(tidy$AveLAMPIntPerCell)
+  tidy$LAMPSumIntMinMax<-norm_minmax(tidy$AveLAMPSumIntPerCell)
+  tidy$LAMPtotIntMinMax<-norm_minmax(tidy$TotLAMPIntPerCell)
+
+```
 
 print list of images with high LC3 total sum intensity
 ```{r}
