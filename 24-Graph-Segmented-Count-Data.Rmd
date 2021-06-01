@@ -117,48 +117,80 @@ plotme<-function(dat,yaxis,labelme,mytitle){
   
 }
 
-tiff(file="./Analysis-files/eqCellsum_analysis/graphs/data-norm/LC3PunctaCounts_boxplot_all-raw_24May21.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$LC3PunctaCount, "Number of LC3 positive puncta per cell","Raw-all: Number of LC3 Puncta")
-dev.off()
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/data-norm/LC3PunctaCounts_boxplot_all-raw_24May21.tiff",width=3000,height=3000,res=600)
+#plotme(temp,temp$LC3PunctaCount, "Number of LC3 positive puncta per cell","Raw-all: Number of LC3 Puncta")
+#dev.off()
 
-tiff(file="./Analysis-files/eqCellsum_analysis/graphs/data-norm/LC3PunctaCounts_boxplot_all-MM_24May21.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$LC3CountMinMax, "Number of LC3 positive puncta per cell","Min Max-all: Number of LC3 Puncta")
-dev.off()
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/data-norm/LC3PunctaCounts_boxplot_all-MM_24May21.tiff",width=3000,height=3000,res=600)
+#plotme(temp,temp$LC3CountMinMax, "Number of LC3 positive puncta per cell","Min Max-all: Number of LC3 Puncta")
+#dev.off()
 
-tiff(file="./Analysis-files/eqCellsum_analysis/graphs/data-norm/LC3PunctaCounts_boxplot_all-RS_24May21.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$LC3CountRS, "Number of LC3 positive puncta per cell","Robust Scalar-all: Number of LC3 Puncta")
-dev.off()
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/data-norm/LC3PunctaCounts_boxplot_all-RS_24May21.tiff",width=3000,height=3000,res=600)
+#plotme(temp,temp$LC3CountRS, "Number of LC3 positive puncta per cell","Robust Scalar-all: Number of LC3 Puncta")
+#dev.off()
 
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/LC3PunctaVol_boxplot_combined_adj-scale_24Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$AveLC3VolPerCell, expression("LC3 Puncta Volume (um"^'3'*")"),"Average Volume of LC3 Puncta")
+#dev.off()
+
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/LC3PunctaVol_boxplot_combined_adj-scale_24Mar21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LC3VolMinMax, expression("LC3 Puncta Volume (um"^'3'*")"),"Min/Max: Average Volume of LC3 Puncta")
 #dev.off()
 
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLC3Int_boxplot_combined_24Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$AveLC3IntPerCell, "Average LC3 puncta intensity (A.U.)","Average LC3 Puncta Intensity")
 #dev.off()
 
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLC3Int_boxplot_combined_24Mar21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LC3IntMinMax, "Average LC3 puncta intensity (A.U.)","Min/Max: Average LC3 Puncta Intensity")
+#dev.off()
+
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLC3SumInt_boxplot_combined_adj-scale_24Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$AveLC3SumIntPerCell, "Average  LC3 puncta sum intensity (A.U.)","Rep 1: Average LC3 Puncta Sum Intensity")
+#dev.off()
+
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLC3SumInt_boxplot_combined_adj-scale_24Mar21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LC3SumIntMinMax, "Average  LC3 puncta sum intensity (A.U.)","Min/Max: Average LC3 Puncta Sum Intensity")
 #dev.off()
 
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/TotLC3Int_boxplot_combined_adj-scale_24Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$TotLC3IntPerCell, "Total LC3 puncta intensity (A.U.)","LC3 Puncta Sum Intensity per Cell")
 #dev.off()
 
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/TotLC3Int_boxplot_combined_adj-scale_24Mar21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LC3totIntMinMax, "Total LC3 puncta intensity (A.U.)","Min/Max: LC3 Puncta Sum Intensity per Cell")
+#dev.off()
+
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/LAMPVol_boxplot_combined_24Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$AveLAMPVolPerCell, expression("LAMP1 Volume (um"^'3'*")"),"Average Volume of LAMP1 Puncta")
+#dev.off()
+
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/LAMPVol_boxplot_combined_24Mar21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LAMPVolMinMax, expression("LAMP1 Volume (um"^'3'*")"),"Min/Max: Average Volume of LAMP1 Puncta")
 #dev.off()
 
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLAMPInt_boxplot_combined_24Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$AveLAMPIntPerCell, "Average LAMP1 puncta intensity (A.U.)","Rep 3: Average LAMP1 Puncta Intensity")
 #dev.off()
 
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLAMPInt_boxplot_combined_24Mar21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LAMPIntMinMax, "Average LAMP1 puncta intensity (A.U.)","Min/Max:  Average LAMP1 Puncta Intensity")
+#dev.off()
+
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLAMPSumInt_boxplot_combined_24Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$AveLAMPSumIntPerCell, "Average LAMP1 puncta sum intensity (A.U.)","Average LAMP1 Puncta Sum Intensity")
 #dev.off()
 
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLAMPSumInt_boxplot_combined_24Mar21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LAMPSumIntMinMax, "Average LAMP1 puncta sum intensity (A.U.)","Min/Max: Average LAMP1 Puncta Sum Intensity")
+#dev.off()
+
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/TotLAMPInt_boxplot_combined_adj-scale_24Mar21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$TotLAMPIntPerCell, "Total LAMP1 puncta intensity (A.U.)","LAMP1 Sum Intensity per Cell")
+#dev.off()
+
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/TotLAMPInt_boxplot_combined_adj-scale_24Mar21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$LAMPtotIntMinMax, "Total LAMP1 puncta intensity (A.U.)","Min/Max: LAMP1 Sum Intensity per Cell")
 #dev.off()
 
 ```
