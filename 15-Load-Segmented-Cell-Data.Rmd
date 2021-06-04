@@ -166,15 +166,28 @@ norm_minmax <- function(x){
 
 ```
 
-Apply Robust Scalar normalization
-```{r}
-temp$LC3CountRS<-NA
+calculating number of cells with counts above WT 3rd quartile (independently determined for basal and starved 3rd quartilerep3C)
 
-robust_scalar <- function(x){
-                  (x-median(x))/ (quantile(x,probs= 0.75)-quantile(x,probs=0.25))
+```{r}
+temp$cellsHighCount<-NA
+
+
+temp$BvsS<-factor(temp$BvsS, levels=c("Basal", "Starved"))
+
+for (t in c("WT","Mock", "Control", "tepsin", "AP4E1")) {
+  for (bs in c("Basal", "Starved")) {
+    x=quantile(temp$LC3CountMinMax[which(temp$Type=="WT" & temp$BvsS==bs)], probs=0.75)
+    temp$cellsHighCount[which(temp$Type==t & temp$BvsS==bs)]<-length(which(temp$Type==t & temp$BvsS==bs & temp$LC3CountMinMax >x))
+  }
 }
 
-temp$LC3CountRS <- robust_scalar(temp$LC3PunctaCount)
+```
+
+Generate dataframe of non duplicated data for number of cells with high puncta counts
+#sorts for no duplicates based on type,BvsS, and high count
+```{r}
+HighCount_nodup<-temp[!duplicated(temp[,c(7,9,13)]),]
+
 ```
 
 print list of images with high LC3 puncta counts to find image artifacts
