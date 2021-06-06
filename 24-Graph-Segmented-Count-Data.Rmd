@@ -121,8 +121,12 @@ plotme<-function(dat,yaxis,labelme,mytitle){
 #plotme(temp,temp$LC3PunctaCount, "Number of LC3 positive puncta per cell","Raw-all: Number of LC3 Puncta")
 #dev.off()
 
-#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/LC3PunctaCounts_boxplot_all-MM_1Jun21.tiff",width=4500,height=3000,res=600)
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/Basal-starved_graphs/LC3PunctaCounts_boxplot_combined-MM_1Jun21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$LC3CountMinMax, "Number of LC3 positive puncta per cell","Min Max-all: Number of LC3 Puncta")
+#dev.off()
+
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/Basal-starved_graphs/CellsHighCount_boxplot_combined_5Jun21.tiff",width=3000,height=3000,res=600)
+plotme(temp,temp$cellsHighCount, "Number of cells with elevated LC3 puncta number","cells with elevated puncta number")
 #dev.off()
 
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/data-norm/LC3PunctaCounts_boxplot_all-RS_24May21.tiff",width=3000,height=3000,res=600)
@@ -133,64 +137,114 @@ plotme<-function(dat,yaxis,labelme,mytitle){
 #plotme(temp,temp$AveLC3VolPerCell, expression("LC3 Puncta Volume (um"^'3'*")"),"Raw-all: Average Volume of LC3 Puncta")
 #dev.off()
 
-#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/LC3PunctaVol_boxplot_combined-MM_31May21.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$LC3VolMinMax, expression("LC3 Puncta Volume (um"^'3'*")"),"Min/Max: Average Volume of LC3 Puncta")
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/Basal-starved_graphs/LC3PunctaVol_boxplot_combined-MM_1Jun21.tiff",width=3000,height=3000,res=600)
+#plotme(temp,temp$LC3VolMinMax, expression("LC3 Puncta Volume (um"^'3'*")"),"Min/Max: Average Volume of LC3 Puncta")
 #dev.off()
 
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLC3Int_boxplot_combined-raw_31May21.tiff",width=3000,height=3000,res=600)
 #plotme(temp,temp$AveLC3IntPerCell, "Average LC3 puncta intensity (A.U.)","Raw-all: Average LC3 Puncta Intensity")
 #dev.off()
 
-#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLC3Int_boxplot_combined-MM_31May21.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$LC3IntMinMax, "Average LC3 puncta intensity (A.U.)","Min/Max: Average LC3 Puncta Intensity")
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/Basal-starved_graphs/AveLC3Int_boxplot_combined-MM_1Jun21.tiff",width=3000,height=3000,res=600)
+#plotme(temp,temp$LC3IntMinMax, "Average LC3 puncta intensity (A.U.)","Min/Max: Average LC3 Puncta Intensity")
 #dev.off()
 
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLC3SumInt_boxplot_combined-raw_31May21.tiff",width=4500,height=3000,res=600)
 #plotme(temp,temp$AveLC3SumIntPerCell, "Average  LC3 puncta sum intensity (A.U.)","Raw-all: Average LC3 Puncta Sum Intensity")
 #dev.off()
 
-#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLC3SumInt_boxplot_combined-MM_scale-adj_31May21.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$LC3SumIntMinMax, "Average  LC3 puncta sum intensity (A.U.)","Min/Max: Average LC3 Puncta Sum Intensity")
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/Basal-starved_graphs/AveLC3SumInt_boxplot_combined-MM_1Jun21.tiff",width=3000,height=3000,res=600)
+#plotme(temp,temp$LC3SumIntMinMax, "Average  LC3 puncta sum intensity (A.U.)","Min/Max: Average LC3 Puncta Sum Intensity")
 #dev.off()
 
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/TotLC3Int_boxplot_combined-raw_31May21.tiff",width=4500,height=3000,res=600)
 #plotme(temp,temp$TotLC3IntPerCell, "Total LC3 puncta intensity (A.U.)","Raw-all: LC3 Puncta Sum Intensity per Cell")
 #dev.off()
 
-#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/TotLC3Int_boxplot_combined-MM_31May21.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$LC3totIntMinMax, "Total LC3 puncta intensity (A.U.)","Min/Max: LC3 Puncta Sum Intensity per Cell")
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/Basal-starved_graphs/TotLC3Int_boxplot_combined-MM_1Jun21.tiff",width=3000,height=3000,res=600)
+#plotme(temp,temp$LC3totIntMinMax, "Total LC3 puncta intensity (A.U.)","Min/Max: LC3 Puncta Sum Intensity per Cell")
 #dev.off()
 
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/LAMPVol_boxplot_combined-raw_31May21.tiff",width=4500,height=3000,res=600)
 #plotme(temp,temp$AveLAMPVolPerCell, expression("LAMP1 Volume (um"^'3'*")"),"Raw-all: Average Volume of LAMP1 Puncta")
 #dev.off()
 
-#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/LAMPVol_boxplot_combined-MM_31May21.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$LAMPVolMinMax, expression("LAMP1 Volume (um"^'3'*")"),"Min/Max: Average Volume of LAMP1 Puncta")
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/Basal-starved_graphs/LAMPVol_boxplot_combined-MM_1Jun21.tiff",width=3000,height=3000,res=600)
+#plotme(temp,temp$LAMPVolMinMax, expression("LAMP1 Volume (um"^'3'*")"),"Min/Max: Average Volume of LAMP1 Puncta")
 #dev.off()
 
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLAMPInt_boxplot_combined-raw_31May21.tiff",width=4500,height=3000,res=600)
 #plotme(temp,temp$AveLAMPIntPerCell, "Average LAMP1 puncta intensity (A.U.)","Raw-all: Average LAMP1 Puncta Intensity")
 #dev.off()
 
-#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLAMPInt_boxplot_combined-MM_31May21.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$LAMPIntMinMax, "Average LAMP1 puncta intensity (A.U.)","Min/Max:  Average LAMP1 Puncta Intensity")
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/Basal-starved_graphs/AveLAMPInt_boxplot_combined-MM_1Jun21.tiff",width=3000,height=3000,res=600)
+#plotme(temp,temp$LAMPIntMinMax, "Average LAMP1 puncta intensity (A.U.)","Min/Max:  Average LAMP1 Puncta Intensity")
 #dev.off()
 
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLAMPSumInt_boxplot_combined-raw_31May21.tiff",width=4500,height=3000,res=600)
 #plotme(temp,temp$AveLAMPSumIntPerCell, "Average LAMP1 puncta sum intensity (A.U.)","Raw-all: Average LAMP1 Puncta Sum Intensity")
 #dev.off()
 
-#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/AveLAMPSumInt_boxplot_combined-MM_31May21.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$LAMPSumIntMinMax, "Average LAMP1 puncta sum intensity (A.U.)","Min/Max: Average LAMP1 Puncta Sum Intensity")
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/Basal-starved_graphs/AveLAMPSumInt_boxplot_combined-MM_1Jun21.tiff",width=3000,height=3000,res=600)
+#plotme(temp,temp$LAMPSumIntMinMax, "Average LAMP1 puncta sum intensity (A.U.)","Min/Max: Average LAMP1 Puncta Sum Intensity")
 #dev.off()
 
 #tiff(file="./Analysis-files/eqCellsum_analysis/graphs/TotLAMPInt_boxplot_combined-raw_31May21.tiff",width=4500,height=3000,res=600)
 #plotme(temp,temp$TotLAMPIntPerCell, "Total LAMP1 puncta intensity (A.U.)","Raw-all: LAMP1 Sum Intensity per Cell")
 #dev.off()
 
-#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/TotLAMPInt_boxplot_combined-MM_31May21.tiff",width=3000,height=3000,res=600)
-plotme(temp,temp$LAMPtotIntMinMax, "Total LAMP1 puncta intensity (A.U.)","Min/Max: LAMP1 Sum Intensity per Cell")
+#tiff(file="./Analysis-files/eqCellsum_analysis/graphs/Basal-starved_graphs/TotLAMPInt_boxplot_combined-MM_1Jun21.tiff",width=3000,height=3000,res=600)
+#plotme(temp,temp$LAMPtotIntMinMax, "Total LAMP1 puncta intensity (A.U.)","Min/Max: LAMP1 Sum Intensity per Cell")
 #dev.off()
+
+```
+
+
+For display of the count of cells with elevated puncta number (values beyond Q3 of WT condition), 
+```{r}
+HighCount$Type<-factor(HighCount$Type, levels=c("WT", "Control", "tepsin", "AP4E1"))
+HighCount$BvsS<-factor(HighCount$BvsS, levels=c("Basal", "Starved"))
+
+
+library(ggplot2)
+# install.packages("remotes")
+#remotes::install_github("coolbutuseless/ggpattern")
+library(ggpattern)
+library(viridis)
+
+plotme<-function(yaxis,sd,sc,labelme,mytitle){
+   ggplot(HighCount,aes(x=Type,y=yaxis,fill=Type, pattern=BvsS)) +
+    
+      geom_jitter(aes(x=Type, y=sc), position = position_jitterdodge(dodge.width=0.9, jitter.width = 0.8), alpha=0.8, color= "dark grey") +
+    
+    geom_bar_pattern(binaxis='y', width=.7, position = position_dodge(0.9),alpha=.2, stat = "identity",
+            colour="black",
+            pattern_spacing = 0.025,
+            pattern_fill = "black",
+            pattern_angle = 25,
+            pattern_density = 0.1,) + 
+    
+        geom_errorbar(aes(ymin=yaxis-sd,ymax=yaxis+sd),binaxis='y',width=0.4,position = position_dodge(0.9),alpha=.9, colour="black", size=0.6) +
+    
+        
+    
+    
+        guides(pattern = guide_legend(override.aes = list(fill = "white")), fill = guide_legend(override.aes = list(pattern = "none")))+
+      #geom_dotplot(binaxis='sc', stackdir='center', stackratio= 0.8, dotsize = 0.5, position = position_dodge(0.9),alpha=.5)+
+    facet_wrap(~BvsS)+
+      ylab(labelme)+
+      ggtitle(mytitle)+
+      theme_minimal()+
+      #scale_x_discrete(limits= rev(unique(sort(WBdata_nodup$type))))+
+      theme(plot.title=element_text(hjust=.5))+
+        scale_fill_viridis(discrete=TRUE,end=.9) +
+        scale_color_viridis(discrete=TRUE,end=.9)+
+        scale_pattern_manual(values = c(Basal = "none", Starved = "stripe"))
+  
+}
+
+tiff(file="./Analysis-files/eqCellsum_analysis/graphs/HighCellCounts/CellsHighCount_boxplot-SE_combined_5Jun21.tiff",width=3000,height=3000,res=600)
+plotme(HighCount$HiCountAve,HighCount$HiCountSE,HighCount$cellsHighCount, "Number of cells with elevated puncta number","Number of cells >WT Q3 puncta/cell")
+dev.off()
 
 ```
