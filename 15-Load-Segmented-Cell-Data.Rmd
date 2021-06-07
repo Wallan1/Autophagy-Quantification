@@ -191,22 +191,28 @@ HighCount_nodup<-temp[!duplicated(temp[,c(7,9,13)]),]
 ```
 
 
-High count data no duplicate data will need to have summary averages and SD calculated. Once all the no-duplicate dataframes for each replicate have been generated with the functions above, they should be bound together using the rbind function. This complete data set should be used for the following calculations of mean and sd
+High count data no duplicate data will need to have summary averages and SD calculated. Once all the no-duplicate dataframes for each replicate have been generated with the functions above, they should be bound together using the rbind function. This complete data set should be used for the following calculations of mean, standard deviation, and standard error (manually adjust n)
 ```{r}
 HighCount$HiCountAve<-NA
 HighCount$HiCountSD<-NA
+HighCount$HiCountSE<-NA
 
 for (t in c("WT", "Control", "tepsin", "AP4E1")) {
   for (bs in c("Basal", "Starved")) {
   HighCount$HiCountAve[which(HighCount$Type==t & HighCount$BvsS==bs)]<-sum(HighCount$cellsHighCount[which(HighCount$Type==t & HighCount$BvsS==bs & HighCount$cellsHighCount)])/length(which(HighCount$Type==t & HighCount$BvsS==bs & HighCount$cellsHighCount))
 
   HighCount$HiCountSD[which(HighCount$Type==t & HighCount$BvsS==bs)]<-sd(HighCount$cellsHighCount[which(HighCount$Type==t & HighCount$BvsS==bs & HighCount$cellsHighCount)])
+  
+  HighCount$HiCountSE[which(HighCount$Type==t & HighCount$BvsS==bs)]<-sd(HighCount$cellsHighCount[which(HighCount$Type==t & HighCount$BvsS==bs & HighCount$cellsHighCount)])/3
   }
   }
 ```
 
 
 
+
+
+#Following code are to assess outliers and find representative images
 print list of images with high LC3 puncta counts to find image artifacts
 ```{r}
 
