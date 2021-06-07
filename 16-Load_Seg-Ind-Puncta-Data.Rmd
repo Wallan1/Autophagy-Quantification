@@ -224,6 +224,10 @@ norm_minmax <- function(x){
 
 ```
 
+
+
+
+#Use following code to assess outlier data points
 print list of images with high LC3 total sum intensity
 ```{r}
 
@@ -292,6 +296,39 @@ for (i in 1:ntemp) {
 
 LAMPcells<-data.frame(temp[img,])
 
+```
+
+
+
+#To replace outlier datapoints with NA values (not measured in final graphs or statistics)
+*Change to do this for desired metric based on threshold for outliers*
+Will need to reapply min/max normalization, this should be done individually to get normalized values per experiment. So replace NA's in dataframe including all replicates then can proceed to following code chunk for rep specific renormalization.
+```{r}
+ntemp<-nrow(temp)
+
+for (i in 1:ntemp) {
+  if (!is.na(temp[i,17]) && temp[i,3] =="Basal" && temp[i,17]>0.5) {
+        temp[i,17]<-NA
+
+}
+}
+```
+
+To reapply min/max normalization
+```{r}
+norm_minmax <- function(x){
+                (x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))
+  }
+
+
+
+for (t in c("WT", "Control", "tepsin", "AP4E1")) {
+    for (r in c("1", "2","3")) {
+      
+   temp$LC3totIntMinMax<-norm_minmax(temp$LC3totIntMinMax)
+      
+  }
+}
 ```
 
 
